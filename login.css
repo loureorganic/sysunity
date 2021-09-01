@@ -1,16 +1,25 @@
-* {
-
-}
-
 body {
     background-color:#277EAE;
     text-align: center;
     align-items: center;
 }
 
+h1 {
+    text-align: center;
+	margin: 20px;
+	font-size: 5em;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+	font-size: 2em;
+    margin-top: -2px;
+}
+
 .content {
     align-items: center;
-    margin: auto;
+    margin-top: 100px;
     
 }
 
@@ -20,15 +29,16 @@ body {
 
 .quadroLogin {
     background-color:white;
-    width: 665px;
+    width: 465px;
     height: 293px;
-    padding-top: 70px;
+    padding-top: 10px;
     margin: auto;
     margin-top: 100px;
+    border-radius: 5px;
 }
 
 #login {
-    flex-wrap: wrap;
+
 }
 
 form {
