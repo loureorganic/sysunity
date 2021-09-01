@@ -1,0 +1,36 @@
+* {
+
+}
+
+body {
+    background-color:#277EAE;
+    text-align: center;
+    align-items: center;
+}
+
+.content {
+    align-items: center;
+    margin: auto;
+    
+}
+
+.container {
+    
+}
+
+.quadroLogin {
+    background-color:white;
+    width: 665px;
+    height: 293px;
+    padding-top: 70px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#login {
+    flex-wrap: wrap;
+}
+
+form {
+    top: 200px;
+}
