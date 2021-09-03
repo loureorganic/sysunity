@@ -1,12 +1,11 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <title>Fazer Login no SysUnity</title>
+  <title>Login - SysUnity</title>
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <script src="script/login.js"></script>
   <link rel="stylesheet" type="text/css" href="css/login.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
@@ -33,6 +32,18 @@
         <div class="btn-group">
           <p>
           <button class="btn btn-primary" id="btn_Entrar" type="button" onclick="entrar()">ENTRAR</button>
+        <p class="inputDados">
+          <label for="usuario_login">Usuário</label>
+          <input id="usuario_login" name="usuario_login" required="required" type="text" placeholder="digite seu usuário..."/>
+        </p>
+
+        <p class="inputDados">
+          <label for="senha_login">Senha</label>
+          <input id="senha_login" name="senha_login" required="required" type="password" placeholder="digite sua senha..."/>
+        </p>
+
+        <p>
+          <button id="btn_Entrar" type="button" value="Entrar">Entrar</button>
         </p>
         </div>
       </form>
@@ -40,5 +51,8 @@
     </div>
   </div> 
 </div>
+
+<script src="script/login.js"></script>
+
 </body>
 </html>
