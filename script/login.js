@@ -1,6 +1,6 @@
-const login = document.querySelector('usuario_login');
-const senha = document.querySelector('senha_login');
+const login = document.getElementById('usuario_login');
+const senha = document.getElementById('senha_login');
 
-function entrar(){
-	document.getElementById("btn-entrar").innerHTML = "Entrar"
-}
+document.getElementById("btn_Entrar").addEventListener("click", function() {
+	window.location.replace('index.html');
+});
