@@ -13,8 +13,8 @@ body {
 }
 
 .background {
+    position: absolute;
     align-items: center;
-    position:absolute;
     bottom: 60px;
 }
 
@@ -63,7 +63,6 @@ input {
 .content {
     align-items: center;
     margin-top: 100px;
-
 }
 
 .quadroLogin {
