@@ -1,27 +1,52 @@
+@import url(bootstrap.min.css);
+
+* {
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 body {
     background-color:#277EAE;
     text-align: center;
     align-items: center;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 h1 {
     text-align: center;
-	margin: 20px;
-	font-size: 5em;
+	margin: 50px;
+	font-size: 6.5em;
     color: white;
+    font-weight: 700;
 }
 
 h2 {
     text-align: center;
 	font-size: 2em;
     margin-top: -2px;
+    font-weight: 700;
+}
+
+label {
+    font-weight: 800;
+    
+}
+
+input {
+    border-color: black;
+    border-radius: 3px;
+    border-width: 2px;
+    width: 250px;
+    height: 35px;
+}
+
+#btn_Entrar {
+    width: 150px;
+    font-weight:bold;
 }
 
 .content {
     align-items: center;
     margin-top: 100px;
-    
+
 }
 
 .container {
@@ -35,14 +60,14 @@ h2 {
     height: 293px;
     padding-top: 10px;
     margin: auto;
-    margin-top: 100px;
     border-radius: 5px;
 }
 
 #login {
-
+    
 }
 
 form {
     top: 200px;
+    
 }
