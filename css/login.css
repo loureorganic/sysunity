@@ -8,6 +8,19 @@ body {
     background-color:#277EAE;
     text-align: center;
     align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.background {
+    align-items: center;
+    position:absolute;
+    bottom: 60px;
+}
+
+.background img {
+    width: 350px;
+    margin: -40px;
 }
 
 h1 {
@@ -53,22 +66,13 @@ input {
 
 }
 
-.container {
-    
-    
-}
-
 .quadroLogin {
-    background-color:white;
+    background:white;
     width: 465px;
     height: 293px;
     padding-top: 10px;
     margin: auto;
     border-radius: 5px;
-}
-
-#login {
-    
 }
 
 form {
