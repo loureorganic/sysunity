@@ -25,9 +25,12 @@ h2 {
     font-weight: 700;
 }
 
+p {
+    text-indent: -95px;
+}
+
 label {
     font-weight: 800;
-    
 }
 
 input {
@@ -41,6 +44,7 @@ input {
 #btn_Entrar {
     width: 150px;
     font-weight:bold;
+    text-align: center;
 }
 
 .content {
