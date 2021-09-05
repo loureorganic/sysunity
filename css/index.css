@@ -24,54 +24,79 @@ body {
 }
 
 h1 {
-    text-align: center;
-	margin: 50px;
-	font-size: 6.5em;
+    position: absolute;
+    width: 545px;
+    height: 198px;
+    left: 435px;
+    top: 68px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 110px;
+    line-height: 180px;
     color: white;
-    font-weight: 700;
 }
 
 h2 {
-    text-align: center;
-	font-size: 2em;
-    margin-top: -2px;
-    font-weight: 700;
+    position: absolute;
+    left: 145px;
+    top: -70px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 75px;
+    color: black;
 }
 
 p {
-    text-indent: -95px;
+    text-indent: -100px;
 }
 
 label {
-    font-weight: 800;
+    font-weight: 700;
+    text-indent: -101px;
+    font-size: 20px;
+    line-height: 30px;
 }
 
 input {
     border-color: black;
     border-radius: 3px;
     border-width: 2px;
-    width: 250px;
+    width: 270px;
     height: 35px;
 }
 
 #btn_Entrar {
-    width: 150px;
+    height: 43px;
+    width: 170px;
     font-weight:bold;
     text-align: center;
+    font-size: 18px;
 }
 
 .content {
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .quadroLogin {
     background:white;
-    width: 465px;
-    height: 293px;
-    padding-top: 10px;
-    margin: auto;
-    border-radius: 5px;
+    position: absolute;
+    width: 490px;
+    height: 350px;
+    left: 470px;
+    top: 261px;
+    border-radius: 3px;
+}
+
+#login {
+    position: absolute;
+    width: 388px;
+    height: 93px;
+    left: 55px;
+    top: 70px;
 }
 
 form {
