@@ -3,50 +3,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SysUnity</title>
+  <title>Fazer Login no SysUnity</title>
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <script src="home.js"></script>
-  <link rel="stylesheet" type="text/css" href="home.css" />
+  <script src="script/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container" >
-    <div class="content">
-    
-      <div id="home">
-        <form method="post" action="">
-          <section class="barra-status">
-            <h1 id="hello">Olá Taila,</h1>
-            <h1>seja bem vinda!</h1>
-            <div class="barra-logado">
-              <img src="" alt="">
-              <h3>usuario_login</h3>
-              <!--Pesquisar como faz o scroll de informações-->
-              <div><h4>Configurações</h4><img src="" alt="" sizes="" srcset=""></div>
-              <div><h4>Sair</h4><img src="" alt="" sizes="" srcset=""></div>
-            </div>
-          </section>
-          <section class="sidebar">
-            <h1>Menu</h1>
-            <div class="sidebar-Usuario">
-              <!--Pesquisar como faz o scroll de informações--> 
-
-            </div>
-
-          </section>
+  <section>
+    <div class="background">
+      <a href=""><img src=""/></a> 
+      <a href=""><img src=""/></a>
+      <a href=""><img src=""/></a>
+      <a href=""><img src=""/></a>
+      <a href=""><img src=""/></a> 
+    </div>
+  </section>
+<div class="container">
+  <div class="content">
+    <h1>SysUnity</h1>
+    <!--FORMULÁRIO DE LOGIN-->
+    <div class="quadroLogin">
+    <div id="login">
+      <form method="post" action="">
+        <h2>Login</h2>
+        <br>
           <p>
+            <label for="usuario_login">Usuário</label>
+            <br>
+            <input id="usuario_login" name="usuario_login" required="required" type="text" placeholder="Digite seu usuário..."/>
           </p>
-
           <p>
+            <label for="senha_login">Senha</label>
+            <br>
+            <input id="senha_login" name="senha_login" required="required" type="password" placeholder="Digite sua senha..."/>
           </p>
-
-          <p>
-          </p>
-
-        
-        </form>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btn_Entrar" type="button" onclick="entrar()">ENTRAR</button>
+      </form>
       </div>
-   </div> 
+    </div>
+  </div> 
+</div>
 </div>
 </body>
 </html>
