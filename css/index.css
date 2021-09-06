@@ -50,7 +50,7 @@ h2 {
 }
 
 p {
-    text-indent: -100px;
+    font-weight: 300;
 }
 
 label {
