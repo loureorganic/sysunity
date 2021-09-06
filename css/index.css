@@ -1,12 +1,11 @@
 @import url(bootstrap.min.css);
 
 * {
-    font-family: ;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color:#277EAE;
-    text-align: center;
     align-items: center;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -26,7 +25,7 @@ body {
 h1 {
     text-align: center;
 	margin: 50px;
-	font-size: 6.5em;
+	font-size: 100px;
     color: white;
     font-weight: 700;
 }
@@ -35,15 +34,12 @@ h2 {
     text-align: center;
 	font-size: 2em;
     margin-top: -2px;
-    font-weight: 700;
-}
-
-p {
-    text-indent: -95px;
+    font-weight: 800;
 }
 
 label {
-    font-weight: 800;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 input {
@@ -55,26 +51,28 @@ input {
 }
 
 #btn_Entrar {
-    width: 150px;
+    height: 43px;
+    width: 170px;
     font-weight:bold;
     text-align: center;
+    font-size: 18px;
+    
 }
 
 .content {
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .quadroLogin {
     background:white;
     width: 35%;
-    height: 293px;
+    height: 320px;
     padding-top: 10px;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
-form {
-    top: 200px;
-    
+form{
+    text-align: center;
 }
