@@ -16,6 +16,7 @@ body {
     }
 
 h1{
+    margin-left: 15px;
     font-size: 50px;
     line-height: 75px;
     font-weight: 700;
@@ -33,23 +34,32 @@ h1{
     background: rgba(196, 196, 196, 0.1);
 }
 
-.aux{
+.welcome{
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
 }
 
-.aux2{
+.log-usuario{
     font-weight: bold;
 }
 .barra-logado{
+    display: flex;
+    flex-direction: row;
     font-style: normal;
     color: #085D8C;
 }
 
 .sidebar{
     position: absolute;
-    width: 412px;
-    height: 891px;
+    background-color: #085D8C;
+    width: 30%;
+    height: 600px;
     left: 0px;
     top: 140px;
+}
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
