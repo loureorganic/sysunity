@@ -11,11 +11,16 @@ body {
     background-image: url(../images/background-\ sys\ unity2.png);
     background-size: 100%;
 }
+
 .container{
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 .content {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     margin-top: 50px;
 }
 
