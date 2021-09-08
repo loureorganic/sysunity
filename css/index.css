@@ -6,20 +6,11 @@
 
 body {
     background-color:#277EAE;
-    align-items: center;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
 
-.background {
-    position: absolute;
-    align-items: center;
-    bottom: 60px;
-}
-
-.background img {
-    width: 350px;
-    margin: -40px;
+.ui{
+    opacity: 0.2;
+    width: 100%;
 }
 
 h1 {
