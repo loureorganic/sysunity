@@ -15,12 +15,10 @@ body {
 .container{
     display: flex;
     flex-direction: column;
-    align-content: center;
 }
 .content {
     display: flex;
     flex-direction: column;
-    align-content: center;
     margin-top: 50px;
 }
 
@@ -50,7 +48,6 @@ h1 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    text-align: center;
 }
 
 h2 {
@@ -81,8 +78,6 @@ input {
 }
 
 #btn_Entrar {
-    flex: 0;
-    width: auto;
     height: 43px;
     font-weight:bold;
     font-size: 18px;
