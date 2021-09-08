@@ -9,17 +9,11 @@
 
 body {
     background-color:#277EAE;
-    align-items: center;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
 
-.background {
-
-}
-
-.background img {
-
+.ui{
+    opacity: 0.2;
+    width: 100%;
 }
 
 h1 {
