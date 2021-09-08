@@ -2,6 +2,9 @@
 
 * {
     font-family: 'Poppins', sans-serif;
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -12,19 +15,16 @@ body {
 }
 
 .background {
-    position: absolute;
-    align-items: center;
-    bottom: 60px;
+
 }
 
 .background img {
-    width: 350px;
-    margin: -40px;
+
 }
 
 h1 {
+    width: 100%;
     text-align: center;
-	margin: 50px;
 	font-size: 100px;
     color: white;
     font-weight: 700;
@@ -73,7 +73,7 @@ input {
     background:white;
     position: absolute;
     padding: 30px; 
-    width: 500px;
+    width: 30%;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
