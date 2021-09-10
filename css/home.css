@@ -63,3 +63,21 @@ h1{
     flex-direction: column;
     align-items: flex-end;
 }
+.table-bordered{
+    border-color: #085D8C;
+    
+
+}
+.table-encomendas{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+.link-see-more{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

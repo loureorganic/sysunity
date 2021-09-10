@@ -9,8 +9,7 @@
   <link rel="stylesheet" type="text/css" href="css/home.css" />
 </head>
 <body>
-<div>
-    <div class="content">
+  <div class="content">
       <div id="home">
         <form method="post" action="">
           <header class="barra-status">
@@ -98,7 +97,7 @@
                </ul>
               </nav>
           </section>
-
+<!--Barra de alerta-->
           <section class="conteudo">
             <header>
               <div>
@@ -114,57 +113,63 @@
                 <p>1 dia</p>
               </div>
             </header>
-            <article>
+
+<!--Tabela Encomendas-->
+            <section class="section table-encomendas">
               <h1>Encomendas</h1>
-              <table>
-                <tr><td><img src="images/.png" alt="" width="10%"></td></tr>
-                <tr><td>O produto {nome} de código {id} faltam 2 dias para a entrega.</td></tr>
-                <tr><td>O produto {nome} de código {id} faltam 3 dias para a entrega.</td></tr>
+              <table class="table table-bordered">
+                <tbody>
+                  <tr><td><img src="images/baseline_report_problem_black_48dp.png" alt="" width="10%"></td></tr>
+                  <tr><td>O produto {nome} de código {id} faltam 2 dias para a entrega.</td></tr>
+                  <tr><td>O produto {nome} de código {id} faltam 3 dias para a entrega.</td></tr>
+                </tbody>
               </table>
-              <a href="">Ver Mais</a>
-            </article>
-            <footer>
+              <div class="link-see-more"><a href="">Ver Mais</a></div>              
+            </section>
+
+<!--Tabela Validade dos Produtos-->
+            <section>
               <h1>Validade dos Produtos</h1>
-              <table>
-                <tr><td></td></tr>
-                <tr>
-                  <td>
-                    <img src="images/.png" alt="" width="10%">
-                    O produto {nome} de código {id} faltam 2 dias para a entrega.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="images/.png" alt="" width="10%">
-                    O produto {nome} de código {id} faltam 3 dias para a entrega.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="images/.png" alt="" width="10%">
-                    O produto {nome} de código {id} faltam 3 dias para a entrega.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="images/.png" alt="" width="10%">
-                    O produto {nome} de código {id} faltam 3 dias para a entrega.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="images/.png" alt="" width="10%">
-                    O produto {nome} de código {id} faltam 3 dias para a entrega.
-                  </td>
-                </tr>
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="images/baseline_report_problem_black_48dp.png" alt="alert" width="5%">
+                      O produto {nome} de código {id} faltam 2 dias para a entrega.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="images/baseline_report_problem_black_48dp.png" alt="alert" width="5%">
+                      O produto {nome} de código {id} faltam 3 dias para a entrega.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="images/baseline_report_problem_black_48dp.png" alt="alert" width="5%">
+                      O produto {nome} de código {id} faltam 3 dias para a entrega.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="images/baseline_report_problem_black_48dp.png" alt="alert" width="5%">
+                      O produto {nome} de código {id} faltam 3 dias para a entrega.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="images/baseline_report_problem_black_48dp.png" alt="alert" width="5%">
+                      O produto {nome} de código {id} faltam 3 dias para a entrega.
+                    </td>
+                  </tr>
+                </tbody>
               </table>
-              <a href="">Ver Mais</a>
-            </footer>
+              <div class="link-see-more"><a href="">Ver Mais</a></div>    
+            </section>
           </section>
         </form>
       </div>
-   </div> 
-</div>
+ </div> 
   <script src="home.js"></script>
 </body>
 </html>
