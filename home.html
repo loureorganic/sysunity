@@ -7,10 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="css/home.css" />
 </head>
 <body>
-  <div class="content">
+<div>
+    <div class="content">
       <div id="home">
         <form method="post" action="">
           <header class="barra-status">
@@ -20,84 +22,125 @@
             </div>
             <!--dropdown do usuário-->
             <ul class="barra-logado">
-              <li>
-                <img src="images/baseline_account_circle_black_48dp.png" alt="" width="10%">
-                <a class="log-usuario">usuario_login</a>
-                <img src="images/.png" alt="" width="10%">
-                <ul>
+              <li id="usuario">
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/baseline_account_circle_black_48dp.png" alt="" width="50%"></i>
+                    <span class="link_name">Taila Santos</span>
+                </a>
+                  <i class="arrow"><img src="images/arrowDown.png" alt="" width="40%"></i>
+                </div>
+                <ul class="sub-menu">
                   <li>
-                    <a href="">Configurações</a>
-                    <img src="images/baseline_settings_black_48dp.png" alt="" width="10%">
+                    <a href="#">Configurações
+                    <i class="arrow"><img src="images/baseline_settings_black_48dp.png" alt="" width="30%"></i>
+                   </a>
                   </li>
                   <li>
-                    <a href="">Sair</a>
-                    <img src="images/baseline_logout_black_48dp.png" alt="" width="10%">
+                    <a href="#">Sair
+                    <i class="arrow"><img src="images/baseline_logout_black_48dp.png" alt="" width="30%"></i>
+                    </a> 
                   </li>
                 </ul>
               </li>
             </ul>
           </header>
+
+          <div class="sidebar">
+            <div class="logo-details">
+              <span class="logo_name">Menu</span>
+            </div>
+            <ul class="nav-links">
+              <li id="ul_usuario">
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/outline_manage_accounts_white_48dp.png" alt="" width="50%"></i>
+                    <span class="link_name">Usuários</span>
+                </a>
+                  <i class="arrow"><img src="images/baseline_expand_more_white_48dp.png" alt="" width="50%"></i>
+                </div>
+                  <ul class="sub-menu">
+                    <li><a href="#">Cadastrar usuário</a></li>
+                    <li><a href="#">Gerenciar usuários</a></li>
+                  </ul>
+              </li>
+              <li id="ul_vendas">
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/baseline_shopping_bag_white_48dp.png" alt="" width="45%"></i>
+                    <span class="link_name">Vendas</span>
+                  </a>
+                  <i class="arrow"><img src="images/baseline_expand_more_white_48dp.png" alt="" width="50%"></i>
+                </div>
+                <ul class="sub-menu">
+                  <li><a href="#">Cadastrar vendas</a></li>
+                  <li><a href="#">Gerenciar vendas</a></li>
+                </ul>
+              </li>
+              <li id="ul_produtos">
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/baseline_inventory_2_white_48dp.png" alt="" width="45%"></i>
+                    <span class="link_name">Produtos</span>
+                  </a>
+                  <i class="arrow"><img src="images/baseline_expand_more_white_48dp.png" alt="" width="50%"></i>
+                </div>
+                <ul class="sub-menu">
+                  <li><a href="#">Cadastrar produtos</a></li>
+                  <li><a href="#">Cadastrar nova produção</a></li>
+                  <li><a href="#">Gerenciar produtos</a></li>
+                </ul>
+              </li>
+              <li id="ul_relatorio">
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/baseline_leaderboard_white_48dp.png" alt="" width="45%"></i>
+                    <span class="link_name">Relatórios</span>
+                  </a>
+                  <i class="arrow"><img src="images/baseline_expand_more_white_48dp.png" alt="" width="50%"></i>
+                </div>
+                <ul class="sub-menu">
+                  <li><a href="#">Relatórios gerais</a></li>
+                  <li><a href="#">Relatórios de vendas</a></li>
+                  <li><a href="#">Relatórios de produtos</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/baseline_history_white_48dp.png" alt="" width="45%"></i>
+                    <span class="link_name">Histórico</span>
+                  </a>
+              </div>
+              </li>
+              <li>
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/baseline_room_service_white_48dp.png" alt="" width="45%"></i>
+                    <span class="link_name">Encomendas</span>
+                  </a>
+              </div>
+              </li>
+              <li>
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/baseline_settings_white_48dp.png" alt="" width="45%"></i>
+                    <span class="link_name">Configurações</span>
+                  </a>
+              </div>
+              </li>
+              <li>
+                <div class="iocn-link">
+                  <a href="#">
+                    <i><img src="images/baseline_help_center_white_48dp.png" alt="" width="45%"></i>
+                    <span class="link_name">Suporte</span>
+                  </a>
+              </div>
+              </li>
+            </ul>
+          </div>
+
           
-          <section class="sidebar">
-            <h3>Menu</h3>
-            <!--dropdown do menu-->
-             <nav class="sidebar-Usuario">
-               <ul>
-                  <li>
-                    <img src="images/outline_manage_accounts_white_48dp.png" alt="" width="10%">
-                    <a href="">Usuário</a>
-                    <img src="images/.png" alt="" width="10%">
-                    <ul>
-                      <li><a href="">Cadastrar usuário</a></li>
-                      <li><a href="">Gerenciar usuários</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <img src="images/baseline_shopping_bag_white_48dp.png" alt="" width="10%">
-                    <a href="">Vendas</a>
-                    <img src="images/.png" alt="" width="10%">
-                    <ul>
-                      <li><a href="">Cadastrar usuário</a></li>
-                      <li><a href="">Gerenciar usuários</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <img src="images/baseline_inventory_2_white_48dp.png" alt="" width="10%">
-                    <a href="">Produtos</a>
-                    <img src="images/.png" alt="" width="10%">
-                    <ul>
-                      <li><a href="">Cadastrar usuário</a></li>
-                      <li><a href="">Gerenciar usuários</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <img src="images/baseline_leaderboard_white_48dp.png" alt="" width="10%">
-                    <a href="">Relatórioa</a>
-                    <img src="images/.png" alt="" width="10%">
-                    <ul>
-                      <li><a href="">Cadastrar usuário</a></li>
-                      <li><a href="">Gerenciar usuários</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <img src="images/pizza-deliver.png" alt="" width="10%">
-                    <a href="">Encomendas</a>
-                  </li>
-                  <li>
-                    <img src="images/baseline_history_white_48dp.png" alt="" width="10%">
-                    <a href="">Histórico</a>
-                  </li>
-                  <li>
-                    <img src="images/baseline_settings_white_48dp.png" alt="" width="10%">
-                    <a href="">Configuração</a>
-                  </li>
-                  <li>
-                    <img src="images/baseline_help_center_white_48dp.png" alt="" width="10%">
-                    <a href="">Suporte</a>
-                  </li>
-               </ul>
-              </nav>
-          </section>
 <!--Barra de alerta-->
           <section class="conteudo">
             <header class="barra-atention">
@@ -165,12 +208,25 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="link-see-more"><a href="">Ver Mais</a></div>    
-            </section>
+              <a href="">Ver Mais</a>
+            </footer>
           </section>
         </form>
       </div>
- </div> 
-  <script src="home.js"></script>
+   </div> 
+</div>
+
+  <script>
+    
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+        let arrowParent = e.target.parentElement.parentElement;
+        console.log(arrowParent);
+        arrowParent.classList.toggle("showMenu");
+    });
+}
+
+  </script>
 </body>
 </html>
