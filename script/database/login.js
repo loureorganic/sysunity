@@ -1,4 +1,3 @@
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 export default class Login{
     constructor(usuario,senha){
@@ -12,19 +11,15 @@ export default class Login{
             resultado.forEach(element => {
                if(element.child("user").val() == usuario && element.child("password").val() == senha) {
                    user = true;
-                   redirecionar();
+                   this.redirecionar();
                } 
             });
-            if(!user) erro()
+            if(!user) this.erro();
         })
-    }
+    };
 
      redirecionar(){
-        Swal.fire({
-            icon: 'success',
-            title: 'Usuário encontrado',
-            text: 'Você será redirecionado em instantes!',
-          })
+          window.location.replace('home.html');
      }
 
      erro(){
