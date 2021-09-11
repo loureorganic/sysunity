@@ -16,11 +16,19 @@ body {
     }
 
 h1{
-    margin-left: 15px;
+    margin: 0;
     font-size: 50px;
     line-height: 75px;
     font-weight: 700;
     color: #000000;
+}
+p{
+    margin: 0;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+
 }
 
 .barra-status{
@@ -58,26 +66,56 @@ h1{
     left: 0px;
     top: 140px;
 }
+
 .conteudo{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
-.table-bordered{
-    border-color: #085D8C;
-    
 
+.barra-atention{
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
 }
-.table-encomendas{
+
+.danger{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
+    align-items: center;
+    margin: auto;
 }
+
+.danger img{
+    width: 50%;
+}
+
+.section-table{
+    display: flex;
+    flex-direction: column;
+    height:max-content;
+    align-items:flex-start;
+    width: 70%;
+    padding: 20px;
+}
+
+.table-bordered{
+    border-color: #085D8C;
+    border-radius: 70%;
+}
+
+
+.table img{
+    width: 5%;
+    margin-right: 30px;
+}
+
 .link-see-more{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-end;
+    width: 100%;
+    text-decoration: none;
 }
