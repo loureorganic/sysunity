@@ -1,15 +1,4 @@
-@import url(bootstrap.min.css);
-
-* {
-    font-family: 'Poppins', sans-serif;
-    border: 0;
-    padding: 0;
-    margin: 0;
-}
-
-body {
-
-}
+@import url(main.css);
 
 #hello{
     color: #085D8C;
@@ -40,24 +29,166 @@ h1{
     flex-wrap: nowrap;
 }
 
-.log-usuario{
-    font-weight: bold;
-}
 .barra-logado{
     display: flex;
-    flex-direction: row;
-    font-style: normal;
+    list-style: none;
     color: #085D8C;
+    padding: 0;
+}
+
+.barra-logado .iocn-link{
+    display: flex;
+}
+
+.barra-logado li i {
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.barra-logado li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.barra-logado  li a .link_name{
+    font-size: 22px;
+    color: #085D8C;
+    font-weight: 800;
+}
+
+.barra-logado li .sub-menu{
+    padding: 2px 10px 2px;
+    background: #A7C7FF;
+    list-style: none;
+    display:none;
+}
+
+.barra-logado li.showMenu .sub-menu{
+    display: block;
+    width: 90%;
+}
+
+.barra-logado li .sub-menu a{
+    display:flex;
+    justify-content: flex-end;
+    color: #085D8C;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 6px 0;
+}
+
+.barra-logado li .sub-menu i{
+    display: flex;
+    justify-content: end;
+}
+
+.barra-logado ul li:hover .sub-menu ul{
+    pointer-events: auto;
+    display: block;
 }
 
 .sidebar{
-    position: absolute;
-    background-color: #085D8C;
-    width: 30%;
-    height: 600px;
-    left: 0px;
-    top: 140px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 100%;
+    width: 25%;
+    background: #277EAE;
 }
+
+.sidebar .logo-details{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .logo-details i{
+    font-size: 30px;
+    color: #fff;
+}
+
+.sidebar .logo-details .logo_name{
+    font-size: 30px;
+    color: #A7C7FF;
+    font-weight: 600;
+}
+
+.sidebar .nav-links{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 0;
+}
+
+.sidebar .nav-links .iocn-link{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar .nav-links li{
+    list-style: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover{
+    background: #085D8C;
+}
+
+.sidebar .nav-links li i .iocn-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .nav-links li i{
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;;
+}
+
+.sidebar .nav-links li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar .nav-links li a .link_name{
+    font-size: 22px;
+    color: #fff;
+}
+
+.sidebar .nav-links li .sub-menu{
+    padding: 2px 10px 2px;
+    background: #A7C7FF;
+    display:none;
+}
+
+.sidebar .nav-links li.showMenu .sub-menu{
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu a{
+    color: #000000;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.sidebar .nav-links li:hover .sub-menu{
+    pointer-events: auto;
+}
+
+.sidebar .nav-links li a .link_name{
+    font-size: 22px;
+    color: #fff;
+}
+
 .conteudo{
     display: flex;
     flex-direction: column;
