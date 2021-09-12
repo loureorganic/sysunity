@@ -20,6 +20,11 @@ p{
 a{
     text-decoration: none;
 }
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 .barra-status{
     display: flex;
@@ -85,7 +90,7 @@ a{
 .sidebar{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 30%;
     background: #277EAE;
     list-style: none;
 }
@@ -144,31 +149,7 @@ h3{
   width: 100%;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.alerts{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 600px 0px 200px;
-}
-
-.table-order{
-    display: flex;
-    flex-direction: column;
-    padding: 0px 30px;
-    width: 100%;
-}
-
-h2{
-    font-size: 30px;
-    font-weight: 800;
-}
-
-.table-order .link-see-more{
+.content-table{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -177,11 +158,28 @@ h2{
     text-decoration: none;
 }
 
-.barra-atention{
+.alerts{
     display: flex;
-    width: 70%;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    
+}
+.danger{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+
+.section-table{
+    display: flex;
+    flex-direction: column;
+    height:max-content;
+    align-items:flex-start;
+    width: 0%;
+    padding: 20px;
 }
 
 .danger{
@@ -200,7 +198,7 @@ h2{
     flex-direction: column;
     height:max-content;
     align-items:flex-start;
-    width: 70%;
+    width: 100%;
     padding: 20px;
 }
 .section-table h1{
