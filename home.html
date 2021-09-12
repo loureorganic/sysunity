@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +13,6 @@
 <div>
     <div class="content">
       <div id="home">
-        <form method="post" action="">
           <header class="barra-status">
             <div class="welcome">    
               <h1 id="hello">Olá Taila,</h1>
@@ -23,122 +21,125 @@
             <!--dropdown do usuário-->
             <ul class="barra-logado">
               <li id="usuario">
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/baseline_account_circle_black_48dp.png" alt="" width="50%"></i>
-                    <span class="link_name">Taila Santos</span>
-                </a>
-                  <i class="arrow"><img src="images/arrowDown.png" alt="" width="40%"></i>
+                <div id="dropdown-login" class="btn-group">
+                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="images/baseline_account_circle_black_48dp.png" alt="" width="20%">
+                      Taila Santos
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">Configurações
+                      <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
+                     </a>
+                    </li>
+                    <li>
+                      <a href="#">Sair
+                      <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
+                      </a> 
+                    </li>
+                  </ul>
                 </div>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="#">Configurações
-                    <i class="arrow"><img src="images/baseline_settings_black_48dp.png" alt="" width="30%"></i>
-                   </a>
-                  </li>
-                  <li>
-                    <a href="#">Sair
-                    <i class="arrow"><img src="images/baseline_logout_black_48dp.png" alt="" width="30%"></i>
-                    </a> 
-                  </li>
-                </ul>
               </li>
             </ul>
           </header>
-
-          <div class="sidebar">
-            <div class="logo-details">
-              <span class="logo_name">Menu</span>
+      <section class="sidebar-conteudo" action="">
+        <div class="sidebar">
+            <div class="menu">
+              <h3>Menu</h3>
             </div>
-            <ul class="nav-links">
-              <li id="ul_usuario">
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/outline_manage_accounts_white_48dp.png" alt="" width="50%"></i>
-                    <span class="link_name">Usuários</span>
-                </a>
-                  <i class="arrow"><img src="images/baseline_expand_more_white_48dp.png" alt="" width="50%"></i>
-                </div>
-                  <ul class="sub-menu">
+          <div class="topics">
+            <div class="dropdown-sidebar">
+              <li>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/outline_manage_accounts_white_48dp.png" alt="" width="12%">
+                      Usuários
+                  </button>
+                  <ul class="dropdown-menu">
                     <li><a href="#">Cadastrar usuário</a></li>
                     <li><a href="#">Gerenciar usuários</a></li>
                   </ul>
-              </li>
-              <li id="ul_vendas">
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/baseline_shopping_bag_white_48dp.png" alt="" width="45%"></i>
-                    <span class="link_name">Vendas</span>
-                  </a>
-                  <i class="arrow"><img src="images/baseline_expand_more_white_48dp.png" alt="" width="50%"></i>
                 </div>
-                <ul class="sub-menu">
-                  <li><a href="#">Cadastrar vendas</a></li>
-                  <li><a href="#">Gerenciar vendas</a></li>
-                </ul>
               </li>
-              <li id="ul_produtos">
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/baseline_inventory_2_white_48dp.png" alt="" width="45%"></i>
-                    <span class="link_name">Produtos</span>
-                  </a>
-                  <i class="arrow"><img src="images/baseline_expand_more_white_48dp.png" alt="" width="50%"></i>
+            </div>
+            <div class="dropdown-sidebar">
+              <li>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/baseline_shopping_bag_white_48dp.png" alt="" width="12%">
+                      Vendas
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Cadastrar vendas</a></li>
+                    <li><a href="#">Gerenciar vendas</a></li>
+                  </ul>
                 </div>
-                <ul class="sub-menu">
-                  <li><a href="#">Cadastrar produtos</a></li>
-                  <li><a href="#">Cadastrar nova produção</a></li>
-                  <li><a href="#">Gerenciar produtos</a></li>
-                </ul>
               </li>
-              <li id="ul_relatorio">
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/baseline_leaderboard_white_48dp.png" alt="" width="45%"></i>
-                    <span class="link_name">Relatórios</span>
-                  </a>
-                  <i class="arrow"><img src="images/baseline_expand_more_white_48dp.png" alt="" width="50%"></i>
+            </div>
+            <div class="dropdown-sidebar">
+              <li>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/baseline_inventory_2_white_48dp.png" alt="" width="12%">
+                      Produtos
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Cadastrar produtos</a></li>
+                    <li><a href="#">Cadastrar nova produção</a></li>
+                    <li><a href="#">Gerenciar produtos</a></li>
+                  </ul>
                 </div>
-                <ul class="sub-menu">
-                  <li><a href="#">Relatórios gerais</a></li>
-                  <li><a href="#">Relatórios de vendas</a></li>
-                  <li><a href="#">Relatórios de produtos</a></li>
-                </ul>
               </li>
+            </div>
+            <div class="dropdown-sidebar">
               <li>
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/baseline_history_white_48dp.png" alt="" width="45%"></i>
-                    <span class="link_name">Histórico</span>
-                  </a>
-              </div>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/baseline_leaderboard_white_48dp.png" alt="" width="12%">
+                      Relatórios
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Relatórios gerais</a></li>
+                    <li><a href="#">Relatórios de vendas</a></li>
+                    <li><a href="#">Relatórios de produtos</a></li>
+                  </ul>
+                </div>
               </li>
+            </div>
+            <div class="dropdown-sidebar">
               <li>
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/baseline_room_service_white_48dp.png" alt="" width="45%"></i>
-                    <span class="link_name">Encomendas</span>
-                  </a>
-              </div>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/baseline_room_service_white_48dp.png" alt="" width="12%">
+                      Encomendas
               </li>
+            </div>
+            <div class="dropdown-sidebar">
               <li>
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/baseline_settings_white_48dp.png" alt="" width="45%"></i>
-                    <span class="link_name">Configurações</span>
-                  </a>
-              </div>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/baseline_history_white_48dp.png" alt="" width="12%">
+                      Histórico
               </li>
+            </div>
+            <div class="dropdown-sidebar">
               <li>
-                <div class="iocn-link">
-                  <a href="#">
-                    <i><img src="images/baseline_help_center_white_48dp.png" alt="" width="45%"></i>
-                    <span class="link_name">Suporte</span>
-                  </a>
-              </div>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/baseline_settings_white_48dp.png" alt="" width="12%">
+                      Configurações
               </li>
-            </ul>
+            </div>
+            <div class="dropdown-sidebar">
+              <li>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/baseline_help_center_white_48dp.png" alt="" width="12%">
+                      Suporte
+              </li>
+            </div>
           </div>
+        </div>
 
           
 <!--Barra de alerta-->
@@ -210,22 +211,9 @@
               <div class="link-see-more"><a href="">Ver Mais</a></div>    
             </footer>
           </section>
-        </form>
+      </section>
       </div>
    </div> 
 </div>
-
-  <script>
-    
-    let arrow = document.querySelectorAll(".arrow");
-    for (var i = 0; i < arrow.length; i++) {
-    arrow[i].addEventListener("click", (e)=>{
-        let arrowParent = e.target.parentElement.parentElement;
-        console.log(arrowParent);
-        arrowParent.classList.toggle("showMenu");
-    });
-}
-
-  </script>
 </body>
 </html>
