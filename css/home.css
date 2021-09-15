@@ -147,9 +147,11 @@ h3{
 }
 
 .btn-toggle::before {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
+/*
+display: flex;
+flex: 1;
+justify-content: flex-end;
+*/
     line-height: 0;
     content: url("../images/baseline_expand_more_white_48dp.png");
     transition: transform .35s ease;
@@ -158,6 +160,7 @@ h3{
 .btn-toggle[aria-expanded="true"]::before {
     transform: rotate(180deg);
 }
+
 
 .btn-toggle-nav a {
     display: inline-flex;
