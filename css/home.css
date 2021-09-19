@@ -15,7 +15,7 @@ h1{
 }
 p{
     margin: 0;
-    font-size: 20px;
+    font-size: 13px;
 }
 a{
     text-decoration: none;
@@ -69,7 +69,7 @@ a{
 }
 
 .bar-login  li a {
-    font-size: 20px;
+    font-size: 8px;
     color: #085D8C;
     font-weight: 800;
     padding: 10px;
@@ -91,7 +91,7 @@ a{
     display: flex;
     flex-direction: column;
     background: #277EAE;
-    width: 30%;
+    width: 25%;
 }
 
 .menu{
@@ -122,6 +122,7 @@ h3{
 }
 
 .sidebar li a{
+    font-size: 13px;
     display: flex;
     align-items: center;
 }
@@ -129,16 +130,43 @@ h3{
 .btn-toggle {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
     align-items: center;
-    padding: 4px 8px;
-    font-size: 22px;
-    color: #fff;
-    border: 0;
+    justify-content: space-between;
+    padding: 8px;
+    border: none;
+    position: relative;
 }
 
+.button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border: none;
+    position: relative;
+}
+
+.button > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button:focus > img{
+transform: rotate(180deg);
+transition: 0.25s;
+}
+
+.set1{
+display: flex;
+align-items:flex-start;
+justify-content: flex-start;
+}
+
+
 .btn-toggle span{
-    padding-left: 10px;
+    padding-left: 8px;
 }
 
 .btn-toggle:hover {
@@ -148,10 +176,8 @@ h3{
 
 .btn-toggle::before {
     display: flex;
-    flex: 1;
-    justify-content: flex-end;
     line-height: 0;
-    content: url("../images/baseline_expand_more_white_48dp.png");
+    content: url("../images/expand_more_white_24dp\ \(1\).svg");
     transition: transform .25s ease;
 }
 
