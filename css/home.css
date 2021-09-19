@@ -1,5 +1,5 @@
 @import url(main.css);
-
+html, body {margin:0;padding:0;height:100%;}
 
 #hello{
     color: #085D8C;
@@ -24,6 +24,7 @@ a{
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
 }
 
 .bar-status{
@@ -31,10 +32,14 @@ a{
     width:100%;  
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 15%;
     flex-direction: row;
-    padding: 26px 54px;
+    padding:18px;
     background: rgba(196, 196, 196, 0.1);
+}
+
+.a{
+    height: 100%;
 }
 
 .welcome{
@@ -90,6 +95,11 @@ a{
     list-style: none;
 }
 
+.consert{
+    display: flex;
+    flex-direction: row;
+}
+
 .bar-login .dropdown-menu li:hover{
     background-color: #ffffff57;
 }
@@ -97,14 +107,21 @@ a{
 .sidebar-tables{
     display: flex;
     align-content: stretch;
-    height: 100%;
 }
+.sidebar-logo{
+    padding: 12px;
 
+}
+.sidebar-logo h6{
+    color: #fff;
+    font-weight: 700;
+} 
 .sidebar{
     display: flex;
     flex-direction: column;
     background: #277EAE;
-    width: 25%;
+    width: 100%;
+    height:108.2%;
 }
 
 .menu{
@@ -172,6 +189,7 @@ transition: 0.25s;
 }
 
 .set1{
+padding-right: 24px;
 display: flex;
 align-items:flex-start;
 justify-content: flex-start;
@@ -180,6 +198,7 @@ justify-content: flex-start;
 
 .btn-toggle span{
     padding-left: 8px;
+    color: #fff;
 }
 
 .btn-toggle:hover {
@@ -228,12 +247,10 @@ justify-content: flex-start;
 }
 
 .content-table{
+    margin: 18px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
     width: 100%;
-    height: 100%;
     text-decoration: none;
 }
 
