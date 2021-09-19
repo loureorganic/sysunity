@@ -8,7 +8,7 @@
 
 h1{
     margin: 0;
-    font-size: 50px;
+    font-size: 35px;
     line-height: 75px;
     font-weight: 700;
     color: #000000;
@@ -274,4 +274,40 @@ h3{
     color: #086191;
     font-size: 15px;
     font-weight: bold;
+}
+@media (min-width: 400px) and (max-width: 600px) {
+    .bar-status{
+        height: 150px;
+        padding: 10px 26px 10px 26px;
+    }
+    .welcome{
+        flex-direction: column;
+        width: 100%;
+    }
+    h1{
+        line-height: 50px;
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 729px) {
+    .welcome{
+        flex-direction: column;
+    }
+    h1{
+        line-height: 50px;
+        font-size: 25px;
+    }
+}
+@media (min-width: 730px) and (max-width: 800px) {
+    h1{
+        line-height: 40px;
+        font-size: 25px;
+    }
+}
+@media (min-width: 801px) and (max-width: 850px) {
+    h1{
+        line-height: 40px;
+        font-size: 30px;
+    }
 }
