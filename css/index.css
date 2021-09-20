@@ -78,7 +78,7 @@ input {
     padding: 0 40px 0 40px;
 }
 
-#usuario_login, #usuario_senha{
+#input_erro{
     border: 'red';
 }
 
