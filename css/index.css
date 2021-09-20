@@ -78,7 +78,7 @@ input {
     padding: 0 40px 0 40px;
 }
 
-#input_erro{
+.input_erro{
     border: 'red';
 }
 
