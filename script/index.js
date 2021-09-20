@@ -8,8 +8,9 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 
 	if(inputdadosusuario != "")
 	{
-		return dadosdosusuario;
-		inputdadosusuario.className += ' erro'; 
+		inputdadosusuario.className += " #usuario_login, #usuario_senha"; 
 		inputdadosusuario.focus();
+	} else {
+		return dadosdosusuario;
 	}
 });
