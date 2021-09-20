@@ -81,3 +81,7 @@ input {
 #usuario_login, #usuario_senha{
     border: 'red';
 }
+
+.none{
+    display: none;
+}
