@@ -8,7 +8,7 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 	dadosdosusuario = validarSenha();
 
 	function validarSenha(){
-		if(!dadosdosusuario == ""){
+		if(dadosdosusuario == ""){
 			dadosdosusuario.className += ' input_erro';
 			dadosdosusuario.focus();
 			return false;
