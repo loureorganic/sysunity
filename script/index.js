@@ -8,9 +8,9 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 	if(dadosdosusuario == "")
 	{
 		dadosdosusuario.focus();
-		dadosdosusuario.class.Name += ' input_erro';
+		return dadosdosusuario.class.Name += ' input_erro';
 	} else {
-		dadosdosusuario = new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
+		return dadosdosusuario = new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 	}
 
 });
