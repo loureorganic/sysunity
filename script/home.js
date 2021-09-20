@@ -10,8 +10,8 @@
 });
 
 $(document).ready(function() {
-    const btn_usuario = $('.bt');
-    const dropDown = $('usuario');    
+    const btn_usuario = $('dropdown-menu');
+    const dropDown = $('usuario_configuracoes');    
    
     btn_usuario.on('click', function(event){
         dropDown.stop(true,true).slideToggle();
@@ -26,7 +26,7 @@ $(document).ready(function() {
     }
 });
 $(document).ready(function() {
-    const btn = $('.bt1');
+    const btn = $('link-dark rounded');
     const dropDown = $('ul_usuario');    
    
     btn.on('click', function(event){
@@ -43,7 +43,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    const btn2= $('.bt2');
+    const btn2= $('link-dark rounded');
     const dropDown = $('ul_vendas');    
    
     btn2.on('click', function(event){
@@ -60,7 +60,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    const btn3 = $('.bt3');
+    const btn3 = $('link-dark rounded');
     const dropDown = $('ul_produtos');    
    
     btn3.on('click', function(event){
@@ -80,7 +80,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    const btn4 = $('.bt4');
+    const btn4 = $('link-dark rounded');
     const dropDown = $('ul_relatorios');    
    
     btn4.on('click', function(event){
@@ -99,7 +99,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    const btn5 = $('.bt5');
+    const btn5 = $('link-dark rounded');
    
     btn5.on('click', function(){
         window.location.href = 'encomendas.html';
@@ -107,7 +107,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    const btn6 = $('.bt6');
+    const btn6 = $('link-dark rounded');
    
     btn6.on('click', function(){
         window.location.href = 'historico.html';
@@ -115,7 +115,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    const btn7 = $('.bt7');
+    const btn7 = $('link-dark rounded');
    
     btn7.on('click', function(){
         window.location.href = 'configuracao.html';
@@ -123,7 +123,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    const btn8 = $('.bt8');
+    const btn8 = $('link-dark rounded');
    
     btn8.on('click', function(){
         window.location.href = 'suporte.html';
