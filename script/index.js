@@ -2,16 +2,10 @@ import Login from "./database/login.js";
 
 
 document.getElementById("btn_Entrar").addEventListener("click", function() {
-	const dadosdosusuario = (document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
-
-	dadosdosusuario = validacao();
-	
-	function validacao(){
-		if(dadosdosusuario == "")
-		{
-			document.write("O campo precisa ser preechido");
-		} else {
-			return dadosdosusuario = new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
-		}
-	}	
+	const  dadosdosusuario = new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
+		
+	if(document.getElementById('usuario_login') != "" || document.getElementById('senha_login') != "")
+	{
+		return dadosdosusuario;
+	}
 });
