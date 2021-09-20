@@ -78,6 +78,6 @@ input {
     padding: 0 40px 0 40px;
 }
 
-.erro{
+#usuario_login, #usuario_senha{
     border: 'red';
 }
