@@ -3,12 +3,14 @@ import Login from "./database/login.js";
 
 document.getElementById("btn_Entrar").addEventListener("click", function() {
 
-	const dadosdosusuario = verificar();
+	const dadosdosusuario = (document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 
-	function verificar(){
-		if(dadosdosusuario == ""){
-			dadosdosusuario.class.Name += ' #input_erro';
-			dadosdosusuario.focus();
+	dadosdosusuario = validarSenha();
+	
+	function validarSenha(){
+		if(document.getElementById('senha_login') == ""){
+			document.getElementById('senha_login').className += ' #input_erro';
+			document.getElementById('senha_login').focus();
 		} else {
 			dadosdosusuario = new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 		}
