@@ -8,7 +8,7 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 	if(dadosdosusuario == "")
 	{
 		dadosdosusuario.focus();
-		dadosdosusuario.class.Name += ' usuario_login, senha_login';
+		dadosdosusuario.class.Name += ' input_erro';
 	} else {
 		dadosdosusuario = new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 	}
