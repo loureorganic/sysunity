@@ -11,7 +11,7 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 		if(!dadosdosusuario == ""){
 			dadosdosusuario.className += ' input_erro';
 			dadosdosusuario.focus();
-			return false
+			return false;
 		} else {
 			dadosdosusuario = new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 		}
