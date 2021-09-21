@@ -8,7 +8,7 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 		if(document.getElementById('senha_login').value == "" || document.getElementById('senha_login').value == " "){
 			document.getElementById('senha_login').style.borderColor = "red",
 			document.getElementById('senha_login').focus();
-			document.getElementById('msgErro').textContent;
+			return document.getElementById('msgErro').textContent;
 		} else {
 			new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 		}
