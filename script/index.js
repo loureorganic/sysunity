@@ -8,8 +8,12 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 		if(document.getElementById('senha_login').value == "" || document.getElementById('senha_login').value == " "){
 			document.getElementById('senha_login').style.borderColor = "red",
 			document.getElementById('senha_login').focus();
-			return document.getElementById('msgErro').textContent;
+			document.getElementById('senha_login').innerText = mensagem();
 		} else {
 			new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
+		}
+
+		function mensagem(){
+			document.getElementById('msgErro').textContent;
 		}
 });
