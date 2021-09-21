@@ -5,9 +5,9 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 
 	const dadosdosusuario = (document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 
-		if(document.getElementById('senha_login').value == ""){
-			document.getElementById('senha_login').style.borderColor = "red",
-			document.getElementById('senha_login').focus();
+		if(dadosdosusuario == ""){
+			dadosdosusuario.style.borderColor = "red",
+			dadosdosusuario.focus();
 		} else {
 			 new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 		}
