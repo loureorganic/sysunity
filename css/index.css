@@ -77,11 +77,3 @@ input {
     font-size: 18px;
     padding: 0 40px 0 40px;
 }
-
-#msgErro{
-    display: none;
-}
-
-#msgErro:checked ~ .msgErro2{
-    display: block;
-}
