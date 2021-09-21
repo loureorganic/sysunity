@@ -8,7 +8,7 @@ document.getElementById("btn_Entrar").addEventListener("click", function() {
 		if(document.getElementById('senha_login').value == "" || document.getElementById('senha_login').value == " "){
 			document.getElementById('senha_login').style.borderColor = "red",
 			document.getElementById('senha_login').focus();
-			document.getElementById('senha_login') = document.getElementById('msgErro').innerText;
+			document.write("O campo precisa ser preenchido");
 		} else {
 			new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 		}
