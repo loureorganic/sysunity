@@ -19,7 +19,7 @@ $(document).ready(function(){
         event.stopPropagation();
     });
 
-    if(classeUsuario == ul_suuario)
+    if(classeUsuario == ul_usuario)
     {
         window.location.href = 'cadastrar_usuario.html';
     } else {
