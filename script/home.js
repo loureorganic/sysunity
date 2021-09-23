@@ -9,7 +9,7 @@
        }
 });
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     
     const classeUsuario = $('.collapse');
     const ul = $('#ul_usuario');
@@ -26,4 +26,16 @@ $(document).ready(function(){
         window.location.href = 'gerenciar_usuario.html';
     }
 
-})
+})*/
+
+function redirecionarUsuario(){
+
+    const usuario;
+
+    if (usuario == ul_usuario) {
+        window.location.href = 'cadastrar_usuario.html';
+    } else {
+        window.location.href = 'gerenciar_usuario.html';
+    }
+
+}
