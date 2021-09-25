@@ -22,6 +22,7 @@ h2{
     margin: 20px;
     background: #a7c7ff3f;
     padding: 30px;
+    width: 60%;
 }
 
 p{
@@ -55,14 +56,48 @@ input {
     display: flex;
 }
 
+.b label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+}
+
+.b .btn-secondary{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: none;
+    border-color: #085D8C;
+    padding: 5px;
+    color: black;
+}
+
+.b .dropdown-toggle::after {
+    color:#085D8C;
+}
+
+.b .dropdown-menu{
+    width: 100%;
+    background: #A7C7FF;
+}
+
+.b li a{
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 2px;
+    color: #fff;
+}
+
 .c{
     display: flex;
     justify-content: end;
 }
 
-.form .btn-group{
+.c .btn-group{
     width: 30%;
-    padding: 30px 0 10px 0px;
+    padding: 100px 0 10px 0px;
 }
 
 #btn_cadastrar{
