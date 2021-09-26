@@ -13,7 +13,7 @@ h2{
     align-items:flex-start;
     width: 100%;
     padding: 0px 30px 0px 30px;
-    margin-top: 30px;
+    margin-top: 18px;
 }
 
 .form{
@@ -23,6 +23,7 @@ h2{
     background: #a7c7ff3f;
     padding: 30px;
     width: 60%;
+    border-radius: 4px;
 }
 
 p{
@@ -48,60 +49,70 @@ input {
     border-color: #085D8C;
 }
 
-.a{
+.user-email{
     display: flex;
 }
 
-.b{
+.office-access{
     display: flex;
 }
 
-.b label{
+.office-access label{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 5px;
 }
 
-.b .btn-secondary{
+.office-access .btn-secondary{
     display: flex;
     align-items: center;
     justify-content: space-around;
     background: none;
     border-color: #085D8C;
-    padding: 5px;
     color: black;
 }
 
-.b .dropdown-toggle::after {
-    color:#085D8C;
+.office-access .dropdown-toggle::after {
+    border: 0;
+    margin: 0;
+    content: url(../images/baseline_expand_more_blue_48dp.png);
+    height: 36px;
+    margin-top: -12px;
 }
 
-.b .dropdown-menu{
+.office-access .dropdown-menu{
     width: 100%;
-    background: #A7C7FF;
+    background: #7AA5BC;
+    border-width: 2px;
+    border-color: #085D8C;
 }
 
-.b li a{
+.office-access li a{
     display: flex;
     font-size: 15px;
     font-weight: 400;
-    padding: 2px;
+    padding: 6px;
     color: #fff;
 }
 
-.c{
+.office-access li a:hover {
+    background-color: #085D8C;
+}
+
+.register{
     display: flex;
     justify-content: end;
 }
 
-.c .btn-group{
+.register .btn-group{
     width: 30%;
-    padding: 100px 0 10px 0px;
+    padding: 120px 6px 12px 0px;
 }
 
 #btn_cadastrar{
     height: 40px;
     font-weight:600;
     font-size: 16px;
+    background: #085D8C;
 }
