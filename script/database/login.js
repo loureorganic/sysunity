@@ -1,9 +1,16 @@
+const firebaseref = firebase.database().ref("Usuario");
+firebaseref.once('value',(resultado)=> {
+    resultado.forEach(element => {
+    console.log(element.child("user").valueOf());
+    });
+});
+
 
 export default class Login{
     constructor(usuario,senha){
-    this.login(usuario,senha)
+       this.login(usuario,senha)
     }
-    
+
     login(usuario,senha) {
         const firebaseref = firebase.database().ref("Usuario");
         firebaseref.once('value',(resultado)=>{
@@ -14,7 +21,7 @@ export default class Login{
                if(element.child("user").val() == usuario && element.child("password").val() == senha) {
                    user = true;
                    this.redirecionar();
-               } 
+               }
                else if (element.child("user").val() != usuario && element.child("password").val() == senha)
                {
                    erruser = true;
@@ -24,7 +31,7 @@ export default class Login{
                    errsenha = true;
                }
             });
-            if(!user && erruser) 
+            if(!user && erruser)
             {
                 this.errousuario();
             }
@@ -37,7 +44,7 @@ export default class Login{
      redirecionar(){
           window.location.replace('home.html');
      }
-     
+
      errousuario(){
         Swal.fire({
             icon: 'error',
