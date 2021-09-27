@@ -26,21 +26,21 @@ h2{
     border-radius: 4px;
 }
 
-p{
+.form p{
     padding: 5px;
     width: 100%;
 }
 
-input{
+.form input{
     width: 100%;
 }
 
-label {
+.form label {
     font-weight: 700;
     font-size: 18px;
 }
 
-input {
+.form input {
     background: none;
     border-radius: 4px;
     border-width: 1px;
