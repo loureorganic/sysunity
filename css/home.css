@@ -20,6 +20,11 @@ p{
 a{
     text-decoration: none;
 }
+#home{
+    font-size: large;
+    font-weight: 700;
+
+}
 .content{
     display: flex;
     flex-direction: column;
@@ -35,7 +40,7 @@ a{
     height: 80px;
     flex-direction: row;
     padding:18px;
-    background: rgba(196, 196, 196, 0.1);
+    background: #F9F9F9;
 }
 
 .a{
@@ -109,13 +114,15 @@ a{
     align-content: stretch;
 }
 .sidebar-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px;
-
 }
-.sidebar-logo h6{
-    color: #fff;
-    font-weight: 700;
-} 
+.sidebar-logo  a{
+    color: white;
+}
+
 .sidebar{
     display: flex;
     position: fixed;
