@@ -1,4 +1,4 @@
-import Login from "./database/login.js";
+import Login from "./database/databaseLogin.js";
 
 
 document.getElementById("btn_Entrar").addEventListener("click", function() {
