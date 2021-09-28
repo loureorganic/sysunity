@@ -1,9 +1,3 @@
-// const firebaseref = firebase.database().ref("Usuario");
-//     firebaseref.once('value',(resultado)=>{
-//         resultado.forEach(element => {
-//             console.log(element.key)
-//         });
-//     });
 
 export default class Login{
     constructor(usuario,senha){
@@ -21,11 +15,7 @@ export default class Login{
             resultado.forEach(element => {
                if(element.child("user").val() == usuario && element.child("password").val() == senha) {
                    user = true;
-                   //console.log(element.child());
-                   localStorage.setItem("id", element.key);
-                   //console.log(localStorage.getItem("id"));
-                   this.teste();
-                   //this.redirecionar();
+                   this.redirecionar();
                } 
                else if (element.child("user").val() != usuario && element.child("password").val() == senha)
                {
@@ -45,32 +35,6 @@ export default class Login{
             }
         });
     };
-
-    teste(){
-        let suco = localStorage.getItem("id")
-        let usuariologado = {nome: '', sobrenome: '', usuario: ''};
-        let firebaseref = firebase.database().ref("Usuario");
-        firebaseref.once('value',(resultado)=>{
-        resultado.forEach(element => {
-            if(element.key != suco) 
-            {
-//                usuariologado.nome = element.val().firstname;
-//                usuariologado.sobrenome = element.val().lastname;
-//                usuariologado.usuario = element.val().user;
-            usuariologado = { 
-                nome : 'element.val().firstname',
-                sobrenome : element.val().lastname,
-                usuario : element.val().user,
-            }
-            } else {
-                usuariologado = {nome: '', sobrenome: '', usuario: ''};
-            };
-            
-        });
-     });
-     console.log(usuariologado)
-     return usuariologado;
-    }
 
      redirecionar(){
           window.location.replace('home.html');

@@ -1,6 +1,4 @@
-import Login from "./database/login.js";
+import Home from "./database/databaseHome.js";
 
-const dados = new Login();
-const objeto = dados.teste();
-console.log("sucodeuva");
-console.log(objeto);
+const dados = new Home();
+let a = dados.objectuser();
