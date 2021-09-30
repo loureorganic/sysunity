@@ -34,6 +34,7 @@ h2{
     font-weight: 700;
     font-size: 18px;
     padding: 6px;
+    width: 100%;
 }
 
 .form input {
@@ -65,40 +66,19 @@ h2{
     padding: 6px;
 }
 
-.office-access .btn-secondary{
+.office-access select{
     display: flex;
     align-items: center;
-    justify-content: space-around;
     background: none;
     border-color: #085D8C;
-    color: black;
-}
-
-.office-access .dropdown-toggle::after {
-    border: 0;
-    margin: 0;
-    content: url(../images/baseline_expand_more_blue_48dp.png);
-    height: 36px;
-    margin-top: -12px;
-}
-
-.office-access .dropdown-menu{
-    width: 100%;
-    background: #7AA5BC;
-    border-width: 1px;
-    border-color: #085D8C;
-}
-
-.office-access li a{
-    display: flex;
+    border-radius: 4px;
     font-size: 15px;
-    font-weight: 400;
-    padding: 6px;
-    color: #fff;
+    height: 32px;
 }
 
-.office-access li a:hover {
-    background-color: #085D8C;
+.office-access option{
+    background: #7AA5BC;
+    color: #fff;
 }
 
 .register{
@@ -108,7 +88,7 @@ h2{
 
 .register .btn-group{
     width: 30%;
-    padding: 120px 6px 12px 0px;
+    padding: 80px 6px 12px 0px;
 }
 
 #btn_cadastrar{
@@ -116,5 +96,4 @@ h2{
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
-    margin-top: 6px;
 }
