@@ -28,7 +28,7 @@ const swalWithBootstrapButtons = Swal.mixin({
     ) {
       swalWithBootstrapButtons.fire(
         'Cancelado',
-        'Seu arquivo está seguro',
+        'Os dados estão seguros',
         'Erro'
       )
     }

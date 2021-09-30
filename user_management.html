@@ -15,7 +15,6 @@
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
   <script src="script/database/database-connection.js"></script>
-  <script src="script/modal.js"></script>
 
 </head>
 <body>
@@ -162,11 +161,13 @@
 
         <!--Tabela -> Gerenciamento de Usuarios-->
         <section class="section-table" >
-          <table class="table">
+          <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
-              <th>Nome <img src="images/baseline_expand_more_white_48dp.png" alt=""></th>
-              <th>Usuário <img src="images/baseline_expand_more_white_48dp.png" alt=""></th>
+              <tr>
+              <th class="th-sm">Nome</th>
+              <th class="th-sm">Usuário</th>
               <th colspan="3" id="opcoes">Opções</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
@@ -220,7 +221,7 @@
                     <button class="show-example-btn" 
                     aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'"
                     onclick="executeExample('handleDismiss')">
-                      delete
+                    delete
                     </button>
                   </td>
               </tr>
@@ -231,5 +232,6 @@
     </div>
     </div> 
   </div>
+<script src="script/tablePagination.js"></script>
 </body>
 </html>
