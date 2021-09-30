@@ -28,7 +28,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
 function valorSelect(){
     
-    let item = document.getElementById("cargo").value;
-    let item2 = document.getElementById("nvl").value;
+    let item = document.getElementById("office").value;
+    let item2 = document.getElementById("access").value;
 
 }
