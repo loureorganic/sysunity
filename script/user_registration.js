@@ -1,3 +1,7 @@
+import Home from "./database/databaseUser.js";
+const dados = new databaseuser();
+dados.objectuser();
+
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
 	const dadosUsuario = (document.getElementById('nome').value, document.getElementById('usuario').value, document.getElementById('email').value);
@@ -26,9 +30,4 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
 });
 
-function valorSelect(){
-    
-    let item = document.getElementById("office").value;
-    let item2 = document.getElementById("access").value;
 
-}
