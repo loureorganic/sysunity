@@ -3,10 +3,9 @@ export default class Login{
     constructor(usuario,senha){
     this.login(usuario,senha)
     }
-
+    
     login(usuario,senha) {
         const firebaseref = firebase.database().ref("Usuario");
-        
         firebaseref.once('value',(resultado)=>{
             let user = false;
             let erruser = false;
@@ -32,7 +31,7 @@ export default class Login{
             else if (!user && errsenha) {
                 this.errosenha();
             }
-        });
+        })
     };
 
      redirecionar(){
