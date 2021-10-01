@@ -2,7 +2,6 @@
 export default class Login{
     constructor(usuario,senha){
     this.login(usuario,senha)
-    this.teste();
     }
 
     login(usuario,senha) {

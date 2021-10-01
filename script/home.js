@@ -1,4 +1,5 @@
-import Home from "./database/databaseHome.js";
+import databaseuser from "./database/databaseUser.js";
 
-const dados = new Home();
-let a = dados.objectuser();
+const dados = new databaseuser();
+dados.objectuser();
+dados.objectinitial();
