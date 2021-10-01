@@ -235,6 +235,12 @@ justify-content: flex-start;
     color: #fff;
 }
 
+.btn-toggle .set1 a{
+    font-size: 16px;
+    padding-left: 8px;
+    color: #fff;
+}
+
 .btn-toggle:hover {
     background-color: #085D8C;
     color: #fff;
