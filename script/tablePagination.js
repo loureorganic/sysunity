@@ -1,7 +1,27 @@
-// Basic example
-$(document).ready(function () {
-    $('#dtBasicExample').DataTable({
-      "paging": false // false to disable pagination (or any other option)
-    });
-    $('.dataTables_length').addClass('bs-select');
+$(document).ready( function () {
+  $('#myTable').DataTable({
+      "language": {
+          "lengthMenu": "Mostrando _MENU_ registros por página",
+          "zeroRecords": "Nada encontrado - desculpa",
+          "info": "Mostrando página _PAGE_ de _PAGES_",
+          "infoEmpty": "Nenhum registro disponível",
+          "infoFiltered": "(filtrado de _MAX_ registros no total)",
+          "search": "Pesquise:",
+          "paginate": {
+              "first":      "Primeiro",
+              "last":       "Último",
+              "next":       "Próximo",
+              "previous":   "Anterior"
+          }
+      },
+      data: dataSet,
+        columns: [
+            { title: "Name" },
+            { title: "Position" },
+            { title: "Office" },
+            { title: "Extn." },
+            { title: "Start date" },
+            { title: "Salary" }
+        ]
   });
+} );
