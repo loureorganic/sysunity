@@ -1,6 +1,11 @@
-import Home from "./database/databaseUser.js";
+import databasecreateuser from "./database/databaseCreate-user.js";
+import databaseuser from "./database/databaseUser.js";
+
 const dados = new databaseuser();
 dados.objectuser();
+
+const data = new databasecreateuser();
+data.createuser();
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
