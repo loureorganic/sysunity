@@ -5,21 +5,21 @@ export default class Login{
     }
     
     login(usuario,senha) {
-        const firebaseref = firebase.database().ref("Usuario");
+        const firebaseref = firebase.database().ref("user");
         firebaseref.once('value',(resultado)=>{
             let user = false;
             let erruser = false;
             let errsenha = false;
             resultado.forEach(element => {
-               if(element.child("user").val() == usuario && element.child("password").val() == senha) {
+               if(element.child("username").val() == usuario && element.child("password").val() == senha) {
                    user = true;
                    this.redirecionar();
                } 
-               else if (element.child("user").val() != usuario && element.child("password").val() == senha)
+               else if (element.child("username").val() != usuario && element.child("password").val() == senha)
                {
                    erruser = true;
                }
-               else if (element.child("user").val() == usuario && element.child("password").val() != senha)
+               else if (element.child("username").val() == usuario && element.child("password").val() != senha)
                {
                    errsenha = true;
                }

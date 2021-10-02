@@ -1,7 +1,7 @@
 export default class databaseuser{
 
     objectinitial(){
-        const firebaseref = firebase.database().ref("Usuario");
+        const firebaseref = firebase.database().ref("user");
         firebaseref.once('value').then(function (snapshot) {
             snapshot.forEach(element => {
                 let user = element.val();
@@ -11,7 +11,7 @@ export default class databaseuser{
     }
 
     objectuser(){
-        const firebaseref = firebase.database().ref("Usuario");
+        const firebaseref = firebase.database().ref("user");
         firebaseref.once('value').then(function (snapshot) {
             snapshot.forEach(element => {
                 let user = element.val();
