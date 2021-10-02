@@ -1,12 +1,14 @@
 export default class databasecreateuser{
 
-        createuser(){
+        createuser(firstname, lastname, username, email, job, acesslevel){
             const database = firebase.database();
             let newClientKey = database.ref().child('user').push().key;
-            database.ref('user/'+newClientKey+'/firstname').set('Elivania');
-            database.ref('user/'+newClientKey+'/lastname').set('Jesus');
-            database.ref('user/'+newClientKey+'/username').set('elivaniajesus');
-            database.ref('user/'+newClientKey+'/password').set(123456);
+            database.ref('user/'+newClientKey+'/firstname').set(firstname);
+            database.ref('user/'+newClientKey+'/lastname').set(lastname);
+            database.ref('user/'+newClientKey+'/username').set(username);
+            database.ref('user/'+newClientKey+'/email').set(email);
+            database.ref('user/'+newClientKey+'/job').set(job);
+            database.ref('user/'+newClientKey+'/job').set(acesslevel);
         }
             
 
