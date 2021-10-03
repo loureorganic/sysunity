@@ -79,6 +79,11 @@ h2{
 .office-access option{
     background: #7AA5BC;
     color: #fff;
+    font-size: 13px;
+}
+
+.office-access select{
+    transition-delay: 250ms;
 }
 
 .register{
