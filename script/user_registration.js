@@ -9,7 +9,8 @@ data.createuser();
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
-	const dadosUsuario = (document.getElementById('nome').value, document.getElementById('usuario').value, document.getElementById('email').value);
+	const dadosUsuario = (document.getElementById('nome').value, document.getElementById('usuario').value, document.getElementById('email').value,
+	document.getElementById("office").value, document.getElementById("access").value);
 
 	let msg = document.getElementById("msgErro");
     let msg2 = document.getElementById("msgErro2");
@@ -31,6 +32,5 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 			document.getElementById('email').focus();
 			msg3.style.display = "block";
 		}
-
 
 });
