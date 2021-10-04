@@ -1,4 +1,28 @@
-import databaseuser from "./database/databaseUser.js";
-
-const dados = new databaseuser();
-dados.objectuser();
+$(document).ready( function () {
+    $('#myTable').DataTable({
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Nada encontrado - desculpa",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro disponível",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)",
+            "paginate": {
+                "first":      "Primeiro",
+                "last":       "Último",
+                "next":       "Próximo",
+                "previous":   "Anterior"
+            }            
+        },
+        "info":     false,
+        "filter": false,
+        "orderCellsTop": true,
+        "paginate": true,
+        "columnDefs": [
+            {
+                "targets": [ 5 ],
+                "visible": false,
+                "searchable": false
+            }
+        ]
+    });
+  } );

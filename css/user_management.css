@@ -12,12 +12,11 @@
 .section-table{
     padding-left: 70px;    
 }
-.table{
+.dataTables_wrapper{
     width: 90%;
 }
-
-.table img{
-    width: 30px;
+label{
+    margin-bottom: 20px;
 }
 thead{
     width: 100%;
@@ -25,9 +24,13 @@ thead{
     color: white;
     font-size: 17px;
 }
+
 #opcoes{
     text-align: center;
-    padding-bottom: 12px;
+}
+.read{
+    background-image: url(../images/baseline_visibility_white_48dp.png);
+    width: 1;
 }
 
 tbody{
