@@ -18,12 +18,8 @@
 label{
     margin-bottom: 20px;
 }
-thead{
-    width: 100%;
-    background-color: #085d8c;
-    color: white;
-    font-size: 17px;
-}
+
+
 
 #opcoes{
     text-align: center;
@@ -33,6 +29,27 @@ thead{
     width: 1;
 }
 
-tbody{
+td a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-teste img :hover{
+    background-color: #ABD2CE;
+    width: 40px;
+}
+
+.table-teste{
     background-color: #ABD2CE;
 }
+table tbody{
+    background-color: #ABD2CE;
+}
+thead{
+    width: 100%;
+    background-color: #085d8c;
+    color: white;
+    font-size: 17px;
+}
+
