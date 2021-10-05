@@ -9,13 +9,15 @@ export default class databaseuser{
              });
         });
     }
-
     objectuser(){
+        let authUser = localStorage.getItem("id");
         const firebaseref = firebase.database().ref("user");
         firebaseref.once('value').then(function (snapshot) {
             snapshot.forEach(element => {
-                let user = element.val();
-                document.getElementById('user').innerHTML = user.firstname + " " + user.lastname;
+                if(element.key === authUser)
+                {
+                    document.getElementById('user').innerHTML =element.val().firstname + " " + element.val().lastname;
+                }
              });
         });
     }
