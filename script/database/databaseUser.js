@@ -1,11 +1,14 @@
 export default class databaseuser{
 
     objectinitial(){
+        let authUser = localStorage.getItem("id");
         const firebaseref = firebase.database().ref("user");
         firebaseref.once('value').then(function (snapshot) {
             snapshot.forEach(element => {
-                let user = element.val();
-                document.getElementById('hello').innerHTML = "Olá " + user.firstname + ",";
+                if(element.key === authUser)
+                {
+                document.getElementById('hello').innerHTML = "Olá " + element.val().firstname + ",";
+                }
              });
         });
     }
