@@ -6,13 +6,23 @@ $(document).ready( function () {
             "info": "Mostrando página _PAGE_ de _PAGES_",
             "infoEmpty": "Nenhum registro disponível",
             "infoFiltered": "(filtrado de _MAX_ registros no total)",
-            "search": "Pesquise:",
             "paginate": {
                 "first":      "Primeiro",
                 "last":       "Último",
                 "next":       "Próximo",
                 "previous":   "Anterior"
             }            
-        }
+        },
+        "info":     false,
+        "filter": false,
+        "orderCellsTop": true,
+        "paginate": true,
+        "columnDefs": [
+            {
+                "targets": [ 5 ],
+                "visible": false,
+                "searchable": false
+            }
+        ]
     });
   } );

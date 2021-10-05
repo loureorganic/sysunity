@@ -12,12 +12,30 @@
 .section-table{
     padding-left: 70px;    
 }
-.table{
+.dataTables_wrapper{
     width: 90%;
 }
+label{
+    margin-bottom: 20px;
+}
 
-.table img{
-    width: 30px;
+#opcoes{
+    text-align: center;
+}
+table td{
+    padding-top: 10px;
+}
+
+td button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table a :hover{
+    cursor: pointer;
+}
+table.dataTable tbody tr{
+    background-color: #ABD2CE;
 }
 thead{
     width: 100%;
@@ -25,11 +43,10 @@ thead{
     color: white;
     font-size: 17px;
 }
-#opcoes{
-    text-align: center;
-    padding-bottom: 12px;
+table button{
+    background-color:  #98bebb;
+    border: transparent;
+    width: 90px;
+    padding: 0;
 }
 
-tbody{
-    background-color: #ABD2CE;
-}
