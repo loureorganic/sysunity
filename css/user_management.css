@@ -1,5 +1,6 @@
 @import url(main.css);
 @import url(home.css);
+@import url(user_registration.css);
 
 .section-title{
     height: 50px;
@@ -49,6 +50,55 @@ table button{
 }
 .delete{
     margin-left: 30px;
+}
+.visibility::before{
+    content: url(../images/visibility_white_24dp.svg);
+}
+.modal-header{
+    background: #085D8C;
+    color: #fff;
+}
+.modal-header h5{
+    font-size: 24px;
+    font-weight: 700;
+}
+.modal-header .delete{
+    background: none;
+}
+.modal-header .delete::before{
+    content: url(../images/close_white_24dp.svg);
+}
+.modal-body form{
+    display: flex;
+    flex-direction: column;
+    margin-top: -12px;
+}
+.modal-body form input{
+    width: 100%;
+}
+.modal-body form label {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px;
+    margin-bottom: 0;
+}
+.modal-body form input {
+    border-radius: 4px;
+    border-width: 1px;
+    height: 32px;
+    border-style: solid;
+    border-color: #085D8C;
+}
+.modal-body .user-email label{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.modal-body .office-access label {
+    align-items: flex-start;
+}
+.modal-body .office-access select {
+    width: 100%;
 }
 
 @media (min-width: 1040px) and (max-width: 1200px) {
