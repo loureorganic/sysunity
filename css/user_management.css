@@ -15,7 +15,7 @@
 .dataTables_wrapper{
     width: 90%;
 }
-label{
+.section-table label{
     margin-bottom: 20px;
 }
 
@@ -26,14 +26,6 @@ table td{
     padding-top: 10px;
 }
 
-td button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.table a :hover{
-    cursor: pointer;
-}
 table.dataTable tbody tr{
     background-color: #ABD2CE;
 }
@@ -44,9 +36,74 @@ thead{
     font-size: 17px;
 }
 table button{
-    background-color:  #98bebb;
+    background-color:  #ABD2CE;
     border: transparent;
-    width: 90px;
+    width: 60px;
     padding: 0;
 }
+.visibility{
+    margin-left: 100px;
+}
+.edit{
+    margin-left: 30px;
+}
+.delete{
+    margin-left: 30px;
+}
 
+@media (min-width: 1040px) and (max-width: 1200px) {
+    .visibility{
+        margin-left: 50px;
+    }
+    .edit{
+        margin-left: 30px;
+    }
+    .delete{
+        margin-left: 30px;
+    }
+}
+@media (min-width: 950px) and (max-width: 1039px) {
+    .visibility{
+        margin-left: 0px;
+    }
+    .edit{
+        margin-left: 30px;
+    }
+    .delete{
+        margin-left: 30px;
+    }
+}
+
+@media (min-width: 910px) and (max-width: 949px) {
+    .visibility{
+        margin-left: 0px;
+    }
+    .edit{
+        margin-left: 20px;
+    }
+    .delete{
+        margin-left: 20px;
+    }
+}
+@media (min-width: 860px) and (max-width: 909px) {
+    .visibility{
+        margin-left: 0px;
+    }
+    .edit{
+        margin-left: 10px;
+    }
+    .delete{
+        margin-left: 10px;
+    }
+}
+@media (min-width: 800px) and (max-width: 860px) {
+    .visibility{
+        margin-left: 0px;
+    }
+    .edit{
+        margin-left: 0px;
+    }
+    .delete{
+        margin-left: 0px;
+    }
+}

@@ -10,7 +10,6 @@
   <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" type="text/css" href="css/user_management.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="./images/y.png"   sizes="any"  >
@@ -167,253 +166,346 @@
         <section class="section-table" >
           <table id="myTable" class="table">
             <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Usuário</th>
-                <th id="opcoes" colspan="3">Opções</th>
-                <th>vasio</th>
-              </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Usuário</th>
+                    <th id="opcoes">Opções</th>
+                    
+                </tr>
             </thead>
-            <tbody class="table-active">
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>               
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>              
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>              
-              <tr>
-                <td>Lorena Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>               
-              <tr>
-                <td>Eunice Suzart</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>              
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>              
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>              
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>        
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>            
-              <tr>
-                <td>Taila Santos</td>
-                <td>@laurenorganic</td>
-                <td><button id="btnVisibility" class="visibility">
-                    <img src="images/visibility_white_24dp.svg" alt="">
-                </button>
-                </td>
-                <td><button id="btnEdit" class="edit">
-                      <img src="images/create_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td><button id="btnDelete" class="delete" >
-                      <img src="images/delete_white_24dp.svg" alt="">
-                    </button>
-                </td>
-                <td>vazio</td>
-              </tr>                                       
+            <tbody>
+                <tr>
+                    <td>Palloma Ruysa</td>
+                    <td>@llomaMoon</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete" >
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ambrósia Andrade</td>
+                    <td>@andradeAmber</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete" >
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Taila Santos</td>
+                    <td>@laurenorganic</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete" >
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tiger</td>
+                    <td>Nixon</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Garrett</td>
+                    <td>Winters</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ashton</td>
+                    <td>Cox</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cedric</td>
+                    <td>Kelly</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Airi</td>
+                    <td>Satou</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Brielle</td>
+                    <td>Williamson</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Herrod</td>
+                    <td>Chandler</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rhona</td>
+                    <td>Davidson</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Palloma Ruysa</td>
+                    <td>@llomaMoon</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete" >
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ambrósia Andrade</td>
+                    <td>@andradeAmber</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete" >
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Taila Santos</td>
+                    <td>@laurenorganic</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete" >
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tiger</td>
+                    <td>Nixon</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Garrett</td>
+                    <td>Winters</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ashton</td>
+                    <td>Cox</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cedric</td>
+                    <td>Kelly</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Airi</td>
+                    <td>Satou</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Brielle</td>
+                    <td>Williamson</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Herrod</td>
+                    <td>Chandler</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rhona</td>
+                    <td>Davidson</td>
+                    <td>
+                        <button id="btnVisibility" class="visibility">
+                            <img src="images/visibility_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnEdit" class="edit">
+                            <img src="images/create_white_24dp.svg" alt="">
+                        </button>
+                        <button id="btnDelete" class="delete">
+                            <img src="images/delete_white_24dp.svg" alt="">
+                        </button>
+                    </td>
+                </tr>
             </tbody>
+        </table>
           </table>       
         </section>
       </section>
