@@ -20,9 +20,9 @@ document.getElementById("btn_salvar").addEventListener("click", function() {
 			msg2.style.display = "block";
 		}
 
-        if(document.getElementById('usuario').value == "" || document.getElementById('usuario').value == " "){
-			document.getElementById('usuario').style.borderColor = "red";
-			document.getElementById('usuario').focus();
+        if(document.getElementById('nomedeusuario').value == "" || document.getElementById('nomedeusuario').value == " "){
+			document.getElementById('nomedeusuario').style.borderColor = "red";
+			document.getElementById('nomedeusuario').focus();
 			msg3.style.display = "block";
 		}
 
