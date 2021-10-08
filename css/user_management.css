@@ -84,6 +84,7 @@ table button{
     font-size: 16px;
     padding: 6px;
     margin-bottom: 0;
+    color: black;
 }
 .modal-body form input {
     border-radius: 4px;
