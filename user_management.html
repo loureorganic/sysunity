@@ -190,36 +190,88 @@
                                 <form>
                                   <div class="user-email">
                                     <label for="">Nome
-                                      <input id="nome" type="text" placeholder=""/>
+                                      <input id="nome" type="text" placeholder="" disabled/>
                                     </label>
                                     <label for="">Sobrenome
-                                      <input id="sobrenome" type="text" placeholder=""/>
+                                      <input id="sobrenome" type="text" placeholder="" disabled/>
                                     </label>
                                   </div>
                                   <div class="user-email">
                                     <label for="">Usuário
-                                      <input id="nomedeusuario" type="text" placeholder=""/>
+                                      <input id="nomedeusuario" type="text" placeholder="" disabled/>
                                     </label>
                                     <label for="">Email
-                                      <input id="email" type="text" placeholder=""/>
+                                      <input id="email" type="text" placeholder="" disabled/>
                                     </label>
                                   </div>
                                   <div class="office-access">   
                                     <label for="">Cargo
-                                      <select id="office"></select>
+                                      <select id="office" disabled></select>
                                     </label>
                                     <label for="">Nivel de acesso
-                                      <select id="access"></select>
+                                      <select id="access" disabled></select>
                                     </label> 
                                   </div>
                                 </form>
                               </div>
                             </div>
                           </div>
+                        </div> 
+                    <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+                      <div class="modal" id="MyModalEditar">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title2">Editar Usuário</h5>
+                                <button type="button" class="delete" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form>
+                                <div class="user-email">
+                                  <label for="">Nome
+                                    <input id="nome" type="text" placeholder="">
+                                    <p id="msgErro" style="display: none;">O Campo precisa ser preenchido</p>
+                                  </label>
+                                  <label for="">Sobrenome
+                                    <input id="sobrenome" type="text" placeholder="">
+                                    <p id="msgErro2" style="display: none;">O Campo precisa ser preenchido</p>
+                                  </label>
+                                </div>
+                                <div class="user-email">
+                                  <label for="">Usuário
+                                    <input id="nomedeusuario" type="text" placeholder="">
+                                    <p id="msgErro3" style="display: none;">O Campo precisa ser preenchido</p>
+                                  </label>
+                                  <label for="">Email
+                                    <input id="email" type="text" placeholder="">
+                                    <p id="msgErro4" style="display: none;">O Campo precisa ser preenchido</p>
+                                  </label>
+                                </div>
+                                <div class="office-access">   
+                                  <label for="">Cargo
+                                    <select id="office">
+                                      <div class="dropdown-menu">
+                                        <option value="proprietario">Proprietário</option>
+                                        <option value="vendedor">Vendedor</option>
+                                      </div>
+                                    </select>
+                                  </label>
+                                  <label for="">Nivel de acesso
+                                    <select id="access">
+                                      <option value="administrador">Administrador</option>
+                                      <option value="gerenciador">Gerenciador</option>
+                                      <option value="visualizador">Visualizador</option>
+                                    </select>
+                                  </label> 
+                                </div>
+                                <div class="btn-group">
+                                  <button class="btn btn-primary" id="btn_salvar" type="button">Salvar</button>
+                                </div>
+                              </form>
+                            </div>
+                            </div>
                         </div>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                      </div>
                         <button id="btnDelete" class="delete" >
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -230,9 +282,7 @@
                     <td>@andradeAmber</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete" >
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -243,9 +293,7 @@
                     <td>@laurenorganic</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete" >
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -256,9 +304,7 @@
                     <td>Nixon</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -269,9 +315,7 @@
                     <td>Winters</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -282,9 +326,7 @@
                     <td>Cox</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -295,9 +337,7 @@
                     <td>Kelly</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -308,9 +348,7 @@
                     <td>Satou</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -321,9 +359,7 @@
                     <td>Williamson</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -334,9 +370,7 @@
                     <td>Chandler</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -347,9 +381,7 @@
                     <td>Davidson</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -360,9 +392,7 @@
                     <td>@llomaMoon</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete" >
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -373,9 +403,7 @@
                     <td>@andradeAmber</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete" >
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -386,9 +414,7 @@
                     <td>@laurenorganic</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete" >
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -399,9 +425,7 @@
                     <td>Nixon</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -412,9 +436,7 @@
                     <td>Winters</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -425,9 +447,7 @@
                     <td>Cox</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -438,9 +458,7 @@
                     <td>Kelly</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -451,9 +469,7 @@
                     <td>Satou</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -464,9 +480,7 @@
                     <td>Williamson</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -477,9 +491,7 @@
                     <td>Chandler</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
@@ -490,9 +502,7 @@
                     <td>Davidson</td>
                     <td>
                         <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-                        <button id="btnEdit" class="edit">
-                            <img src="images/create_white_24dp.svg" alt="">
-                        </button>
+                        <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
                         <button id="btnDelete" class="delete">
                             <img src="images/delete_white_24dp.svg" alt="">
                         </button>
