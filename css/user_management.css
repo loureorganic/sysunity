@@ -54,6 +54,9 @@ table button{
 .visibility::before{
     content: url(../images/visibility_white_24dp.svg);
 }
+.edit::before{
+    content: url(../images/create_white_24dp.svg);
+}
 .modal-header{
     background: #085D8C;
     color: #fff;
@@ -99,6 +102,20 @@ table button{
 }
 .modal-body .office-access select {
     width: 100%;
+}
+.save{
+    display: flex;
+    justify-content: end;
+}
+.save .btn-group{
+    width: 30%;
+    padding-top: 66px;
+}
+#btn_salvar{
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
 }
 
 @media (min-width: 1040px) and (max-width: 1200px) {
