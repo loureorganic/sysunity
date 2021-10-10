@@ -121,7 +121,27 @@ table button{
     font-size: 16px;
     background: #085D8C;
 }
-
+.alternative{
+    display: flex;
+    justify-content: end;
+    padding-top: 36px;
+}
+.alternative .btn-primary{
+    width: 20%;
+    margin-right: 6px;
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+}
+.alternative .btn-secondary{
+    width: 20%;
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #A82012;
+    border-color: #892015;
+}
 @media (min-width: 1040px) and (max-width: 1200px) {
     .visibility{
         margin-left: 50px;
