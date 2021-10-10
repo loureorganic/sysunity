@@ -1,3 +1,8 @@
+import databaseuser from "./database/databaseUser.js";
+
+const dados = new databaseuser();
+dados.objectuser();
+
 $(document).ready(function() {
     $('#myTable').DataTable({
         lengthMenu:[5,10,20,50],
