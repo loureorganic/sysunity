@@ -57,6 +57,9 @@ table button{
 .edit::before{
     content: url(../images/create_white_24dp.svg);
 }
+.delete::before{
+    content: url(../images/delete_white_24dp.svg);
+}
 .modal-header{
     background: #085D8C;
     color: #fff;
