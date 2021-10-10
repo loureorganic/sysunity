@@ -1,13 +1,19 @@
 import databasecreateuser from "./database/databaseCreate-user.js";
 import databaseuser from "./database/databaseUser.js";
 
+import databasecreateproduct from "./database/databaseCreate-product";
+
+const databaseCreateProduct = new databasecreateproduct();
+
+
 const dados = new databaseuser();
 dados.objectuser();
 
 const data = new databasecreateuser();
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-
+	
+	databaseCreateProduct.createproduct();
 	data.createuser(document.getElementById('nome').value,document.getElementById('sobrenome').value , document.getElementById('nomedeusuario').value, document.getElementById('email').value, document.getElementById('office').value, document.getElementById('access').value); 
 	
 	let msg = document.getElementById("msgErro");

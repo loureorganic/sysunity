@@ -1,3 +1,4 @@
+
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
 	const dadosProduto = (document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
