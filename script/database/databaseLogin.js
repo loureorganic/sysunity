@@ -13,7 +13,6 @@ export default class Login{
             resultado.forEach(element => {
                if(element.child("username").val() == usuario && element.child("password").val() == senha) {
                    user = true;
-                   console.log(element.key);
                    localStorage.setItem("id", element.key);
                    this.redirecionar();
                } 
