@@ -9,7 +9,7 @@ dados.objectuser();
 
 $(document).ready(function() {
     $('#myTable').DataTable({
-        lengthMenu:[5,10,20,50],
+        lengthMenu:[10,15,20,50],
         "filter": false,
         'columnDefs': [ {
             'targets': [2], /* column index */       

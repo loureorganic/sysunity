@@ -23,9 +23,6 @@
 #opcoes{
     text-align: center;
 }
-table td{
-    padding-top: 10px;
-}
 
 table.dataTable tbody tr{
     background-color: #ABD2CE;
