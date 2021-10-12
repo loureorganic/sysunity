@@ -11,7 +11,10 @@ export default class databasemanagementuser {
                     var nome = curecord.key;
                     var usuario = curecord.val();
                     console.log(nome)
-                    dados = "<table>" + "<tr><td>" + usuario.firstname + " "  + usuario.lastname + "<td><tr>";
+                    dados = "<tr>" + 
+                                "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
+                                "<td>" + usuario.username + "</td>" + 
+                            "</tr>";
                     
                     var_lista.innerHTML += dados;
                 }
