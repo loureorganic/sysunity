@@ -51,6 +51,12 @@ table button{
 .visibility::before{
     content: url(../images/visibility_white_24dp.svg);
 }
+.edit::before{
+    content: url(../images/create_white_24dp.svg);
+}
+.delete::before{
+    content: url(../images/delete_white_24dp.svg);
+}
 .modal-header{
     background: #085D8C;
     color: #fff;
@@ -78,6 +84,7 @@ table button{
     font-size: 16px;
     padding: 6px;
     margin-bottom: 0;
+    color: black;
 }
 .modal-body form input {
     border-radius: 4px;
@@ -97,7 +104,41 @@ table button{
 .modal-body .office-access select {
     width: 100%;
 }
-
+.save{
+    display: flex;
+    justify-content: end;
+}
+.save .btn-group{
+    width: 30%;
+    padding-top: 66px;
+}
+#btn_salvar{
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+}
+.alternative{
+    display: flex;
+    justify-content: end;
+    padding-top: 36px;
+}
+.alternative .btn-primary{
+    width: 20%;
+    margin-right: 6px;
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+}
+.alternative .btn-secondary{
+    width: 20%;
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #A82012;
+    border-color: #892015;
+}
 @media (min-width: 1040px) and (max-width: 1200px) {
     .visibility{
         margin-left: 50px;
