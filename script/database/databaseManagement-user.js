@@ -1,5 +1,5 @@
 var dados = ""
-var var_lista = document.getElementById("name");
+var var_lista = document.getElementById("tablebody");
 
 export default class databasemanagementuser {
 
@@ -9,11 +9,11 @@ export default class databasemanagementuser {
             all.forEach(
                 function(curecord){
                     var nome = curecord.key;
-                    var usuario = curecord.child("username").val();
+                    var usuario = curecord.val();
                     console.log(nome)
-                    dados = "<table>" + "<tr><td>" + nome + "<td><tr>" + dados;
-
-                    //var_lista.innerHTML = dados;
+                    dados = "<table>" + "<tr><td>" + usuario.firstname + " "  + usuario.lastname + "<td><tr>";
+                    
+                    var_lista.innerHTML += dados;
                 }
             )
         })
