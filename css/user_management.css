@@ -173,18 +173,8 @@ table button{
         margin-left: 20px;
     }
 }
-@media (min-width: 860px) and (max-width: 909px) {
-    .visibility{
-        margin-left: 0px;
-    }
-    .edit{
-        margin-left: 10px;
-    }
-    .delete{
-        margin-left: 10px;
-    }
-}
-@media (min-width: 800px) and (max-width: 860px) {
+
+@media (min-width: 400px) and (max-width: 909px) {
     .visibility{
         margin-left: 0px;
     }
