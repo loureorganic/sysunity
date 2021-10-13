@@ -1,5 +1,9 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
+// const elem = document.createElement("td");
+// const elemText = document.createTextNode("Wesley");
+// elem.appendChild(elemText);
+var a = "<td> <button type='button' class='visibility' data-bs-toggle='modal' data-bs-target='#MyModal'></button> </td>";
 
 export default class databasemanagementuser {
 
@@ -8,12 +12,11 @@ export default class databasemanagementuser {
         firebaseref.once('value', function(all){
             all.forEach(
                 function(curecord){
-                    var nome = curecord.key;
+                    //var nome = curecord.key;
                     var usuario = curecord.val();
-                    console.log(nome)
                     dados = "<tr>" + 
                                 "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
-                                "<td>" + usuario.username + "</td>" + 
+                                "<td>" + usuario.username + "</td>" + a +
                             "</tr>";
                     
                     var_lista.innerHTML += dados;
