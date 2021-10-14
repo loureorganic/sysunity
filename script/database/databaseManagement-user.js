@@ -3,9 +3,9 @@ var var_lista = document.getElementById("tablebody");
 // const elem = document.createElement("td");
 // const elemText = document.createTextNode("Wesley");
 // elem.appendChild(elemText);
-var a = '<td> <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
+var a = '<button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
 var b = '<button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
-var c = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button></td>';
+var c = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
 export default class databasemanagementuser {
 
     managementuser() {
@@ -17,7 +17,7 @@ export default class databasemanagementuser {
                     var usuario = curecord.val();
                     dados = "<tr>" + 
                                 "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
-                                "<td>" + usuario.username + "</td>" + a + b + c +
+                                "<td>" + usuario.username + "</td>" + "<td>" + a + b + c + "</td>" +
                             "</tr>";
                     
                     var_lista.innerHTML += dados;
