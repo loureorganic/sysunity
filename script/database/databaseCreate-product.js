@@ -1,10 +1,10 @@
 export default class databasecreateproduct{
 
-    createproduct(){
+    createproduct(name, type, value){
         const database = firebase.database();
-        let newProductKey = database.ref().child().push().key;
-        database.ref('product/'+newProductKey+'/name').set('Coxinha');
-        database.ref('product/'+newProductKey+'/type').set('Frango');
-        database.ref('product/'+newProductKey+'/value').set(2.00);
+        let newProductKey = database.ref().child('product').push().key;
+        database.ref('product/'+newProductKey+'/name').set(name);
+        database.ref('product/'+newProductKey+'/type').set(type);
+        database.ref('product/'+newProductKey+'/value').set(value);
     }
 }

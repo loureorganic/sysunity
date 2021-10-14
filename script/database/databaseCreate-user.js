@@ -8,7 +8,7 @@ export default class databasecreateuser{
             database.ref('user/'+newClientKey+'/username').set(username);
             database.ref('user/'+newClientKey+'/email').set(email);
             database.ref('user/'+newClientKey+'/job').set(job);
-            database.ref('user/'+newClientKey+'/job').set(acesslevel);
+            database.ref('user/'+newClientKey+'/acesslevel').set(acesslevel);
         }
             
 
