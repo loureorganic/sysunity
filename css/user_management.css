@@ -27,7 +27,7 @@ table td{
     padding-top: 10px;
 }
 
-table.dataTable tbody tr{
+tbody tr{
     background-color: #ABD2CE;
 }
 thead{
