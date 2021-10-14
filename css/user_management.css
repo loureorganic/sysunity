@@ -157,3 +157,9 @@ table button{
         margin-left: 0px;
     }
 }
+.edit::before{
+    content: url(../images/create_white_24dp.svg);
+}
+.delete::before{
+    content: url(../images/delete_white_24dp.svg);
+}
