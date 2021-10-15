@@ -136,3 +136,15 @@ h2{
     border: 1px solid black;
     margin: 10px;
 }
+
+@media (max-width: 876px){
+    .register{
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 820px){
+    .office-access{
+        flex-direction: column;
+    }
+}
