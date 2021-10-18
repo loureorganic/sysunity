@@ -1,0 +1,22 @@
+{
+  "name": "sysunity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testeTable.js",
+  "scripts": {
+    "start": "node scr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loureorganic/sysunity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loureorganic/sysunity/issues"
+  },
+  "homepage": "https://github.com/loureorganic/sysunity#readme",
+  "dependencies": {
+    "nodemailer": "^6.7.0"
+  }
+}
