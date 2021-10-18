@@ -446,3 +446,21 @@ justify-content: flex-start;
     border: 1px solid black;
     margin: 10px;
 }
+
+@media (max-width:930px){
+    .welcome h1{
+        font-size: 28px;
+    }
+}
+
+@media (max-width:890px){
+    .welcome h1{
+        font-size: 26px;
+    }
+}
+
+@media (max-width:853px){
+    .welcome{
+        flex-wrap: wrap;
+    }
+}
