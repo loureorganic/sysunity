@@ -13,31 +13,17 @@ export default class databasemanagementuser {
         firebaseref.once('value', function(all){
             all.forEach(
                 function(curecord){
-                    //var nome = curecord.key;
                     var usuario = curecord.val();
-                    dados = "<tr>" + 
+                    var g = document.createElement('tr');
+                    console.log(g);
+                    dados = 
                                 "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
-                                "<td>" + usuario.username + "</td>" + "<td>" + a + b + c + "</td>" +
-                            "</tr>";
-                    
-                    var_lista.innerHTML += dados;
+                                "<td>" + usuario.username + "</td>" + "<td>" + a + b + c + "</td>";
+                    g.innerHTML += dados;
+                    g.id = curecord.key;
+                    var_lista.innerHTML += g.innerHTML;
                 }
             )
         })
     }
 }
-
-    // const firebaseref = firebase.database().ref("user").orderByKey();
-    // firebaseref.once('value',function(snapshot){
-    //     snapshot.forEach(element => {
-    //         const senha = element.child("password").val();
-    //     console.log(senha)
-    //     });
-    // })
-
-    //     const firebaseref = firebase.database().ref("user").orderByKey();
-    //     firebaseref.once('value',function(snapshot){
-    //         var senha = snapshot.val();
-    //         console.log(senha)
-    //     })
-    // }
