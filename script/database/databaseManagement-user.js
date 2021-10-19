@@ -138,6 +138,7 @@ var clicked = false;
 document.getElementById('see').addEventListener("click", function(){
 clicked = true;
 console.log(clicked);
+var_lista.innerHTML += d;
 });
         })
     }
