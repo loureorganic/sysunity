@@ -136,3 +136,33 @@ h2{
     border: 1px solid black;
     margin: 10px;
 }
+.modal-header{
+    height: 10px;
+}
+.modal-body{
+    margin: 0;
+    padding-top: 0;
+}
+.modal-lg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 770px;
+}
+.modal-lg img{
+    width: 60%;
+    margin: 0;
+}
+.modal-lg h1{
+    text-align: center;
+    color: rgba(130, 130, 130, 1); 
+    font-weight: bold;
+    font-size: 30px; 
+    line-height: 10px;
+}
+.btn-paraGerenciamento{
+    height: 30px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+}

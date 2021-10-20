@@ -198,10 +198,24 @@
                   </div>
                   <div class="register">
                     <div class="btn-group">
-                      <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
+                      <button class="btn btn-primary" id="btn_cadastrar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">CADASTRAR</button>
                     </div>
                   </div>
-                </div>  
+                </div>
+                <div class="modal" id="checked" data-bs-backdrop="static">
+                  <div class="modal-dialog">
+                      <div class="modal-content modal-lg">
+                          <div class="modal-header modal-lg">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body modal-dialog modal-lg">
+                                  <img src="images/GREEN-checked.png" alt="">
+                                  <h1>Usuário cadastrado com sucesso!</h1>
+                                  <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'user_management.html'">IR PARA TELA DE GERENCIAMENTO</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>  
         </section>
       </section>
     </div>
