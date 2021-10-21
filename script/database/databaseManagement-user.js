@@ -5,9 +5,8 @@ var b = '<button type="button" id="edit" class="edit" data-bs-toggle="modal" dat
 var c = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
 
 //string
-var d = 
-
-` <div class="modal" id="MyModal">
+var d = `
+<div class="modal" id="MyModal">
 
 <div class="modal-dialog modal-dialog-centered">
 
@@ -59,61 +58,85 @@ var d =
 
 </div> `;
 
-{/* <div class="modal" id="MyModal">
-
+var e = `
+<div class="modal" id="MyModalEditar">
   <div class="modal-dialog modal-dialog-centered">
-
     <div class="modal-content">
-
       <div class="modal-header">
-        <h5 class="modal-title">Visualizar Usuário</h5>
-        <button type="button" class="delete" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title2">Editar Usuário</h5>
+          <button type="button" class="delete" data-bs-dismiss="modal"></button>
       </div>
-
       <div class="modal-body">
-
         <form>
-
           <div class="user-email">
             <label for="">Nome
-              <input id="nome" type="text" placeholder="" disabled/>
+              <input id="nome" type="text" placeholder="">
+              <p id="msgErro" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
             <label for="">Sobrenome
-              <input id="sobrenome" type="text" placeholder="" disabled/>
+              <input id="sobrenome" type="text" placeholder="">
+              <p id="msgErro2" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
-
           <div class="user-email">
             <label for="">Usuário
-              <input id="nomedeusuario" type="text" placeholder="" disabled/>
+              <input id="nomedeusuario" type="text" placeholder="">
+              <p id="msgErro3" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
             <label for="">Email
-              <input id="email" type="text" placeholder="" disabled/>
+              <input id="email" type="text" placeholder="">
+              <p id="msgErro4" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
-
           <div class="office-access">   
             <label for="">Cargo
-              <select id="office" disabled></select>
+              <select id="office">
+                <div class="dropdown-menu">
+                  <option value="proprietario">Proprietário</option>
+                  <option value="vendedor">Vendedor</option>
+                </div>
+              </select>
             </label>
             <label for="">Nivel de acesso
-              <select id="access" disabled></select>
+              <select id="access">
+                <option value="administrador">Administrador</option>
+                <option value="gerenciador">Gerenciador</option>
+                <option value="visualizador">Visualizador</option>
+              </select>
             </label> 
           </div>
-
+          <div class="save">
+            <div class="btn-group">
+              <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
+            </div>
+          </div>
         </form>
-
       </div>
-
     </div>
-
   </div>
+</div>`;
 
-</div> */}
-
-//string
-
-
+var f = `
+<div class="modal" id="MyModalDeletar">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title3">Deletar Usuário</h5>
+        <button type="button" class="delete" data-bs-dismiss="modal"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <h3>Tem certeza que deseja deletar o usuário?</h3>
+        <div class="alternative">
+          <button type="button" class="btn btn-primary">SIM</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</td>`;
 
 export default class databasemanagementuser {
 
