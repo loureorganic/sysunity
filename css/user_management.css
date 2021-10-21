@@ -39,7 +39,7 @@ table button{
     width: 60px;
     padding: 0;
 }
-.visibility{
+.see{
     margin-left: 150px;
 }
 .edit{
@@ -48,7 +48,7 @@ table button{
 .delete{
     margin-left: 30px;
 }
-.visibility::before{
+.see::before{
     content: url(../images/visibility_white_24dp.svg);
 }
 .edit::before{
@@ -140,7 +140,7 @@ table button{
     border-color: #892015;
 }
 @media (min-width: 1040px) and (max-width: 1200px) {
-    .visibility{
+    .see{
         margin-left: 50px;
     }
     .edit{
@@ -151,7 +151,7 @@ table button{
     }
 }
 @media (min-width: 950px) and (max-width: 1039px) {
-    .visibility{
+    .see{
         margin-left: 0px;
     }
     .edit{
@@ -163,7 +163,7 @@ table button{
 }
 
 @media (min-width: 910px) and (max-width: 949px) {
-    .visibility{
+    .see{
         margin-left: 0px;
     }
     .edit{
@@ -175,7 +175,7 @@ table button{
 }
 
 @media (min-width: 400px) and (max-width: 909px) {
-    .visibility{
+    .see{
         margin-left: 0px;
     }
     .edit{
