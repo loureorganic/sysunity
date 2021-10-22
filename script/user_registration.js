@@ -13,11 +13,13 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     let msg2 = document.getElementById("msgErro2");
     let msg3 = document.getElementById("msgErro3");
 	let msg4 = document.getElementById("msgErro4");
+	let modal = document.getElementById("checked");
 
 	if(document.getElementById('nome').value == "" || document.getElementById('nome').value == " "){
 		document.getElementById('nome').style.borderColor = "red";
 		document.getElementById('nome').focus();
 		msg.style.display = "block";
+		modal.style.display = "block";
 	}
 	if(document.getElementById('sobrenome').value == "" || document.getElementById('sobrenome').value == " "){
 		document.getElementById('sobrenome').style.borderColor = "red";
@@ -25,9 +27,9 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 		msg2.style.display = "block";
 	}
 
-	if(document.getElementById('usuario').value == "" || document.getElementById('usuario').value == " "){
-		document.getElementById('usuario').style.borderColor = "red";
-		document.getElementById('usuario').focus();
+	if(document.getElementById('nomedeusuario').value == "" || document.getElementById('usuario').value == " "){
+		document.getElementById('nomedeusuario').style.borderColor = "red";
+		document.getElementById('nomedeusuario').focus();
 		msg3.style.display = "block";
 	}
 
@@ -40,4 +42,6 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	if(document.getElementById('nome').value != "" && document.getElementById('nome').value != " " && document.getElementById('sobrenome').value != "" && document.getElementById('sobrenome').value != " " && document.getElementById('nomedeusuario').value != "" && document.getElementById('nomedeusuario').value != " " && document.getElementById('email').value != "" && document.getElementById('email').value != " "){
 		data.createuser(document.getElementById('nome').value,document.getElementById('sobrenome').value , document.getElementById('nomedeusuario').value, document.getElementById('email').value, document.getElementById('office').value, document.getElementById('access').value); 
 	}
+
+
 });
