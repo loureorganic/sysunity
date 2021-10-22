@@ -156,19 +156,34 @@ export default class databasemanagementuser {
                     console.log(var_lista);
                   }
                   )
+
                   var clicked = false;
-                  var y = document.querySelectorAll('#see');
+                  var y = document.querySelectorAll("#li p");
                   console.log(y[0]);
                   for( var i = 0; i < y.length; i++){
-                    y[i].addEventListener('click', function(e){
+                    y[i].addEventListener("click", function(e){
                       console.log('aqui');
-                      console.log(y[i].innerHTML)
+                      console.log(this.innerHTML)
                       clicked = true;
                       console.log(clicked);
                       
                     })
                     console.log(clicked);
                   }
+
+                  // var clicked = false;
+                  // var y = document.querySelectorAll('#see');
+                  // console.log(y[0]);
+                  // for( var i = 0; i < y.length; i++){
+                  //   y[i].addEventListener('click', function(e){
+                  //     console.log('aqui');
+                  //     console.log(y[i].innerHTML)
+                  //     clicked = true;
+                  //     console.log(clicked);
+                      
+                  //   })
+                  //   console.log(clicked);
+                  // }
                   })
               }
             }
