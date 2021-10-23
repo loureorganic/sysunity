@@ -4,7 +4,6 @@ var a = '<button type="button" id="see" class="see"></button>';
 var b = '<button type="button" id="edit" class="edit"  data-bs-target="#MyModalEditar"></button>';
 var c = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
 
-//string
 var d = `
 <div class="modal" id="MyModal">
 
@@ -146,29 +145,30 @@ export default class databasemanagementuser {
             all.forEach(
                 function(curecord){
                     var usuario = curecord.val();
-                     var g = document.createElement('tr');
+                    var g = document.createElement('tr');
+                    g.classList.add('dot')
                     console.log(g);
                     dados = 
                                 "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
-                                "<td id='username'>" + usuario.username + "</td>" + "<td>" + a + b + c + "</td>";
+                                "<td>" + usuario.username + "</td>" + "<td>" + a + b + c + "</td>";
                     g.innerHTML = dados;
                     var_lista.appendChild(g);
-                    console.log(var_lista);
+                    //console.log(var_lista);
                   }
                   )
 
                   var clicked = false;
-                  var y = document.querySelectorAll("#li p");
+                  var y = document.querySelectorAll(".dot tr");
                   console.log(y[0]);
                   for( var i = 0; i < y.length; i++){
                     y[i].addEventListener("click", function(e){
-                      console.log('aqui');
+                      //console.log('aqui');
                       console.log(this.innerHTML)
                       clicked = true;
-                      console.log(clicked);
+                      //console.log(clicked);
                       
                     })
-                    console.log(clicked);
+                    //console.log(clicked);
                   }
 
                   // var clicked = false;
