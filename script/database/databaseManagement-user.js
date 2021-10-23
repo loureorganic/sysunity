@@ -158,13 +158,14 @@ export default class databasemanagementuser {
                   )
 
                   var clicked = false;
-                  var y = document.querySelectorAll(".dot tr");
+                  var y = document.querySelectorAll(".dot td");
                   console.log(y[0]);
                   for( var i = 0; i < y.length; i++){
                     y[i].addEventListener("click", function(e){
                       //console.log('aqui');
-                      console.log(this.innerHTML)
+                      console.log(this.parentNode);
                       clicked = true;
+    
                       //console.log(clicked);
                       
                     })
