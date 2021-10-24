@@ -137,8 +137,10 @@ export default class databasemanagementuser {
 var clicked = false;
 document.getElementById('see').addEventListener("click", function(){
 clicked = true;
+var g = document.createElement('div');
 console.log(clicked);
-var_lista.innerHTML += d;
+g.innerHTML = d;
+var_lista.appendChild(g);
 });
         })
     }
