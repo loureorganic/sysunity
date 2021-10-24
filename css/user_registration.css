@@ -147,4 +147,7 @@ h2{
     .office-access{
         flex-direction: column;
     }
+    #office{
+        margin-bottom: 30px;
+    }
 }
