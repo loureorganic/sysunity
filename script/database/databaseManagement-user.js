@@ -39,10 +39,10 @@ var d = `<div class="modal" id="MyModal">
 
         <div class="office-access">   
           <label for="">Cargo
-            <select id="office" disabled></select>
+            <input id="office" disabled></input>
           </label>
           <label for="">Nivel de acesso
-            <select id="access" disabled></select>
+            <input id="access" disabled></input>
           </label> 
         </div>
 
@@ -57,13 +57,24 @@ var d = `<div class="modal" id="MyModal">
 </div>`;
 
 export default class databasemanagementuser {
- 
 
-  modaldata(){
-   console.log('oi');
+  
+  modaldata(a){
+    console.log(a);
+    const firebaseref = firebase.database().ref("user");
+        firebaseref.once('value',(resultado)=>{
+            resultado.forEach(element => {
+               if(element.child("username").val() == a) {
+                   console.log(element.val())
+                   document.getElementById("nome").value = element.val().firstname;
+               }
+            
+            });
+        })
   }
-
-    managementuser() {
+  
+  managementuser() {
+      var self = this;
         const firebaseref = firebase.database().ref("user");
         firebaseref.once('value', function(all){
             all.forEach(
@@ -82,9 +93,12 @@ export default class databasemanagementuser {
                   for( var i = 0; i < y.length; i++){
                     y[i].addEventListener("click", function(e){
                       var c = this.parentNode;
-                      // this.modaldata();
+                      
+                      console.log(c.getElementsByTagName('td')[1].innerHTML);
+                      self.modaldata(c.getElementsByTagName('td')[1].innerHTML);
                       var g = document.createElement('div');
                       g.innerHTML = d;
+                      
                       var_lista.appendChild(g);
                     })
                   }
