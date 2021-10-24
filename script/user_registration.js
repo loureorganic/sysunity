@@ -15,33 +15,43 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	let msg4 = document.getElementById("msgErro4");
 	let modal = document.getElementById("checked");
 
-	if(document.getElementById('nome').value == "" || document.getElementById('nome').value == " "){
-		document.getElementById('nome').style.borderColor = "red";
-		document.getElementById('nome').focus();
+	let inputNome = document.getElementById("nome");
+	let inputSobrenome = document.getElementById("sobrenome");
+	let inputUsuario = document.getElementById("nomedeusuario");
+	let inputEmail = document.getElementById("email");
+
+
+	if(inputNome.value == ""){
+		inputNome.style.borderColor = "red";
+		inputNome.focus();
 		msg.style.display = "block";
 		modal.style.display = "block";
 	}
-	if(document.getElementById('sobrenome').value == "" || document.getElementById('sobrenome').value == " "){
-		document.getElementById('sobrenome').style.borderColor = "red";
-		document.getElementById('sobrenome').focus();
+	if(inputSobrenome.value == ""){
+		inputSobrenome.style.borderColor = "red";
+		inputSobrenome.focus();
 		msg2.style.display = "block";
 	}
 
-	if(document.getElementById('nomedeusuario').value == "" || document.getElementById('usuario').value == " "){
-		document.getElementById('nomedeusuario').style.borderColor = "red";
-		document.getElementById('nomedeusuario').focus();
+	if(inputUsuario.value == ""){
+		inputUsuario.style.borderColor = "red";
+		inputUsuario.focus();
 		msg3.style.display = "block";
 	}
 
-	if(document.getElementById('email').value == "" || document.getElementById('email').value == " "){
-		document.getElementById('email').style.borderColor = "red";
-		document.getElementById('email').focus();
+	if(inputEmail.value == ""){
+		inputEmail.style.borderColor = "red";
+		inputEmail.focus();
 		msg4.style.display = "block";
 	}
 
-	if(document.getElementById('nome').value != "" && document.getElementById('nome').value != " " && document.getElementById('sobrenome').value != "" && document.getElementById('sobrenome').value != " " && document.getElementById('nomedeusuario').value != "" && document.getElementById('nomedeusuario').value != " " && document.getElementById('email').value != "" && document.getElementById('email').value != " "){
-		data.createuser(document.getElementById('nome').value,document.getElementById('sobrenome').value , document.getElementById('nomedeusuario').value, document.getElementById('email').value, document.getElementById('office').value, document.getElementById('access').value); 
+	if(	inputNome.value != "" &&	 
+		inputSobrenome.value != "" && 
+		inputUsuario.value != "" && 
+		inputEmail.value != ""){
+		data.createuser(inputNome.value,inputSobrenome.value, inputUsuario.value, inputEmail.value, document.getElementById('office').value, document.getElementById('access').value); 
+
+		$('#checked').modal('show');
+		 
 	}
-
-
 });
