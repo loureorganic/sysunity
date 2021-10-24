@@ -57,54 +57,63 @@ var d = `<div class="modal" id="MyModal">
 </div>`;
 
 export default class databasemanagementuser {
-
   
   modaldata(a){
-    console.log(a);
     const firebaseref = firebase.database().ref("user");
-        firebaseref.once('value',(resultado)=>{
-            resultado.forEach(element => {
-               if(element.child("username").val() == a) {
-                   console.log(element.val())
-                   document.getElementById("nome").value = element.val().firstname;
-               }
+    firebaseref.once('value',(resultado)=>{
+
+      resultado.forEach(element => {
+
+        if(element.child("username").val() == a) {
+
+          document.getElementById("nome").value = element.val().firstname;
+          document.getElementById("sobrenome").value = element.val().lastname;
+          document.getElementById("nomedeusuario").value = element.val().username;
+          document.getElementById("email").value = element.val().email;
+          document.getElementById("office").value = element.val().job;
+          document.getElementById("access").value = element.val().acesslevel;
+
+        }
             
-            });
-        })
+      });
+
+    })
+
   }
   
   managementuser() {
-      var self = this;
-        const firebaseref = firebase.database().ref("user");
-        firebaseref.once('value', function(all){
-            all.forEach(
-                function(curecord){
-                    var usuario = curecord.val();
-                    var g = document.createElement('tr');
-                    g.classList.add('dot');
-                    dados = 
-                                "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
-                                "<td id='username2' >" + usuario.username + "</td>" + "<td>" + a + b + c + "</td>";
-                    g.innerHTML = dados;
-                    var_lista.appendChild(g);
-                  }
-                  )
-                  var y = document.querySelectorAll(".dot td");
-                  for( var i = 0; i < y.length; i++){
-                    y[i].addEventListener("click", function(e){
-                      var c = this.parentNode;
-                      
-                      console.log(c.getElementsByTagName('td')[1].innerHTML);
-                      self.modaldata(c.getElementsByTagName('td')[1].innerHTML);
-                      var g = document.createElement('div');
-                      g.innerHTML = d;
-                      
-                      var_lista.appendChild(g);
-                    })
-                  }
-                  })
-              }
 
-              
-            }
+    var self = this;
+
+    const firebaseref = firebase.database().ref("user");
+
+    firebaseref.once('value', function(all){
+      all.forEach(
+        function(curecord){
+          var usuario = curecord.val();
+          var g = document.createElement('tr');
+          g.classList.add('dot');
+          dados =
+          "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
+          "<td id='username2' >" + usuario.username + "</td>" + "<td>" + a + b + c + "</td>";
+
+          g.innerHTML = dados;
+          var_lista.appendChild(g);
+        }
+      )
       
+      var y = document.querySelectorAll(".dot td");
+      for( var i = 0; i < y.length; i++){
+        y[i].addEventListener("click", function(e){
+
+          var c = this.parentNode;
+          self.modaldata(c.getElementsByTagName('td')[1].innerHTML);
+          var g = document.createElement('div');
+          g.innerHTML = d;
+                      
+          var_lista.appendChild(g);
+        })
+      }
+    })
+  }            
+}
