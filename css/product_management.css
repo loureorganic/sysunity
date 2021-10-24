@@ -77,7 +77,7 @@ h2{
 }
 
 .office-access option{
-    background: #A7C7FF;
+    background: #7AA5BC;
     color: #fff;
     font-size: 13px;
 }
@@ -136,20 +136,6 @@ h2{
     border: 1px solid black;
     margin: 10px;
 }
-
-@media (max-width: 876px){
-    .register{
-        justify-content: space-around;
-    }
-}
-
-@media (max-width: 820px){
-    .office-access{
-        flex-direction: column;
-    }
-    #office{
-        margin-bottom: 30px;
-    }
 .modal-header{
     height: 10px;
 }
@@ -179,5 +165,4 @@ h2{
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
-}
 }

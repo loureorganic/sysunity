@@ -12,11 +12,13 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	let AlertaSobrenome = document.getElementById("alerta_sobrenome");
 	let AlertaUsuario = document.getElementById("alerta_usuario");
 	let AlertaEmail = document.getElementById("alerta_email");
+	let modal = document.getElementById("checked");
 
 	if(document.getElementById('nome').value == "" || document.getElementById('nome').value == " "){
 		document.getElementById('nome').style.borderColor = "red";
 		document.getElementById('nome').focus();
 		AlertaNomeUsuario.style.display = "block";
+		modal.style.display = "block";
 	}
 	if(document.getElementById('sobrenome').value == "" || document.getElementById('sobrenome').value == " "){
 		document.getElementById('sobrenome').style.borderColor = "red";
@@ -39,4 +41,6 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	if(document.getElementById('nome').value != "" && document.getElementById('nome').value != " " && document.getElementById('sobrenome').value != "" && document.getElementById('sobrenome').value != " " && document.getElementById('nomedeusuario').value != "" && document.getElementById('nomedeusuario').value != " " && document.getElementById('email').value != "" && document.getElementById('email').value != " "){
 		data.createuser(document.getElementById('nome').value,document.getElementById('sobrenome').value , document.getElementById('nomedeusuario').value, document.getElementById('email').value, document.getElementById('office').value, document.getElementById('access').value); 
 	}
+
+
 });
