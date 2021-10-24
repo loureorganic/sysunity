@@ -77,7 +77,7 @@ h2{
 }
 
 .office-access option{
-    background: #7AA5BC;
+    background: #A7C7FF;
     color: #fff;
     font-size: 13px;
 }
@@ -135,4 +135,16 @@ h2{
     height: 100px;
     border: 1px solid black;
     margin: 10px;
+}
+
+@media (max-width: 876px){
+    .register{
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 820px){
+    .office-access{
+        flex-direction: column;
+    }
 }
