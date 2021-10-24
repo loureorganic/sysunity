@@ -162,27 +162,28 @@
                   <div class="user-email">
                     <label for="">Nome
                       <input id="nome" name="" required="" type="text" placeholder=""/>
-                      <p id="msgErro" style="display: none;">O Campo precisa ser preenchido</p>
+                      <p id="alerta_nome_usuario" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                     <label for="">Sobrenome
                       <input id="sobrenome" name="" required="" type="text" placeholder=""/>
-                      <p id="msgErro2" style="display: none;">O Campo precisa ser preenchido</p>
+                      <p id="alerta_sobrenome" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                   </div>
                   <div class="user-email">
                     <label for="">Usuário
                       <input id="nomedeusuario" name="" required="" type="text" placeholder=""/>
-                      <p id="msgErro3" style="display: none;">O Campo precisa ser preenchido</p>
+                      <p id="alerta_usuario" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                     <label for="">Email
                       <input id="email" name="" required="" type="text" placeholder=""/>
-                      <p id="msgErro4" style="display: none;">O Campo precisa ser preenchido</p>
+                      <p id="alerta_email" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                   </div>
                   <div class="office-access">   
                     <label for="">Cargo
                       <select id="office" >
                         <div class="dropdown-menu">
+                          <option value=""></option>
                           <option value="proprietario">Proprietário</option>
                           <option value="vendedor">Vendedor</option>
                         </div>
@@ -190,6 +191,7 @@
                     </label>
                     <label for="">Nivel de acesso
                       <select id="access" >
+                        <option value=""></option>
                         <option value="administrador">Administrador</option>
                         <option value="gerenciador">Gerenciador</option>
                         <option value="visualizador">Visualizador</option>
