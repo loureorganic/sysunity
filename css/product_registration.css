@@ -75,3 +75,15 @@ h2{
     font-size: 16px;
     background: #085D8C;
 }
+
+@media (max-width:900px){
+    .name-tipe-value{
+        flex-wrap: wrap;
+    }
+    .name-tipe-value label{
+        width: 100%;
+    }
+    .register{
+        padding-right: 48px;
+    }
+}

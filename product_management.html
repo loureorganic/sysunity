@@ -5,21 +5,20 @@
   <title>SysUnity</title>
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="css/user_registration.css" />
+  <link rel="stylesheet" type="text/css" href="css/product_management.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" href="./images/y.png"   sizes="any"  >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
   <script src="script/database/database-connection.js"></script>
+
 </head>
 <body>
-  <div class="loader">
-    <img src="images/833.gif" alt="Loading..." />
-  </div>
+  <!-- <div id="teste"></div> -->
   <div class="content">
     <div id="home">
     <div class="centro">
@@ -156,74 +155,28 @@
             </li>
           </ul>
         </header>
-        <section class="registration">
-            <h2>Cadastro de Usuário</h2>
-                <div class="form">
-                  <div class="user-email">
-                    <label for="">Nome
-                      <input id="nome" name="" required="" type="text" placeholder=""/>
-                      <p id="alerta_nome_usuario" style="display: none;">O Campo precisa ser preenchido</p>
-                    </label>
-                    <label for="">Sobrenome
-                      <input id="sobrenome" name="" required="" type="text" placeholder=""/>
-                      <p id="alerta_sobrenome" style="display: none;">O Campo precisa ser preenchido</p>
-                    </label>
-                  </div>
-                  <div class="user-email">
-                    <label for="">Usuário
-                      <input id="nomedeusuario" name="" required="" type="text" placeholder=""/>
-                      <p id="alerta_usuario" style="display: none;">O Campo precisa ser preenchido</p>
-                    </label>
-                    <label for="">Email
-                      <input id="email" name="" required="" type="text" placeholder=""/>
-                      <p id="alerta_email" style="display: none;">O Campo precisa ser preenchido</p>
-                    </label>
-                  </div>
-                  <div class="office-access">   
-                    <label for="">Cargo
-                      <select id="office" >
-                        <div class="dropdown-menu">
-                          <option value=""></option>
-                          <option value="proprietario">Proprietário</option>
-                          <option value="vendedor">Vendedor</option>
-                        </div>
-                      </select>
-                    </label>
-                    <label for="">Nivel de acesso
-                      <select id="access" >
-                        <option value=""></option>
-                        <option value="administrador">Administrador</option>
-                        <option value="gerenciador">Gerenciador</option>
-                        <option value="visualizador">Visualizador</option>
-                      </select>
-                    </label> 
-                  </div>
-                  <div class="register">
-                    <div class="btn-group">
-                      <button class="btn btn-primary" id="btn_cadastrar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">CADASTRAR</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal" id="checked" data-bs-backdrop="static">
-                  <div class="modal-dialog">
-                      <div class="modal-content modal-lg">
-                          <div class="modal-header modal-lg">
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body modal-dialog modal-lg">
-                                  <img src="images/GREEN-checked.png" alt="">
-                                  <h1>Usuário cadastrado com sucesso!</h1>
-                                  <button onclick="window.location.href='./user_management.html'" type="button" class="btn-paraGerenciamento" >IR PARA TELA DE GERENCIAMENTO</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>  
+        <!--Título da tela-->
+        <section class="section-title">
+          <h2>Gerenciamento de usuário</h2>   
+        </section>
+
+        <!--Tabela -> Gerenciamento de Usuarios-->
+        <section class="section-table" >
+          <table id="myTable" class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th id="opcoes">Opções</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody"></tbody>
+        </table>       
         </section>
       </section>
     </div>
   </div> 
 </div>
-<script src="script/preloader.js"></script>
-<script type="module" src="script/user_registration.js"></script>
+  <script type="module" src="script/modal.js"></script>
 </body>
 </html>
