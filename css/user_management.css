@@ -3,15 +3,17 @@
 @import url(user_registration.css);
 
 .section-title{
-    height: 50px;
-    padding-left: 70px;
+    height: 60px;
+    padding-left: 30px;
+    padding-top: 20px;
 }
 .section-title  h2{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
 }
 .section-table{
     padding-left: 70px;    
+    padding-right: 70px;    
 }
 .dataTables_wrapper{
     width: 90%;
