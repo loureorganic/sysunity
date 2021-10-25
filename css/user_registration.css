@@ -171,3 +171,9 @@ h2{
 .modal-content{
     cursor: pointer;
 }
+.modal-footer {
+    border: 0;
+}
+.modal-header{
+    border: 0;
+}
