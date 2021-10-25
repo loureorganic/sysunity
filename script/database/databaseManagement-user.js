@@ -1,10 +1,10 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var a = '<button type="button" id="see" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
-var b = '<button type="button" id="edit" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
-var c = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
-//string
-var d = `<div class="modal" id="MyModal">
+var btnsee = '<button type="button" id="see" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
+var btnedit = '<button type="button" id="edit" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
+var btndelete = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
+
+var modal = `<div class="modal" id="MyModal">
 
 <div class="modal-dialog modal-dialog-centered">
 
@@ -58,13 +58,13 @@ var d = `<div class="modal" id="MyModal">
 
 export default class databasemanagementuser {
   
-  modaldata(a){
+  modaldata(dados){
     const firebaseref = firebase.database().ref("user");
     firebaseref.once('value',(resultado)=>{
 
       resultado.forEach(element => {
 
-        if(element.child("username").val() == a) {
+        if(element.child("username").val() == dados) {
 
           document.getElementById("nome").value = element.val().firstname;
           document.getElementById("sobrenome").value = element.val().lastname;
@@ -89,29 +89,29 @@ export default class databasemanagementuser {
 
     firebaseref.once('value', function(all){
       all.forEach(
-        function(curecord){
-          var usuario = curecord.val();
-          var g = document.createElement('tr');
-          g.classList.add('dot');
+        function(resultado){
+          var usuario = resultado.val();
+          var tr = document.createElement('tr');
+          tr.classList.add('dot');
           dados =
           "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
-          "<td id='username2' >" + usuario.username + "</td>" + "<td>" + a + b + c + "</td>";
+          "<td id='username2' >" + usuario.username + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
 
-          g.innerHTML = dados;
-          var_lista.appendChild(g);
+          tr.innerHTML = dados;
+          var_lista.appendChild(tr);
         }
       )
       
-      var y = document.querySelectorAll(".dot td");
-      for( var i = 0; i < y.length; i++){
-        y[i].addEventListener("click", function(e){
+      var everclass = document.querySelectorAll(".dot td");
+      for( var i = 0; i < everclass.length; i++){
+        everclass[i].addEventListener("click", function(e){
 
-          var c = this.parentNode;
-          self.modaldata(c.getElementsByTagName('td')[1].innerHTML);
-          var g = document.createElement('div');
-          g.innerHTML = d;
+          var parent = this.parentNode;
+          self.modaldata(parent.getElementsByTagName('td')[1].innerHTML);
+          var div = document.createElement('div');
+          div.innerHTML = modal;
                       
-          var_lista.appendChild(g);
+          var_lista.appendChild(div);
         })
       }
     })
