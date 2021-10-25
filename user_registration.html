@@ -160,27 +160,27 @@
             <h2>Cadastro de Usuário</h2>
                 <div class="form">
                   <div class="user-email">
-                    <label for="nome">Nome
-                      <input id="nome" name="nome" required type="text" placeholder=""/>
+                    <label for="">Nome
+                      <input id="nome" name="" required="" type="text" placeholder=""/>
                       <p id="msgErro" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
-                    <label for="sobrenome">Sobrenome
-                      <input id="sobrenome" name="sobrenome" required type="text" placeholder=""/>
+                    <label for="">Sobrenome
+                      <input id="sobrenome" name="" required="" type="text" placeholder=""/>
                       <p id="msgErro2" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                   </div>
                   <div class="user-email">
-                    <label for="nomedeusuario">Usuário
-                      <input id="nomedeusuario" name="nomedeusuario" required type="text" placeholder=""/>
+                    <label for="">Usuário
+                      <input id="nomedeusuario" name="" required="" type="text" placeholder=""/>
                       <p id="msgErro3" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
-                    <label for="email">Email
-                      <input id="email" name="email" required type="text" placeholder=""/>
+                    <label for="">Email
+                      <input id="email" name="" required="" type="text" placeholder=""/>
                       <p id="msgErro4" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                   </div>
                   <div class="office-access">   
-                    <label for="office">Cargo
+                    <label for="">Cargo
                       <select id="office" >
                         <div class="dropdown-menu">
                           <option value="proprietario">Proprietário</option>
@@ -188,7 +188,7 @@
                         </div>
                       </select>
                     </label>
-                    <label for="access">Nivel de acesso
+                    <label for="">Nivel de acesso
                       <select id="access" >
                         <option value="administrador">Administrador</option>
                         <option value="gerenciador">Gerenciador</option>
@@ -198,7 +198,7 @@
                   </div>
                   <div class="register">
                     <div class="btn-group">
-                      <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
+                      <button class="btn btn-primary" id="btn_cadastrar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">CADASTRAR</button>
                     </div>
                   </div>
                 </div>
@@ -211,7 +211,7 @@
                           <div class="modal-body modal-dialog modal-lg">
                                   <img src="images/GREEN-checked.png" alt="">
                                   <h1>Usuário cadastrado com sucesso!</h1>
-                                  <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'user_management.html'">IR PARA TELA DE GERENCIAMENTO</button>
+                                  <button onclick="window.location.href='./user_management.html'" type="button" class="btn-paraGerenciamento" >IR PARA TELA DE GERENCIAMENTO</button>
                           </div>
                       </div>
                   </div>

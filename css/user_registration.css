@@ -161,8 +161,12 @@ h2{
     line-height: 10px;
 }
 .btn-paraGerenciamento{
-    height: 30px;
+    cursor: pointer;
+    height: 40px;
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+    border-radius: 10px;
+    border-color: #085D8C;
+    
 }
