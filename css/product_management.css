@@ -1,106 +1,210 @@
 @import url(main.css);
 @import url(home.css);
+@import url(user_registration.css);
 
-h2{
+.section-title{
+    height: 60px;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.section-title  h2{
     font-size: 25px;
     font-weight: 700;
 }
+.section-table{
+    padding-left: 70px;    
+    padding-right: 70px;    
+}
+.dataTables_wrapper{
+    width: 90%;
+}
+.section-table label{
+    margin-bottom: 20px;
+}
 
-.registration{
-    display: flex;
-    flex-direction: column;
-    height:max-content;
-    align-items:flex-start;
+#opcoes{
+    text-align: center;
+    padding-left: 85px;
+}
+
+tbody tr{
+    background-color: #ABD2CE;
+}
+thead{
     width: 100%;
-    padding: 0px 30px 0px 30px;
-    margin-top: 18px;
+    background-color: #085d8c;
+    color: white;
+    font-size: 17px;
 }
-
-.form{
-    display: flex;
-    flex-direction: column;
-    margin: 18px;
-    background: #a7c7ff3f;
-    padding: 24px;
-    width: 60%;
-    border-radius: 4px;
+table button{
+    background-color:  #ABD2CE;
+    border: transparent;
+    width: 60px;
+    padding: 0;
 }
-
-.form input{
-    width: 100%;
+.visibility{
+    margin-left: 150px;
 }
-
-.form label {
+.edit{
+    margin-left: 30px;
+}
+.delete{
+    margin-left: 30px;
+}
+.visibility::before{
+    content: url(../images/visibility_white_24dp.svg);
+}
+.edit::before{
+    content: url(../images/create_white_24dp.svg);
+}
+.delete::before{
+    content: url(../images/delete_white_24dp.svg);
+}
+.modal-header{
+    background: #085D8C;
+    color: #fff;
+}
+.modal-header h5{
+    font-size: 24px;
     font-weight: 700;
-    font-size: 18px;
-    padding: 6px;
+}
+.modal-header .delete{
+    background: none;
+}
+.modal-header .delete::before{
+    content: url(../images/close_white_24dp.svg);
+}
+.modal-body form{
+    display: flex;
+    flex-direction: column;
+    margin-top: -12px;
+}
+.modal-body form input{
     width: 100%;
 }
-
-.form input {
-    background: none;
+.modal-body form label {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px;
+    margin-bottom: 0;
+    color: black;
+}
+.modal-body form input {
     border-radius: 4px;
     border-width: 1px;
     height: 32px;
     border-style: solid;
     border-color: #085D8C;
 }
-
-.name{
+.modal-body .user-email label{
     display: flex;
-    flex-direction: column;
-}
-
-.user-email{
-    display: flex;
-}
-
-.office-access{
-    display: flex;
-}
-
-.office-access label{
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    padding: 6px;
+    flex-wrap: wrap;
 }
-
-.office-access select{
-    display: flex;
-    align-items: center;
-    background: none;
-    border-color: #085D8C;
-    border-radius: 4px;
-    font-size: 15px;
-    height: 32px;
+.modal-body .office-access label {
+    align-items: flex-start;
 }
-
-.office-access option{
-    background: #7AA5BC;
-    color: #fff;
-    font-size: 13px;
+.modal-body .office-access select {
+    width: 100%;
 }
-
-.office-access select{
-    transition-delay: 250ms;
-}
-
-.register{
+.save{
     display: flex;
     justify-content: end;
 }
-
-.register .btn-group{
+.save .btn-group{
     width: 30%;
-    padding: 80px 6px 12px 0px;
+    padding-top: 66px;
 }
-
-#btn_cadastrar{
+#btn_salvar{
     height: 40px;
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+}
+.alternative{
+    display: flex;
+    justify-content: end;
+    padding-top: 36px;
+}
+.alternative .btn-primary{
+    width: 20%;
+    margin-right: 6px;
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+}
+.alternative .btn-secondary{
+    width: 20%;
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #A82012;
+    border-color: #892015;
+}
+@media (min-width: 1040px) and (max-width: 1200px) {
+    .visibility{
+        margin-left: 50px;
+    }
+    .edit{
+        margin-left: 30px;
+    }
+    .delete{
+        margin-left: 30px;
+    }
+    #opcoes{
+        padding-left: 0;
+    }
+}
+@media (min-width: 950px) and (max-width: 1039px) {
+    .visibility{
+        margin-left: 0px;
+    }
+    .edit{
+        margin-left: 30px;
+    }
+    .delete{
+        margin-left: 30px;
+    }
+    #opcoes{
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 910px) and (max-width: 949px) {
+    .visibility{
+        margin-left: 0px;
+    }
+    .edit{
+        margin-left: 20px;
+    }
+    .delete{
+        margin-left: 20px;
+    }
+    #opcoes{
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 909px) {
+    .visibility{
+        margin-left: 0px;
+    }
+    .edit{
+        margin-left: 0px;
+    }
+    .delete{
+        margin-left: 0px;
+    }
+    #opcoes{
+        padding-left: 0;
+    }
+}
+.edit::before{
+    content: url(../images/create_white_24dp.svg);
+}
+.delete::before{
+    content: url(../images/delete_white_24dp.svg);
 }
 .loader {
     position: fixed;
@@ -135,34 +239,4 @@ h2{
     height: 100px;
     border: 1px solid black;
     margin: 10px;
-}
-.modal-header{
-    height: 10px;
-}
-.modal-body{
-    margin: 0;
-    padding-top: 0;
-}
-.modal-lg{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 770px;
-}
-.modal-lg img{
-    width: 60%;
-    margin: 0;
-}
-.modal-lg h1{
-    text-align: center;
-    color: rgba(130, 130, 130, 1); 
-    font-weight: bold;
-    font-size: 30px; 
-    line-height: 10px;
-}
-.btn-paraGerenciamento{
-    height: 30px;
-    font-weight:600;
-    font-size: 16px;
-    background: #085D8C;
 }
