@@ -188,7 +188,7 @@ export default class databasemanagementuser {
           document.getElementById("sobrenome").placeholder = element.val().lastname;
           document.getElementById("nomedeusuario").placeholder = element.val().username;
           document.getElementById("email").placeholder = element.val().email; 
-
+          
           var btn = document.getElementById("btn_salvar");
           btn.addEventListener("click", function(e){
             var inputn = document.getElementById("nome").value;
@@ -199,14 +199,27 @@ export default class databasemanagementuser {
             var select2 = document.getElementById("office");
             var text1 = select1.options[select1.selectedIndex].text;
             var text2 = select2.options[select2.selectedIndex].text;
-          
+
+            if(inputn === ""){
+              inputn = element.val().firstname;
+            } 
+            if (inputsn === ""){
+              inputsn = element.val().lastname;
+            } 
+            if (inputnu === ""){
+              inputnu = element.val().username;
+            } 
+            if(inpute === ""){
+              inpute = element.val().email;
+            }
+
             self.funcUpd(element.key, inputn, inputsn, inputnu, inpute, text1, text2);
-        })
-
+          })
+            
         }
-      
+          
       });
-
+      
     })
 
   }
