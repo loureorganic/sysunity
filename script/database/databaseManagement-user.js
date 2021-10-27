@@ -216,12 +216,12 @@ export default class databasemanagementuser {
           else if(data.path[0].id === 'btnSee'){
             div.innerHTML = modalsee;
             var_lista.appendChild(div);
+            self.modaldata(parent.getElementsByTagName('td')[1].innerHTML);
           }
           else if(data.path[0].id === 'btnEdit'){
             div.innerHTML = modaledit;
             var_lista.appendChild(div);
           }
-          self.modaldata(parent.getElementsByTagName('td')[1].innerHTML);
         
         })
       }
