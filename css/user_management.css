@@ -83,6 +83,12 @@ table button{
     flex-direction: column;
     margin-top: -12px;
 }
+.modal-body form h3{
+    padding-top: 20px;
+    color: black;
+    font-weight: 400;
+    text-align: center;
+}
 .modal-body form input{
     width: 100%;
 }
@@ -128,7 +134,7 @@ table button{
 .alternative{
     display: flex;
     justify-content: end;
-    padding-top: 36px;
+    padding-top: 30px;
 }
 .alternative .btn-primary{
     width: 20%;
