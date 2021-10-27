@@ -106,7 +106,7 @@ var modaledit = `
           </div>
           <div class="save">
             <div class="btn-group">
-              <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
+              <button class="btn btn-primary" id="btn_salvar" type="button" >SALVAR</button>
             </div>
           </div>
         </form>
@@ -139,7 +139,7 @@ var modaldelete = `
 
 export default class databasemanagementuser {
   
- consultData(dados){
+  funcmodaldelete(dados){
    let valu = '';
    const database = firebase.database();
   const firebaseref = firebase.database().ref("user");
@@ -156,7 +156,19 @@ export default class databasemanagementuser {
 
  }
 
-  modaldata(dados){
+
+  funcUpd(chave, nome, sobrenome, nomeusuario, email, job, acesslevel){
+    const database = firebase.database();
+
+    database.ref('user/'+chave+'/firstname').set(nome);
+    database.ref('user/'+chave+'/lastname').set(sobrenome);
+    database.ref('user/'+chave+'/username').set(nomeusuario);
+    database.ref('user/'+chave+'/email').set(email);
+    database.ref('user/'+chave+'/job').set(job);
+    database.ref('user/'+chave+'/acesslevel').set(acesslevel);
+  };
+
+  funcmodalsee(dados){
     const firebaseref = firebase.database().ref("user");
     firebaseref.once('value',(resultado)=>{
 
@@ -179,7 +191,58 @@ export default class databasemanagementuser {
 
   }
   
-  managementuser(){
+  funcmodaledit(a){
+
+    var self = this;
+
+    const firebaseref = firebase.database().ref("user");
+    firebaseref.once('value',(resultado)=>{
+      
+      resultado.forEach(element => {
+
+        if(element.child("username").val() == a) {
+
+          document.getElementById("nome").placeholder = element.val().firstname;
+          document.getElementById("sobrenome").placeholder = element.val().lastname;
+          document.getElementById("nomedeusuario").placeholder = element.val().username;
+          document.getElementById("email").placeholder = element.val().email; 
+          
+          var btn = document.getElementById("btn_salvar");
+          btn.addEventListener("click", function(e){
+            var inputn = document.getElementById("nome").value;
+            var inputsn = document.getElementById("sobrenome").value;
+            var inputnu = document.getElementById("nomedeusuario").value;
+            var inpute = document.getElementById("email").value;
+            var select1 = document.getElementById("access");
+            var select2 = document.getElementById("office");
+            var text1 = select1.options[select1.selectedIndex].text;
+            var text2 = select2.options[select2.selectedIndex].text;
+
+            if(inputn === ""){
+              inputn = element.val().firstname;
+            } 
+            if (inputsn === ""){
+              inputsn = element.val().lastname;
+            } 
+            if (inputnu === ""){
+              inputnu = element.val().username;
+            } 
+            if(inpute === ""){
+              inpute = element.val().email;
+            }
+
+            self.funcUpd(element.key, inputn, inputsn, inputnu, inpute, text1, text2);
+          })
+            
+        }
+          
+      });
+      
+    })
+
+  }
+
+  managementuser() {
 
     var self = this;
 
@@ -210,19 +273,21 @@ export default class databasemanagementuser {
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function(){
-              self.consultData(parent.getElementsByTagName('td')[1].innerHTML)
+              self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
             });
           }
           else if(data.path[0].id === 'btnSee'){
             div.innerHTML = modalsee;
             var_lista.appendChild(div);
-            self.modaldata(parent.getElementsByTagName('td')[1].innerHTML);
+            var parent = this.parentNode;
+            self.funcmodalsee(parent.getElementsByTagName('td')[1].innerHTML);
           }
           else if(data.path[0].id === 'btnEdit'){
             div.innerHTML = modaledit;
-            var_lista.appendChild(div);
+            var_lista.appendChild(div);  
+            var parent = this.parentNode;
+            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
           }
-        
         })
       }
     })
