@@ -59,6 +59,11 @@ h2{
     flex: 2;
 }
 
+.validity{
+    display: flex;
+    margin-top: 6px;
+}
+
 .time-date{
     display: flex;
 }
@@ -68,6 +73,11 @@ h2{
     display: flex;
     font-size: 16px;
     align-items: center;
+}
+
+.time-date input{
+    min-width: 20px;
+    height: 24px;
 }
 
 .days{
@@ -89,7 +99,12 @@ h2{
 }
 
 .fabrication-pay input{
-    width: 70%;
+    width: 80%;
+}
+
+.quantity{
+    display: flex;
+    margin-top: 6px;
 }
 
 .unity-package{
@@ -103,6 +118,11 @@ h2{
     align-items: center;
 }
 
+.unity-package input{
+    min-width: 20px;
+    height: 24px;
+}
+
 .package{
     display: flex;
     background: #A8C8FF;
@@ -111,7 +131,7 @@ h2{
 }
 
 .package input{
-    width: 100%;
+    width: 80%;
 }
 
 .register{
