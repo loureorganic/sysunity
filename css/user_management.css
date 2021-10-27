@@ -62,6 +62,8 @@ table button{
 .modal-header{
     background: #085D8C;
     color: #fff;
+    height: 70px;
+    border-inline: none;
 }
 .modal-header h5{
     font-size: 24px;
@@ -72,6 +74,9 @@ table button{
 }
 .modal-header .delete::before{
     content: url(../images/close_white_24dp.svg);
+}
+.modal-body{
+    padding-top: 10px;
 }
 .modal-body form{
     display: flex;
