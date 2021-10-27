@@ -127,8 +127,8 @@ var modaldelete = `
       <form>
         <h3>Tem certeza que deseja deletar o usuário?</h3>
         <div class="alternative">
-          <button type="button" class="btn btn-primary">SIM</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
+          <button type="button" id="confirm" class="btn btn-primary">SIM</button>
+          <button type="button" id="deny" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
         </div>
       </form>
     </div>
@@ -139,6 +139,23 @@ var modaldelete = `
 
 export default class databasemanagementuser {
   
+ consultData(dados){
+   let valu = '';
+   const database = firebase.database();
+  const firebaseref = firebase.database().ref("user");
+  firebaseref.once('value',(resultado)=>{
+    resultado.forEach(element => {
+      if(element.child("username").val() == dados) {
+        console.log(element.key)
+        valu = element.key;
+        console.log('user/'+valu)
+        database.ref('user/'+valu).remove();
+      }
+    });
+  })
+
+ }
+
   modaldata(dados){
     const firebaseref = firebase.database().ref("user");
     firebaseref.once('value',(resultado)=>{
@@ -162,7 +179,7 @@ export default class databasemanagementuser {
 
   }
   
-  managementuser() {
+  managementuser(){
 
     var self = this;
 
@@ -187,10 +204,14 @@ export default class databasemanagementuser {
       for( var i = 0; i < everclass.length; i++){
         
         everclass[i].addEventListener("click", function(data){
+          var parent = this.parentNode;
           var div = document.createElement('div');
           if(data.path[0].id === 'btnDelete'){
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
+            document.getElementById('confirm').addEventListener("click", function(){
+              self.consultData(parent.getElementsByTagName('td')[1].innerHTML)
+            });
           }
           else if(data.path[0].id === 'btnSee'){
             div.innerHTML = modalsee;
@@ -200,7 +221,6 @@ export default class databasemanagementuser {
             div.innerHTML = modaledit;
             var_lista.appendChild(div);
           }
-          var parent = this.parentNode;
           self.modaldata(parent.getElementsByTagName('td')[1].innerHTML);
         
         })
