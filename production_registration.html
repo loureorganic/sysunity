@@ -154,55 +154,83 @@
           </ul>
         </header>
         <section class="registration">
-            <h2>Cadastro de Nova Produção</h2>
-                <div class="form">
-                    <div class="name-tipe-value">
-                        <label for="">Nome
-                            <input id="name" type="text" placeholder=""/>
-                            <p id="alertaproduto" style="display: none;">O Campo precisa ser preenchido</p>
-                        </label>
-                        <div class="tipe">
-                            <label for="">Tipo
-                                <input id="tipe" type="text" placeholder=""/>
-                                <p id="alertatipoproduto" style="display: none;">O Campo precisa ser preenchido</p>
-                            </label>
-                        </div>
-                        <div class="value">
-                            <label for="">Valor
-                                <input id="value" type="text" placeholder=""/>
-                                <p id="alertavalorproduto" style="display: none;">O Campo precisa ser preenchido</p>
-                            </label>
-                        </div>
-
-                        <label class="">Prazo
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        
-                        <label class="">Data
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        
-                        <label class="">Unidade
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        
-                        <label class="">Pacote
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-                    <div class="register">
-                      <div class="btn-group">
-                        <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
-                      </div>
-                    </div>
-                </div>  
+          <h2>Cadastro de Nova Produção</h2>
+            <div class="form">
+              <div class="name-tipe-batch">
+                <label for="">Nome
+                  <input id="name" type="text" placeholder=""/>
+                  <p id="alertaproduto" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+                <div class="tipe">
+                  <label for="">Tipo
+                    <input id="tipe" type="text" placeholder=""/>
+                    <p id="alertatipoproduto" style="display: none;">O Campo precisa ser preenchido</p>
+                  </label>
+                </div>
+                <div class="batch">
+                  <label for="">Lote
+                    <input id="batch" type="text" placeholder=""/>
+                    <p id="alertavalorproduto" style="display: none;">O Campo precisa ser preenchido</p>
+                  </label>
+                </div>
+              </div>
+              <label for="">Tipo de Validade</label>
+              <div class="time-date">
+                <label>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  Prazo
+                </label>
+                <label>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  Data
+                </label>
+              </div>
+              <div class="days">
+                <label for="">Dias válidos
+                  <input id="days" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+              </div>
+              <div class="fabrication-pay">
+                <label for="">Data de fabricação
+                  <input id="fabrication" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+                <label for="">Data de Vencimento
+                  <input id="pay" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+              </div>
+              <label for="">Quantidade Produzida</label>
+              <div class="unity-package">
+                <label>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  Unidade
+                </label>
+                <label>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  Pacote
+                </label>
+              </div>
+              <div class="package">
+                <label for="">Pacote
+                  <input id="days" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+              </div>
+              <div class="register">
+                <div class="btn-group">
+                  <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
-      </section>
-    </div>
+      </div>
   </div> 
 </div>
 <script type="module" src="script/product_registration.js"></script>

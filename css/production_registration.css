@@ -45,23 +45,74 @@ h2{
     border-color: #085D8C;
 }
 
-/*
-
-.name-tipe-value{
+.name-tipe-batch{
     display: flex;
 }
 
-.name-tipe-value .tipe{
+.name-tipe-batch .tipe{
     display: flex;
     flex: 3;
 }
 
-.name-tipe-value .value{
+.name-tipe-batch .batch{
     display: flex;
     flex: 2;
 }
 
-*/
+.time-date{
+    display: flex;
+}
+
+.time-date label{
+    width: 25%;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+}
+
+.days{
+    display: flex;
+    background: #A8C8FF;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.days input{
+    width: 70%;
+}
+
+.fabrication-pay{
+    display: flex;
+    background: #A8C8FF;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.fabrication-pay input{
+    width: 70%;
+}
+
+.unity-package{
+    display: flex;
+}
+
+.unity-package label{
+    width: 25%;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+}
+
+.package{
+    display: flex;
+    background: #A8C8FF;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.package input{
+    width: 100%;
+}
 
 .register{
     display: flex;
