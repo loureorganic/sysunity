@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="css/product_registration.css" />
+  <link rel="stylesheet" type="text/css" href="css/production_registration.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="./images/y.png"   sizes="any"  >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,7 +154,7 @@
           </ul>
         </header>
         <section class="registration">
-            <h2>Cadastro de Produto</h2>
+            <h2>Cadastro de Nova Produção</h2>
                 <div class="form">
                     <div class="name-tipe-value">
                         <label for="">Nome
@@ -173,11 +173,31 @@
                                 <p id="alertavalorproduto" style="display: none;">O Campo precisa ser preenchido</p>
                             </label>
                         </div>
-                    </div>
+
+                        <label class="">Prazo
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark"></span>
+                        </label>
+                        
+                        <label class="">Data
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                        </label>
+                        
+                        <label class="">Unidade
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                        </label>
+                        
+                        <label class="">Pacote
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
                     <div class="register">
-                        <div class="btn-group">
+                      <div class="btn-group">
                         <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
-                        </div>
+                      </div>
                     </div>
                 </div>  
         </section>
