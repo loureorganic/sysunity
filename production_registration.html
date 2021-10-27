@@ -174,34 +174,34 @@
                   </label>
                 </div>
               </div>
-              <div class="validity">
+              <div class="validity" id="validity_type">
                 <label for="">Tipo de Validade</label>
               </div>
               <div class="time-date">
                 <label>
-                  <input type="radio" name="question">Prazo
+                  <input type="radio" name="question" id="deadline">Prazo
                 </label>
                 <label>
-                  <input type="radio" name="question">Data
+                  <input type="radio" name="question" id="date">Data
                 </label>
               </div>
               <div class="days">
                 <label for="">Dias válidos
                   <input id="days" type="text" placeholder=""/>
-                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                  <p id="alerta_dias" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
               <div class="fabrication-pay">
                 <label for="">Data de fabricação
                   <input id="fabrication" type="text" placeholder=""/>
-                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                  <p id="alerta_data_fabricacao" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
                 <label for="">Data de Vencimento
                   <input id="pay" type="text" placeholder=""/>
-                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                  <p id="alerta_data_vencimento" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
-              <div class="quantity">
+              <div class="quantity" id="quantity_produced">
                 <label for="">Quantidade Produzida</label>
               </div>
               <div class="unity-package">
@@ -215,7 +215,7 @@
               <div class="package">
                 <label for="">Pacote
                   <input id="package" type="text" placeholder=""/>
-                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                  <p id="alerta_pacotes" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
               <div class="register">
@@ -229,6 +229,6 @@
       </div>
   </div> 
 </div>
-<script type="module" src="script/product_registration.js"></script>
+<script type="module" src="script/production_registration.js"></script>
 </body>
 </html>
