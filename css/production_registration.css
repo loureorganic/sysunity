@@ -45,23 +45,94 @@ h2{
     border-color: #085D8C;
 }
 
-/*
-
-.name-tipe-value{
+.name-tipe-batch{
     display: flex;
 }
 
-.name-tipe-value .tipe{
+.name-tipe-batch .tipe{
     display: flex;
     flex: 3;
 }
 
-.name-tipe-value .value{
+.name-tipe-batch .batch{
     display: flex;
     flex: 2;
 }
 
-*/
+.validity{
+    display: flex;
+    margin-top: 6px;
+}
+
+.time-date{
+    display: flex;
+}
+
+.time-date label{
+    width: 25%;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+}
+
+.time-date input{
+    min-width: 20px;
+    height: 24px;
+}
+
+.days{
+    display: flex;
+    background: #A8C8FF;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.days input{
+    width: 70%;
+}
+
+.fabrication-pay{
+    display: flex;
+    background: #A8C8FF;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.fabrication-pay input{
+    width: 80%;
+}
+
+.quantity{
+    display: flex;
+    margin-top: 6px;
+}
+
+.unity-package{
+    display: flex;
+}
+
+.unity-package label{
+    width: 25%;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+}
+
+.unity-package input{
+    min-width: 20px;
+    height: 24px;
+}
+
+.package{
+    display: flex;
+    background: #A8C8FF;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.package input{
+    width: 80%;
+}
 
 .register{
     display: flex;
