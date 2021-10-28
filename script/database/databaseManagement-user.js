@@ -141,6 +141,7 @@ export default class databasemanagementuser {
   
   funcmodaldelete(dados){
    let valu = '';
+   let active = false;
    const database = firebase.database();
   const firebaseref = firebase.database().ref("user");
   firebaseref.once('value',(resultado)=>{
@@ -150,6 +151,7 @@ export default class databasemanagementuser {
         valu = element.key;
         console.log('user/'+valu)
         database.ref('user/'+valu).remove();
+        window.location.reload(active);
       }
     });
   })
@@ -159,13 +161,14 @@ export default class databasemanagementuser {
 
   funcUpd(chave, nome, sobrenome, nomeusuario, email, job, acesslevel){
     const database = firebase.database();
-
+    let active = false;
     database.ref('user/'+chave+'/firstname').set(nome);
     database.ref('user/'+chave+'/lastname').set(sobrenome);
     database.ref('user/'+chave+'/username').set(nomeusuario);
     database.ref('user/'+chave+'/email').set(email);
     database.ref('user/'+chave+'/job').set(job);
     database.ref('user/'+chave+'/acesslevel').set(acesslevel);
+    window.location.reload(active);
   };
 
   funcmodalsee(dados){
