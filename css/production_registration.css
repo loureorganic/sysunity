@@ -108,44 +108,57 @@ h2{
     margin-top: 6px;
 }
 
-.unity-package{
+.radio-package{
     display: flex;
 }
 
-.unity-package label{
+.radio-package label{
     width: 25%;
     display: flex;
     font-size: 16px;
     align-items: center;
 }
 
-.unity-package input{
+.radio-package input{
     min-width: 20px;
     height: 24px;
 }
 
+.unity-package{
+    display: flex;
+    background: #A8C8FF;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.unity-package label{
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+}
+
+.unity-package input{
+    width: 60%;
+}
+
 .unity{
-    display: flex;
-    background: #A8C8FF;
-    border-radius: 4px;
-    padding: 6px;
-}
-
-.unity input{
     width: 20%;
-    margin-right: 6px;
 }
 
-.package{
+.package select{
     display: flex;
-    background: #A8C8FF;
+    align-items: center;
+    background: none;
+    border-color: #085D8C;
     border-radius: 4px;
-    padding: 6px;
+    font-size: 18px;
+    height: 32px;
 }
 
-.package input{
-    width: 20%;
-    margin-right: 6px;
+.package option{
+    background: #7AA5BC;
+    color: #fff;
+    font-size: 15px;
 }
 
 .register{
@@ -165,10 +178,19 @@ h2{
     background: #085D8C;
 }
 
-@media (max-width:940px){
+@media (max-width:1030px){
     .unity-package{
         flex-direction: column;
     }
+    .package{
+        width: 30%;
+    }
+    .unity{
+        width: 40%;
+    }
+}
+
+@media (max-width:940px){
     .time-date{
         flex-direction: column;
     }
