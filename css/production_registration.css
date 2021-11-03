@@ -79,9 +79,13 @@ h2{
     min-width: 20px;
     height: 24px;
 }
-
+#boxday{
+    display: none;
+}
+#boxfabrication{
+    display: none;
+}
 .days{
-    display: flex;
     background: #A8C8FF;
     border-radius: 4px;
     padding: 6px;

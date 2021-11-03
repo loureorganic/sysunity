@@ -1,5 +1,17 @@
-document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
+document.getElementById("deadline").addEventListener("click", function() {
+	document.getElementById('boxday').style.display = "flex";
+	document.getElementById('boxfabrication').style.display = "none";
+})
+
+document.getElementById("date").addEventListener("click", function() {
+    document.getElementById('boxday').style.display = "none";
+	document.getElementById('boxfabrication').style.display = "flex";
+	
+})
+
+document.getElementById("btn_cadastrar").addEventListener("click", function() {
+    
     const dadosProducao = (document.getElementById("name").value, document.getElementById("tipe").value, document.getElementById("batch").value,
 		document.getElementById("deadline").value, document.getElementById("date").value, document.getElementById('days').value,
         document.getElementById('fabrication').value, document.getElementById('pay').value, document.getElementById('unity').value, 
