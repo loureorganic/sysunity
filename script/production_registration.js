@@ -66,10 +66,6 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
         document.getElementById('unity').focus();
         AlertaUnidade.style.display = "block";
     }
-
-    if(document.getElementById("deadline").style.display = "flex"){
-        document.getElementById("fabrication").style.display = "none";
-        document.getElementById("pay").style.display = "none";
-    }
+    
 
 });
