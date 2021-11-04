@@ -179,51 +179,43 @@
               </div>
               <div class="time-date">
                 <label>
-                  <input type="radio" name="question" id="deadline">Prazo
+                  <input type="radio" name="question" id="deadline" value="prazo">Prazo
                 </label>
                 <label>
-                  <input type="radio" name="question" id="date">Data
+                  <input type="radio" name="question" id="date" value="data">Data
                 </label>
               </div>
-              <div class="days">
-                <label>
-                  <input id="days" type="text" placeholder=""/>dias válidos
+              <div class="days" id="boxday">
+                <label for="">Dias válidos
+                  <input id="days" type="text" placeholder=""/>
                   <p id="alerta_dias" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
-              <div class="fabrication-pay">
-                <label>Data de fabricação
-                  <input id="fabrication" type="text" placeholder=""/>
+              <div class="fabrication-pay" id="boxfabrication">
+                <label for="">Data de fabricação
+                  <input id="fabrication" type="date" placeholder=""/>
                   <p id="alerta_data_fabricacao" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
-                <label>Data de Vencimento
-                  <input id="pay" type="text" placeholder=""/>
+                <label for="">Data de Vencimento
+                  <input id="pay" type="date" placeholder=""/>
                   <p id="alerta_data_vencimento" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
               <div class="quantity" id="quantity_produced">
                 <label>Quantidade Produzida</label>
               </div>
-              <div class="radio-package">
-                <label>
-                  <input type="radio" name="question" checked>Pacote
-                </label>
-              </div>
               <div class="unity-package">
-                <label class="unity">Unidades
-                  <input id="unity" type="text" placeholder=""/>
-                  <p id="alerta_unidade" style="display: none;">O Campo precisa ser preenchido</p>
-                </label>
-                <label class="package">Pacotes
-                  <select>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                  </select>
+                <label>
+                  <input type="radio" name="question" id="package">Pacote
                 </label>
               </div>
-              <div class="register">
+              <div class="package" id="boxpackage">
+                <label for="">Pacote
+                  <input id="package" type="text" placeholder=""/>
+                  <p id="alerta_pacotes" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+              </div>
+              <div class="register" >
                 <div class="btn-group">
                   <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
                 </div>

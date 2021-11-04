@@ -1,11 +1,21 @@
+
+document.getElementById("deadline").addEventListener("click", function() {
+	document.getElementById('boxday').style.display = "flex";
+	document.getElementById('boxfabrication').style.display = "none";
+})
+
+document.getElementById("date").addEventListener("click", function() {
+    document.getElementById('boxday').style.display = "none";
+	document.getElementById('boxfabrication').style.display = "flex";
+	
+})
+
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-
+    
     const dadosProducao = (document.getElementById("name").value, document.getElementById("tipe").value, document.getElementById("batch").value,
-		document.getElementById("prazo").value, document.getElementById("data").value, 
-		document.getElementById('days').value, document.getElementById('fabrication').value, 
-		document.getElementById('pay').value, document.getElementById('unit').value, 
-		document.getElementById('package_checkbox').value, document.getElementById('package').value);
-
+		document.getElementById("deadline").value, document.getElementById("date").value, document.getElementById('days').value,
+        document.getElementById('fabrication').value, document.getElementById('pay').value, document.getElementById('unity').value, 
+        document.getElementById('package').value);
 
     let AlertaNomeProduto = document.getElementById("alertaproduto");
     let AlertaTipoProduto = document.getElementById("alertatipoproduto");
@@ -13,7 +23,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     let AlertaDiasVálidos = document.getElementById("alerta_dias");
     let AlertaDataFabricação = document.getElementById("alerta_data_fabricacao");
     let AlertaDataVencimento = document.getElementById("alerta_data_vencimento");
-    let AlertaPacotes = document.getElementById("alerta_pacotes");
+    let AlertaUnidade = document.getElementById("alerta_unidade");
 
 	if(document.getElementById('name').value == "" || document.getElementById('name').value == " "){
 			document.getElementById('name').style.borderColor = "red";
@@ -51,34 +61,11 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
             AlertaDataVencimento.style.display = "block";
     }
 
-    if(document.getElementById('package').value == "" || document.getElementById('package').value == " "){
-            document.getElementById('package').style.borderColor = "red";
-            document.getElementById('package').focus();
-            AlertaPacotes.style.display = "block";
+    if(document.getElementById('unity').value == "" || document.getElementById('unity').value == " "){
+        document.getElementById('unity').style.borderColor = "red";
+        document.getElementById('unity').focus();
+        AlertaUnidade.style.display = "block";
     }
-
-	function TipoValidade(){
-
-        const checkboxPrazo = document.getElementById("deadline")
-        const inputDiasVálidos = document.getElementById("days");
-
-        const checkboxData = document.getElementById("date")
-        const inputDataFabricacao = document.getElementById("fabrication");
-        const inputDataVencimento = document.getElementById("pay");
-
-        if(checkboxPrazo.checked == true){
-            inputDiasVálidos.style.display = "block";
-        } else {
-            inputDiasVálidos.style.display = "none";
-        }
-
-        if(checkboxData.checked == true){
-            inputDataFabricacao.style.display = "block";
-            inputDataVencimento.style.display = "block";
-        } else {
-            inputDataFabricacao.style.display = "none";
-            inputDataVencimento.style.display = "none";
-        }
-    }
+    
 
 });
