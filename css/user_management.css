@@ -130,6 +130,7 @@ table button{
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+    border: none;
 }
 .alternative{
     display: flex;
@@ -143,6 +144,7 @@ table button{
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+    border: none;
 }
 .alternative .btn-secondary{
     width: 20%;

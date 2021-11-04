@@ -4,6 +4,101 @@ var btnsee = '<button type="button" id="btnSee" class="visibility" data-bs-toggl
 var btnedit = '<button type="button" id="btnEdit" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
 var btndelete = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
 
+var modalsee = `
+<div class="modal" id="MyModal">
+
+<div class="modal-dialog modal-dialog-centered">
+
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h5 class="modal-title">Visualizar Produto</h5>
+      <button type="button" class="delete" data-bs-dismiss="modal"></button>
+    </div>
+
+    <div class="modal-body">
+
+      <form>
+
+        <div class="user-email">
+          <label for="">Nome
+            <input id="nome" type="text" placeholder="" disabled/>
+          </label>
+          <label for="">Tipo
+            <input id="sobrenome" type="text" placeholder="" disabled/>
+          </label>
+          <label for="">Valor
+            <input id="nomedeusuario" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>`;
+
+var modaledit = `
+<div class="modal" id="MyModalEditar">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title2">Editar Produto</h5>
+          <button type="button" class="delete" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="user-email">
+            <label for="">Nome
+              <input id="nome" type="text" placeholder="">
+              <p id="msgErro" style="display: none;">O Campo precisa ser preenchido</p>
+            </label>
+            <label for="">Tipo
+              <input id="tipo" type="text" placeholder="">
+              <p id="msgErro2" style="display: none;">O Campo precisa ser preenchido</p>
+            </label>
+            <label for="">Valor
+              <input id="valor" type="text" placeholder="">
+              <p id="msgErro2" style="display: none;">O Campo precisa ser preenchido</p>
+            </label>
+          </div>
+          
+          <div class="save">
+            <div class="btn-group">
+              <button class="btn btn-primary" id="btn_salvar" type="button" >SALVAR</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+var modaldelete = `
+<div class="modal" id="MyModalDeletar">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title3">Deletar Produto</h5>
+        <button type="button" class="delete" data-bs-dismiss="modal"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <h3>Tem certeza que deseja deletar esse produto?</h3>
+        <div class="alternative">
+          <button type="button" id="confirm" class="btn btn-primary">SIM</button>
+          <button type="button" id="deny" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>`;
+
 export default class databasemanagementproduct {
     managementproduct() {
 
