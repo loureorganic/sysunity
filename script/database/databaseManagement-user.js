@@ -140,11 +140,12 @@ var modaldelete = `
 export default class databasemanagementuser {
   
   funcmodaldelete(dados){
-   let valu = '';
-   let active = false;
-   const database = firebase.database();
-  const firebaseref = firebase.database().ref("user");
-  firebaseref.once('value',(resultado)=>{
+
+    let valu = '';
+    let active = false;
+    const database = firebase.database();
+    const firebaseref = firebase.database().ref("user");
+    firebaseref.once('value',(resultado)=>{
     resultado.forEach(element => {
       if(element.child("username").val() == dados) {
         console.log(element.key)
