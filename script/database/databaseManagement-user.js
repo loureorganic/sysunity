@@ -159,7 +159,6 @@ export default class databasemanagementuser {
 
  }
 
-
   funcUpd(chave, nome, sobrenome, nomeusuario, email, job, acesslevel){
     const database = firebase.database();
     let active = false;
