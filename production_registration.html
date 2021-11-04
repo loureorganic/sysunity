@@ -205,14 +205,17 @@
                 <label>Quantidade Produzida</label>
               </div>
               <div class="unity-package">
-                <label>
-                  <input type="radio" name="question" id="package">Pacote
+                <label class="unity">N°
+                  <input id="unity" type="text" placeholder=""/>
+                  <p id="alerta_unidade" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
-              </div>
-              <div class="package" id="boxpackage">
-                <label for="">Pacote
-                  <input id="package" type="text" placeholder=""/>
-                  <p id="alerta_pacotes" style="display: none;">O Campo precisa ser preenchido</p>
+                <label class="package">Pacotes
+                  <select>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select>
                 </label>
               </div>
               <div class="register" >
