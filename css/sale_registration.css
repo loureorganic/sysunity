@@ -6,6 +6,22 @@ h2{
     font-weight: 700;
 }
 
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #085D8C;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    font-weight: 700;
+}
+
+.nav-item button{
+    color:#797979;
+    font-weight: 700;
+}
+
+.nav-item button:hover{
+    color: #797979;
+}
+
 .registration{
     display: flex;
     flex-direction: column;
@@ -22,8 +38,9 @@ h2{
     margin: 18px;
     background: #a7c7ff3f;
     padding: 24px;
-    width: 60%;
+    width: 70%;
     border-radius: 4px;
+    margin-left: 0;
 }
 
 .form input{
@@ -31,6 +48,9 @@ h2{
 }
 
 .form label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-weight: 700;
     font-size: 18px;
     padding: 6px;
@@ -47,7 +67,7 @@ h2{
 
 .sale{
     color: #003553;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
 }
 
@@ -61,11 +81,63 @@ h2{
     font-size: 16px;
     align-items: center;
     margin-right: 36px;
+    flex-direction: row;
 }
 
 .public-order input{
     min-width: 20px;
     height: 24px;
+}
+
+.seller-date{
+    display: flex;
+}
+
+.seller-date label{
+    width: 25%;
+}
+
+.total-general{
+    display: flex;
+    width: 25%;
+    margin-top: 12px;
+}
+
+.product-type-quantity{
+    display: flex;
+}
+
+.type{
+    margin-left: -14px;
+    margin-right: -14px;
+}
+
+.type input{
+    border-radius: 0;
+}
+
+.price-total{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.price-total label{
+    width: 45%;
+}
+
+.price-total span{
+    display: flex;
+    font-weight: 600;
+}
+
+.price-total span::before{
+    content: url(../images/add_black_24dp.svg);
+}
+
+.total-general-2{
+    display: flex;
+    width: 25%;
+    margin-top: -25px;
 }
 
 .register{
