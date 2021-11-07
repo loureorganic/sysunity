@@ -232,17 +232,17 @@ table button{
     width: 50px;
 }
 
-.loader.hidden {
-    animation: fadeOut 2s;
-    animation-fill-mode: forwards;
-}
-
 @keyframes fadeOut {
     100% {
         opacity: 1;
         visibility: hidden;
     }
 }
+.loader.hidden {
+    animation: fadeOut 2s;
+    animation-fill-mode: forwards;
+}
+
 
 .thumb {
     height: 100px;
