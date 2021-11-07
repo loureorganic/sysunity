@@ -1,3 +1,7 @@
+import databaseuser from "./database/databaseUser.js";
+
+const dados = new databaseuser();
+dados.objectuser();
 
 document.getElementById("deadline").addEventListener("click", function() {
 	document.getElementById('boxday').style.display = "flex";
