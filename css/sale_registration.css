@@ -100,7 +100,7 @@ h2{
 .total-general{
     display: flex;
     width: 25%;
-    margin-top: 12px;
+    margin-top: 6px;
 }
 
 .product-type-quantity{
@@ -138,6 +138,42 @@ h2{
     display: flex;
     width: 25%;
     margin-top: -25px;
+}
+
+.discount-general{
+    display: flex;
+}
+
+.discount-general label{
+    width: 40%;
+}
+
+.payment-value{
+    display: flex;
+    margin-top: 6px;
+}
+
+.payment{
+    width: 50%;
+}
+
+.total-value{
+    margin-left: 48px;
+}
+
+.total-value span{
+    display: flex;
+    font-weight: 600;
+}
+
+.total-value span::before{
+    content: url(../images/add_black_24dp.svg);
+}
+
+.total-paid{
+    display: flex;
+    width: 50%;
+    margin-top: -18px;
 }
 
 .register{

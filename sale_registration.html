@@ -179,7 +179,7 @@
                 <div class="form">
                   <div class="seller-date">
                     <label>Vendedor
-                      <input id="name" type="text" placeholder=""/>
+                      <input id="" type="text" placeholder=""/>
                       <p id="" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                     <label>Data
@@ -226,6 +226,11 @@
                       <p id="" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                   </div>
+                  <div class="register">
+                    <div class="btn-group" style="width: 10%;">
+                      <button class="btn btn-primary" id="btn_cadastrar" type="button">></button>
+                    </div>
+                  </div>
               </div>
             </div>
             <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
@@ -240,11 +245,60 @@
                 </label>
               </div>
             </div>
+            <div class="form">
+              <div class="discount-general">
+                <label>Desconto
+                  <input id="" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+                <div class="total-general" style="margin-top: 0; width: 100%;">
+                <label>Total geral
+                  <input id="total-general" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+              </div>
+            </div>
+            <div class="payment-value">
+              <div class="payment">
+                <label>Forma de Pagamento
+                  <input id="" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+              </div>
+              <div class="total-value">
+                <label>Valor total
+                  <input id="total-value" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                  <span>Adicionar</span>
+                </label>
+              </div>
+            </div>
+            <div class="total-general" style="width: 50%;">
+              <label>Total geral
+                <input id="total-general" type="text" placeholder=""/>
+                <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+              </label>
+            </div>
+            <div class="total-paid">
+              <label>Total pago
+                <input id="total-paid" type="text" placeholder=""/>
+                <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+              </label>
+            </div>
+            <div class="register" style="justify-content: space-between;">
+              <div class="btn-group" style="width: 10%;">
+                <button class="btn btn-primary" id="btn_cadastrar" type="button"><</button>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
       </section>
-    </div>
-  </div> 
+    </section>
+  </div>
+</div> 
 </div>
 <script type="module" src="script/sale_registration.js"></script>
 </body>
