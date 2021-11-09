@@ -4,8 +4,10 @@ Number(document.getElementById('price').value);
 Number(document.getElementById('total').value);
 Number(document.getElementById('total_value').value);
 Number(document.getElementById('discount').value);
-Number(document.getElementById('full_payment').value);
+Number(document.getElementById('total-paid').value);
 
+console.log('boxproduct');
+document.getElementById('boxproduct').style.display = "none";
 
 document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "flex";
@@ -13,7 +15,7 @@ document.getElementById("public").addEventListener("click", function() {
 })
 
 document.getElementById("order").addEventListener("click", function() {
-	document.getElementById('boxdate').style.display = "flex";
+	document.getElementById('boxdate').style.display = "none";
 	document.getElementById('boxproduct').style.display = "flex";
 })
 
@@ -23,7 +25,7 @@ document.getElementById("public").addEventListener("click", function() {
 })
 
 document.getElementById("order").addEventListener("click", function() {
-	document.getElementById('boxdiscount-general').style.display = "flex";
+	document.getElementById('boxdiscount-general').style.display = "none";
 	document.getElementById('boxpayment').style.display = "flex";
 })
 
@@ -37,7 +39,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	document.getElementById('discount').value, document.getElementById('total-paid').value);
  
     
-     	let AlertaVendedor = document.getElementById("alerta_vendedor");
+    let AlertaVendedor = document.getElementById("alerta_vendedor");
 	let AlertaData = document.getElementById("alerta_data");
 	let AlertaTotalGeral = document.getElementById("alerta_totalgeral");
 	let AlertaProduto = document.getElementById("alerta_produto");
