@@ -23,6 +23,9 @@
 </head>
 
 <body>
+  <div class="loader">
+    <img src="images/833.gif" alt="Loading..." />
+  </div>
   <!-- <div id="teste"></div> -->
   <div class="content">
     <div id="home">
@@ -177,8 +180,21 @@
       <h2>Gerenciamento da produção</h2>
     </section>
 
-    <!--Tabela -> Gerenciamento de Usuarios-->
-    <section class="section-table">
+    <!--Tabela -> Gerenciamento de Produtos-->
+    <section class="section-table" >
+      <table id="myTable" class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Lote</th>
+                <th id="opcoes">Opções</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody"></tbody>
+      </table>       
+    </section>
+    <!-- <section class="section-table">
       <table id="myTable" class="table">
         <thead>
           <tr>
@@ -367,11 +383,13 @@
           </tr>
         </tbody>
       </table>
-    </section>
+    </section> -->
   </section>
   </div>
   </div>
   </div>
+  <script type="module" src="./script/production_management.js"></script>
+  <script src="script/preloader.js"></script>
   <script type="module" src="script/modal.js"></script>
 </body>
 

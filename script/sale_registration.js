@@ -1,3 +1,7 @@
+import databaseuser from "./database/databaseUser.js";
+
+const dados = new databaseuser();
+dados.objectuser();
 
 console.log(document.getElementById('boxsale'));
 
