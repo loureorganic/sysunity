@@ -48,15 +48,15 @@ h2{
 .name-tipe-batch{
     display: flex;
 }
-
-.name-tipe-batch .tipe{
+.name, .tipe, 
+.name label, .tipe label{
     display: flex;
-    flex: 3;
+    flex-direction: column;
+    width: 100%;
 }
 
-.name-tipe-batch .batch{
-    display: flex;
-    flex: 2;
+.name select, .tipe select{
+    width: 100%;
 }
 
 .validity{
