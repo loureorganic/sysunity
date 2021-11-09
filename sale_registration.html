@@ -164,7 +164,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent" style="width: 100%;">
-              <div class="tab-pane fade show active" id="product" role="tabpanel" aria-labelledby="product-tab">
+              <div class="tab-pane fade show" id="product" role="tabpanel" aria-labelledby="product-tab">
                 <div class="form">
                   <h5 class="sale">Tipo de Venda</h5>
                 <div class="public-order">
@@ -187,13 +187,8 @@
                       <p id="alerta_data" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                   </div>
-                  <div class="total-general">
-                    <label>Total geral
-                      <input id="total-general" type="text" placeholder=""/>
-                      <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
-                    </label>
-                  </div>
-                  <div class="p-t-q-p-t">
+                
+                  <div class="p-t-q-p-t" id="boxsale">
                     <div class="product-type-quantity">
                       <label>Produto
                         <input id="" type="text" placeholder=""/>
@@ -240,10 +235,10 @@
                 <h5 class="sale">Tipo de Venda</h5>
               <div class="public-order">
                 <label>
-                  <input type="radio" name="question" id="public" value="geral">Geral
+                  <input type="radio" name="question" id="public2" value="geral">Geral
                 </label>
                 <label>
-                  <input type="radio" name="question" id="order" value="encomenda">Encomenda
+                  <input type="radio" name="question" id="order2" value="encomenda">Encomenda
                 </label>
               </div>
             </div>
@@ -274,12 +269,6 @@
                   <span>Adicionar</span>
                 </label>
               </div>
-            </div>
-            <div class="total-general" style="width: 50%;" id="boxpayment">
-              <label>Total geral
-                <input id="total-general" type="text" placeholder=""/>
-                <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
-              </label>
             </div>
             <div class="total-paid" id="boxpayment">
               <label>Total pago

@@ -1,30 +1,23 @@
-Number(document.getElementById('total-general').value);
-Number(document.getElementById('quantity').value);
-Number(document.getElementById('price').value);
-Number(document.getElementById('total').value);
-Number(document.getElementById('total_value').value);
-Number(document.getElementById('discount').value);
-Number(document.getElementById('total-paid').value);
 
-console.log('boxproduct');
-document.getElementById('boxproduct').style.display = "none";
+console.log(document.getElementById('boxsale'));
+
 
 document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "flex";
-	document.getElementById('boxproduct').style.display = "none";
+	document.getElementById('boxsale').style.display = "none";
 })
 
 document.getElementById("order").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "none";
-	document.getElementById('boxproduct').style.display = "flex";
+	document.getElementById('boxsale').style.display = "flex";
 })
 
-document.getElementById("public").addEventListener("click", function() {
+document.getElementById("order2").addEventListener("click", function() {
 	document.getElementById('boxdiscount-general').style.display = "flex";
-	document.getElementById('boxpayment').style.display = "none";
+	document.getElementById('boxpayment').style.display = "flex";
 })
 
-document.getElementById("order").addEventListener("click", function() {
+document.getElementById("public2").addEventListener("click", function() {
 	document.getElementById('boxdiscount-general').style.display = "none";
 	document.getElementById('boxpayment').style.display = "flex";
 })
