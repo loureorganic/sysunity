@@ -103,8 +103,13 @@ h2{
     margin-top: 6px;
 }
 
+.p-t-q-p-t{
+    display: flex;
+}
+
 .product-type-quantity{
     display: flex;
+    width: 60%;
 }
 
 .type{
@@ -118,6 +123,7 @@ h2{
 
 .price-total{
     display: flex;
+    width: 40%;
     justify-content: flex-end;
 }
 
@@ -204,4 +210,34 @@ h2{
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+}
+
+@media (max-width:1160px){
+    .p-t-q-p-t{
+        flex-direction: column;
+    }
+
+    .product-type-quantity{
+        width: 100%;
+    }
+
+    .price-total{
+        width: 80%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width:925px){
+    .payment-value{
+        flex-direction: column;
+    }
+
+    .payment{
+        width: 60%;
+    }
+
+    .total-value{
+        margin-left: 0;
+        width: 60%;
+    }
 }
