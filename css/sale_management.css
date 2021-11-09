@@ -24,6 +24,7 @@
 
 #opcoes{
     text-align: center;
+    padding-left: 85px;
 }
 
 tbody tr{
@@ -42,7 +43,7 @@ table button{
     padding: 0;
 }
 .visibility{
-    margin-left: 150px;
+    margin-left: 210px;
 }
 .edit{
     margin-left: 30px;
@@ -62,6 +63,7 @@ table button{
 .modal-header{
     background: #085D8C;
     color: #fff;
+    height: 50px;
 }
 .modal-header h5{
     font-size: 24px;
@@ -76,7 +78,13 @@ table button{
 .modal-body form{
     display: flex;
     flex-direction: column;
-    margin-top: -12px;
+    margin-top: 12px;
+}
+.modal-body form h3{
+    padding-top: 20px;
+    color: black;
+    font-weight: 400;
+    text-align: center;
 }
 .modal-body form input{
     width: 100%;
@@ -95,6 +103,25 @@ table button{
     border-style: solid;
     border-color: #085D8C;
 }
+#div-table{
+    overflow-y: scroll; 
+    height: 265px;
+}
+.user-email table, #thead-vendas{
+    background-color: white;
+    width: 100%;
+}
+#table-vendas, #thead-vendas, #tbody-vendas, #thead-tr-vendas, input{
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+.tbody-vendas tr{
+    background-color: white;
+}
+.modal-body h4{
+    text-align: center;
+}
 .modal-body .user-email label{
     display: flex;
     width: 100%;
@@ -112,13 +139,14 @@ table button{
 }
 .save .btn-group{
     width: 30%;
-    padding-top: 66px;
+    padding-top: 30px;
 }
 #btn_salvar{
     height: 40px;
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+    border: none;
 }
 .alternative{
     display: flex;
@@ -132,6 +160,7 @@ table button{
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+    border: none;
 }
 .alternative .btn-secondary{
     width: 20%;
@@ -143,48 +172,60 @@ table button{
 }
 @media (min-width: 1040px) and (max-width: 1200px) {
     .visibility{
-        margin-left: 50px;
+        margin-left: 100px;
     }
     .edit{
         margin-left: 30px;
     }
     .delete{
         margin-left: 30px;
+    }
+    #opcoes{
+        padding-left: 0;
     }
 }
 @media (min-width: 950px) and (max-width: 1039px) {
     .visibility{
-        margin-left: 0px;
+        margin-left: 90px;
     }
     .edit{
         margin-left: 30px;
     }
     .delete{
         margin-left: 30px;
+    }
+    #opcoes{
+        padding-left: 0;
     }
 }
 
 @media (min-width: 910px) and (max-width: 949px) {
     .visibility{
-        margin-left: 0px;
+        margin-left: 80px;
     }
     .edit{
         margin-left: 20px;
     }
     .delete{
         margin-left: 20px;
+    }
+    #opcoes{
+        padding-left: 0;
     }
 }
 
 @media (min-width: 400px) and (max-width: 909px) {
     .visibility{
-        margin-left: 0px;
+        margin-left: 80px;
     }
     .edit{
         margin-left: 0px;
     }
     .delete{
         margin-left: 0px;
+    }
+    #opcoes{
+        padding-left: 0;
     }
 }
 .edit::before{

@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <title>SysUnity</title>
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="css/sale_management.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,169 +21,911 @@
   <script src="script/database/database-connection.js"></script>
 
 </head>
+
 <body>
   <!-- <div id="teste"></div> -->
   <div class="content">
     <div id="home">
-    <div class="centro">
-      <section class="sidebar">
-        <ul class="list-unstyled ps-0">
-          <li class="mb-1">
-            <div class="sidebar-logo">
-              <h6><a href="home.html" id="home"> SysUnity</a></h6>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-              <div class="set1">
-                <img src="./images/outline_manage_accounts_white_48dp.png" alt="" width="22">
-                <span>Usuários</span>
+      <div class="centro">
+        <section class="sidebar">
+          <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+              <div class="sidebar-logo">
+                <h6><a href="home.html" id="home"> SysUnity</a></h6>
               </div>
-            </button>
-            <div class="collapse" id="home-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="user_registration.html" class="link-dark rounded"> <p>Cadastrar usuário</p></a></li>
-                <li><a href="user_management.html" class="link-dark rounded">Gerenciar usuário</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-              <div class="set1">
-                <img class="dashboard-shop" src="./images/baseline_shopping_bag_white_48dp.png" alt="" width="22">
-                <span>Vendas</span>
-              </div>
-            </button>
-            <div class="collapse" id="dashboard-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="sale_registration.html" class="link-dark rounded">Cadastrar vendas</a></li>
-                <li><a href="sale_management.html" class="link-dark rounded">Gerenciar vendas</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              <div class="set1">
-                <img src="./images/baseline_inventory_2_white_48dp.png" alt="" width="22">
-                <span>Produtos</span>
-              </div>
-            </button>
-            <div class="collapse" id="orders-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="product_registration.html" class="link-dark rounded">Cadastrar produtos</a></li>
-                <li><a href="production_registration.html" class="link-dark rounded">Cadastrar nova produção</a></li>
-                <li><a href="product_management.html" class="link-dark rounded">Gerenciar produtos</a></li>
-                <li><a href="production_management.html" class="link-dark rounded">Gerenciar produção</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-              <div class="set1">
-                <img src="./images/baseline_leaderboard_white_48dp.png" alt="" width="22">
-                <span>Relatórios</span>
-              </div>
-            </button>
-            <div class="collapse" id="account-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
-                <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
-                <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produtos</a></li>
-              </ul>
-            </div>
-          </li>
-          <div class="mb">
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
-                  <div class="set1">
-                    <img src="./images/baseline_local_shipping_white_48dp.png" alt="" width="22">
-                    <li><a href="orders.html" class="link-dark rounded">Encomendas</a></li>
-                  </div>
-                </button>
-              </li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
-                  <div class="set1">
-                    <img src="./images/baseline_history_white_48dp.png" alt="" width="22">
-                    <li><a href="historic.html" class="link-dark rounded">Histórico</a></li>
-                  </div>
-                </button>
-              </li>
-              <li class="mb-1">
-                  <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
-                  <div class="set1">
-                    <li><a href="settings.html" class="link-dark rounded">Configurações</a></li>
-                  </div>
-                  <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
-                </button>
-              </li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
-                  <div class="set1">
-                    <img src="./images/baseline_help_center_white_48dp.png" alt="" width="22">
-                    <li><a href="prop.html" class="link-dark rounded">Suporte</a></li>
-                  </div>
-                </button>
-              </li>  
-          </div>
-        </ul>
-      </section>
-          
-      <!--Barra de alerta-->
-      <section class="content-table">
-        <header class="bar-status">
-          <div class="welcome">    
-            <h1 id="hello">Usuários</h1>            
-          </div>
-          <ul class="bar-login">
-            <li id="usuario">
-              <div class="btn-group">
-                <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="images/account_circle_black_36dp.svg" alt="" width="20%">
-                    <h6 id="user">
-                      Taila Santos
-                    </h6>
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="settings_user.html">Configurações
-                    <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="index.html">Sair
-                    <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
-                    </a> 
-                  </li>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="#home-collapse" aria-expanded="false">
+                <div class="set1">
+                  <img src="./images/outline_manage_accounts_white_48dp.png" alt="" width="22">
+                  <span>Usuários</span>
+                </div>
+              </button>
+              <div class="collapse" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="user_registration.html" class="link-dark rounded">
+                      <p>Cadastrar usuário</p>
+                    </a></li>
+                  <li><a href="user_management.html" class="link-dark rounded">Gerenciar usuário</a></li>
                 </ul>
               </div>
             </li>
-          </ul>
-        </header>
-        <!--Título da tela-->
-        <section class="section-title">
-          <h2>Gerenciamento de vendas</h2>   
-        </section>
-
-        <!--Tabela -> Gerenciamento de Usuarios-->
-        <section class="section-table" >
-          <table id="myTable" class="table">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Vendedor</th>
-                    <th>Total</th>
-                    <th id="opcoes">Opções</th>
-                </tr>
-            </thead>
-            <tbody id="tablebody"></tbody>
-        </table>       
-        </section>
-      </section>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="#dashboard-collapse" aria-expanded="false">
+                <div class="set1">
+                  <img class="dashboard-shop" src="./images/baseline_shopping_bag_white_48dp.png" alt="" width="22">
+                  <span>Vendas</span>
+                </div>
+              </button>
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="sale_registration.html" class="link-dark rounded">Cadastrar vendas</a></li>
+                  <li><a href="sale_management.html" class="link-dark rounded">Gerenciar vendas</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="#orders-collapse" aria-expanded="false">
+                <div class="set1">
+                  <img src="./images/baseline_inventory_2_white_48dp.png" alt="" width="22">
+                  <span>Produtos</span>
+                </div>
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="product_registration.html" class="link-dark rounded">Cadastrar produtos</a></li>
+                  <li><a href="production_registration.html" class="link-dark rounded">Cadastrar nova produção</a></li>
+                  <li><a href="product_management.html" class="link-dark rounded">Gerenciar produtos</a></li>
+                  <li><a href="production_management.html" class="link-dark rounded">Gerenciar produção</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="#account-collapse" aria-expanded="false">
+                <div class="set1">
+                  <img src="./images/baseline_leaderboard_white_48dp.png" alt="" width="22">
+                  <span>Relatórios</span>
+                </div>
+              </button>
+              <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
+                  <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
+                  <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produtos</a></li>
+                </ul>
+              </div>
+            </li>
+            <div class="mb">
+              <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none"
+                  data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
+                  <div class="set1">
+                    <img src="./images/baseline_local_shipping_white_48dp.png" alt="" width="22">
+              <li><a href="orders.html" class="link-dark rounded">Encomendas</a></li>
+            </div>
+            </button>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="collapse" aria-expanded="true">
+                <div class="set1">
+                  <img src="./images/baseline_history_white_48dp.png" alt="" width="22">
+            <li><a href="historic.html" class="link-dark rounded">Histórico</a></li>
+      </div>
+      </button>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse"
+          data-bs-target="collapse" aria-expanded="true">
+          <div class="set1">
+      <li><a href="settings.html" class="link-dark rounded">Configurações</a></li>
     </div>
-  </div> 
-</div>
-  <script type="module" src="script/user_management.js"></script>
+    <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
+    </button>
+    </li>
+    <li class="mb-1">
+      <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse"
+        data-bs-target="collapse" aria-expanded="true">
+        <div class="set1">
+          <img src="./images/baseline_help_center_white_48dp.png" alt="" width="22">
+    <li><a href="prop.html" class="link-dark rounded">Suporte</a></li>
+  </div>
+  </button>
+  </li>
+  </div>
+  </ul>
+  </section>
+
+  <!--Barra de alerta-->
+  <section class="content-table">
+    <header class="bar-status">
+      <div class="welcome">
+        <h1 id="hello">Vendas</h1>
+      </div>
+      <ul class="bar-login">
+        <li id="usuario">
+          <div class="btn-group">
+            <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="images/account_circle_black_36dp.svg" alt="" width="20%">
+              <h6 id="user">
+                Taila Santos
+              </h6>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="settings_user.html">Configurações
+                  <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
+                </a>
+              </li>
+              <li>
+                <a href="index.html">Sair
+                  <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </header>
+    <!--Título da tela-->
+    <section class="section-title">
+      <h2>Gerenciamento de vendas</h2>
+    </section>
+
+    <!--Tabela -> Gerenciamento de Usuarios-->
+    <section class="section-table">
+      <table id="myTable" class="table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Vendedor</th>
+            <th>Total</th>
+            <th id="opcoes">Opções</th>
+          </tr>
+        </thead>
+        <tbody id="tablebody">
+          <tr>
+            <td>01/08/21</td>
+            <td>Taila</td>
+            <td>R$ 10,50</td>
+            <td>
+              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+              <div class="modal" id="MyModal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Visualizar Vendas</h5>
+                      <button type="button" class="delete" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div id="div-table" class="user-email">
+                          <table id="table-vendas">
+                            <thead id="thead-vendas">
+                              <tr id="thead-tr-vendas">
+                                <th>Item</th>
+                                <th>Quantidade</th>
+                                <th>Valor</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tbody-vendas" class="tbody-vendas">
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" disabled />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                                </td>
+                              </tr>                              
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <br>
+                          <h4>Informações de Pagamento</h4>
+                        </div>                       
+                        <div class="user-email">
+                          <label for="">Forma de pagamento
+                            <input id="prazo" type="text" placeholder="" disabled />
+                          </label>
+                          <label for="">Data de pagamento
+                            <input id="totalProducao" type="text" placeholder="" disabled />
+                          </label>
+                          <label for="">Valor pago
+                            <input id="totalProducao" type="text" placeholder="" disabled />
+                          </label>
+                        </div>
+                        <div class="user-email">
+                          <label for="">Vendedor
+                            <input id="dataVenciemnto" type="text" placeholder="" disabled />
+                          </label>
+                          <label for="">Data da Venda
+                            <input id="dataProdução" type="text" placeholder="" disabled />
+                          </label>
+                          <label for="">Data de entrega
+                            <input id="dataVenciemnto" type="text" placeholder="" disabled />
+                          </label>
+                          <label for="">Total
+                            <input id="dataVenciemnto" type="text" placeholder="" disabled />
+                          </label>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+              <div class="modal" id="MyModalEditar">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title2">Editar Vendas</h5>
+                      <button type="button" class="delete" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div id="div-table" class="user-email">
+                          <table id="table-vendas">
+                            <thead id="thead-vendas">
+                              <tr id="thead-tr-vendas">
+                                <th>Item</th>
+                                <th>Quantidade</th>
+                                <th>Valor</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tbody-vendas" class="tbody-vendas">
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <input id="inputItem" type="text" placeholder="Coxinha de frango" />
+                                </td>
+                                <td>
+                                  <input id="inputQtn" type="text" placeholder="20" />
+                                </td>
+                                <td>
+                                  <input id="inputValor" type="text" placeholder="R$ 0,69" />
+                                </td>
+                              </tr>                              
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <br>
+                          <h4>Informações de Pagamento</h4>
+                        </div>                       
+                        <div class="user-email">
+                          <label for="">Forma de pagamento
+                            <input id="prazo" type="text" placeholder="" />
+                          </label>
+                          <label for="">Data de pagamento
+                            <input id="totalProducao" type="text" placeholder="" />
+                          </label>
+                          <label for="">Valor pago
+                            <input id="totalProducao" type="text" placeholder="" />
+                          </label>
+                        </div>
+                        <div class="user-email">
+                          <label for="">Vendedor
+                            <input id="dataVenciemnto" type="text" placeholder="" />
+                          </label>
+                          <label for="">Data da Venda
+                            <input id="dataProdução" type="text" placeholder="" />
+                          </label>
+                          <label for="">Data de entrega
+                            <input id="dataVenciemnto" type="text" placeholder="" />
+                          </label>
+                          <label for="">Total
+                            <input id="dataVenciemnto" type="text" placeholder="" />
+                          </label>
+                        </div>
+                        <div class="save">
+                          <div class="btn-group">
+                            <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>
+              <div class="modal" id="MyModalDeletar">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title3">Deletar Vendas</h5>
+                      <button type="button" class="delete" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <h3>Tem certeza que deseja deletar o usuário?</h3>
+                        <div class="alternative">
+                          <button type="button" class="btn btn-primary">SIM</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>01/08/21</td>
+            <td>Eunice</td>
+            <td>R$ 7,00</td>
+            <td>
+              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                data-bs-target="#MyModalDeletar"></button>
+            </td>
+          </tr>
+          <tr>
+            <td>01/08/21</td>
+            <td>Wesley</td>
+            <td>R$ 5,00</td>
+            <td>
+              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                data-bs-target="#MyModalDeletar"></button>
+            </td>
+          </tr>
+          <tr>
+            <td>01/08/21</td>
+            <td>Palloma</td>
+            <td>R$ 6,20</td>
+            <td>
+              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                data-bs-target="#MyModalDeletar"></button>
+            </td>
+          </tr>
+          <tr>
+            <td>01/08/21</td>
+            <td>Kaique</td>
+            <td>R$ 4,50</td>
+            <td>
+              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                data-bs-target="#MyModalDeletar"></button>
+            </td>
+          </tr>
+          <tr>
+            <td>01/08/21</td>
+            <td>João</td>
+            <td>R$ 13,75</td>
+            <td>
+              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                data-bs-target="#MyModalDeletar"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+  </div>
+  </div>
+  </div>
   <script type="module" src="script/modal.js"></script>
 </body>
+
 </html>
