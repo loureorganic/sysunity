@@ -38,7 +38,7 @@ h2{
     margin: 18px;
     background: #a7c7ff3f;
     padding: 24px;
-    width: 70%;
+    width: 80%;
     border-radius: 4px;
     margin-left: 0;
 }
@@ -103,8 +103,13 @@ h2{
     margin-top: 6px;
 }
 
+.p-t-q-p-t{
+    display: flex;
+}
+
 .product-type-quantity{
     display: flex;
+    width: 60%;
 }
 
 .type{
@@ -118,6 +123,7 @@ h2{
 
 .price-total{
     display: flex;
+    width: 40%;
     justify-content: flex-end;
 }
 
@@ -144,6 +150,12 @@ h2{
     display: flex;
 }
 
+.discount-general .total-general{
+    margin-left: 36px;
+    margin-top: 0;
+    width: 100%;
+}
+
 .discount-general label{
     width: 40%;
 }
@@ -158,7 +170,7 @@ h2{
 }
 
 .total-value{
-    margin-left: 48px;
+    margin-left: 60px;
 }
 
 .total-value span{
@@ -191,4 +203,41 @@ h2{
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+}
+
+#btn_setinha{
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+}
+
+@media (max-width:1160px){
+    .p-t-q-p-t{
+        flex-direction: column;
+    }
+
+    .product-type-quantity{
+        width: 100%;
+    }
+
+    .price-total{
+        width: 80%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width:925px){
+    .payment-value{
+        flex-direction: column;
+    }
+
+    .payment{
+        width: 60%;
+    }
+
+    .total-value{
+        margin-left: 0;
+        width: 60%;
+    }
 }
