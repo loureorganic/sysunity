@@ -1,5 +1,8 @@
 import databasecreateproduct from "./database/databaseCreate-product.js";
+import databaseuser from "./database/databaseUser.js";
 
+const dados = new databaseuser();
+dados.objectuser();
 const data = new databasecreateproduct();
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
