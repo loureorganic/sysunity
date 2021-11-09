@@ -35,13 +35,10 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     let AlertaVendedor = document.getElementById("alerta_vendedor");
 	let AlertaData = document.getElementById("alerta_data");
 	let AlertaTotalGeral = document.getElementById("alerta_totalgeral");
-	let AlertaProduto = document.getElementById("alerta_produto");
-	let AlertaTipoProduto = document.getElementById("alerta_tipoproduto");
 	let AlertaQuantidade = document.getElementById("alerta_quantidade");
 	let AlertaPrecoUnidade = document.getElementById("alerta_precounidade");
 	let AlertaTotal = document.getElementById("alerta_total");
 	let AlertaValorTotal = document.getElementById("alerta_valortotal");
-	let AlertaFormaPagamento = document.getElementById("alerta_formapagamento");
 	let AlertaDesconto = document.getElementById("alerta_desconto");
 	let AlertaTotalPago = document.getElementById("alerta_totalpago");
 	
@@ -60,16 +57,6 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 			document.getElementById('total-general').style.borderColor = "red";
 			document.getElementById('total-general').focus();
 			AlertaTotalGeral.style.display = "block";
-	}
-	if(document.getElementById('product').value == "" || document.getElementById('product').value == " "){
-			document.getElementById('product').style.borderColor = "red";
-			document.getElementById('product').focus();
-			AlertaProduto.style.display = "block";
-	}
-	if(document.getElementById('type').value == "" || document.getElementById('type').value == " "){
-			document.getElementById('type').style.borderColor = "red";
-			document.getElementById('type').focus();
-			AlertaTipoProduto.style.display = "block";
 	}
 	if(document.getElementById('quantity').value == "" || document.getElementById('quantity').value == " "){
 			document.getElementById('quantity').style.borderColor = "red";
@@ -91,11 +78,6 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 			document.getElementById('total-value').style.borderColor = "red";
 			document.getElementById('total-value').focus();
 			AlertaValorTotal.style.display = "block";
-	}
-	if(document.getElementById('payment_method').value == "" || document.getElementById('payment_method').value == " "){
-			document.getElementById('payment_method').style.borderColor = "red";
-			document.getElementById('payment_method').focus();
-			AlertaFormaPagamento.style.display = "block";
 	}
 	if(document.getElementById('discount').value == "" || document.getElementById('discount').value == " "){
 			document.getElementById('discount').style.borderColor = "red";
