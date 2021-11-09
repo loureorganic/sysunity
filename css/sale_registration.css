@@ -1,0 +1,194 @@
+@import url(main.css);
+@import url(home.css);
+
+h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #085D8C;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    font-weight: 700;
+}
+
+.nav-item button{
+    color:#797979;
+    font-weight: 700;
+}
+
+.nav-item button:hover{
+    color: #797979;
+}
+
+.registration{
+    display: flex;
+    flex-direction: column;
+    height:max-content;
+    align-items:flex-start;
+    width: 100%;
+    padding: 0px 30px 0px 30px;
+    margin-top: 18px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 18px;
+    background: #a7c7ff3f;
+    padding: 24px;
+    width: 70%;
+    border-radius: 4px;
+    margin-left: 0;
+}
+
+.form input{
+    width: 100%;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 6px;
+}
+
+.form input {
+    background: none;
+    border-radius: 4px;
+    border-width: 1px;
+    height: 32px;
+    border-style: solid;
+    border-color: #085D8C;
+}
+
+.sale{
+    color: #003553;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.public-order{
+    display: flex;
+}
+
+.public-order label{
+    width: 25%;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    margin-right: 36px;
+    flex-direction: row;
+}
+
+.public-order input{
+    min-width: 20px;
+    height: 24px;
+}
+
+.seller-date{
+    display: flex;
+}
+
+.seller-date label{
+    width: 25%;
+}
+
+.total-general{
+    display: flex;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.product-type-quantity{
+    display: flex;
+}
+
+.type{
+    margin-left: -14px;
+    margin-right: -14px;
+}
+
+.type input{
+    border-radius: 0;
+}
+
+.price-total{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.price-total label{
+    width: 45%;
+}
+
+.price-total span{
+    display: flex;
+    font-weight: 600;
+}
+
+.price-total span::before{
+    content: url(../images/add_black_24dp.svg);
+}
+
+.total-general-2{
+    display: flex;
+    width: 25%;
+    margin-top: -25px;
+}
+
+.discount-general{
+    display: flex;
+}
+
+.discount-general label{
+    width: 40%;
+}
+
+.payment-value{
+    display: flex;
+    margin-top: 6px;
+}
+
+.payment{
+    width: 50%;
+}
+
+.total-value{
+    margin-left: 48px;
+}
+
+.total-value span{
+    display: flex;
+    font-weight: 600;
+}
+
+.total-value span::before{
+    content: url(../images/add_black_24dp.svg);
+}
+
+.total-paid{
+    display: flex;
+    width: 50%;
+    margin-top: -18px;
+}
+
+.register{
+    display: flex;
+    justify-content: end;
+}
+
+.register .btn-group{
+    width: 30%;
+    padding: 60px 6px 12px 0px;
+}
+
+#btn_cadastrar{
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+}
