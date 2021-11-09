@@ -215,6 +215,12 @@ table button{
 .delete::before{
     content: url(../images/delete_white_24dp.svg);
 }
+@keyframes fadeOut {
+    100% {
+        opacity: 1;
+        visibility: hidden;
+    }
+}
 .loader {
     position: fixed;
     z-index: 99;
@@ -236,14 +242,6 @@ table button{
     animation: fadeOut 2s;
     animation-fill-mode: forwards;
 }
-
-@keyframes fadeOut {
-    100% {
-        opacity: 1;
-        visibility: hidden;
-    }
-}
-
 .thumb {
     height: 100px;
     border: 1px solid black;
