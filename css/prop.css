@@ -2,19 +2,19 @@
 @import url(home.css);
 
 .suporte{
-    margin-top: 200px;
-    margin-left: 40px;
+    margin-left: 20px;
     padding: 10px;
 }
 
 .suporte h2{
     color: #085D8C;
+    margin-top: 20px;
 }
 
 .suporte2{
     background-color: #bcd4ff;
     width: 1030px;
-    height: 250px;
+    height: 230px;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 20px;
@@ -23,7 +23,7 @@
 .suportetexto p{
     font-size: 18px;
     margin-left: 30px;
-    margin-top: 20px;
+    margin-top: 25px;
     color: #000000;
 }
 
@@ -31,5 +31,5 @@
     margin-left: 30px;
 }
 #input_email{
-    margin-top: 70px;
+    margin-top: 50px;
 }
