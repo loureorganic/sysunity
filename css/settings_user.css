@@ -1,0 +1,162 @@
+@import url(main.css);
+@import url(home.css);
+
+h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+.content-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titleScreen{
+    width: 100%;
+    padding: 20px 0px 0px 30px;
+    
+}
+
+.registration{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    width: 90%;
+    height: 430px;
+    background: #a7c7ff3f;
+    padding: 0px 30px 0px 30px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 18px;   
+    padding: 24px;
+    width: 60%;
+    border-radius: 4px;
+}
+
+.form input{
+    width: 90%;
+}
+
+.form label {
+    font-weight: 700;
+    font-size: 18px;
+    padding: 6px;
+    width: 100%;
+}
+
+.form input {
+    background: none;
+    border-radius: 4px;
+    border-width: 1px;
+    height: 32px;
+    border-style: solid;
+    border-color: #085D8C;
+}
+.column-img-btn{
+    width: 40%;
+}
+.img-user{
+    height: 50%;
+    width: 100%;
+}
+
+.register{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.register .btn-group{
+    width: 30%;
+    padding: 80px 6px 12px 0px;
+}
+
+#btn_cadastrar{
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+    border: none;
+}
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #085D8C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+    width: 50px;
+}
+
+.loader.hidden {
+    animation: fadeOut 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 1;
+        visibility: hidden;
+    }
+}
+
+.thumb {
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+}
+.modal-header{
+    height: 10px;
+}
+.modal-body{
+    margin: 0;
+    padding-top: 0;
+}
+.modal-lg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 770px;
+}
+.modal-lg img{
+    width: 60%;
+    margin: 0;
+}
+.modal-lg h1{
+    text-align: center;
+    color: rgba(130, 130, 130, 1); 
+    font-weight: bold;
+    font-size: 30px; 
+    line-height: 10px;
+}
+.btn-paraGerenciamento{
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    color: white;
+    background: #085D8C;
+    border-radius: 10px;
+    border-color: #085D8C;
+    border-block: none;
+    border-inline: none;
+}
+.modal-content{
+    cursor: pointer;
+}
+.modal-footer {
+    border: 0;
+}
+.modal-header{
+    border: 0;
+}

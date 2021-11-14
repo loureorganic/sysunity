@@ -16,6 +16,10 @@ document.getElementById("date").addEventListener("click", function() {
 	
 })
 
+Number(document.getElementById('unity').value);
+Number(document.getElementById('batch').value);
+
+
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
     
     const dadosProducao = (document.getElementById("name").value, document.getElementById("tipe").value, document.getElementById("batch").value,

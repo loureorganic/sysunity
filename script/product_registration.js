@@ -5,6 +5,8 @@ const dados = new databaseuser();
 dados.objectuser();
 const data = new databasecreateproduct();
 
+Number(document.getElementById('value').value);
+
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	
     let AlertaProduto = document.getElementById("alertaproduto");
