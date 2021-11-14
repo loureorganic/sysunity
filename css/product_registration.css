@@ -22,8 +22,34 @@ h2{
     margin: 18px;
     background: #a7c7ff3f;
     padding: 24px;
-    width: 60%;
+    width: 80%;
     border-radius: 4px;
+}
+.product{
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.produto-tipo{
+    display: flex;
+    flex-direction: row;
+}
+.produto-tipo label{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+#produtoTipo{
+    width: 15%;
+    height: 25px;
+    font-size: 10px;
+    font-weight: 400;
+}
+#tipo{
+    width: 15%;
+    height: 25px;
+    font-size: 10px;
+    font-weight: 400;
 }
 
 .form input{
@@ -47,6 +73,14 @@ h2{
 
 .name-tipe-value{
     display: flex;
+}
+.name{
+    width: 38%
+}
+.name label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .name-tipe-value .tipe{
@@ -74,6 +108,7 @@ h2{
     font-weight:600;
     font-size: 16px;
     background: #085D8C;
+    border: none;
 }
 
 @media (max-width:900px){
