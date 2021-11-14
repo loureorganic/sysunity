@@ -33,3 +33,17 @@
 #input_email{
     margin-top: 50px;
 }
+
+/*Cor do texto do placeholder de acordo com o navegador*/
+::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: black;
+}
