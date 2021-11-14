@@ -1,10 +1,10 @@
 import databaseuser from "./database/databaseUser.js";
+import createsale from "./database/databaseCreat-sale.js"
 
+const sale = new createsale();
+sale.createsale();
 const dados = new databaseuser();
 dados.objectuser();
-
-console.log(document.getElementById('boxsale'));
-
 
 document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "flex";

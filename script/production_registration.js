@@ -1,7 +1,8 @@
 import databaseuser from "./database/databaseUser.js";
-// import databaseregistrationproduction from "./database/databaseCreate-production";
+import database from "./database/databaseCreate-production.js";
 
-// const data = new databaseregistrationproduction();
+const teste = new database();
+teste.createproduction();
 const dados = new databaseuser();
 dados.objectuser();
 
