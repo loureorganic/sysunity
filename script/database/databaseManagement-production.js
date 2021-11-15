@@ -120,8 +120,8 @@ var modaldelete = ` <div class="modal" id="MyModalDeletar">
       <form>
         <h3>Tem certeza que deseja deletar a produção?</h3>
         <div class="alternative">
-          <button type="button" class="btn btn-primary">SIM</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
+          <button type="button" id="confirm" class="btn btn-primary">SIM</button>
+          <button type="button" id="deny" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
         </div>
       </form>
     </div>
@@ -135,17 +135,17 @@ export default class databasemanagementproduction {
 
     var self = this;
 
-    const firebaseref = firebase.database().ref("product");
+    const firebaseref = firebase.database().ref("production");
 
     firebaseref.once('value', function(all){
       all.forEach(
         function(curecord){
-          var produto = curecord.val();
+          var produção = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           dados =
-          "<td>" + produto.name + "</td>" + 
-          "<td>" + produto.type + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+          "<td>" + produção.name + "</td>" + "<td>" + produção.type + 
+          "</td>" + "<td>" + produção.batch + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
@@ -183,92 +183,132 @@ export default class databasemanagementproduction {
   }
 
   funcmodalsee(dados){
-    // const firebaseref = firebase.database().ref("product");
-    // firebaseref.once('value',(resultado)=>{
+    const firebaseref = firebase.database().ref("production");
+    firebaseref.once('value',(resultado)=>{
 
-    //   resultado.forEach(element => {
+      resultado.forEach(element => {
 
-    //     if(element.child("value").val() == dados) {
+        if(element.child("type").val() == dados) {
 
-    //       document.getElementById("nome").value = element.val().name;
-    //       document.getElementById("tipo").value = element.val().type;
-    //       document.getElementById("valor").value = element.val().value;
+          document.getElementById("item").value = element.val().name + " de " + element.val().type;
+          document.getElementById("lote").value = element.val().batch;
+          document.getElementById("funcionario").value = "Nulo" //element.val().batch;
+          document.getElementById("qntEstoque").value = element.val().package + " pacotes de " + element.val().unity + " unidades";
+          document.getElementById("qntProduzida").value = element.val().unity;
+          document.getElementById("dataProdução").value = element.val().fabrication;
+          document.getElementById("dataVenciemnto").value = element.val().pay;
+          document.getElementById("prazo").value = element.val().days;
+          document.getElementById("totalProducao").value = "Nulo" //element.val().pay;
 
-    //     }
+        }
             
-    //   });
+      });
 
-    // })
+    })
 
   }
 
   funcmodaledit(a){
 
-    // var self = this;
+    var self = this;
 
-    // const firebaseref = firebase.database().ref("product");
-    // firebaseref.once('value',(resultado)=>{
+    const firebaseref = firebase.database().ref("production");
+    firebaseref.once('value',(resultado)=>{
       
-    //   resultado.forEach(element => {
+      resultado.forEach(element => {
 
-    //     if(element.child("value").val() == a) {
+        if(element.child("type").val() == a) {
 
-    //       document.getElementById("nome").placeholder = element.val().name;
-    //       document.getElementById("tipo").placeholder = element.val().type;
-    //       document.getElementById("valor").placeholder = element.val().value; 
-          
-    //       var btn = document.getElementById("btn_salvar");
-    //       btn.addEventListener("click", function(e){
-    //         var inputnome = document.getElementById("nome").value;
-    //         var inputtipo = document.getElementById("tipo").value;
-    //         var inputvalor = document.getElementById("valor").value;
+          document.getElementById("item").placeholder = element.val().name + " de " + element.val().type;
+          document.getElementById("lote").placeholder = element.val().batch;
+          document.getElementById("funcionario").placeholder = "Nulo" //element.val().batch;
+          document.getElementById("qntEstoque").placeholder = element.val().package + " pacotes de " + element.val().unity + " unidades";
+          document.getElementById("qntProduzida").placeholder = element.val().unity;
+          document.getElementById("dataProdução").placeholder = element.val().fabrication;
+          document.getElementById("dataVenciemnto").placeholder = element.val().pay;
+          document.getElementById("prazo").placeholder = element.val().days;
+          document.getElementById("totalProducao").placeholder = "Nulo" //element.val().pay;
 
-    //         if(inputnome === ""){
-    //           inputnome = element.val().name;
-    //         } 
-    //         if (inputtipo === ""){
-    //           inputtipo = element.val().type;
-    //         } 
-    //         if (inputvalor === ""){
-    //           inputvalor = element.val().value;
-    //         }
+          var btn = document.getElementById("btn_salvar");
+          btn.addEventListener("click", function(e){
 
-    //         self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
-    //       })
+            var item = document.getElementById("item").value;
+            var lote = document.getElementById("lote").value;
+            var funcionario = document.getElementById("funcionario").value;
+            var qntEstoque = document.getElementById("qntEstoque").value;
+            var qntProduzida = document.getElementById("qntProduzida").value;
+            var dataProdução = document.getElementById("dataProdução").value;
+            var dataVenciemnto = document.getElementById("dataVenciemnto").value;
+            var prazo = document.getElementById("prazo").value;
+            var totalProducao = document.getElementById("totalProducao").value;
+
+            // if(item === ""){
+            //   item = element.val().name;
+            // } 
+            // if (lote === ""){
+            //   lote = element.val().batch;
+            // } 
+            // if (funcionario === ""){
+            //   funcionario = element.val().;
+            // }
+            // if (qntEstoque === ""){
+            //   qntEstoque = element.val().value;
+            // }
+            // if (qntProduzida === ""){
+            //   qntProduzida = element.val().value;
+            // }
+            // if (dataProdução === ""){
+            //   dataProdução = element.val().fabrication;
+            // }
+            // if (dataVenciemnto === ""){
+            //   dataVenciemnto = element.val().pay;
+            // }
+            // if (prazo === ""){
+            //   prazo = element.val().days;
+            // }
+            // if (totalProducao === ""){
+            //   totalProducao = element.val().;
+            // }
             
-    //     }
+            self.funcUpd(element.key, item, lote, dataProdução, dataVenciemnto, prazo);
+          })
+            
+        }
           
-    //   });
+      });
       
-    // })
+    })
 
   }
 
-  funcUpd(chave, nome, tipo, valor){
-    // const database = firebase.database();
-    // let active = false;
-    // database.ref('product/'+chave+'/name').set(nome);
-    // database.ref('product/'+chave+'/type').set(tipo);
-    // database.ref('product/'+chave+'/value').set(valor);
+  funcUpd(chave, item, lote, dataProdução, dataVenciemnto, prazo){
+    const database = firebase.database();
+    let active = false;
+    database.ref('production/'+chave+'/name').set(item);
+    database.ref('production/'+chave+'/batch').set(lote);
+    database.ref('production/'+chave+'/fabrication').set(dataProdução);
+    database.ref('production/'+chave+'/pay').set(dataVenciemnto);
+    database.ref('production/'+chave+'/days').set(prazo);
     
-    // window.location.reload(active);
+    window.location.reload(active);
   };
 
   funcmodaldelete(dados){
+    let valu = '';
+    let active = false;
+    const database = firebase.database();
+    const firebaseref = firebase.database().ref("production");
+    firebaseref.once('value',(resultado)=>{
+    resultado.forEach(element => {
 
-  //   let valu = '';
-  //   let active = false;
-  //   const database = firebase.database();
-  //   const firebaseref = firebase.database().ref("product");
-  //   firebaseref.once('value',(resultado)=>{
-  //   resultado.forEach(element => {
-  //     if(element.child("value").val() == dados) {
-  //       valu = element.key;
-  //       database.ref('product/'+valu).remove();
-  //       window.location.reload(active);
-  //     }
-  //   });
-  // })
+      if(element.child("type").val() == dados) {
+        valu = element.key;
+        database.ref('production/'+valu).remove();
+
+        window.location.reload(active);
+      }
+    });
+  })
 
  }
 
