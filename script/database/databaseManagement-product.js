@@ -106,16 +106,16 @@ export default class databasemanagementproduct {
     var self = this;
 
     const firebaseref = firebase.database().ref("product");
-
     firebaseref.once('value', function(all){
       all.forEach(
         function(curecord){
           var produto = curecord.val();
+          console.log(JSON.stringify(produto))
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           dados =
-          "<td>" + produto.name + "</td>" + 
-          "<td>" + produto.value + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+          "<td>" + produto + "</td>" + 
+          "<td>" + produto + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
           var_lista.appendChild(tr);

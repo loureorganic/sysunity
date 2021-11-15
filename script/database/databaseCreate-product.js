@@ -1,3 +1,5 @@
+var dados = ""
+var select = document.getElementById("selectNameProduto")
 export default class databasecreateproduct{
 
     createproduct(name, type, value){
@@ -9,5 +11,19 @@ export default class databasecreateproduct{
         database.ref('product/'+name+'/'+type+'/value').set(value);
 
         window.location.reload(active);
+    }
+
+    creatoption(){
+        const database = firebase.database();
+        firebaseref.once('value', function(all){
+            all.forEach(
+                function(curecord){
+                  var produto = curecord.val();
+                  dados = "<option>" + produto.name + "</option>";
+        
+                  select.innerHTML = dados;
+                }
+              )
+        })
     }
 }
