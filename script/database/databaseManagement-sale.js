@@ -1,5 +1,5 @@
 var dados = ""
-var var_lista = document.getElementById("");
+var var_lista = document.getElementById("tablebody");
 var btnsee = '<button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
 var btnedit = '<button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
 var btndelete = '<button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
@@ -674,19 +674,136 @@ var modaldelete = `<div class="modal" id="MyModalDeletar">
 
 export default class databasemanagementsale{
 
-    managementsale(){
-        all.forEach(
-            function(curecord){
-                var produto = curecord.val();
-                var tr = document.createElement('tr');
-                tr.classList.add('dot');
-                dados =
-                "<td>" + produto.name + "</td>" + 
-                "<td>" + produto.value + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+  managementsale(){
+    var self = this;
 
-                tr.innerHTML = dados;
-                var_lista.appendChild(tr);
+    const firebaseref = firebase.database().ref("sale");
+
+    firebaseref.once('value', function(all){
+      all.forEach(
+        function(curecord){
+          var venda = curecord.val();
+          var tr = document.createElement('tr');
+          tr.classList.add('dot');
+          dados =
+          "<td>" + venda.date + "</td>" + "<td>" + venda.seller + "</td>" + "<td>" + venda.total + "</td>" +
+          "<td>" + btnsee + btnedit + btndelete + "</td>";
+
+          tr.innerHTML = dados;
+          var_lista.appendChild(tr);
+        }
+      )
+      
+      var everclass = document.querySelectorAll(".dot td");
+      for( var i = 0; i < everclass.length; i++){
+        
+        everclass[i].addEventListener("click", function(data){
+          var parent = this.parentNode;
+          var div = document.createElement('div');
+          if(data.path[0].id === 'btnDelete'){
+            div.innerHTML = modaldelete;
+            var_lista.appendChild(div);
+            document.getElementById('confirm').addEventListener("click", function(){
+              self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
+            });
+          }
+          else if(data.path[0].id === 'btnSee'){
+            div.innerHTML = modalsee;
+            var_lista.appendChild(div);
+            var parent = this.parentNode;
+            self.funcmodalsee(parent.getElementsByTagName('td')[1].innerHTML);
+          }
+          else if(data.path[0].id === 'btnEdit'){
+            div.innerHTML = modaledit;
+            var_lista.appendChild(div);  
+            var parent = this.parentNode;
+            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
+          }
+        })
+      }
+    })
+  }
+
+  funcmodalsee(dados){
+    const firebaseref = firebase.database().ref("sale");
+    firebaseref.once('value',(resultado)=>{
+
+      resultado.forEach(element => {
+
+        if(element.child("value").val() == dados) {
+
+          document.getElementById("nome").value = element.val().name;
+          document.getElementById("tipo").value = element.val().type;
+          document.getElementById("valor").value = element.val().value;
+
+        }   
+      });
+    })
+  }
+
+  funcmodaledit(a){
+
+    var self = this;
+
+    const firebaseref = firebase.database().ref("sale");
+    firebaseref.once('value',(resultado)=>{
+      
+      resultado.forEach(element => {
+
+        if(element.child("value").val() == a) {
+
+          document.getElementById("nome").placeholder = element.val().name;
+          document.getElementById("tipo").placeholder = element.val().type;
+          document.getElementById("valor").placeholder = element.val().value; 
+          
+          var btn = document.getElementById("btn_salvar");
+          btn.addEventListener("click", function(e){
+            var inputnome = document.getElementById("nome").value;
+            var inputtipo = document.getElementById("tipo").value;
+            var inputvalor = document.getElementById("valor").value;
+
+            if(inputnome === ""){
+              inputnome = element.val().name;
+            } 
+            if (inputtipo === ""){
+              inputtipo = element.val().type;
+            } 
+            if (inputvalor === ""){
+              inputvalor = element.val().value;
             }
-        )
-    }
+
+            self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
+          })   
+        } 
+      });
+    })
+  }
+
+  funcUpd(chave, nome, tipo, valor){
+    const database = firebase.database();
+    let active = false;
+    database.ref('sale/'+chave+'/name').set(nome);
+    database.ref('sale/'+chave+'/type').set(tipo);
+    database.ref('sale/'+chave+'/value').set(valor);
+    
+    window.location.reload(active);
+  };
+
+  funcmodaldelete(dados){
+
+    let valu = '';
+    let active = false;
+    const database = firebase.database();
+    const firebaseref = firebase.database().ref("sale");
+    firebaseref.once('value',(resultado)=>{
+    resultado.forEach(element => {
+      if(element.child("value").val() == dados) {
+        valu = element.key;
+        database.ref('sale/'+valu).remove();
+        window.location.reload(active);
+      }
+    });
+  })
+ }
+
 }
