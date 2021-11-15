@@ -4,6 +4,7 @@ import databaseuser from "./database/databaseUser.js";
 const dados = new databaseuser();
 dados.objectuser();
 const data = new databasecreateproduct();
+// data.creatoption();
 
 document.getElementById("produtoTipo").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "flex";
