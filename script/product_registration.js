@@ -16,7 +16,7 @@ document.getElementById("tipo").addEventListener("click", function() {
 	document.getElementById('boxdate2').style.display = "flex";
 })
 
-console.log(document.getElementById('value').value);
+Number(document.getElementById('inputValue').value);
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	
@@ -24,25 +24,39 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     let AlertaTipoProduto= document.getElementById("alertatipoproduto");
     let AlertaValorProduto = document.getElementById("alertavalorproduto");
 	
-	if(document.getElementById('name').value == "" || document.getElementById('name').value == " "){
-		document.getElementById('name').style.borderColor = "red";
-		document.getElementById('name').focus();
+	if(document.getElementById('inputName').value == "" || document.getElementById('inputName').value == " "){
+		document.getElementById('inputName').style.borderColor = "red";
+		document.getElementById('inputName').focus();
 		AlertaProduto.style.display = "block";
 	}
 	
-	else if(document.getElementById('tipe').value == "" || document.getElementById('tipe').value == " "){
-		document.getElementById('tipe').style.borderColor = "red";
-		document.getElementById('tipe').focus();
+	else if(document.getElementById('inputTipe').value == "" || document.getElementById('inputTipe').value == " "){
+		document.getElementById('inputTipe').style.borderColor = "red";
+		document.getElementById('inputTipe').focus();
 		AlertaTipoProduto.style.display = "block";
 	}
 	
-	else if(document.getElementById('value').value == "" || document.getElementById('value').value == " "){
-		document.getElementById('value').style.borderColor = "red";
-		document.getElementById('value').focus();
+	else if(document.getElementById('inputValue').value == "" || document.getElementById('inputValue').value == " "){
+		document.getElementById('inputValue').style.borderColor = "red";
+		document.getElementById('inputValue').focus();
 		AlertaValorProduto.style.display = "block";
 	}
+
+	else if(document.getElementById('inputTipe2').value == "" || document.getElementById('inputTipe2').value == " "){
+		document.getElementById('inputTipe2').style.borderColor = "red";
+		document.getElementById('inputTipe2').focus();
+		AlertaTipoProduto.style.display = "block";
+	}
+
+	else if(document.getElementById('inputValue2').value == "" || document.getElementById('inputValue2').value == " "){
+		document.getElementById('inputValue2').style.borderColor = "red";
+		document.getElementById('inputValue2').focus();
+		AlertaValorProduto.style.display = "block";
+	}
+
 	else {
-		data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
+		data.createproduct(document.getElementById('inputName').value, document.getElementById('inputTipe').value, document.getElementById('inputValue').value, 
+		document.getElementById('selectNameProduto').value, document.getElementById('inputTipe2').value, document.getElementById('inputValue2').value);
 	}
 	
 });

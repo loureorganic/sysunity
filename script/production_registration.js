@@ -17,48 +17,33 @@ document.getElementById("date").addEventListener("click", function() {
 	
 })
 
-Number(document.getElementById('unity').value);
-console.log(document.getElementById('batch1').value)
+Number(document.getElementById('inputUnity').value);
+Number(document.getElementById('inputBatch').value);
 
 
 teste.secondData(document.getElementById('unique').value);
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-    teste.secondData(document.getElementById('unique1').value);
-    console.log(document.getElementById('batch1').value)
-    console.log(document.getElementById('unique').value, document.getElementById("unique1").value, document.getElementById("batch1").value,
-		document.getElementById("deadline").value, document.getElementById("date").value, document.getElementById('days').value,
-        document.getElementById('fabricationdate').value, document.getElementById('deadlinedate').value, document.getElementById('unity').value, 
-        document.getElementById('package').value);
+    
+    const dadosProducao = (document.getElementById("selectNomeProducao").value, document.getElementById("selectTipoProducao").value, 
+        document.getElementById("inputBatch").value, document.getElementById("deadline").value, document.getElementById("date").value, 
+        document.getElementById('inputDays').value, document.getElementById('fabrication').value, document.getElementById('pay').value, 
+        document.getElementById('inputUnity').value, document.getElementById('package').value);
 
-    let AlertaNomeProduto = document.getElementById("alertaproduto");
-    let AlertaTipoProduto = document.getElementById("alertatipoproduto");
     let AlertaLote = document.getElementById("alertavalorproduto");
     let AlertaDiasVálidos = document.getElementById("alerta_dias");
     let AlertaDataFabricação = document.getElementById("alerta_data_fabricacao");
     let AlertaDataVencimento = document.getElementById("alerta_data_vencimento");
     let AlertaUnidade = document.getElementById("alerta_unidade");
 
-	if(document.getElementById('name').value == "" || document.getElementById('name').value == " "){
-			document.getElementById('name').style.borderColor = "red";
-			document.getElementById('name').focus();
-			AlertaNomeProduto.style.display = "block";
-	}
-
-	if(document.getElementById('tipe').value == "" || document.getElementById('tipe').value == " "){
-			document.getElementById('tipe').style.borderColor = "red";
-			document.getElementById('tipe').focus();
-			AlertaTipoProduto.style.display = "block";
-	}
-
-	if(document.getElementById('batch1').value == "" || document.getElementById('batch1').value == " "){
-			document.getElementById('batch1').style.borderColor = "red";
-			document.getElementById('batch1').focus();
+	if(document.getElementById('inputBatch').value == "" || document.getElementById('inputBatch').value == " "){
+			document.getElementById('inputBatch').style.borderColor = "red";
+			document.getElementById('inputBatch').focus();
 			AlertaLote.style.display = "block";
 	}
 
-    if(document.getElementById('days').value == "" || document.getElementById('days').value == " "){
-        document.getElementById('days').style.borderColor = "red";
-        document.getElementById('days').focus();
+    if(document.getElementById('inputDays').value == "" || document.getElementById('inputDays').value == " "){
+        document.getElementById('inputDays').style.borderColor = "red";
+        document.getElementById('inputDays').focus();
         AlertaDiasVálidos.style.display = "block";
     }
 
@@ -74,9 +59,9 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
             AlertaDataVencimento.style.display = "block";
     }
 
-    if(document.getElementById('unity').value == "" || document.getElementById('unity').value == " "){
-        document.getElementById('unity').style.borderColor = "red";
-        document.getElementById('unity').focus();
+    if(document.getElementById('inputUnity').value == "" || document.getElementById('inputUnity').value == " "){
+        document.getElementById('inputUnity').style.borderColor = "red";
+        document.getElementById('inputUnity').focus();
         AlertaUnidade.style.display = "block";
     }
     
