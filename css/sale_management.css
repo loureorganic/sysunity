@@ -103,15 +103,15 @@ table button{
     border-style: solid;
     border-color: #085D8C;
 }
-#div-table{
+#div-table, #div-table2{
     overflow-y: scroll; 
     height: 265px;
 }
-.user-email table, #thead-vendas{
+.user-email table, #thead-vendas, #thead-vendas2{
     background-color: white;
     width: 100%;
 }
-#table-vendas, #thead-vendas, #tbody-vendas, #thead-tr-vendas, input{
+#table-vendas,#table-vendas2, #thead-vendas, #thead-vendas2, #tbody-vendas-id, #tbody-vendas-id2, #thead-tr-vendas, #thead-tr-vendas2, input{
     text-align: center;
     background-color: white;
     color: black;
