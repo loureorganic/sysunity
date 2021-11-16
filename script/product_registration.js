@@ -15,7 +15,7 @@ document.getElementById("tipo").addEventListener("click", function() {
 	document.getElementById('boxdate2').style.display = "flex";
 })
 
-Number(document.getElementById('value').value);
+Number(document.getElementById('inputValue').value);
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	
