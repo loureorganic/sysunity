@@ -143,7 +143,7 @@ export default class databasemanagementproduction {
           var produção = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
-          dados =
+          dados = 
           "<td>" + produção.name + "</td>" + "<td>" + produção.type + 
           "</td>" + "<td>" + produção.batch + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
 

@@ -1,36 +1,35 @@
 
+var label = document.getElementById("label1");
+var label1 = document.getElementById("label2");
+var item = document.getElementById('unique');
+var item1 = document.getElementById('unique1');
 export default class databasecreateproduction{
 
-    createproduction(){
-      
-      document.getElementById("btn_cadastrar").addEventListener("click", function() {
-        var select1 = document.getElementById('selectNomeProducao');
-        var select2 = document.getElementById('selectTipoProducao');
-        var select3 = document.getElementById('package01');
-        var value1 = select1.options[select1.selectedIndex].value;
-        var value2 = select2.options[select2.selectedIndex].value;
-        var value3 = select3.options[select3.selectedIndex].value;
-        var fabrication = document.getElementById('fabrication').value;
-        var batch = document.getElementById('batch').value;
-        var days = document.getElementById('days').value;
-        var unity = document.getElementById('unity').value;
-        var pay = document.getElementById('pay').value;
+    secondData(data){
+      const firebaseref = firebase.database().ref("product");
+      firebaseref.once('value', function(all){
+        var select1 = document.createElement('select');
+         Object.keys(all.val()[data]).find((a)=>{
+          select1.setAttribute('id', 'unique');
+          var dados = "<option " + "id="+ a +" >" + a + "</option>"
+          select1.innerHTML += dados;
+            label1.appendChild(select1);
+        })
+    })}
 
-        
-        const database = firebase.database();
-        let active = false;
-        database.ref('production/-MmzKkAAgksDrVcpWdtL').remove();
-        let newProductKey = database.ref().child('production').push().key;
-        database.ref('production/'+newProductKey+'/name').set(value1);
-        database.ref('production/'+newProductKey+'/type').set(value2);
-        database.ref('production/'+newProductKey+'/batch').set(batch);
-        database.ref('production/'+newProductKey+'/fabrication').set(fabrication);
-        database.ref('production/'+newProductKey+'/days').set(days);
-        database.ref('production/'+newProductKey+'/pay').set(pay);
-        database.ref('production/'+newProductKey+'/unity').set(unity);
-        database.ref('production/'+newProductKey+'/package').set(value3);
 
-        window.location.reload(active);
-      })
-    }
+    data(){
+      const firebaseref = firebase.database().ref("product");
+      firebaseref.once('value', function(all){
+        var select = document.createElement('select');
+        select.setAttribute('id', 'unique');
+        Object.keys(all.val()).map((keyname)=> {
+          var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
+          select.innerHTML += dados2;
+          label.appendChild(select);
+        })
+    })
+  }
+
+   signup(){}
 }

@@ -4,7 +4,7 @@ import databaseuser from "./database/databaseUser.js";
 const dados = new databaseuser();
 dados.objectuser();
 const data = new databasecreateproduct();
-// data.creatoption();
+
 
 document.getElementById("produtoTipo").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "flex";
@@ -16,7 +16,7 @@ document.getElementById("tipo").addEventListener("click", function() {
 	document.getElementById('boxdate2').style.display = "flex";
 })
 
-Number(document.getElementById('value').value);
+console.log(document.getElementById('value').value);
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	
