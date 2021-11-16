@@ -167,25 +167,16 @@
             <div class="form">
               <div class="name-tipe-batch">
                 <div class="name">
-                  <label>Nome
-                    <select id="selectNomeProducao">
-                      <option></option>
-                      <option value="Coxinha">Coxinha</option>
-                      <option value="Pastel">Pastel</option>
-                    </select>
+                  <label id="label1" >Nome
                   </label>
                 </div>
                 <div class="tipe">
-                  <label>Tipo
-                    <select id="selectTipoProducao">
-                      <option></option>
-                      <option value="Frango">Frango</option>
-                      <option value="Carne">Carne</option>
-                    </select></label>
+                  <label id="label2">Tipo
+                  </label>
                 </div>
                 <div class="batch">
                   <label>Lote
-                    <input id="batch" type="text" placeholder=""/>
+                    <input id="batch1" type="text" placeholder=""/>
                     <p id="alertavalorproduto" style="display: none;">O Campo precisa ser preenchido</p>
                   </label>
                 </div>
@@ -209,11 +200,11 @@
               </div>
               <div class="fabrication-pay" id="boxfabrication">
                 <label for="">Data de fabricação
-                  <input id="fabrication" type="date" placeholder=""/>
+                  <input id="fabricationdate" type="date" placeholder=""/>
                   <p id="alerta_data_fabricacao" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
                 <label for="">Data de Vencimento
-                  <input id="pay" type="date" placeholder=""/>
+                  <input id="deadlinedate" type="date" placeholder=""/>
                   <p id="alerta_data_vencimento" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
@@ -236,7 +227,7 @@
               </div>
               <div class="register" >
                 <div class="btn-group">
-                  <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
+                  <button class="btn btn-primary" id="btn_cadastrar" type="button" >CADASTRAR</button>
                 </div>
               </div>
             </div>

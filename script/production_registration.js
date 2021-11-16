@@ -1,13 +1,13 @@
 import databaseuser from "./database/databaseUser.js";
-import database from "./database/databaseCreate-production.js";
+import databasecreateproduction from "./database/databaseCreate-production.js";
 
-const teste = new database();
-teste.createproduction();
+const teste = new databasecreateproduction();
 const dados = new databaseuser();
-dados.objectuser();
 
+dados.objectuser();
+teste.data();
 document.getElementById("deadline").addEventListener("click", function() {
-	document.getElementById('boxday').style.display = "flex";
+    document.getElementById('boxday').style.display = "flex";
 	document.getElementById('boxfabrication').style.display = "none";
 })
 
@@ -18,14 +18,16 @@ document.getElementById("date").addEventListener("click", function() {
 })
 
 Number(document.getElementById('unity').value);
-Number(document.getElementById('batch').value);
+console.log(document.getElementById('batch1').value)
 
 
+teste.secondData(document.getElementById('unique').value);
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-    
-    const dadosProducao = (document.getElementById("name").value, document.getElementById("tipe").value, document.getElementById("batch").value,
+    teste.secondData(document.getElementById('unique1').value);
+    console.log(document.getElementById('batch1').value)
+    console.log(document.getElementById('unique').value, document.getElementById("unique1").value, document.getElementById("batch1").value,
 		document.getElementById("deadline").value, document.getElementById("date").value, document.getElementById('days').value,
-        document.getElementById('fabrication').value, document.getElementById('pay').value, document.getElementById('unity').value, 
+        document.getElementById('fabricationdate').value, document.getElementById('deadlinedate').value, document.getElementById('unity').value, 
         document.getElementById('package').value);
 
     let AlertaNomeProduto = document.getElementById("alertaproduto");
@@ -48,9 +50,9 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 			AlertaTipoProduto.style.display = "block";
 	}
 
-	if(document.getElementById('batch').value == "" || document.getElementById('batch').value == " "){
-			document.getElementById('batch').style.borderColor = "red";
-			document.getElementById('batch').focus();
+	if(document.getElementById('batch1').value == "" || document.getElementById('batch1').value == " "){
+			document.getElementById('batch1').style.borderColor = "red";
+			document.getElementById('batch1').focus();
 			AlertaLote.style.display = "block";
 	}
 
