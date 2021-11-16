@@ -41,7 +41,8 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 		AlertaValorProduto.style.display = "block";
 	}
 	else {
-		data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
+		data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value, 
+		document.getElementById('selectNameProduto').value);
 	}
 	
 });
