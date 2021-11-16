@@ -3,9 +3,15 @@ var label = document.getElementById("label1");
 var label1 = document.getElementById("label2");
 var item = document.getElementById('unique');
 var item1 = document.getElementById('unique1');
-export default class databasecreateproduction{
 
-    secondData(data){
+
+export default class databasecreateproduction{
+  
+  
+  
+  secondData(data){
+      console.log(document.getElementById("label1"));
+
       const firebaseref = firebase.database().ref("product");
       firebaseref.once('value', function(all){
         var select1 = document.createElement('select');
@@ -13,7 +19,7 @@ export default class databasecreateproduction{
           select1.setAttribute('id', 'unique');
           var dados = "<option " + "id="+ a +" >" + a + "</option>"
           select1.innerHTML += dados;
-            label1.appendChild(select1);
+            label.appendChild(select1);
         })
     })}
 
@@ -22,7 +28,7 @@ export default class databasecreateproduction{
       const firebaseref = firebase.database().ref("product");
       firebaseref.once('value', function(all){
         var select = document.createElement('select');
-        select.setAttribute('id', 'unique');
+        select.setAttribute('id', 'unique1');
         Object.keys(all.val()).map((keyname)=> {
           var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
           select.innerHTML += dados2;

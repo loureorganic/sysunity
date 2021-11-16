@@ -5,25 +5,11 @@ const teste = new databasecreateproduction();
 const dados = new databaseuser();
 
 dados.objectuser();
-teste.data();
-document.getElementById("deadline").addEventListener("click", function() {
-    document.getElementById('boxday').style.display = "flex";
-	document.getElementById('boxfabrication').style.display = "none";
-})
 
-document.getElementById("date").addEventListener("click", function() {
-    document.getElementById('boxday').style.display = "none";
-	document.getElementById('boxfabrication').style.display = "flex";
-	
-})
-
-Number(document.getElementById('inputUnity').value);
-Number(document.getElementById('inputBatch').value);
-
-
-teste.secondData(document.getElementById('unique').value);
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-    
+
+    console.log(document.getElementById("inputBatch").value);
+
     const dadosProducao = (document.getElementById("selectNomeProducao").value, document.getElementById("selectTipoProducao").value, 
         document.getElementById("inputBatch").value, document.getElementById("deadline").value, document.getElementById("date").value, 
         document.getElementById('inputDays').value, document.getElementById('fabrication').value, document.getElementById('pay').value, 
@@ -67,3 +53,5 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     
 
 });
+
+teste.secondData(document.getElementById('unique').value);
