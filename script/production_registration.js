@@ -4,6 +4,7 @@ import databasecreateproduction from "./database/databaseCreate-production.js";
 const teste = new databasecreateproduction();
 const dados = new databaseuser();
 
+teste.data();
 dados.objectuser();
 document.getElementById("deadline").addEventListener("click", function() {
     document.getElementById('boxday').style.display = "flex";
@@ -17,18 +18,20 @@ document.getElementById("date").addEventListener("click", function() {
 })
 
 Number(document.getElementById('unity').value);
+console.log(document.getElementById('batch1').value)
 
 
 
-teste.data();
 teste.signup();
-console.log(document.getElementById('unique').value);
-// document.getElementById('unique').addEventListener("change", function() {
-//     console.log('u');
-// });
+
+
+document.getElementById('label1').addEventListener("click", function() {
+  
+        console.log(document.getElementById('unique').value);
+
+})
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-
     
     
     let AlertaNomeProduto = document.getElementById("alertaproduto");
@@ -77,3 +80,4 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     
     
 });
+

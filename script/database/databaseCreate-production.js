@@ -14,7 +14,10 @@ export default class databasecreateproduction{
           select1.innerHTML = dados;
           label1.appendChild(select1);
         })
-    })}
+    })
+    
+console.log(document.getElementById('unique'));
+  }
 
 
     data(){
@@ -28,7 +31,7 @@ export default class databasecreateproduction{
           label.appendChild(select);
         })
     })
-    
+
   }
 
    signup(){ 
