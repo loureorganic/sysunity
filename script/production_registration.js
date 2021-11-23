@@ -31,6 +31,7 @@ document.getElementById('label1').addEventListener("click", function() {
     teste.secondData(data)
 })
 
+
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
     
     i++;
