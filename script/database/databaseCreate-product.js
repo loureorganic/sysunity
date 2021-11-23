@@ -1,5 +1,5 @@
 var dados = ""
-var select = document.getElementById("selectNameProduto")
+var label = document.getElementById("label1");
 export default class databasecreateproduct{
 
     createproduct(name, type, value){
@@ -13,17 +13,17 @@ export default class databasecreateproduct{
         window.location.reload(active);
     }
 
-    creatoption(){
-        const database = firebase.database();
-        firebaseref.once('value', function(all){
-            all.forEach(
-                function(curecord){
-                  var produto = curecord.val();
-                  dados = "<option>" + produto.name + "</option>";
-        
-                  select.innerHTML = dados;
-                }
-              )
+    data(){
+        const firebaseref = firebase.database().ref("product");
+      firebaseref.once('value', function(all){
+        var select = document.createElement('select');
+        select.setAttribute('id', 'unique');
+        Object.keys(all.val()).map((keyname)=> {
+          var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
+          select.innerHTML += dados2;
+          label.appendChild(select);
         })
+    })
     }
+    
 }
