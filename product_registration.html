@@ -192,43 +192,44 @@
         <div class="name-tipe-value" id="boxdate">
           <label for="">Nome
             <input id="name" type="text" placeholder="" />
-            <p id="alertaproduto" style="display: none;">O Campo precisa ser preenchido</p>
+            <p id="a" style="display: none;">O Campo precisa ser preenchido</p>
           </label>
           <div class="tipe">
             <label for="">Tipo
               <input id="tipe" type="text" placeholder="" />
-              <p id="alertatipoproduto" style="display: none;">O Campo precisa ser preenchido</p>
+              <p id="b" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
           <div class="value">
             <label for="">Valor
               <input id="value" type="text" placeholder="" />
-              <p id="alertavalorproduto" style="display: none;">O Campo precisa ser preenchido</p>
+              <p id="c" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
         </div>
         <div class="name-tipe-value" id="boxdate2">
           <div class="name">
             <label id="label1">Nome
-              <p id="alertaproduto" style="display: none;">O Campo precisa ser selecionado</p>
+              <p id="" style="display: none;">O Campo precisa ser selecionado</p>
             </label>
           </div>
           <div class="tipe">
             <label for="">Tipo
               <input id="tipe1" type="text" placeholder="" />
-              <p id="alertatipoproduto" style="display: none;">O Campo precisa ser preenchido</p>
+              <p id="d" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
           <div class="value">
             <label for="">Valor
               <input id="value1" type="text" placeholder="" />
-              <p id="alertavalorproduto" style="display: none;">O Campo precisa ser preenchido</p>
+              <p id="e" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
         </div>
         <div class="register">
           <div class="btn-group">
-            <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
+            <button class="btn btn-primary" id="btn_cadastrar" type="button" onclick="test()">CADASTRAR</button>
+            <button type="button" onclick="verificar()">Verificar</button>
           </div>
         </div>
       </div>
@@ -238,7 +239,55 @@
   </div>
   </div>
   <script src="script/preloader.js"></script>
-  <script type="module" src="script/product_registration.js"></script>
+  <!-- <script type="module" src="script/product_registration.js"></script> -->
+
+<script>
+    function escolhido() {
+    var res = '';
+    const items = document.getElementsByName('question');
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].checked) {
+      res = items[i].value
+      break;
+      }
+    }  
+    return res;
+  }
+
+  function verificar() {
+    const res = escolhido();
+    if (res === '') {
+      alert('nenhum item foi selecionado');
+    }
+    alert('O item selecionado foi ' + res);
+  }
+
+  function test(){
+    if(document.getElementById('name').value == ''){
+      // alert('Por favor, preencha o campo nome');
+      document.getElementById('name').style.borderColor = "red";
+      document.getElementById('a').style.display = 'flex';
+
+    } if(document.getElementById('tipe').value == ''){
+      document.getElementById('tipe').style.borderColor = "red";
+      document.getElementById('b').style.display = 'flex';
+
+    } if(document.getElementById('value').value == ''){
+      document.getElementById('value').style.borderColor = "red";
+      document.getElementById('c').style.display = 'flex';
+
+    } if(document.getElementById('tipe1').value == ''){
+      document.getElementById('tipe1').style.borderColor = "red";
+      document.getElementById('d').style.display = 'flex';
+
+    } if(document.getElementById('value1').value == ''){
+      document.getElementById('value1').style.borderColor = "red";
+      document.getElementById('e').style.display = 'flex';
+
+    }
+  }
+</script>
+
 </body>
 
 </html>
