@@ -26,9 +26,9 @@ teste.signup();
 
 
 document.getElementById('label1').addEventListener("click", function() {
-  
         console.log(document.getElementById('unique').value);
-
+        let data = document.getElementById('unique').value;
+        teste.secondData(data);
 })
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {

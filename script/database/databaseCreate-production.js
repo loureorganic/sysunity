@@ -2,23 +2,27 @@
 var label = document.getElementById("label1");
 var label1 = document.getElementById("label2");
 var item = document.getElementById('unique');
+var select1 = document.createElement('select');
+
 export default class databasecreateproduction{
 
     secondData(data){
       const firebaseref = firebase.database().ref("product");
+      console.log(select1)
+      if (select1.hasChildNodes){
+        select1.innerHTML = '';
+      }
       firebaseref.once('value', function(all){
-        var select1 = document.createElement('select');
         select1.setAttribute('id', 'unique');
         Object.keys(all.val()[data]).find((a)=>{
-          var dados = "<option " + "id="+ a +" >" + a + "</option>"
-          select1.innerHTML = dados;
+          console.log(a)
+          let dados = "<option " + "id="+ a +" >" + a + "</option>"
+          select1.innerHTML += dados;
           label1.appendChild(select1);
         })
     })
     
-console.log(document.getElementById('unique'));
   }
-
 
     data(){
       const firebaseref = firebase.database().ref("product");
