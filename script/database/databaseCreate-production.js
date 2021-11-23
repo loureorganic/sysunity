@@ -2,8 +2,7 @@
 var label = document.getElementById("label1");
 var label1 = document.getElementById("label2");
 var item = document.getElementById('unique');
-var item1 = document.getElementById('unique1');
-
+var select1 = document.createElement('select');
 
 export default class databasecreateproduction{
   
@@ -13,16 +12,21 @@ export default class databasecreateproduction{
       console.log(document.getElementById("label1"));
 
       const firebaseref = firebase.database().ref("product");
+      console.log(select1)
+      if (select1.hasChildNodes){
+        select1.innerHTML = '';
+      }
       firebaseref.once('value', function(all){
-        var select1 = document.createElement('select');
-         Object.keys(all.val()[data]).find((a)=>{
-          select1.setAttribute('id', 'unique');
-          var dados = "<option " + "id="+ a +" >" + a + "</option>"
+        select1.setAttribute('id', 'unique');
+        Object.keys(all.val()[data]).find((a)=>{
+          console.log(a)
+          let dados = "<option " + "id="+ a +" >" + a + "</option>"
           select1.innerHTML += dados;
-            label.appendChild(select1);
+          label1.appendChild(select1);
         })
-    })}
-
+    })
+    
+  }
 
     data(){
       const firebaseref = firebase.database().ref("product");
@@ -35,7 +39,18 @@ export default class databasecreateproduction{
           label.appendChild(select);
         })
     })
+
   }
 
-   signup(){}
+   signup(){ 
+
+    const database = firebase.database();
+    let newClientKey = database.ref().child('production').push().key;
+    database.ref('production/'+newClientKey+'/batch').set("Kibe");
+    database.ref('production/'+newClientKey+'/batch').set("Carne");
+      database.ref('production/'+newClientKey+'/time').set(90);
+    database.ref('production/'+newClientKey+'/lastname').set(1259);
+    database.ref('production/'+newClientKey+'/unity').set(3);
+    database.ref('production/'+newClientKey+'/packages').set(20);
+   }
 }
