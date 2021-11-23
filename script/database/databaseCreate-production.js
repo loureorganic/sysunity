@@ -44,7 +44,7 @@ export default class databasecreateproduction{
     let newClientKey = database.ref().child('production').push().key;
     database.ref('production/'+newClientKey+'/batch').set("Kibe");
     database.ref('production/'+newClientKey+'/batch').set("Carne");
-      database.ref('production/'+newClientKey+'/time').set(90);
+    database.ref('production/'+newClientKey+'/time').set(90);
     database.ref('production/'+newClientKey+'/lastname').set(1259);
     database.ref('production/'+newClientKey+'/unity').set(3);
     database.ref('production/'+newClientKey+'/packages').set(20);
