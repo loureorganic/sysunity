@@ -1,0 +1,272 @@
+@import url(main.css);
+@import url(home.css);
+@import url(user_registration.css);
+
+.section-title{
+    height: 60px;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.section-title  h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+.section-table{
+    padding-left: 50px;    
+    padding-right: 70px;    
+}
+.dataTables_wrapper{
+    width: 90%;
+}
+.section-table label{
+    margin-bottom: 20px;
+}
+.section-table th{
+    font-weight: 600;
+    padding-right: 0;
+}
+#opcoes{
+    text-align: center;
+}
+
+tbody tr{
+    background-color: #ABD2CE;
+}
+thead{
+    width: 100%;
+    background-color: #085d8c;
+    color: white;
+    font-size: 17px;
+}
+table button{
+    background-color:  #ABD2CE;
+    border: transparent;
+    width: 60px;
+    padding: 0;
+}
+.visibility{
+    margin-left: 210px;
+}
+.edit{
+    margin-left: 30px;
+}
+.delete{
+    margin-left: 30px;
+}
+.visibility::before{
+    content: url(../images/visibility_white_24dp.svg);
+}
+.edit::before{
+    content: url(../images/create_white_24dp.svg);
+}
+.delete::before{
+    content: url(../images/delete_white_24dp.svg);
+}
+.modal-header{
+    background: #085D8C;
+    color: #fff;
+    height: 50px;
+}
+.modal-header h5{
+    font-size: 24px;
+    font-weight: 700;
+}
+.modal-header .delete{
+    background: none;
+}
+.modal-header .delete::before{
+    content: url(../images/close_white_24dp.svg);
+}
+.modal-body form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+.modal-body form h3{
+    padding-top: 20px;
+    color: black;
+    font-weight: 400;
+    text-align: center;
+}
+.modal-body form input{
+    width: 100%;
+}
+.modal-body form label {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px;
+    margin-bottom: 0;
+    color: black;
+}
+.modal-body form input {
+    border-radius: 4px;
+    border-width: 1px;
+    height: 32px;
+    border-style: solid;
+    border-color: #085D8C;
+}
+#div-table, #div-table2{
+    overflow-y: scroll; 
+    height: 265px;
+}
+.user-email table, #thead-vendas, #thead-vendas2{
+    background-color: white;
+    width: 100%;
+}
+#table-vendas,#table-vendas2, #thead-vendas, #thead-vendas2, #tbody-vendas-id, #tbody-vendas-id2, #thead-tr-vendas, #thead-tr-vendas2, input{
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+.tbody-vendas tr{
+    background-color: white;
+}
+.modal-body h4{
+    text-align: center;
+}
+.modal-body .user-email label{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.modal-body .office-access label {
+    align-items: flex-start;
+}
+.modal-body .office-access select {
+    width: 100%;
+}
+.save{
+    display: flex;
+    justify-content: end;
+}
+.save .btn-group{
+    width: 30%;
+    padding-top: 30px;
+}
+#btn_salvar{
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+    border: none;
+}
+.alternative{
+    display: flex;
+    justify-content: end;
+    padding-top: 36px;
+}
+.alternative .btn-primary{
+    width: 20%;
+    margin-right: 6px;
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #085D8C;
+    border: none;
+}
+.alternative .btn-secondary{
+    width: 20%;
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    background: #A82012;
+    border-color: #892015;
+}
+@media (min-width: 1040px) and (max-width: 1200px) {
+    .visibility{
+        margin-left: 100px;
+    }
+    .edit{
+        margin-left: 30px;
+    }
+    .delete{
+        margin-left: 30px;
+    }
+    #opcoes{
+        padding-left: 0;
+    }
+}
+@media (min-width: 950px) and (max-width: 1039px) {
+    .visibility{
+        margin-left: 90px;
+    }
+    .edit{
+        margin-left: 30px;
+    }
+    .delete{
+        margin-left: 30px;
+    }
+    #opcoes{
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 910px) and (max-width: 949px) {
+    .visibility{
+        margin-left: 80px;
+    }
+    .edit{
+        margin-left: 20px;
+    }
+    .delete{
+        margin-left: 20px;
+    }
+    #opcoes{
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 909px) {
+    .visibility{
+        margin-left: 80px;
+    }
+    .edit{
+        margin-left: 0px;
+    }
+    .delete{
+        margin-left: 0px;
+    }
+    #opcoes{
+        padding-left: 0;
+    }
+}
+.edit::before{
+    content: url(../images/create_white_24dp.svg);
+}
+.delete::before{
+    content: url(../images/delete_white_24dp.svg);
+}
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #085D8C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+    width: 50px;
+}
+
+.loader.hidden {
+    animation: fadeOut 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 1;
+        visibility: hidden;
+    }
+}
+
+.thumb {
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+}
