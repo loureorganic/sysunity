@@ -36,5 +36,28 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     i++;
     console.log(i);
     document.getElementById('batch1').value = i;
+
+    let AlertaLote =  document.getElementById("alerta_lote");
+    let AlertaDiasValidos = document.getElementById("alerta_dias");
+    let AlertaUnidade = document.getElementById("alerta_unidade");
+    let AlertaDataFabricacao = document.getElementById("alerta_data_fabricacao");
+    let AlertaDataVencimento = document.getElementById("alerta_data_vencimento");
+
+    if(document.getElementById('inputBatch').value == "" || document.getElementById('inputBatch').value == " "){
+		document.getElementById('inputBatch').style.borderColor = "red";
+		document.getElementById('inputBatch').focus();
+		AlertaLote.style.display = "block";
+	}
+    if(document.getElementById('inputDays').value == "" || document.getElementById('inputDays').value == " "){
+		document.getElementById('inputDays').style.borderColor = "red";
+		document.getElementById('inputDays').focus();
+		AlertaDiasValidos.style.display = "block";
+	}
+    if(document.getElementById('inputUnity').value == "" || document.getElementById('inputUnity').value == " "){
+		document.getElementById('inputUnity').style.borderColor = "red";
+		document.getElementById('inputUnity').focus();
+		AlertaUnidade.style.display = "block";
+	}
+
 });
 
