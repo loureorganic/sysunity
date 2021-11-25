@@ -5,12 +5,8 @@ var item = document.getElementById('unique');
 var select1 = document.createElement('select');
 
 export default class databasecreateproduction{
-  
-  
-  
-  secondData(data){
-      console.log(document.getElementById("label1"));
 
+    secondData(data){
       const firebaseref = firebase.database().ref("product");
       console.log(select1)
       if (select1.hasChildNodes){
@@ -32,7 +28,7 @@ export default class databasecreateproduction{
       const firebaseref = firebase.database().ref("product");
       firebaseref.once('value', function(all){
         var select = document.createElement('select');
-        select.setAttribute('id', 'unique1');
+        select.setAttribute('id', 'unique');
         Object.keys(all.val()).map((keyname)=> {
           var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
           select.innerHTML += dados2;
@@ -48,7 +44,7 @@ export default class databasecreateproduction{
     let newClientKey = database.ref().child('production').push().key;
     database.ref('production/'+newClientKey+'/batch').set("Kibe");
     database.ref('production/'+newClientKey+'/batch').set("Carne");
-    database.ref('production/'+newClientKey+'/time').set(90);
+      database.ref('production/'+newClientKey+'/time').set(90);
     database.ref('production/'+newClientKey+'/lastname').set(1259);
     database.ref('production/'+newClientKey+'/unity').set(3);
     database.ref('production/'+newClientKey+'/packages').set(20);
