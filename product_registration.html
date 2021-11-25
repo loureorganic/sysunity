@@ -26,13 +26,13 @@
     <img src="images/833.gif" alt="Loading..." />
   </div>
   <div class="content">
-    <div id="home-content">
+    <div id="home">
       <div class="centro">
         <section class="sidebar">
           <ul class="list-unstyled ps-0">
             <li class="mb-1">
               <div class="sidebar-logo">
-                <h6><a href="home.html" id="home-logo"> SysUnity</a></h6>
+                <h6><a href="home.html" id="home"> SysUnity</a></h6>
               </div>
             </li>
             <li class="mb-1">
@@ -150,7 +150,7 @@
         <h1 id="hello">Produtos</h1>
       </div>
       <ul class="bar-login">
-        <li id="usuario-content">
+        <li id="usuario">
           <div class="btn-group">
             <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button"
               data-bs-toggle="dropdown" aria-expanded="false">
@@ -176,72 +176,60 @@
       </ul>
     </header>
     <section class="registration">
-
       <h2>Cadastrar novo produto</h2>
-
       <div class="form">
         <h5 class="product">O que você deseja cadastrar?</h5>
         <div class="produto-tipo" id="produto-tipo">
           <label>
-            <input type="radio" name="question" id="produtoTipo" value="ProdutoTipo" onclick="ShowHideDiv()">Produto e Tipo
+            <input type="radio" name="question" id="produtoTipo" value="ProdutoTipo">Produto e Tipo
           </label>
           <label>
-            <input type="radio" name="question" id="tipo" value="Tipo" onclick="ShowHideDiv02()">Tipo
+            <input type="radio" name="question" id="tipo" value="Tipo">Tipo
           </label>
         </div>
       </div>
-
-      <!-- INPUTS REFERENTES A OPÇÃO PRODUTO E TIPO -->
       <div class="form">
-        <div id="name-tipe-value" id="boxdate" style="display: none">
+        <div class="name-tipe-value" id="boxdate">
           <label for="">Nome
-            <input id="inputName" type="text" placeholder="" />
+            <input id="name" type="text" placeholder="" />
             <p id="alertaproduto" style="display: none;">O Campo precisa ser preenchido</p>
           </label>
           <div class="tipe">
             <label for="">Tipo
-              <input id="inputTipe" type="text" placeholder="" />
+              <input id="tipe" type="text" placeholder="" />
               <p id="alertatipoproduto" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
           <div class="value">
             <label for="">Valor
-              <input id="inputValue" type="text" placeholder="" />
+              <input id="value" type="text" placeholder="" />
               <p id="alertavalorproduto" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
         </div>
-
-        <!-- INPUTS REFERENTES A OPÇÃO TIPO -->
-        <div id="name-tipe-value02" id="boxdate2" style="display: none">
+        <div class="name-tipe-value" id="boxdate2">
           <div class="name">
-            <label for="">Nome
-              <select id="selectNameProduto">
-              </select>
-              <p id="alertaproduto2" style="display: none;">O Campo precisa ser selecionado</p>
+            <label id="label1" for="">Nome
             </label>
           </div>
           <div class="tipe">
             <label for="">Tipo
-              <input id="inputTipe2" type="text" placeholder="" />
-              <p id="alertatipoproduto2" style="display: none;">O Campo precisa ser preenchido</p>
+              <input id="tipe1" type="text" placeholder="" />
+              <p id="alertatipoproduto" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
           <div class="value">
             <label for="">Valor
-              <input id="inputValue2" type="text" placeholder="" />
-              <p id="alertavalorproduto2" style="display: none;">O Campo precisa ser preenchido</p>
+              <input id="value1" type="text" placeholder="" />
+              <p id="alertavalorproduto" style="display: none;">O Campo precisa ser preenchido</p>
             </label>
           </div>
         </div>
-
-        <!-- BOTÃO CADASTRAR -->
         <div class="register">
           <div class="btn-group">
-            <button class="btn btn-primary" id="btn_cadastrar" type="button" onclick="test()">CADASTRAR</button>
+            <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
           </div>
         </div>
-
       </div>
     </section>
   </section>
@@ -249,70 +237,7 @@
   </div>
   </div>
   <script src="script/preloader.js"></script>
-  <!-- <script type="module" src="script/product_registration.js"></script> -->
-
-<script type="text/javascript">
-
-//  VALIDAÇÃO DO 1º INPUT(RADIO)
-  function ShowHideDiv() {
-    var chkYes = document.getElementById("produtoTipo");
-    var dvPassport = document.getElementById("name-tipe-value");
-    var dvPassport02 = document.getElementById("name-tipe-value02");
-    if(chkYes.checked){
-      dvPassport.style.display = "block";
-      dvPassport02.style.display = "none";
-
-    }
-  }
-
-//  VALIDAÇÃO DO 2º INPUT(RADIO)
-  function ShowHideDiv02() {
-    var chkYes = document.getElementById("tipo");
-    var dvPassport02 = document.getElementById("name-tipe-value02");
-    var dvPassport = document.getElementById("name-tipe-value");
-    if(chkYes.checked){
-      dvPassport.style.display = "none";
-      dvPassport02.style.display = "block";
-    }
-  }
-
-//VALIDAÇÃO DO INPUT ESCOLHIDO + DECISÃO DOS VALORES A SEREM ABORDADOS
-  function test(){
-
-    if(document.getElementById("produtoTipo").checked){
-
-      if(document.getElementById('name').value == ''){
-
-      document.getElementById('name').style.borderColor = "red";
-      document.getElementById('a').style.display = 'flex';
-
-      } if(document.getElementById('tipe').value == ''){
-
-      document.getElementById('tipe').style.borderColor = "red";
-      document.getElementById('b').style.display = 'flex';
-
-      } if(document.getElementById('value').value == ''){
-
-      document.getElementById('value').style.borderColor = "red";
-      document.getElementById('c').style.display = 'flex';
-    }
-  }
-
-  if(document.getElementById("tipo").checked){
-
-    if(document.getElementById('tipe1').value == ''){
-      document.getElementById('tipe1').style.borderColor = "red";
-      document.getElementById('d').style.display = 'flex';
-
-    } if(document.getElementById('value1').value == ''){
-
-      document.getElementById('value1').style.borderColor = "red";
-      document.getElementById('e').style.display = 'flex';
-    }
-  }
-}
-</script>
-
+  <script type="module" src="script/product_registration.js"></script>
 </body>
 
 </html>
