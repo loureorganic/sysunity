@@ -6,7 +6,7 @@ dados.objectuser();
 const data = new databasecreateproduct();
 data.data();
 var data1;
-
+var productActive;
 document.getElementById('label1').addEventListener("click", function() {
   data1 = document.getElementById('unique').value;
 })
@@ -23,36 +23,22 @@ document.getElementById("tipo").addEventListener("click", function() {
 	document.getElementById('boxdate2').style.display = "flex";
 })
 
-
+document.getElementById("produto-tipo").addEventListener("click", function(){
+	productActive = document.getElementById("produtoTipo").checked;
+	console.log(productActive);
+})
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
+	console.log(productActive);
 	
-	// data.creatoption(data1, document.getElementById('tipe1').value, document.getElementById('value1').value );
-	// data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value)
 
-    let AlertaProduto = document.getElementById("alertaproduto");
-    let AlertaTipoProduto= document.getElementById("alertatipoproduto");
-    let AlertaValorProduto = document.getElementById("alertavalorproduto");
+ if(productActive){
+	 data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value)
+ } else {
+	 data.creatoption(data1, document.getElementById('tipe1').value, document.getElementById('value1').value );
+ }
+  
+
 	
-	if(document.getElementById('name').value == "" || document.getElementById('name').value == " "){
-		document.getElementById('name').style.borderColor = "red";
-		document.getElementById('name').focus();
-		AlertaProduto.style.display = "block";
-	}
-	
-	else if(document.getElementById('tipe').value == "" || document.getElementById('tipe').value == " "){
-		document.getElementById('tipe').style.borderColor = "red";
-		document.getElementById('tipe').focus();
-		AlertaTipoProduto.style.display = "block";
-	}
-	
-	else if(document.getElementById('value').value == "" || document.getElementById('value').value == " "){
-		document.getElementById('value').style.borderColor = "red";
-		document.getElementById('value').focus();
-		AlertaValorProduto.style.display = "block";
-	}
-	else {
-		data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
-	}
 	
 });
