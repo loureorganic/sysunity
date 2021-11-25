@@ -176,20 +176,24 @@
       </ul>
     </header>
     <section class="registration">
+
       <h2>Cadastrar novo produto</h2>
+
       <div class="form">
         <h5 class="product">O que você deseja cadastrar?</h5>
         <div class="produto-tipo">
           <label>
-            <input type="radio" name="question" id="produtoTipo" value="ProdutoTipo">Produto e Tipo
+            <input type="radio" name="question" id="produtoTipo" value="ProdutoTipo" onclick="ShowHideDiv()">Produto e Tipo
           </label>
           <label>
-            <input type="radio" name="question" id="tipo" value="Tipo">Tipo
+            <input type="radio" name="question" id="tipo" value="Tipo" onclick="ShowHideDiv02()">Tipo
           </label>
         </div>
       </div>
+
+      <!-- INPUTS REFERENTES A OPÇÃO PRODUTO E TIPO -->
       <div class="form">
-        <div class="name-tipe-value" id="boxdate">
+        <div id="name-tipe-value" id="boxdate" style="display: none">
           <label for="">Nome
             <input id="name" type="text" placeholder="" />
             <p id="a" style="display: none;">O Campo precisa ser preenchido</p>
@@ -207,7 +211,9 @@
             </label>
           </div>
         </div>
-        <div class="name-tipe-value" id="boxdate2">
+
+        <!-- INPUTS REFERENTES A OPÇÃO TIPO -->
+        <div id="name-tipe-value02" id="boxdate2" style="display: none">
           <div class="name">
             <label id="label1">Nome
               <p id="" style="display: none;">O Campo precisa ser selecionado</p>
@@ -226,12 +232,14 @@
             </label>
           </div>
         </div>
+
+        <!-- BOTÃO CADASTRAR -->
         <div class="register">
           <div class="btn-group">
             <button class="btn btn-primary" id="btn_cadastrar" type="button" onclick="test()">CADASTRAR</button>
-            <button type="button" onclick="verificar()">Verificar</button>
           </div>
         </div>
+
       </div>
     </section>
   </section>
@@ -241,51 +249,66 @@
   <script src="script/preloader.js"></script>
   <!-- <script type="module" src="script/product_registration.js"></script> -->
 
-<script>
-    function escolhido() {
-    var res = '';
-    const items = document.getElementsByName('question');
-    for (var i = 0; i < items.length; i++) {
-      if (items[i].checked) {
-      res = items[i].value
-      break;
-      }
-    }  
-    return res;
-  }
+<script type="text/javascript">
 
-  function verificar() {
-    const res = escolhido();
-    if (res === '') {
-      alert('nenhum item foi selecionado');
+//  VALIDAÇÃO DO 1º INPUT(RADIO)
+  function ShowHideDiv() {
+    var chkYes = document.getElementById("produtoTipo");
+    var dvPassport = document.getElementById("name-tipe-value");
+    var dvPassport02 = document.getElementById("name-tipe-value02");
+    if(chkYes.checked){
+      dvPassport.style.display = "block";
+      dvPassport02.style.display = "none";
+
     }
-    alert('O item selecionado foi ' + res);
   }
 
+//  VALIDAÇÃO DO 2º INPUT(RADIO)
+  function ShowHideDiv02() {
+    var chkYes = document.getElementById("tipo");
+    var dvPassport02 = document.getElementById("name-tipe-value02");
+    var dvPassport = document.getElementById("name-tipe-value");
+    if(chkYes.checked){
+      dvPassport.style.display = "none";
+      dvPassport02.style.display = "block";
+    }
+  }
+
+//VALIDAÇÃO DO INPUT ESCOLHIDO + DECISÃO DOS VALORES A SEREM ABORDADOS
   function test(){
-    if(document.getElementById('name').value == ''){
-      // alert('Por favor, preencha o campo nome');
+
+    if(document.getElementById("produtoTipo").checked){
+
+      if(document.getElementById('name').value == ''){
+
       document.getElementById('name').style.borderColor = "red";
       document.getElementById('a').style.display = 'flex';
 
-    } if(document.getElementById('tipe').value == ''){
+      } if(document.getElementById('tipe').value == ''){
+
       document.getElementById('tipe').style.borderColor = "red";
       document.getElementById('b').style.display = 'flex';
 
-    } if(document.getElementById('value').value == ''){
+      } if(document.getElementById('value').value == ''){
+
       document.getElementById('value').style.borderColor = "red";
       document.getElementById('c').style.display = 'flex';
+    }
+  }
 
-    } if(document.getElementById('tipe1').value == ''){
+  if(document.getElementById("tipo").checked){
+
+    if(document.getElementById('tipe1').value == ''){
       document.getElementById('tipe1').style.borderColor = "red";
       document.getElementById('d').style.display = 'flex';
 
     } if(document.getElementById('value1').value == ''){
+
       document.getElementById('value1').style.borderColor = "red";
       document.getElementById('e').style.display = 'flex';
-
     }
   }
+}
 </script>
 
 </body>
