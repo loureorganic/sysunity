@@ -117,7 +117,26 @@ h2{
 .product-type-quantity select{
     width: 100%;
 }
- 
+
+.product-type-quantity select{
+    display: flex;
+    align-items: center;
+    background: none;
+    border-color: #085D8C;
+    border-radius: 4px;
+    font-size: 15px;
+    height: 32px;
+}
+
+.product-type-quantity option{
+    background: #7AA5BC;
+    color: #fff;
+    font-size: 13px;
+}
+
+.product-type-quantity select{
+    transition-delay: 250ms;
+}
 
 .price-total{
     display: flex;

@@ -56,7 +56,23 @@ h2{
 }
 
 .name select, .tipe select{
-    width: 100%;
+    display: flex;
+    align-items: center;
+    background: none;
+    border-color: #085D8C;
+    border-radius: 4px;
+    font-size: 15px;
+    height: 32px;
+}
+
+.name option, .tipe option{
+    background: #7AA5BC;
+    color: #fff;
+    font-size: 13px;
+}
+
+.name select, .tipe select{
+    transition-delay: 250ms;
 }
 
 .validity{
