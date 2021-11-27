@@ -247,7 +247,7 @@
   </div>
   </div>
   <script src="script/preloader.js"></script>
-  <!-- <script type="module" src="script/product_registration.js"></script> -->
+  <script type="module" src="script/product_registration.js"></script>
 
 <script type="text/javascript">
 
@@ -274,7 +274,7 @@
     }
   }
 
-//VALIDAÇÃO DO INPUT ESCOLHIDO + DECISÃO DOS VALORES A SEREM ABORDADOS
+// VALIDAÇÃO DO INPUT ESCOLHIDO + DECISÃO DOS VALORES A SEREM ABORDADOS
   function test(){
 
     if(document.getElementById("produtoTipo").checked){
@@ -302,10 +302,16 @@
       document.getElementById('tipe1').style.borderColor = "red";
       document.getElementById('d').style.display = 'flex';
 
-    } if(document.getElementById('value1').value == ''){
+    } else {
+      data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
+    } 
+    
+    if(document.getElementById('value1').value == ''){
 
       document.getElementById('value1').style.borderColor = "red";
       document.getElementById('e').style.display = 'flex';
+    } else {
+      data.createproduct(document.getElementById('name').value, document.getElementById('tipe1').value, document.getElementById('value1').value);
     }
   }
 }
