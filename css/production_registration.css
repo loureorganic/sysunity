@@ -20,9 +20,9 @@ h2{
     display: flex;
     flex-direction: column;
     margin: 18px;
-    background: #a7c7ff3f;
+    background: #f5f5f5;
     padding: 24px;
-    width: 60%;
+    width: 90%;
     border-radius: 4px;
 }
 
@@ -32,7 +32,7 @@ h2{
 
 .form label {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     padding: 6px;
 }
 
@@ -66,8 +66,8 @@ h2{
 }
 
 .name option, .tipe option{
-    background: #7AA5BC;
-    color: #fff;
+    background: #fff;
+    color:#000;
     font-size: 13px;
 }
 
@@ -82,6 +82,9 @@ h2{
 
 .time-date{
     display: flex;
+    margin: 6px;
+    align-items: flex-start;
+
 }
 
 .time-date label{
@@ -102,7 +105,7 @@ h2{
     display: none;
 }
 .days{
-    background: #A8C8FF;
+    background: #ffffff;
     border-radius: 4px;
     padding: 6px;
 }
@@ -114,7 +117,7 @@ h2{
 
 .fabrication-pay{
     display: flex;
-    background: #A8C8FF;
+    background: #ffffff;
     border-radius: 4px;
     padding: 6px;
 }
@@ -146,7 +149,7 @@ h2{
 
 .unity-package{
     display: flex;
-    background: #A8C8FF;
+    background: #ffffff;
     border-radius: 4px;
     padding: 6px;
 }
@@ -158,7 +161,7 @@ h2{
 }
 
 .unity-package input{
-    width: 60%;
+    width: 100%;
 }
 
 .unity{
@@ -176,9 +179,9 @@ h2{
 }
 
 .package option{
-    background: #7AA5BC;
-    color: #fff;
-    font-size: 15px;
+    background: #fff;
+    color:#000;
+    font-size: 13px;
 }
 
 .register{

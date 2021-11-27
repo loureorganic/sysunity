@@ -20,9 +20,9 @@ h2{
     display: flex;
     flex-direction: column;
     margin: 18px;
-    background: #a7c7ff3f;
+    background: #f5f5f5;
     padding: 24px;
-    width: 60%;
+    width: 90%;
     border-radius: 4px;
 }
 
@@ -77,8 +77,8 @@ h2{
 }
 
 .office-access option{
-    background: #7AA5BC;
-    color: #fff;
+    background: #fff;
+    color:#000;
     font-size: 13px;
 }
 
