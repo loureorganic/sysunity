@@ -31,6 +31,9 @@ document.getElementById('label1').addEventListener("click", function() {
     teste.secondData(data)
 })
 
+Number(document.getElementById('package01').value);
+new Date(document.getElementById('fabricationdate').value);
+new Date(document.getElementById('deadlinedate').value);
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
     
@@ -38,7 +41,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     console.log(i);
     document.getElementById('batch1').value = i;
    
-    let AlertaLote =  document.getElementById("alerta_lote");
+    let AlertaLote =  document.getElementById("alertavalorproduto");
     let AlertaDiasValidos = document.getElementById("alerta_dias");
     let AlertaUnidade = document.getElementById("alerta_unidade");
     let AlertaDataFabricacao = document.getElementById("alerta_data_fabricacao");
@@ -46,19 +49,23 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     console.log(document.getElementById('unique').value)
     console.log(document.getElementById('unique1').value)
 
-    if(document.getElementById('inputBatch').value == "" || document.getElementById('inputBatch').value == " "){
-		document.getElementById('inputBatch').style.borderColor = "red";
-		document.getElementById('inputBatch').focus();
+    console.log(document.getElementById('fabricationdate').value)
+    console.log(document.getElementById('deadlinedate').value)
+    console.log(document.getElementById('package01').value)
+
+    if(document.getElementById('batch1').value == "" || document.getElementById('batch1').value == " "){
+		document.getElementById('batch1').style.borderColor = "red";
+		document.getElementById('batch1').focus();
 		AlertaLote.style.display = "block";
 	}
-    if(document.getElementById('inputDays').value == "" || document.getElementById('inputDays').value == " "){
-		document.getElementById('inputDays').style.borderColor = "red";
-		document.getElementById('inputDays').focus();
+    if(document.getElementById('days').value == "" || document.getElementById('days').value == " "){
+		document.getElementById('days').style.borderColor = "red";
+		document.getElementById('days').focus();
 		AlertaDiasValidos.style.display = "block";
 	}
-    if(document.getElementById('inputUnity').value == "" || document.getElementById('inputUnity').value == " "){
-		document.getElementById('inputUnity').style.borderColor = "red";
-		document.getElementById('inputUnity').focus();
+    if(document.getElementById('unity').value == "" || document.getElementById('unity').value == " "){
+		document.getElementById('unity').style.borderColor = "red";
+		document.getElementById('unity').focus();
 		AlertaUnidade.style.display = "block";
 	}
 
