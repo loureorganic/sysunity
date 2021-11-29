@@ -37,20 +37,14 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     i++;
     console.log(i);
     document.getElementById('batch1').value = i;
-});
-
-
-document.getElementById("btn_cadastrar").addEventListener("click", function() {
-    
-    i++;
-    console.log(i);
-    document.getElementById('batch1').value = i;
-
+   
     let AlertaLote =  document.getElementById("alerta_lote");
     let AlertaDiasValidos = document.getElementById("alerta_dias");
     let AlertaUnidade = document.getElementById("alerta_unidade");
     let AlertaDataFabricacao = document.getElementById("alerta_data_fabricacao");
     let AlertaDataVencimento = document.getElementById("alerta_data_vencimento");
+    console.log(document.getElementById('unique').value)
+    console.log(document.getElementById('unique1').value)
 
     if(document.getElementById('inputBatch').value == "" || document.getElementById('inputBatch').value == " "){
 		document.getElementById('inputBatch').style.borderColor = "red";
