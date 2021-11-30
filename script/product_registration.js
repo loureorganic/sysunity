@@ -35,21 +35,19 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	// VALIDAÇÃO DA OPÇÃO PRODUTO-TIPO
 	if(document.getElementById("produtoTipo").checked){
 
-		if(document.getElementById('name').value == ""){
+		if(document.getElementById('name').value === ""){
 	
-		document.getElementById('name').style.borderColor = "red";
-		document.getElementById('alertaproduto').style.display = 'flex';
+			document.getElementById('name').style.borderColor = "red";
+			document.getElementById('alertaproduto').style.display = 'flex';
+		} if(document.getElementById('tipe').value === ""){
 	
-		} if(document.getElementById('tipe').value == ''){
-	
-		document.getElementById('tipe').style.borderColor = "red";
-		document.getElementById('alertatipoproduto').style.display = 'flex';
-	
-		} if(document.getElementById("value").value == ""){
-	
-		document.getElementById('value').style.borderColor = "red";
-		document.getElementById('alertavalorproduto').style.display = 'flex';
-		} else {
+			document.getElementById('tipe').style.borderColor = "red";
+			document.getElementById('alertatipoproduto').style.display = 'flex';
+		} if(document.getElementById("value").value === ""){
+
+			document.getElementById('value').style.borderColor = "red";
+			document.getElementById('alertavalorproduto').style.display = 'flex';
+		} else if(document.getElementById('name').value != "" && document.getElementById('tipe').value != ""){
 			data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
 		}
 	}
@@ -67,7 +65,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	
 		document.getElementById("value1").style.borderColor = "red";
 		document.getElementById("alertavalorproduto1").style.display = "flex";
-		} else {
+		} else if(document.getElementById('tipe1').value != "" && document.getElementById('value1').value != ""){
 			data.creatoption(data1, document.getElementById("tipe1").value, document.getElementById("value1").value );
 		}
 	}
