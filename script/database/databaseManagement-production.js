@@ -144,7 +144,7 @@ export default class databasemanagementproduction {
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           dados = 
-          "<td>" + produção.name + "</td>" + "<td>" + produção.type + 
+          "<td>" + produção.product + "</td>" + "<td>" + produção.type + 
           "</td>" + "<td>" + produção.batch + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
@@ -190,15 +190,15 @@ export default class databasemanagementproduction {
 
         if(element.child("type").val() == dados) {
 
-          document.getElementById("item").value = element.val().name + " de " + element.val().type;
+          document.getElementById("item").value = element.val().product + " de " + element.val().type;
           document.getElementById("lote").value = element.val().batch;
           document.getElementById("funcionario").value = "Nulo" //element.val().batch;
-          document.getElementById("qntEstoque").value = element.val().package + " pacotes de " + element.val().unity + " unidades";
+          document.getElementById("qntEstoque").value = element.val().packagequantity + " pacotes";
           document.getElementById("qntProduzida").value = element.val().unity;
-          document.getElementById("dataProdução").value = element.val().fabrication;
-          document.getElementById("dataVenciemnto").value = element.val().pay;
+          document.getElementById("dataProdução").value = element.val().fabricationdate;
+          document.getElementById("dataVenciemnto").value = element?.val()?.deadlinedate;
           document.getElementById("prazo").value = element.val().days;
-          document.getElementById("totalProducao").value = "Nulo" //element.val().pay;
+          document.getElementById("totalProducao").value = element.val().totalquantity;
 
         }
             
