@@ -148,13 +148,16 @@ h2{
     width: 45%;
 }
 
-.price-total span{
+.price-total button{
     display: flex;
     font-weight: 600;
+    border: none;
+    background: none;
 }
 
-.price-total span::before{
+.price-total button::before{
     content: url(../images/add_black_24dp.svg);
+    margin-top: 2px;
 }
 
 .total-general-2{
@@ -174,7 +177,7 @@ h2{
 }
 
 .discount-general label{
-    width: 40%;
+    justify-content: flex-end;
 }
 
 .payment-value{
@@ -189,17 +192,40 @@ h2{
     width: 100%;
 }
 
+.payment select{
+    display: flex;
+    align-items: center;
+    background: none;
+    border-color: #085D8C;
+    border-radius: 4px;
+    font-size: 15px;
+    height: 32px;
+}
+
+.payment option{
+    background: #fff;
+    color:#000;
+    font-size: 13px;
+}
+
+.payment select{
+    transition-delay: 250ms;
+}
+
 .total-value{
     margin-left: 60px;
 }
 
-.total-value span{
+.total-value button{
     display: flex;
     font-weight: 600;
+    border: none;
+    background: none;
 }
 
-.total-value span::before{
+.total-value button::before{
     content: url(../images/add_black_24dp.svg);
+    margin-top: 2px;
 }
 
 .total-paid{
