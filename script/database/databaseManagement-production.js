@@ -4,6 +4,7 @@ var btnsee = '<button type="button" id="btnSee" class="visibility" data-bs-toggl
 var btnedit = '<button type="button" id="btnEdit" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
 var btndelete = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
 
+// Declaracao dos modais
 var modalsee = ` <div class="modal" id="MyModal">
 <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content">
@@ -137,21 +138,23 @@ export default class databasemanagementproduction {
 
     const firebaseref = firebase.database().ref("production");
 
+    // Criacao da tabela
     firebaseref.once('value', function(all){
       all.forEach(
         function(curecord){
-          var produção = curecord.val();
+          var producao = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           dados = 
-          "<td>" + produção.product + "</td>" + "<td>" + produção.type + 
-          "</td>" + "<td>" + produção.batch + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+          "<td>" + producao.product + "</td>" + "<td>" + producao.type + 
+          "</td>" + "<td>" + producao.batch + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
         }
       )
       
+      // Validando qual modal foi clicado
       var everclass = document.querySelectorAll(".dot td");
       for( var i = 0; i < everclass.length; i++){
         
@@ -163,6 +166,7 @@ export default class databasemanagementproduction {
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function(){
               self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
+              console.log(parent.getElementsByTagName('td')[1])
             });
           }
           else if(data.path[0].id === 'btnSee'){
@@ -182,6 +186,7 @@ export default class databasemanagementproduction {
     })
   }
 
+  // Modal de visualizar
   funcmodalsee(dados){
     const firebaseref = firebase.database().ref("production");
     firebaseref.once('value',(resultado)=>{
@@ -191,13 +196,13 @@ export default class databasemanagementproduction {
         if(element.child("type").val() == dados) {
 
           document.getElementById("item").value = element.val().product + " de " + element.val().type;
-          document.getElementById("lote").value = element.val().batch;
-          document.getElementById("funcionario").value = "Nulo" //element.val().batch;
+          document.getElementById("lote").value = "Em andamento" //element.val().batch;
+          document.getElementById("funcionario").value = "Em andamento" //element.val().batch;
           document.getElementById("qntEstoque").value = element.val().packagequantity + " pacotes";
-          document.getElementById("qntProduzida").value = element.val().unity;
+          document.getElementById("qntProduzida").value = "Em andamento" //element.val().unity;
           document.getElementById("dataProdução").value = element.val().fabricationdate;
           document.getElementById("dataVenciemnto").value = element?.val()?.deadlinedate;
-          document.getElementById("prazo").value = element.val().days;
+          document.getElementById("prazo").value = "Em andamento" //element.val().days;
           document.getElementById("totalProducao").value = element.val().totalquantity;
 
         }
@@ -208,6 +213,7 @@ export default class databasemanagementproduction {
 
   }
 
+  // Modal de editar
   funcmodaledit(a){
 
     var self = this;
@@ -219,27 +225,27 @@ export default class databasemanagementproduction {
 
         if(element.child("type").val() == a) {
 
-          document.getElementById("item").placeholder = element.val().name + " de " + element.val().type;
-          document.getElementById("lote").placeholder = element.val().batch;
-          document.getElementById("funcionario").placeholder = "Nulo" //element.val().batch;
-          document.getElementById("qntEstoque").placeholder = element.val().package + " pacotes de " + element.val().unity + " unidades";
-          document.getElementById("qntProduzida").placeholder = element.val().unity;
-          document.getElementById("dataProdução").placeholder = element.val().fabrication;
-          document.getElementById("dataVenciemnto").placeholder = element.val().pay;
-          document.getElementById("prazo").placeholder = element.val().days;
-          document.getElementById("totalProducao").placeholder = "Nulo" //element.val().pay;
+          document.getElementById("item").placeholder = element.val().product + " de " + element.val().type;
+          document.getElementById("lote").placeholder = "Em andamento";
+          document.getElementById("funcionario").placeholder = "Em andamento";
+          document.getElementById("qntEstoque").placeholder = element.val().packagequantity + " pacotes";
+          document.getElementById("qntProduzida").placeholder = "Em andamento";
+          document.getElementById("dataProdução").placeholder = element.val().fabricationdate;
+          document.getElementById("dataVenciemnto").placeholder = element?.val()?.deadlinedate;
+          document.getElementById("prazo").placeholder = "Em andamento";
+          document.getElementById("totalProducao").placeholder = element.val().totalquantity;
 
           var btn = document.getElementById("btn_salvar");
           btn.addEventListener("click", function(e){
 
-            var item = document.getElementById("item").value;
-            var lote = document.getElementById("lote").value;
-            var funcionario = document.getElementById("funcionario").value;
-            var qntEstoque = document.getElementById("qntEstoque").value;
-            var qntProduzida = document.getElementById("qntProduzida").value;
-            var dataProdução = document.getElementById("dataProdução").value;
+            // var item = document.getElementById("item").value;
+            // var lote = document.getElementById("lote").value;
+            // var funcionario = document.getElementById("funcionario").value;
+            // var qntEstoque = document.getElementById("qntEstoque").value;
+            // var qntProduzida = document.getElementById("qntProduzida").value;
+            var dataProducao = document.getElementById("dataProdução").value;
             var dataVenciemnto = document.getElementById("dataVenciemnto").value;
-            var prazo = document.getElementById("prazo").value;
+            // var prazo = document.getElementById("prazo").value;
             var totalProducao = document.getElementById("totalProducao").value;
 
             // if(item === ""){
@@ -252,25 +258,25 @@ export default class databasemanagementproduction {
             //   funcionario = element.val().;
             // }
             // if (qntEstoque === ""){
-            //   qntEstoque = element.val().value;
+            //   qntEstoque = element.val().packagequantity;
             // }
             // if (qntProduzida === ""){
             //   qntProduzida = element.val().value;
             // }
-            // if (dataProdução === ""){
-            //   dataProdução = element.val().fabrication;
-            // }
-            // if (dataVenciemnto === ""){
-            //   dataVenciemnto = element.val().pay;
-            // }
+            if (dataProducao === ""){
+              dataProdução = element.val().fabricationdate;
+            }
+            if (dataVenciemnto === ""){
+              dataVenciemnto = element.val().deadlinedate;
+            }
             // if (prazo === ""){
             //   prazo = element.val().days;
             // }
-            // if (totalProducao === ""){
-            //   totalProducao = element.val().;
-            // }
+            if (totalProducao === ""){
+              totalProducao = element.val().totalquantity;
+            }
             
-            self.funcUpd(element.key, item, lote, dataProdução, dataVenciemnto, prazo);
+            self.funcUpd(element.key, dataProducao, dataVenciemnto, totalProducao);
           })
             
         }
@@ -281,31 +287,37 @@ export default class databasemanagementproduction {
 
   }
 
-  funcUpd(chave, item, lote, dataProdução, dataVenciemnto, prazo){
+  // Funcao de atualizacao dos dados
+  funcUpd(chave, dataprodução, datavenciemnto, totalProducao){
+
     const database = firebase.database();
     let active = false;
-    database.ref('production/'+chave+'/name').set(item);
-    database.ref('production/'+chave+'/batch').set(lote);
-    database.ref('production/'+chave+'/fabrication').set(dataProdução);
-    database.ref('production/'+chave+'/pay').set(dataVenciemnto);
-    database.ref('production/'+chave+'/days').set(prazo);
+    database.ref('production/'+chave+'/fabricationdate').set(dataprodução);
+    database.ref('production/'+chave+'/deadlinedate').set(datavenciemnto);
+    database.ref('production/'+chave+'/totalquantity').set(totalProducao);
     
     window.location.reload(active);
+
   };
 
+  // Modal de deletar
   funcmodaldelete(dados){
+    console.log(dados)
+
     let valu = '';
     let active = false;
     const database = firebase.database();
     const firebaseref = firebase.database().ref("production");
+
     firebaseref.once('value',(resultado)=>{
+
     resultado.forEach(element => {
 
       if(element.child("type").val() == dados) {
         valu = element.key;
-        database.ref('production/'+valu).remove();
+        // database.ref('production/'+valu).remove();
 
-        window.location.reload(active);
+        // window.location.reload(active);
       }
     });
   })
