@@ -20,16 +20,174 @@ var modalsee = `
 
       <form>
 
-        <div class="user-email">
+        <div id="user-email-id" class="user-email">
           <label for="">Nome
             <input id="nome" type="text" placeholder="" disabled/>
           </label>
-          <label for="">Tipo
-            <input id="tipo" type="text" placeholder="" disabled/>
-          </label>
-          <label for="">Valor
-            <input id="valor" type="text" placeholder="" disabled/>
-          </label>
+        </div>
+        <div id="div-table-sabores-valores" class="user-email">
+          <div id="div-table-sabores" class="user-email">
+            <table id="table-sabores">
+              <thead id="thead-sabores">
+                <tr id="thead-tr-sabores">
+                  <th>Sabores</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-vendas-id" class="tbody-vendas">
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>    
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>                         
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="div-table-valor"  class="user-email">
+            <table id="table-valor">
+              <thead id="thead-valor">
+                <tr id="thead-tr-valor">
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-valor-id" class="tbody-vendas">
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>  
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>                           
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <input id="tipo" type="text" placeholder="" disabled/>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
       </form>
@@ -52,24 +210,178 @@ var modaledit = `
       </div>
       <div class="modal-body">
         <form>
-          <div class="user-email">
+          <div id="user-email-id2" class="user-email">
             <label for="">Nome
-              <input id="nome" type="text" placeholder="">
-              <p id="msgErro" style="display: none;">O Campo precisa ser preenchido</p>
-            </label>
-            <label for="">Tipo
-              <input id="tipo" type="text" placeholder="">
-              <p id="msgErro2" style="display: none;">O Campo precisa ser preenchido</p>
-            </label>
-            <label for="">Valor
-              <input id="valor" type="text" placeholder="">
-              <p id="msgErro2" style="display: none;">O Campo precisa ser preenchido</p>
+              <input id="nome" type="text" placeholder=""/>
             </label>
           </div>
-          
+          <div id="div-table-sabores-valores2" class="user-email">
+            <div id="div-table-sabores2" class="user-email">
+              <table id="table-sabores2">
+                <thead id="thead-sabores2">
+                  <tr id="thead-tr-sabores2">
+                    <th>Sabores</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-vendas-id" class="tbody-vendas">
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>    
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>                         
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="div-table-valor2"  class="user-email">
+              <table id="table-valor2">
+                <thead id="thead-valor2">
+                  <tr id="thead-tr-valor2">
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-valor-id2" class="tbody-vendas">
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>  
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>                           
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <input id="tipo" type="text" placeholder=""/>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           <div class="save">
             <div class="btn-group">
-              <button class="btn btn-primary" id="btn_salvar" type="button" >SALVAR</button>
+              <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
             </div>
           </div>
         </form>
@@ -106,44 +418,44 @@ export default class databasemanagementproduct {
     var self = this;
 
     const firebaseref = firebase.database().ref("product");
-    firebaseref.once('value', function(all){
+    firebaseref.once('value', function (all) {
       all.forEach(
-        function(curecord){
+        function (curecord) {
           var produto = curecord.val();
           console.log(JSON.stringify(produto))
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           dados =
-          "<td>" + produto + "</td>" + 
-          "<td>" + produto + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+            "<td>" + produto + "</td>" +
+            "<td>" + produto + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
         }
       )
-      
+
       var everclass = document.querySelectorAll(".dot td");
-      for( var i = 0; i < everclass.length; i++){
-        
-        everclass[i].addEventListener("click", function(data){
+      for (var i = 0; i < everclass.length; i++) {
+
+        everclass[i].addEventListener("click", function (data) {
           var parent = this.parentNode;
           var div = document.createElement('div');
-          if(data.path[0].id === 'btnDelete'){
+          if (data.path[0].id === 'btnDelete') {
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
-            document.getElementById('confirm').addEventListener("click", function(){
+            document.getElementById('confirm').addEventListener("click", function () {
               self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
             });
           }
-          else if(data.path[0].id === 'btnSee'){
+          else if (data.path[0].id === 'btnSee') {
             div.innerHTML = modalsee;
             var_lista.appendChild(div);
             var parent = this.parentNode;
             self.funcmodalsee(parent.getElementsByTagName('td')[1].innerHTML);
           }
-          else if(data.path[0].id === 'btnEdit'){
+          else if (data.path[0].id === 'btnEdit') {
             div.innerHTML = modaledit;
-            var_lista.appendChild(div);  
+            var_lista.appendChild(div);
             var parent = this.parentNode;
             self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
           }
@@ -152,94 +464,94 @@ export default class databasemanagementproduct {
     })
   }
 
-  funcmodalsee(dados){
+  funcmodalsee(dados) {
     const firebaseref = firebase.database().ref("product");
-    firebaseref.once('value',(resultado)=>{
+    firebaseref.once('value', (resultado) => {
 
       resultado.forEach(element => {
 
-        if(element.child("value").val() == dados) {
+        if (element.child("value").val() == dados) {
 
           document.getElementById("nome").value = element.val().name;
           document.getElementById("tipo").value = element.val().type;
           document.getElementById("valor").value = element.val().value;
 
         }
-            
+
       });
 
     })
 
   }
 
-  funcmodaledit(a){
+  funcmodaledit(a) {
 
     var self = this;
 
     const firebaseref = firebase.database().ref("product");
-    firebaseref.once('value',(resultado)=>{
-      
+    firebaseref.once('value', (resultado) => {
+
       resultado.forEach(element => {
 
-        if(element.child("value").val() == a) {
+        if (element.child("value").val() == a) {
 
           document.getElementById("nome").placeholder = element.val().name;
           document.getElementById("tipo").placeholder = element.val().type;
-          document.getElementById("valor").placeholder = element.val().value; 
-          
+          document.getElementById("valor").placeholder = element.val().value;
+
           var btn = document.getElementById("btn_salvar");
-          btn.addEventListener("click", function(e){
+          btn.addEventListener("click", function (e) {
             var inputnome = document.getElementById("nome").value;
             var inputtipo = document.getElementById("tipo").value;
             var inputvalor = document.getElementById("valor").value;
 
-            if(inputnome === ""){
+            if (inputnome === "") {
               inputnome = element.val().name;
-            } 
-            if (inputtipo === ""){
+            }
+            if (inputtipo === "") {
               inputtipo = element.val().type;
-            } 
-            if (inputvalor === ""){
+            }
+            if (inputvalor === "") {
               inputvalor = element.val().value;
             }
 
             self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
           })
-            
+
         }
-          
+
       });
-      
+
     })
 
   }
 
-  funcUpd(chave, nome, tipo, valor){
+  funcUpd(chave, nome, tipo, valor) {
     const database = firebase.database();
     let active = false;
-    database.ref('product/'+chave+'/name').set(nome);
-    database.ref('product/'+chave+'/type').set(tipo);
-    database.ref('product/'+chave+'/value').set(valor);
-    
+    database.ref('product/' + chave + '/name').set(nome);
+    database.ref('product/' + chave + '/type').set(tipo);
+    database.ref('product/' + chave + '/value').set(valor);
+
     window.location.reload(active);
   };
 
-  funcmodaldelete(dados){
+  funcmodaldelete(dados) {
 
     let valu = '';
     let active = false;
     const database = firebase.database();
     const firebaseref = firebase.database().ref("product");
-    firebaseref.once('value',(resultado)=>{
-    resultado.forEach(element => {
-      if(element.child("value").val() == dados) {
-        valu = element.key;
-        database.ref('product/'+valu).remove();
-        window.location.reload(active);
-      }
-    });
-  })
+    firebaseref.once('value', (resultado) => {
+      resultado.forEach(element => {
+        if (element.child("value").val() == dados) {
+          valu = element.key;
+          database.ref('product/' + valu).remove();
+          window.location.reload(active);
+        }
+      });
+    })
 
- }
+  }
 
 }
