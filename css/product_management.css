@@ -1,251 +1,294 @@
 @import url(main.css);
 @import url(home.css);
-@import url(user_registration.css);
+@import url(sale_management.css);
 
-.section-title{
-    height: 60px;
-    padding-left: 30px;
-    padding-top: 20px;
+.section-title {
+  height: 60px;
+  padding-left: 30px;
+  padding-top: 20px;
 }
-.section-title  h2{
-    font-size: 25px;
-    font-weight: 700;
+.section-title h2 {
+  font-size: 25px;
+  font-weight: 700;
 }
-.section-table{
-    padding-left: 70px;    
-    padding-right: 70px;    
+.section-table {
+  padding-left: 70px;
+  padding-right: 70px;
 }
-.dataTables_wrapper{
-    width: 90%;
+.dataTables_wrapper {
+  width: 90%;
 }
-.section-table label{
-    margin-bottom: 20px;
-}
-
-#opcoes{
-    text-align: center;
-    padding-left: 85px;
+.section-table label {
+  margin-bottom: 20px;
 }
 
-tbody tr{
-    background-color: #ABD2CE;
+#opcoes {
+  text-align: center;
+  padding-left: 85px;
 }
-thead{
-    width: 100%;
-    background-color: #085d8c;
-    color: white;
-    font-size: 17px;
+
+tbody tr {
+  background-color: #abd2ce;
 }
-table button{
-    background-color:  #ABD2CE;
-    border: transparent;
-    width: 60px;
-    padding: 0;
+thead {
+  width: 100%;
+  background-color: #085d8c;
+  color: white;
+  font-size: 17px;
 }
-#btnSee{
-    margin-left: 300px;
+table button {
+  background-color: #abd2ce;
+  border: transparent;
+  width: 60px;
+  padding: 0;
 }
-.edit{
-    margin-left: 30px;
+#table-sabores,
+#table-valor,
+#table-sabores2,
+#table-valor2,
+#thead-sabores,
+#thead-valor,
+#thead-sabores2,
+#thead-valor2,
+#tbody-vendas-id,
+#tbody-valor-id,
+#tbody-vendas-id2,
+#tbody-valor-id2,
+#thead-tr-sabores,
+#thead-tr-valor,
+#thead-tr-sabores2,
+#thead-tr-valor2,
+input {
+  text-align: center;
+  background-color: white;
+  color: black;
 }
-.delete{
-    margin-left: 30px;
+#div-table-sabores-valores,
+#div-table-sabores-valores2 {
+  overflow-y: scroll;
+  height: 105px;
 }
-.visibility::before{
-    content: url(../images/visibility_white_24dp.svg);
+#div-table-sabores,
+#div-table-sabores2 {
+  width: 400px;
+  margin: 10px;
 }
-.edit::before{
-    content: url(../images/create_white_24dp.svg);
+
+#div-table-valor,
+#div-table-valor2 {
+  width: 100px;
+  margin: 10px;
 }
-.delete::before{
-    content: url(../images/delete_white_24dp.svg);
+#user-email-id,
+#user-email-id2 {
+  margin-bottom: 15px;
 }
-.modal-header{
-    background: #085D8C;
-    color: #fff;
-    height: 50px;
+#btnSee {
+  margin-left: 300px;
 }
-.modal-header h5{
-    font-size: 24px;
-    font-weight: 700;
+.edit {
+  margin-left: 30px;
 }
-.modal-header .delete{
-    background: none;
+.delete {
+  margin-left: 30px;
 }
-.modal-header .delete::before{
-    content: url(../images/close_white_24dp.svg);
+.visibility::before {
+  content: url(../images/visibility_white_24dp.svg);
 }
-.modal-body form{
-    display: flex;
-    flex-direction: column;
-    margin-top: 12px;
+.edit::before {
+  content: url(../images/create_white_24dp.svg);
 }
-.modal-body form h3{
-    padding-top: 20px;
-    color: black;
-    font-weight: 400;
-    text-align: center;
+.delete::before {
+  content: url(../images/delete_white_24dp.svg);
 }
-.modal-body form input{
-    width: 100%;
+.modal-content {
+  width: 100%;
 }
-.modal-body form label {
-    font-weight: 600;
-    font-size: 16px;
-    padding: 6px;
-    margin-bottom: 0;
-    color: black;
+.modal-header {
+  background: #085d8c;
+  color: #fff;
+  height: 50px;
+}
+.modal-header h5 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.modal-header .delete {
+  background: none;
+}
+.modal-header .delete::before {
+  content: url(../images/close_white_24dp.svg);
+}
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+.modal-body form h3 {
+  padding-top: 20px;
+  color: black;
+  font-weight: 400;
+  text-align: center;
 }
 .modal-body form input {
-    border-radius: 4px;
-    border-width: 1px;
-    height: 32px;
-    border-style: solid;
-    border-color: #085D8C;
+  width: 100%;
 }
-.modal-body .user-email label{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
+.modal-body form label {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 6px;
+  margin-bottom: 0;
+  color: black;
+}
+.modal-body form input {
+  border-radius: 4px;
+  border-width: 1px;
+  height: 32px;
+  border-style: solid;
+  border-color: #085d8c;
+}
+.modal-body .user-email label {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }
 .modal-body .office-access label {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 .modal-body .office-access select {
-    width: 100%;
+  width: 100%;
 }
-.save{
-    display: flex;
-    justify-content: end;
+.save {
+  display: flex;
+  justify-content: end;
 }
-.save .btn-group{
-    width: 30%;
-    padding-top: 30px;
+.save .btn-group {
+  width: 30%;
+  padding-top: 30px;
 }
-#btn_salvar{
-    height: 40px;
-    font-weight:600;
-    font-size: 16px;
-    background: #085D8C;
-    border: none;
+#btn_salvar {
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  background: #085d8c;
+  border: none;
 }
-.alternative{
-    display: flex;
-    justify-content: end;
-    padding-top: 36px;
+.alternative {
+  display: flex;
+  justify-content: end;
+  padding-top: 36px;
 }
-.alternative .btn-primary{
-    width: 20%;
-    margin-right: 6px;
-    height: 40px;
-    font-weight:600;
-    font-size: 16px;
-    background: #085D8C;
-    border: none;
+.alternative .btn-primary {
+  width: 20%;
+  margin-right: 6px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  background: #085d8c;
+  border: none;
 }
-.alternative .btn-secondary{
-    width: 20%;
-    height: 40px;
-    font-weight:600;
-    font-size: 16px;
-    background: #A82012;
-    border-color: #892015;
+.alternative .btn-secondary {
+  width: 20%;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  background: #a82012;
+  border-color: #892015;
 }
 @media (min-width: 1040px) and (max-width: 1200px) {
-    #btnSee{
-        margin-left: 140px;
-    }
-    .edit{
-        margin-left: 30px;
-    }
-    .delete{
-        margin-left: 30px;
-    }
-    #opcoes{
-        padding-left: 0;
-    }
+  #btnSee {
+    margin-left: 140px;
+  }
+  .edit {
+    margin-left: 30px;
+  }
+  .delete {
+    margin-left: 30px;
+  }
+  #opcoes {
+    padding-left: 0;
+  }
 }
 @media (min-width: 950px) and (max-width: 1039px) {
-    #btnSee{
-        margin-left: 140px;
-    }
-    .edit{
-        margin-left: 30px;
-    }
-    .delete{
-        margin-left: 30px;
-    }
-    #opcoes{
-        padding-left: 0;
-    }
+  #btnSee {
+    margin-left: 140px;
+  }
+  .edit {
+    margin-left: 30px;
+  }
+  .delete {
+    margin-left: 30px;
+  }
+  #opcoes {
+    padding-left: 0;
+  }
 }
 
 @media (min-width: 910px) and (max-width: 949px) {
-    #btnSee{
-        margin-left: 110px;
-    }
-    .edit{
-        margin-left: 20px;
-    }
-    .delete{
-        margin-left: 20px;
-    }
-    #opcoes{
-        padding-left: 0;
-    }
+  #btnSee {
+    margin-left: 110px;
+  }
+  .edit {
+    margin-left: 20px;
+  }
+  .delete {
+    margin-left: 20px;
+  }
+  #opcoes {
+    padding-left: 0;
+  }
 }
 
 @media (min-width: 400px) and (max-width: 909px) {
-    #btnSee{
-        margin-left: 80px;
-    }
-    .edit{
-        margin-left: 0px;
-    }
-    .delete{
-        margin-left: 0px;
-    }
-    #opcoes{
-        padding-left: 0;
-    }
+  #btnSee {
+    margin-left: 80px;
+  }
+  .edit {
+    margin-left: 0px;
+  }
+  .delete {
+    margin-left: 0px;
+  }
+  #opcoes {
+    padding-left: 0;
+  }
 }
-.edit::before{
-    content: url(../images/create_white_24dp.svg);
+.edit::before {
+  content: url(../images/create_white_24dp.svg);
 }
-.delete::before{
-    content: url(../images/delete_white_24dp.svg);
+.delete::before {
+  content: url(../images/delete_white_24dp.svg);
 }
 .loader {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #085D8C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #085d8c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loader > img {
-    width: 50px;
+  width: 50px;
 }
 
 @keyframes fadeOut {
-    100% {
-        opacity: 1;
-        visibility: hidden;
-    }
+  100% {
+    opacity: 1;
+    visibility: hidden;
+  }
 }
 .loader.hidden {
-    animation: fadeOut 2s;
-    animation-fill-mode: forwards;
+  animation: fadeOut 2s;
+  animation-fill-mode: forwards;
 }
 
-
 .thumb {
-    height: 100px;
-    border: 1px solid black;
-    margin: 10px;
+  height: 100px;
+  border: 1px solid black;
+  margin: 10px;
 }
