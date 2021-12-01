@@ -26,15 +26,19 @@ export default class databasecreateproduct{
 
   // CRIAÇÃO DO SELECT
   data(){
-      const firebaseref = firebase.database().ref("product");
-      firebaseref.once('value', function(all){
-        var select = document.createElement('select');
-        select.setAttribute('id', 'unique');
-        Object.keys(all.val()).map((keyname)=> {
-          var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
-          select.innerHTML += dados2;
-          label.appendChild(select);
-        })
+    const firebaseref = firebase.database().ref("product");
+
+    firebaseref.once('value', function(all){
+
+      var select = document.createElement('select');
+      select.setAttribute('id', 'unique');
+
+      Object.keys(all.val()).map((keyname)=> {
+
+        var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
+        select.innerHTML += dados2;
+        label.appendChild(select);
+      })
     })
   }
     

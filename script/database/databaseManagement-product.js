@@ -419,20 +419,19 @@ export default class databasemanagementproduct {
 
     const firebaseref = firebase.database().ref("product");
     firebaseref.once('value', function (all) {
-      all.forEach(
-        function (curecord) {
-          var produto = curecord.val();
-          console.log(JSON.stringify(produto))
-          var tr = document.createElement('tr');
-          tr.classList.add('dot');
-          dados =
-            "<td>" + produto + "</td>" +
-            "<td>" + produto + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+      var tr = document.createElement('tr');
+      tr.classList.add('dot');
 
-          tr.innerHTML = dados;
-          var_lista.appendChild(tr);
-        }
-      )
+      Object.keys(all.val()).map((keyname)=> {
+        console.log(keyname)
+
+        dados = "<td>" + keyname + "</td>" + "<td>"+ "Wes" + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+
+        tr.innerHTML = dados;
+        var_lista.appendChild(tr);
+
+      })
+
 
       var everclass = document.querySelectorAll(".dot td");
       for (var i = 0; i < everclass.length; i++) {
