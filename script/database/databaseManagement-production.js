@@ -167,7 +167,7 @@ export default class databasemanagementproduction {
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function(){
-              self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
+              self.funcmodaldelete(parent.getAttribute('id'))
               
             });
           }
@@ -304,7 +304,6 @@ export default class databasemanagementproduction {
 
   // Modal de deletar
   funcmodaldelete(dados){
-
     let valu = '';
     let active = false;
     const database = firebase.database();
@@ -313,12 +312,11 @@ export default class databasemanagementproduction {
     firebaseref.once('value',(resultado)=>{
 
     resultado.forEach(element => {
-
-      if(element.child("type").val() == dados) {
+      if(element.key == dados) {
         valu = element.key;
-        // database.ref('production/'+valu).remove();
+        database.ref('production/'+valu).remove();
 
-        // window.location.reload(active);
+        window.location.reload(active);
       }
     });
   })
