@@ -191,25 +191,43 @@ export default class databasemanagementproduction {
   // Modal de visualizar
   funcmodalsee(dados){
     const firebaseref = firebase.database().ref("production");
+    const usfirebaseref = firebase.database().ref("user");
+    let u;   
+    
     firebaseref.once('value',(resultado)=>{
-
+      
       resultado.forEach(element => {
-
+        
         if(element.child("type").val() == dados) {
-
+          
+          u = element.val().user;
           document.getElementById("item").value = element.val().product + " de " + element.val().type;
           document.getElementById("lote").value = "Em andamento" //element.val().batch;
-          document.getElementById("funcionario").value = "Em andamento" //element.val().batch;
           document.getElementById("qntEstoque").value = element.val().packagequantity + " pacotes";
           document.getElementById("qntProduzida").value = "Em andamento" //element.val().unity;
           document.getElementById("dataProdução").value = element.val().fabricationdate;
           document.getElementById("dataVenciemnto").value = element?.val()?.deadlinedate;
-          document.getElementById("prazo").value = "Em andamento" //element.val().days;
+          document.getElementById("prazo").value = element.val().validate + " dias";
           document.getElementById("totalProducao").value = element.val().totalquantity;
-
+          
         }
-            
+        
       });
+      
+      // GAMBIARRA
+      usfirebaseref.once('value',(resultado)=>{
+  
+        resultado.forEach(element => {
+  
+          if(element.key == u) {
+            document.getElementById("funcionario").value = element.val().firstname + " " + element.val().lastname;
+            t = element.val().firstname + " " + element.val().lastname;
+          }
+              
+        });
+      // GAMBIARRA
+      
+      })
 
     })
 
@@ -221,6 +239,7 @@ export default class databasemanagementproduction {
     var self = this;
 
     const firebaseref = firebase.database().ref("production");
+
     firebaseref.once('value',(resultado)=>{
       
       resultado.forEach(element => {
@@ -234,7 +253,7 @@ export default class databasemanagementproduction {
           document.getElementById("qntProduzida").placeholder = "Em andamento";
           document.getElementById("dataProdução").placeholder = element.val().fabricationdate;
           document.getElementById("dataVenciemnto").placeholder = element?.val()?.deadlinedate;
-          document.getElementById("prazo").placeholder = "Em andamento";
+          document.getElementById("prazo").placeholder = element.val().validate + " dias";
           document.getElementById("totalProducao").placeholder = element.val().totalquantity;
 
           var btn = document.getElementById("btn_salvar");
@@ -247,7 +266,7 @@ export default class databasemanagementproduction {
             // var qntProduzida = document.getElementById("qntProduzida").value;
             var dataProducao = document.getElementById("dataProdução").value;
             var dataVenciemnto = document.getElementById("dataVenciemnto").value;
-            // var prazo = document.getElementById("prazo").value;
+            var prazo = document.getElementById("prazo").value;
             var totalProducao = document.getElementById("totalProducao").value;
 
             // if(item === ""){
@@ -266,19 +285,19 @@ export default class databasemanagementproduction {
             //   qntProduzida = element.val().value;
             // }
             if (dataProducao === ""){
-              dataProdução = element.val().fabricationdate;
+              dataProducao = element.val().fabricationdate;
             }
             if (dataVenciemnto === ""){
               dataVenciemnto = element.val().deadlinedate;
             }
-            // if (prazo === ""){
-            //   prazo = element.val().days;
-            // }
+            if (prazo === ""){
+              prazo = element.val().validate;
+            }
             if (totalProducao === ""){
               totalProducao = element.val().totalquantity;
             }
             
-            self.funcUpd(element.key, dataProducao, dataVenciemnto, totalProducao);
+            self.funcUpd(element.key, dataProducao, dataVenciemnto, totalProducao, prazo);
           })
             
         }
@@ -290,13 +309,14 @@ export default class databasemanagementproduction {
   }
 
   // Funcao de atualizacao dos dados
-  funcUpd(chave, dataprodução, datavenciemnto, totalProducao){
+  funcUpd(chave, dataprodução, datavenciemnto, totalProducao, pra){
 
     const database = firebase.database();
     let active = false;
     database.ref('production/'+chave+'/fabricationdate').set(dataprodução);
     database.ref('production/'+chave+'/deadlinedate').set(datavenciemnto);
     database.ref('production/'+chave+'/totalquantity').set(totalProducao);
+    database.ref('production/'+chave+'/validate').set(pra);
     
     window.location.reload(active);
 
