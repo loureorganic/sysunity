@@ -145,9 +145,11 @@ export default class databasemanagementproduction {
           var producao = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
+          tr.setAttribute("id",curecord.key)
           dados = 
           "<td>" + producao.product + "</td>" + "<td>" + producao.type + 
           "</td>" + "<td>" + producao.batch + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+          
 
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
@@ -156,7 +158,7 @@ export default class databasemanagementproduction {
       
       // Validando qual modal foi clicado
       var everclass = document.querySelectorAll(".dot td");
-      for( var i = 0; i < everclass.length; i++){
+      for(var i = 0; i < everclass.length; i++){
         
         everclass[i].addEventListener("click", function(data){
           var parent = this.parentNode;
@@ -166,7 +168,7 @@ export default class databasemanagementproduction {
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function(){
               self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
-              console.log(parent.getElementsByTagName('td')[1])
+              
             });
           }
           else if(data.path[0].id === 'btnSee'){
@@ -302,7 +304,6 @@ export default class databasemanagementproduction {
 
   // Modal de deletar
   funcmodaldelete(dados){
-    console.log(dados)
 
     let valu = '';
     let active = false;
