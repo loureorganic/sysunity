@@ -419,8 +419,10 @@ export default class databasemanagementproduct {
 
     const firebaseref = firebase.database().ref("product");
     firebaseref.once('value', function (all) {
+      
       var tr = document.createElement('tr');
       tr.classList.add('dot');
+      let we = all.val();
 
       Object.keys(all.val()).map((keyname)=> {
         console.log(keyname)
@@ -431,6 +433,16 @@ export default class databasemanagementproduct {
         var_lista.appendChild(tr);
 
       })
+
+      // for (var prop in we) {
+      //   console.log(prop)
+
+      //   dados = "<td>" + prop + "</td>" + "<td>"+ "Wes" + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+
+      //   tr.innerHTML = dados;
+      //   var_lista.appendChild(tr);
+        
+      // }
 
 
       var everclass = document.querySelectorAll(".dot td");
