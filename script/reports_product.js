@@ -35,7 +35,7 @@ const myChart2 = new Chart(grafico2, {
         labels: ['produto1', 'produto2', 'produto3'],
         datasets: [{
             label: 'Produtos',
-            data: [10, 20, 30],
+            data: [10, 80, 30],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -50,10 +50,20 @@ const myChart2 = new Chart(grafico2, {
         }]
     },
     options: {
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: 'easeInOutBounce',
+            from: 1,
+            to: 0,
+            loop: true
+          }
+        },
         scales: {
-            y: {
-                beginAtZero: true
-            }
+          y: { // defining min and max so hiding the dataset does not change scale range
+            min: 0,
+            max: 100
+          }
         }
     }
 });
