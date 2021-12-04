@@ -153,9 +153,7 @@ export default class databasemanagementuser {
     resultado.forEach(element => {
 
       if(element.child("username").val() == dados) {
-        console.log(element.key)
         valu = element.key;
-        console.log('user/'+valu)
         database.ref('user/'+valu).remove();
         window.location.reload(active);
 

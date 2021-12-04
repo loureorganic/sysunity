@@ -18,16 +18,9 @@ document.getElementById("date").addEventListener("click", function() {
 })
 
 Number(document.getElementById('unity').value);
-let i = 10000;
-
-
-
-document.getElementById('batch1').value = i;
-
 
 document.getElementById('label1').addEventListener("click", function() {
     let data = document.getElementById('unique').value;
-    console.log(data);
     teste.secondData(data)
 })
 
@@ -50,9 +43,6 @@ document.getElementById('batch1').value = Number(batch);
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
     let active = false;
-
-    i++;
-    console.log(i);
    
     let production = {
         product: document.getElementById('unique').value, 

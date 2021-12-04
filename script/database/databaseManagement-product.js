@@ -420,7 +420,6 @@ export default class databasemanagementproduct {
       Object.keys(resultado.val()).map((keyname)=> {
         
         if (keyname === dados) {
-          console.log(resultado.val()[keyname]);
           document.getElementById("nome").value = keyname;
           document.getElementById("tipo").value = element.val().type;
           document.getElementById("valor").value = element.val().value;

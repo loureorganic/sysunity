@@ -1,5 +1,4 @@
 
-console.log(document.getElementById('boxsale'));
 
 
 document.getElementById("public").addEventListener("click", function() {

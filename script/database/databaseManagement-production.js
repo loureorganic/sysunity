@@ -157,12 +157,10 @@ export default class databasemanagementproduction {
 
       // Validando qual modal foi clicado
       var everclass = document.querySelectorAll(".dot td");
-      console.log(everclass);
       for(var i = 0; i < everclass.length; i++){
         
         everclass[i].addEventListener("click", function(data){
           var parent = this.parentNode;
-          // console.log(data.path)
           var div = document.createElement('div');
           if(data.path[0].id === 'btnDelete'){
             div.innerHTML = modaldelete;
