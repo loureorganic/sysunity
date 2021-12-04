@@ -4,6 +4,7 @@ var btnsee = '<button type="button" id="btnSee" class="visibility" data-bs-toggl
 var btnedit = '<button type="button" id="btnEdit" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
 var btndelete = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
 
+// Declaracao dos modais
 var modalsee = `
 <div class="modal" id="MyModal">
 
@@ -139,27 +140,32 @@ var modaldelete = `
 
 export default class databasemanagementuser {
   
+  // Modal de deletar
   funcmodaldelete(dados){
 
     let valu = '';
     let active = false;
     const database = firebase.database();
     const firebaseref = firebase.database().ref("user");
+
     firebaseref.once('value',(resultado)=>{
+
     resultado.forEach(element => {
+
       if(element.child("username").val() == dados) {
-        console.log(element.key)
         valu = element.key;
-        console.log('user/'+valu)
         database.ref('user/'+valu).remove();
         window.location.reload(active);
+
       }
     });
   })
 
  }
 
+  // Funcao de atualizacao dos dados
   funcUpd(chave, nome, sobrenome, nomeusuario, email, job, acesslevel){
+    
     const database = firebase.database();
     let active = false;
     database.ref('user/'+chave+'/firstname').set(nome);
@@ -169,8 +175,10 @@ export default class databasemanagementuser {
     database.ref('user/'+chave+'/job').set(job);
     database.ref('user/'+chave+'/acesslevel').set(acesslevel);
     window.location.reload(active);
+
   };
 
+  // Modal de visualizar
   funcmodalsee(dados){
     const firebaseref = firebase.database().ref("user");
     firebaseref.once('value',(resultado)=>{
@@ -194,6 +202,7 @@ export default class databasemanagementuser {
 
   }
   
+  // Modal de editar
   funcmodaledit(a){
 
     var self = this;
@@ -251,6 +260,7 @@ export default class databasemanagementuser {
 
     const firebaseref = firebase.database().ref("user");
 
+    // Criacao da tabela
     firebaseref.once('value', function(all){
       all.forEach(
         function(curecord){
@@ -266,6 +276,7 @@ export default class databasemanagementuser {
         }
       )
       
+      // Validando qual modal foi clicado
       var everclass = document.querySelectorAll(".dot td");
       for( var i = 0; i < everclass.length; i++){
         

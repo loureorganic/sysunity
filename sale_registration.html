@@ -1,315 +1,284 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <title>SysUnity</title>
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="css/sale_registration.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="css/sale_registration.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" href="./images/y.png" sizes="any">
+  <link rel="icon" href="./images/y.png"   sizes="any"  >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
   <script src="script/database/database-connection.js"></script>
 </head>
-
 <body>
-  <div class="loader">
-    <img src="images/833.gif" alt="Loading..." />
-  </div>
   <div class="content">
-    <div id="home-content">
-      <div class="centro">
-        <section class="sidebar">
-          <ul class="list-unstyled ps-0">
-            <li class="mb-1">
-              <div class="sidebar-logo">
-                <h6><a href="home.html" id="home-logo"> SysUnity</a></h6>
+    <div id="home">
+    <div class="centro">
+      <section class="sidebar">
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <div class="sidebar-logo">
+              <h6><a href="home.html" id="home"> SysUnity</a></h6>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+              <div class="set1">
+                <img src="./images/outline_manage_accounts_white_48dp.png" alt="" width="22">
+                <span>Usuários</span>
               </div>
-            </li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
-                data-bs-target="#home-collapse" aria-expanded="false">
-                <div class="set1">
-                  <img src="./images/outline_manage_accounts_white_48dp.png" alt="" width="22">
-                  <span>Usuários</span>
-                </div>
-              </button>
-              <div class="collapse" id="home-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="user_registration.html" class="link-dark rounded">
-                      <p>Cadastrar usuário</p>
-                    </a></li>
-                  <li><a href="user_management.html" class="link-dark rounded">Gerenciar usuário</a></li>
-                </ul>
+            </button>
+            <div class="collapse" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="user_registration.html" class="link-dark rounded"> <p>Cadastrar usuário</p></a></li>
+                <li><a href="user_management.html" class="link-dark rounded">Gerenciar usuário</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+              <div class="set1">
+                <img class="dashboard-shop" src="./images/baseline_shopping_bag_white_48dp.png" alt="" width="22">
+                <span>Vendas</span>
               </div>
-            </li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
-                data-bs-target="#dashboard-collapse" aria-expanded="false">
-                <div class="set1">
-                  <img class="dashboard-shop" src="./images/baseline_shopping_bag_white_48dp.png" alt="" width="22">
-                  <span>Vendas</span>
-                </div>
-              </button>
-              <div class="collapse" id="dashboard-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="sale_registration.html" class="link-dark rounded">Cadastrar vendas</a></li>
-                  <li><a href="sale_management.html" class="link-dark rounded">Gerenciar vendas</a></li>
-                </ul>
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="sale_registration.html" class="link-dark rounded">Cadastrar vendas</a></li>
+                <li><a href="sale_management.html" class="link-dark rounded">Gerenciar vendas</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              <div class="set1">
+                <img src="./images/baseline_inventory_2_white_48dp.png" alt="" width="22">
+                <span>Produtos</span>
               </div>
-            </li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
-                data-bs-target="#orders-collapse" aria-expanded="false">
-                <div class="set1">
-                  <img src="./images/baseline_inventory_2_white_48dp.png" alt="" width="22">
-                  <span>Produtos</span>
-                </div>
-              </button>
-              <div class="collapse" id="orders-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="product_registration.html" class="link-dark rounded">Cadastrar produtos</a></li>
-                  <li><a href="production_registration.html" class="link-dark rounded">Cadastrar nova produção</a></li>
-                  <li><a href="product_management.html" class="link-dark rounded">Gerenciar produtos</a></li>
-                  <li><a href="production_management.html" class="link-dark rounded">Gerenciar produção</a></li>
-                </ul>
+            </button>
+            <div class="collapse" id="orders-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="product_registration.html" class="link-dark rounded">Cadastrar produtos</a></li>
+                <li><a href="production_registration.html" class="link-dark rounded">Cadastrar nova produção</a></li>
+                <li><a href="product_management.html" class="link-dark rounded">Gerenciar produtos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+              <div class="set1">
+                <img src="./images/baseline_leaderboard_white_48dp.png" alt="" width="22">
+                <span>Relatórios</span>
               </div>
-            </li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
-                data-bs-target="#account-collapse" aria-expanded="false">
-                <div class="set1">
-                  <img src="./images/baseline_leaderboard_white_48dp.png" alt="" width="22">
-                  <span>Relatórios</span>
-                </div>
-              </button>
-              <div class="collapse" id="account-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
-                  <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
-                  <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produtos</a></li>
-                </ul>
-              </div>
-            </li>
-            <div class="mb">
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
+                <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
+                <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produtos</a></li>
+              </ul>
+            </div>
+          </li>
+          <div class="mb">
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
                   <div class="set1">
                     <img src="./images/baseline_local_shipping_white_48dp.png" alt="" width="22">
                     <li><a href="orders.html" class="link-dark rounded">Encomendas</a></li>
                   </div>
                 </button>
               </li>
-            </div>
-            <div class="mb">
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
                   <div class="set1">
                     <img src="./images/baseline_history_white_48dp.png" alt="" width="22">
                     <li><a href="historic.html" class="link-dark rounded">Histórico</a></li>
                   </div>
                 </button>
               </li>
-            </div>
-            <div class="mb">
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                  <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
                   <div class="set1">
-                    <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
                     <li><a href="settings.html" class="link-dark rounded">Configurações</a></li>
                   </div>
+                  <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
                 </button>
               </li>
-            </div>
-            <div class="mb">
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
                   <div class="set1">
                     <img src="./images/baseline_help_center_white_48dp.png" alt="" width="22">
                     <li><a href="prop.html" class="link-dark rounded">Suporte</a></li>
                   </div>
                 </button>
-              </li>
-            </div>
+              </li>  
+          </div>
+        </ul>
+      </section>
+          
+      <!--Barra de alerta-->
+      <section class="content-table">
+        <header class="bar-status">
+          <div class="welcome">    
+            <h1 id="hello">Vendas</h1>            
+          </div>
+          <ul class="bar-login">
+            <li id="usuario">
+              <div class="btn-group">
+                <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/account_circle_black_36dp.svg" alt="" width="20%">
+                    <h6 id="user">
+                      Taila Santos
+                    </h6>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="settings_user.html">Configurações
+                    <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="index.html">Sair
+                    <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
+                    </a> 
+                  </li>
+                </ul>
+              </div>
+            </li>
           </ul>
-        </section>
-
-  <!--Barra de alerta-->
-  <section class="content-table">
-    <header class="bar-status">
-      <div class="welcome">
-        <h1 id="hello">Vendas</h1>
-      </div>
-      <ul class="bar-login">
-        <li id="usuario-content">
-          <div class="btn-group">
-            <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="images/account_circle_black_36dp.svg" alt="" width="20%">
-              <h6 id="user">Taila Santos</h6>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="settings_user.html">Configurações
-                  <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
-                </a>
-              </li>
-              <li>
-                <a href="index.html">Sair
-                  <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
-                </a>
-              </li>
+        </header>
+        <section class="registration">
+            <h2>Cadastro de Venda</h2>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="product-tab" data-bs-toggle="tab" data-bs-target="#product" type="button" role="tab" aria-controls="product" aria-selected="false">Produtos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment" type="button" role="tab" aria-controls="payment" aria-selected="false">Forma de Pagamento</button>
+                </li>
             </ul>
-          </div>
-        </li>
-      </ul>
-    </header>
-    <section class="registration">
-      <h2>Cadastro de Venda</h2>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="product-tab" data-bs-toggle="tab" data-bs-target="#product" type="button"
-            role="tab" aria-controls="product" aria-selected="false">Produtos</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment" type="button"
-            role="tab" aria-controls="payment" aria-selected="false">Forma de Pagamento</button>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent" style="width: 100%;">
-        <div class="tab-pane fade show" id="product" role="tabpanel" aria-labelledby="product-tab">
-          <div class="form">
-            <h5 class="sale">Tipo de Venda</h5>
-            <div class="public-order">
-              <label>
-                <input type="radio" name="question" id="public" value="geral">Geral
-              </label>
-              <label>
-                <input type="radio" name="question" id="order" value="encomenda">Encomenda
-              </label>
-            </div>
-          </div>
-          <div class="form">
-            <div class="seller-date" id="boxdate">
-              <label>Vendedor
-                <input id="seller" type="text" placeholder="" />
-                <p id="alerta_vendedor" style="display: none;">O Campo precisa ser preenchido</p>
-              </label>
-              <label>Data
-                <input id="date" type="text" placeholder="" />
-                <p id="alerta_data" style="display: none;">O Campo precisa ser preenchido</p>
-              </label>
-            </div>
-
-            <div class="p-t-q-p-t" id="boxsale">
-              <div class="product-type-quantity">
-                <label id="label1">Produto
-                  <select id="selectProdutoVendas">
-                  </select>
-                </label>
-                <label id="labe2">Tipo
-                    <select id="selectTipoVendas">
-                      <div>
-                        <option value=""></option>
-                        <option value="Carne">Carne</option>
-                        <option value="Frango">Frango</option>
-                        <option value="Calabresa">Calabresa</option>
+            <div class="tab-content" id="myTabContent" style="width: 100%;">
+              <div class="tab-pane fade show" id="product" role="tabpanel" aria-labelledby="product-tab">
+                <div class="form">
+                  <h5 class="sale">Tipo de Venda</h5>
+                <div class="public-order">
+                  <label>
+                    <input type="radio" name="question" id="public" value="geral">Geral
+                  </label>
+                  <label>
+                    <input type="radio" name="question" id="order" value="encomenda">Encomenda
+                  </label>
+                  </div>
+                </div>
+                <div class="form">
+                  <div class="seller-date" id="boxdate">
+                    <label>Vendedor
+                      <input id="seller" type="text" placeholder=""/>
+                      <p id="alerta_vendedor" style="display: none;">O Campo precisa ser preenchido</p>
+                    </label>
+                    <label>Data
+                      <input id="date" type="text" placeholder=""/>
+                      <p id="alerta_data" style="display: none;">O Campo precisa ser preenchido</p>
+                    </label>
+                  </div>
+                
+                  <div class="p-t-q-p-t" id="boxsale">
+                    <div class="product-type-quantity">
+                      <label>Produto
+                        <input id="" type="text" placeholder=""/>
+                        <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                      </label>
+                      <div class="type">
+                        <label>Tipo
+                          <input id="" type="text" placeholder=""/>
+                          <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                        </label>
                       </div>
-                    </select>
+                      <label>Quantidade
+                        <input id="" type="text" placeholder=""/>
+                        <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                      </label>
+                    </div>
+                    <div class="price-total">
+                      <label>Preço unid.
+                        <input id="price" type="text" placeholder=""/>
+                        <p id="alerta_precounidade" style="display: none;">O Campo precisa ser preenchido</p>
+                      </label>
+                      <label>Total
+                        <input id="total" type="text" placeholder=""/>
+                        <p id="alerta_total" style="display: none;">O Campo precisa ser preenchido</p>
+                        <span>Adicionar</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="total-general-2" id="boxproduct">
+                    <label>Total geral
+                      <input id="total-general" type="text" placeholder=""/>
+                      <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
+                    </label>
+                  </div>
+                  <div class="register">
+                    <div class="btn-group" style="width: 10%;">
+                      <button class="btn btn-primary" id="btn_setinha" type="button">></button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
+              <div class="form">
+                <h5 class="sale">Tipo de Venda</h5>
+              <div class="public-order">
+                <label>
+                  <input type="radio" name="question" id="public2" value="geral">Geral
                 </label>
-                <label>Quantidade
-                  <input id="quantity" type="text" placeholder="" />
-                  <p id="alerta_quantidade" style="display: none;">O Campo precisa ser preenchido</p>
+                <label>
+                  <input type="radio" name="question" id="order2" value="encomenda">Encomenda
                 </label>
               </div>
-              <div class="price-total">
-                <label>Preço unid.
-                  <input id="price" type="text" placeholder="" />
-                  <p id="alerta_precounidade" style="display: none;">O Campo precisa ser preenchido</p>
+            </div>
+            <div class="form">
+              <div class="discount-general" id="boxdiscount-general">
+                <label>Desconto
+                  <input id="discount" type="text" placeholder=""/>
+                  <p id="alerta_desconto" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
-                <label>Total
-                  <input id="total" type="text" placeholder="" />
-                  <p id="alerta_total" style="display: none;">O Campo precisa ser preenchido</p>
-                  <span>Adicionar</span>
-                </label>
-              </div>
-            </div>
-            <div class="total-general" id="boxproduct">
-              <label>Total geral
-                <input id="total-general-id" type="text" placeholder="" />
-                <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
-              </label>
-            </div>
-            <div class="register">
-              <div class="btn-group" style="width: 10%;">
-                <button class="btn btn-primary" id="btn_setinha" type="button">></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="payment-id" role="tabpanel" aria-labelledby="payment-tab">
-          <div class="form">
-            <h5 class="sale">Tipo de Venda</h5>
-            <div class="public-order">
-              <label>
-                <input type="radio" name="question" id="public2" value="geral">Geral
-              </label>
-              <label>
-                <input type="radio" name="question" id="order2" value="encomenda">Encomenda
-              </label>
-            </div>
-          </div>
-          <div class="form">
-            <div class="discount-general" id="boxdiscount-general">
-              <label>Desconto
-                <input id="discount" type="text" placeholder="" />
-                <p id="alerta_desconto" style="display: none;">O Campo precisa ser preenchido</p>
-              </label>
-              <div class="total-general-2">
+                <div class="total-general">
                 <label>Total geral
-                  <input id="total-general-id-2" type="text" placeholder="" />
-                  <p id="alerta_totalgeral_2" style="display: none;">O Campo precisa ser preenchido</p>
+                  <input id="total-general" type="text" placeholder=""/>
+                  <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
             </div>
-            <div class="payment-value" id="boxpayment-payment-value">
+            <div class="payment-value" id="boxpayment">
               <div class="payment">
                 <label>Forma de Pagamento
-                  <select id="selectPagamentoVendas">
-                      <option value="pix">PIX</option>
-                      <option value="debito">Débito</option>
-                      <option value="credito">Crédito</option>
-                      <option value="dinheiro">Dinheiro</option>
-                  </select>
+                  <input id="payment_method" type="text" placeholder=""/>
+                  <p id="alerta_formapagamento" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
               <div class="total-value">
                 <label>Valor total
-                  <input id="total-value-id" type="text" placeholder="" />
+                  <input id="total-value" type="text" placeholder=""/>
                   <p id="alerta_valortotal" style="display: none;">O Campo precisa ser preenchido</p>
                   <span>Adicionar</span>
                 </label>
               </div>
             </div>
-            <div class="total-paid" id="boxpayment-total-paid">
+            <div class="total-paid" id="boxpayment">
               <label>Total pago
-                <input id="total-paid-input" type="text" placeholder="" />
-                <p id="total-paid-p" style="display: none;">O Campo precisa ser preenchido</p>
+                <input id="total-paid" type="text" placeholder=""/>
+                <p id="" style="display: none;">O Campo precisa ser preenchido</p>
               </label>
             </div>
             <div class="register" style="justify-content: space-between;">
-              <div class="btn-group" style="width: 20%;">
-                <button class="btn btn-primary" id="btn_setinha_2" type="button">
-                  << /button>
+              <div class="btn-group" style="width: 10%;">
+                <button class="btn btn-primary" id="btn_setinha" type="button"><</button>
               </div>
               <div class="btn-group">
                 <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
@@ -317,15 +286,11 @@
             </div>
           </div>
         </div>
+      </section>
     </section>
-  </section>
-  </div>
-  </div>
   </div>
 </div> 
 </div>
-<script src="script/preloader.js"></script>
 <script type="module" src="script/sale_registration.js"></script>
 </body>
-
 </html>

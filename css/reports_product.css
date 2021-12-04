@@ -1,0 +1,30 @@
+@import url(main.css);
+@import url(home.css);
+
+h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.report{
+    display: flex;
+    flex-direction: column;
+    height:max-content;
+    align-items:flex-start;
+    width: 100%;
+    padding: 0px 30px 0px 30px;
+    margin-top: 18px;
+}
+
+.graphics-double{
+    display: flex;
+    width: 50%;
+    margin: 18px;
+    margin-right: 24px
+}
+
+.graphics-single{
+    display: flex;
+    width: 40%;
+    align-self: center;
+}
