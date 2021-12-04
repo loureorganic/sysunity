@@ -37,30 +37,35 @@ export default class databasecreateproduction{
     let today = new Date();
     let cadastrationDate = today.toLocaleDateString();
     let cadastrationHour = today.toLocaleTimeString();
-        let a;
-        let authUser = localStorage.getItem("id");
-        const firebaseref = firebase.database().ref("user");
-        firebaseref.once('value').then(function (snapshot) {
-            snapshot.forEach(element => {
-                if(element.key === authUser)
-                {
-                  a = element;
-                }
-             });
-    const database = firebase.database();
-    let newClientKey = database.ref().child('production').push().key;
-    database.ref('production/'+newClientKey+'/product').set(production.product);
-    database.ref('production/'+newClientKey+'/type').set(production.type);
-    database.ref('production/'+newClientKey+'/validate').set(production.days);
-    database.ref('production/'+newClientKey+'/initialdatavalidate').set(production.initialdatavalidate);
-    database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
-    database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
-    database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
-    database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
-    database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
-    database.ref('production/'+newClientKey+'/batch').set(production.batch);
-    database.ref('production/'+newClientKey+'/user').set(a.key);
-     });
+    let a;
+    let authUser = localStorage.getItem("id");
+
+    const firebaseref = firebase.database().ref("user");
+    firebaseref.once('value').then(function (snapshot) {
+
+      snapshot.forEach(element => {
+
+        if(element.key === authUser)
+        {
+          a = element;
+        }
+      });
+
+      const database = firebase.database();
+      let newClientKey = database.ref().child('production').push().key;
+      database.ref('production/'+newClientKey+'/product').set(production.product);
+      database.ref('production/'+newClientKey+'/type').set(production.type);
+      database.ref('production/'+newClientKey+'/validate').set(production.days);
+      database.ref('production/'+newClientKey+'/initialdatavalidate').set(production.initialdatavalidate);
+      database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
+      database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
+      database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
+      database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
+      database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
+      database.ref('production/'+newClientKey+'/batch').set(production.batch);
+      database.ref('production/'+newClientKey+'/user').set(a.key);
+
+    });
    }
 
    validateProduction(production){
@@ -70,30 +75,35 @@ export default class databasecreateproduction{
     let a;
     let authUser = localStorage.getItem("id");
     const firebaseref = firebase.database().ref("user");
+
     firebaseref.once('value').then(function (snapshot) {
-        snapshot.forEach(element => {
-            if(element.key === authUser)
-            {
-              a = element;
-            }
-         });
-   
+      snapshot.forEach(element => {
+        if(element.key === authUser)
+        {
+          a = element;
+        }
+      });
+
+      let active = false;
     
-    const database = firebase.database();
-    let newClientKey = database.ref().child('production').push().key;
-    database.ref('production/'+newClientKey+'/product').set(production.product);
-    database.ref('production/'+newClientKey+'/type').set(production.type);
-    database.ref('production/'+newClientKey+'/fabricationdate').set(production.fabrication);
-    database.ref('production/'+newClientKey+'/deadlinedate').set(production.deadline);
-    database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
-    database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
-    database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
-    database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
-    database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
-    database.ref('production/'+newClientKey+'/batch').set(production.batch);
-    database.ref('production/'+newClientKey+'/user').set(a.key);
+      const database = firebase.database();
+      let newClientKey = database.ref().child('production').push().key;
+      database.ref('production/'+newClientKey+'/product').set(production.product);
+      database.ref('production/'+newClientKey+'/type').set(production.type);
+      database.ref('production/'+newClientKey+'/fabricationdate').set(production.fabrication);
+      database.ref('production/'+newClientKey+'/deadlinedate').set(production.deadline);
+      database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
+      database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
+      database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
+      database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
+      database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
+      database.ref('production/'+newClientKey+'/batch').set(production.batch);
+      database.ref('production/'+newClientKey+'/user').set(a.key);
+
+      window.location.reload(active);
+
     });
-   }
+  }
 
    
 }

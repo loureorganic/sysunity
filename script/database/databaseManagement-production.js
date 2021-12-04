@@ -132,13 +132,14 @@ var modaldelete = ` <div class="modal" id="MyModalDeletar">
 
 export default class databasemanagementproduction {
 
+  // CRIACAO DA TABELA
   managementproduction() {
 
     var self = this;
 
     const firebaseref = firebase.database().ref("production");
 
-    // Criacao da tabela
+    // CRIACAO E POPULAR OS DADOS NA TABELA
     firebaseref.once('value', function(all){
       all.forEach(
         function(curecord){
@@ -155,27 +156,31 @@ export default class databasemanagementproduction {
       )
       
 
-      // Validando qual modal foi clicado
+      // VALIDACAO DO MODAL CLICADO
       var everclass = document.querySelectorAll(".dot td");
       for(var i = 0; i < everclass.length; i++){
         
         everclass[i].addEventListener("click", function(data){
+
           var parent = this.parentNode;
           var div = document.createElement('div');
+
           if(data.path[0].id === 'btnDelete'){
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function(){
               self.funcmodaldelete(parent.getAttribute('id'))
-              
+              console.log(parent.getAttribute('id'))           
             });
           }
+
           else if(data.path[0].id === 'btnSee'){
             div.innerHTML = modalsee;
             var_lista.appendChild(div);
             var parent = this.parentNode;
             self.funcmodalsee(parent.getElementsByTagName('td')[1].innerHTML);
           }
+
           else if(data.path[0].id === 'btnEdit'){
             div.innerHTML = modaledit;
             var_lista.appendChild(div);  
@@ -187,7 +192,7 @@ export default class databasemanagementproduction {
     })
   }
 
-  // Modal de visualizar
+  // MODAL DE VISUALIZAR
   funcmodalsee(dados){
     const firebaseref = firebase.database().ref("production");
     const usfirebaseref = firebase.database().ref("user");
@@ -232,7 +237,7 @@ export default class databasemanagementproduction {
 
   }
 
-  // Modal de editar
+  // MODAL DE EDITAR
   funcmodaledit(a){
 
     var self = this;
@@ -305,7 +310,7 @@ export default class databasemanagementproduction {
 
   }
 
-  // Funcao de atualizacao dos dados
+  // FUNCAO P/ ATUALIZAR DADOS
   funcUpd(chave, dataprodução, datavenciemnto, totalProducao, pra){
 
     const database = firebase.database();
@@ -319,7 +324,7 @@ export default class databasemanagementproduction {
 
   };
 
-  // Modal de deletar
+  // MODAL DE DELETAR
   funcmodaldelete(dados){
     let valu = '';
     let active = false;
@@ -331,9 +336,9 @@ export default class databasemanagementproduction {
     resultado.forEach(element => {
       if(element.key == dados) {
         valu = element.key;
-        database.ref('production/'+valu).remove();
+        // database.ref('production/'+valu).remove();
 
-        window.location.reload(active);
+        // window.location.reload(active);
       }
     });
   })
