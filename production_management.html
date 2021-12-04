@@ -146,254 +146,258 @@
           </ul>
         </section>
 
-  <!--Barra de alerta-->
-  <section class="content-table">
-    <header class="bar-status">
-      <div class="welcome">
-        <h1 id="hello">Produtos</h1>
-      </div>
-      <ul class="bar-login">
-        <li id="usuario-content">
-          <div class="btn-group">
-            <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="images/account_circle_black_36dp.svg" alt="" width="20%">
-              <h6 id="user">
-                Taila Santos
-              </h6>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="settings_user.html">Configurações
-                  <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
-                </a>
-              </li>
-              <li>
-                <a href="index.html">Sair
-                  <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
-                </a>
+
+        <!--Barra de alerta-->
+        <section class="content-table">
+          <header class="bar-status">
+            <div class="welcome">
+              <h1 id="hello">Produtos</h1>
+            </div>
+            <ul class="bar-login">
+              <li id="usuario-content">
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/account_circle_black_36dp.svg" alt="" width="20%">
+                    <h6 id="user">
+                      Taila Santos
+                    </h6>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="settings_user.html">Configurações
+                        <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.html">Sair
+                        <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
-          </div>
-        </li>
-      </ul>
-    </header>
-    <!--Título da tela-->
-    <section class="section-title">
-      <h2>Gerenciamento da produção</h2>
-    </section>
+          </header>
+          <!--Título da tela-->
+          <section class="section-title" id="a">
+            <h2 >Gerenciamento da produção</h2>
+          </section>
 
-    <!--Tabela -> Gerenciamento de Produtos-->
-    <section class="section-table" >
-      <table id="myTable" class="table">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Tipo</th>
-                <th>Lote</th>
-                <th id="opcoes">Opções</th>
-            </tr>
-        </thead>
-        <tbody id="tablebody"></tbody>
-      </table>       
-    </section>
-    <!-- <section class="section-table">
-      <table id="myTable" class="table">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Tipo</th>
-            <th>Lote</th>
-            <th id="opcoes">Opções</th>
-          </tr>
-        </thead>
-        <tbody id="tablebody">
-          <tr>
-            <td>Coxinha</td>
-            <td>Frango</td>
-            <td>2598</td>
-            <td>
-              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-              <div class="modal" id="MyModal">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Visualizar Produção</h5>
-                      <button type="button" class="delete" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="user-email">
-                          <label for="">Item
-                            <input id="item" type="text" placeholder="" disabled />
-                          </label>
-                          <label for="">Lote
-                            <input id="lote" type="text" placeholder="" disabled />
-                          </label>
-                          <label for="">Funcionário
-                            <input id="funcionario" type="text" placeholder="" disabled />
-                          </label>
-                        </div>
-                        <div class="user-email">
-                          <label for="">Quantidade em Estoque
-                            <input id="qntEstoque" type="text" placeholder="" disabled />
-                          </label>
-                          <label for="">Quantidade Produzida
-                            <input id="qntProduzida" type="text" placeholder="" disabled />
-                          </label>                          
-                        </div>
-                        <div class="user-email">
-                          <label for="">Data de Produção
-                            <input id="dataProdução" type="text" placeholder="" disabled />
-                          </label>
-                          <label for="">Data de Venciemento
-                            <input id="dataVenciemnto" type="text" placeholder="" disabled />
-                          </label>                          
-                        </div>
-                        <div class="user-email">
-                          <label for="">Prazo
-                            <input id="prazo" type="text" placeholder="" disabled />
-                          </label>                          
-                          <label for="">Total da Produção
-                            <input id="totalProducao" type="text" placeholder="" disabled />
-                          </label>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
-              <div class="modal" id="MyModalEditar">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title2">Editar Produção</h5>
-                      <button type="button" class="delete" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="user-email">
-                          <label for="">Item
-                            <input id="item" type="text" placeholder="" />
-                          </label>
-                          <label for="">Lote
-                            <input id="lote" type="text" placeholder="" />
-                          </label>
-                          <label for="">Funcionário
-                            <input id="funcionario" type="text" placeholder="" />
-                          </label>
-                        </div>
-                        <div class="user-email">
-                          <label for="">Quantidade em Estoque
-                            <input id="qntEstoque" type="text" placeholder="" />
-                          </label>
-                          <label for="">Quantidade Produzida
-                            <input id="qntProduzida" type="text" placeholder="" />
-                          </label>                          
-                        </div>
-                        <div class="user-email">
-                          <label for="">Data de Produção
-                            <input id="dataProdução" type="text" placeholder="" />
-                          </label>
-                          <label for="">Data de Venciemento
-                            <input id="dataVenciemnto" type="text" placeholder="" />
-                          </label>                          
-                        </div>
-                        <div class="user-email">
-                          <label for="">Prazo
-                            <input id="prazo" type="text" placeholder="" />
-                          </label>                          
-                          <label for="">Total da Produção
-                            <input id="totalProducao" type="text" placeholder="" />
-                          </label>
-                        </div>
-                        <div class="save">
-                          <div class="btn-group">
-                            <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
+          <!--Tabela -> Gerenciamento de Produtos-->
+          <section class="section-table" >
+            <table id="myTable" class="table">
+              <thead>
+                  <tr>
+                      <th>Nome</th>
+                      <th>Tipo</th>
+                      <th>Lote</th>
+                      <th id="opcoes">Opções</th>
+                  </tr>
+              </thead>
+              <tbody id="tablebody"></tbody>
+            </table>       
+          </section>
+          <!-- <section class="section-table">
+            <table id="myTable" class="table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Tipo</th>
+                  <th>Lote</th>
+                  <th id="opcoes">Opções</th>
+                </tr>
+              </thead>
+              <tbody id="tablebody">
+                <tr>
+                  <td>Coxinha</td>
+                  <td>Frango</td>
+                  <td>2598</td>
+                  <td>
+                    <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+                    <div class="modal" id="MyModal">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Visualizar Produção</h5>
+                            <button type="button" class="delete" data-bs-dismiss="modal"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="user-email">
+                                <label for="">Item
+                                  <input id="item" type="text" placeholder="" disabled />
+                                </label>
+                                <label for="">Lote
+                                  <input id="lote" type="text" placeholder="" disabled />
+                                </label>
+                                <label for="">Funcionário
+                                  <input id="funcionario" type="text" placeholder="" disabled />
+                                </label>
+                              </div>
+                              <div class="user-email">
+                                <label for="">Quantidade em Estoque
+                                  <input id="qntEstoque" type="text" placeholder="" disabled />
+                                </label>
+                                <label for="">Quantidade Produzida
+                                  <input id="qntProduzida" type="text" placeholder="" disabled />
+                                </label>                          
+                              </div>
+                              <div class="user-email">
+                                <label for="">Data de Produção
+                                  <input id="dataProdução" type="text" placeholder="" disabled />
+                                </label>
+                                <label for="">Data de Venciemento
+                                  <input id="dataVenciemnto" type="text" placeholder="" disabled />
+                                </label>                          
+                              </div>
+                              <div class="user-email">
+                                <label for="">Prazo
+                                  <input id="prazo" type="text" placeholder="" disabled />
+                                </label>                          
+                                <label for="">Total da Produção
+                                  <input id="totalProducao" type="text" placeholder="" disabled />
+                                </label>
+                              </div>
+                            </form>
                           </div>
                         </div>
-                      </form>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>
-              <div class="modal" id="MyModalDeletar">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title3">Deletar Produção</h5>
-                      <button type="button" class="delete" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <h3>Tem certeza que deseja deletar a produção?</h3>
-                        <div class="alternative">
-                          <button type="button" class="btn btn-primary">SIM</button>
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
+                    <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+                    <div class="modal" id="MyModalEditar">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title2">Editar Produção</h5>
+                            <button type="button" class="delete" data-bs-dismiss="modal"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="user-email">
+                                <label for="">Item
+                                  <input id="item" type="text" placeholder="" />
+                                </label>
+                                <label for="">Lote
+                                  <input id="lote" type="text" placeholder="" />
+                                </label>
+                                <label for="">Funcionário
+                                  <input id="funcionario" type="text" placeholder="" />
+                                </label>
+                              </div>
+                              <div class="user-email">
+                                <label for="">Quantidade em Estoque
+                                  <input id="qntEstoque" type="text" placeholder="" />
+                                </label>
+                                <label for="">Quantidade Produzida
+                                  <input id="qntProduzida" type="text" placeholder="" />
+                                </label>                          
+                              </div>
+                              <div class="user-email">
+                                <label for="">Data de Produção
+                                  <input id="dataProdução" type="text" placeholder="" />
+                                </label>
+                                <label for="">Data de Venciemento
+                                  <input id="dataVenciemnto" type="text" placeholder="" />
+                                </label>                          
+                              </div>
+                              <div class="user-email">
+                                <label for="">Prazo
+                                  <input id="prazo" type="text" placeholder="" />
+                                </label>                          
+                                <label for="">Total da Produção
+                                  <input id="totalProducao" type="text" placeholder="" />
+                                </label>
+                              </div>
+                              <div class="save">
+                                <div class="btn-group">
+                                  <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
                         </div>
-                      </form>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Pastel</td>
-            <td>Carne</td>
-            <td>2600</td>
-            <td>
-              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
-              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
-                data-bs-target="#MyModalDeletar"></button>
-            </td>
-          </tr>
-          <tr>
-            <td>Kibe</td>
-            <td>Carne</td>
-            <td>2601</td>
-            <td>
-              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
-              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
-                data-bs-target="#MyModalDeletar"></button>
-            </td>
-          </tr>
-          <tr>
-            <td>Bolinha</td>
-            <td>Queijo</td>
-            <td>2602</td>
-            <td>
-              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
-              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
-                data-bs-target="#MyModalDeletar"></button>
-            </td>
-          </tr>
-          <tr>
-            <td>Empada</td>
-            <td>Frango</td>
-            <td>2603</td>
-            <td>
-              <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
-              <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
-              <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
-                data-bs-target="#MyModalDeletar"></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section> -->
-  </section>
+                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>
+                    <div class="modal" id="MyModalDeletar">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title3">Deletar Produção</h5>
+                            <button type="button" class="delete" data-bs-dismiss="modal"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <h3>Tem certeza que deseja deletar a produção?</h3>
+                              <div class="alternative">
+                                <button type="button" class="btn btn-primary">SIM</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pastel</td>
+                  <td>Carne</td>
+                  <td>2600</td>
+                  <td>
+                    <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+                    <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+                    <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                      data-bs-target="#MyModalDeletar"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Kibe</td>
+                  <td>Carne</td>
+                  <td>2601</td>
+                  <td>
+                    <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+                    <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+                    <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                      data-bs-target="#MyModalDeletar"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bolinha</td>
+                  <td>Queijo</td>
+                  <td>2602</td>
+                  <td>
+                    <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+                    <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+                    <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                      data-bs-target="#MyModalDeletar"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Empada</td>
+                  <td>Frango</td>
+                  <td>2603</td>
+                  <td>
+                    <button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>
+                    <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>
+                    <button id="btnDelete" class="delete" type="button" data-bs-toggle="modal"
+                      data-bs-target="#MyModalDeletar"></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section> -->
+        </section>
+      </div>
+    </div>
   </div>
-  </div>
-  </div>
+
+  <!-- Chamada dos scripts -->
   <script type="module" src="./script/production_management.js"></script>
   <script src="script/preloader.js"></script>
   <script type="module" src="script/modal.js"></script>
+
 </body>
 
 </html>

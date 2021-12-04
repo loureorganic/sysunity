@@ -40,7 +40,8 @@ let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-    
+    let active = false;
+
     i++;
     console.log(i);
     document.getElementById('batch1').value = i;
@@ -66,4 +67,3 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     }
 
 });
-
