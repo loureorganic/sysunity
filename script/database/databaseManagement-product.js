@@ -421,7 +421,7 @@ export default class databasemanagementproduct {
         
         if (keyname === dados) {
           console.log(resultado.val()[keyname]);
-          document.getElementById("nome").value = element.val().name;
+          document.getElementById("nome").value = keyname;
           document.getElementById("tipo").value = element.val().type;
           document.getElementById("valor").value = element.val().value;
           
