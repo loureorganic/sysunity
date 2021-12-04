@@ -40,78 +40,6 @@ var modalsee = `
                     <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -258,8 +186,14 @@ export default class databasemanagementproduct {
         
         if (keyname === dados) {
           document.getElementById("nome").value = keyname;
-          document.getElementById("tipo").value = element.val().type;
-          document.getElementById("valor").value = element.val().value;
+          var tr = document.createElement('tr');
+          var var_lista2 = document.getElementById("tbody-sabores-valores");  
+          //FALTA TRANSFORMAR ISSO EM STRING E FAZER O APPEND CHILD
+          //VC CONSEGUE FAZER :)
+          //  <td id="input-sabores-id">
+          //           <input id="tipo" type="text" placeholder="" disabled />
+          //         </td>
+          console.log(var_lista2);
           
         }
         
