@@ -145,23 +145,24 @@ export default class databasemanagementproduction {
           var producao = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
-          tr.setAttribute("id",curecord.key)
+          tr.setAttribute("id",curecord.key);
           dados = 
           "<td>" + producao.product + "</td>" + "<td>" + producao.type + 
-          "</td>" + "<td>" + producao.batch + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
-          
-
+          "</td>" + "<td>" + producao.batch + "</td>" + "<td "+"id='suc'>" + btnsee + btnedit + btndelete + "</td>";
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
         }
       )
       
+
       // Validando qual modal foi clicado
       var everclass = document.querySelectorAll(".dot td");
+      console.log(everclass);
       for(var i = 0; i < everclass.length; i++){
         
         everclass[i].addEventListener("click", function(data){
           var parent = this.parentNode;
+          // console.log(data.path)
           var div = document.createElement('div');
           if(data.path[0].id === 'btnDelete'){
             div.innerHTML = modaldelete;
@@ -224,9 +225,7 @@ export default class databasemanagementproduction {
     firebaseref.once('value',(resultado)=>{
       
       resultado.forEach(element => {
-
         if(element.child("type").val() == a) {
-
           document.getElementById("item").placeholder = element.val().product + " de " + element.val().type;
           document.getElementById("lote").placeholder = "Em andamento";
           document.getElementById("funcionario").placeholder = "Em andamento";
@@ -244,7 +243,7 @@ export default class databasemanagementproduction {
             // var lote = document.getElementById("lote").value;
             // var funcionario = document.getElementById("funcionario").value;
             // var qntEstoque = document.getElementById("qntEstoque").value;
-            // var qntProduzida = document.getElementById("qntProduzida").value;
+            // var qntProduzida = document.getElementById("qntProduzida").value;\
             var dataProducao = document.getElementById("dataProdução").value;
             var dataVenciemnto = document.getElementById("dataVenciemnto").value;
             // var prazo = document.getElementById("prazo").value;
