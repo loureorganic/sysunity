@@ -413,72 +413,21 @@ var modaldelete = `
 
 export default class databasemanagementproduct {
 
-  managementproduct() {
-
-    var self = this;
-
-    const firebaseref = firebase.database().ref("product");
-    firebaseref.once('value', function (all) {
-      all.forEach(
-        function (curecord) {
-          var produto = curecord.val();
-          console.log(JSON.stringify(produto))
-          var tr = document.createElement('tr');
-          tr.classList.add('dot');
-          dados =
-            "<td>" + produto + "</td>" +
-            "<td>" + produto + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
-
-          tr.innerHTML = dados;
-          var_lista.appendChild(tr);
-        }
-      )
-
-      var everclass = document.querySelectorAll(".dot td");
-      for (var i = 0; i < everclass.length; i++) {
-
-        everclass[i].addEventListener("click", function (data) {
-          var parent = this.parentNode;
-          var div = document.createElement('div');
-          if (data.path[0].id === 'btnDelete') {
-            div.innerHTML = modaldelete;
-            var_lista.appendChild(div);
-            document.getElementById('confirm').addEventListener("click", function () {
-              self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
-            });
-          }
-          else if (data.path[0].id === 'btnSee') {
-            div.innerHTML = modalsee;
-            var_lista.appendChild(div);
-            var parent = this.parentNode;
-            self.funcmodalsee(parent.getElementsByTagName('td')[1].innerHTML);
-          }
-          else if (data.path[0].id === 'btnEdit') {
-            div.innerHTML = modaledit;
-            var_lista.appendChild(div);
-            var parent = this.parentNode;
-            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
-          }
-        })
-      }
-    })
-  }
-
+ 
   funcmodalsee(dados) {
     const firebaseref = firebase.database().ref("product");
     firebaseref.once('value', (resultado) => {
-
-      resultado.forEach(element => {
-
-        if (element.child("value").val() == dados) {
-
+      Object.keys(resultado.val()).map((keyname)=> {
+        
+        if (keyname === dados) {
+          console.log(resultado.val()[keyname]);
           document.getElementById("nome").value = element.val().name;
           document.getElementById("tipo").value = element.val().type;
           document.getElementById("valor").value = element.val().value;
-
+          
         }
-
-      });
+        
+      })
 
     })
 
@@ -553,5 +502,54 @@ export default class databasemanagementproduct {
     })
 
   }
+
+  managementproduct() {
+
+    var self = this;
+
+    const firebaseref = firebase.database().ref("product");
+    firebaseref.once('value', function (all) {
+      Object.keys(all.val()).map((keyname)=> {
+          var tr = document.createElement('tr');
+          tr.classList.add('dot');
+          dados =
+          "<td id="+ keyname +">" + keyname + "</td>" +
+          "<td>" + '    ' + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+          
+          tr.innerHTML = dados;
+          var_lista.appendChild(tr);
+          
+        })
+
+      var everclass = document.querySelectorAll(".dot td");
+      for (var i = 0; i < everclass.length; i++) {
+
+        everclass[i].addEventListener("click", function (data) {
+          var parent = this.parentNode;
+          var div = document.createElement('div');
+          if (data.path[0].id === 'btnDelete') {
+            div.innerHTML = modaldelete;
+            var_lista.appendChild(div);
+            document.getElementById('confirm').addEventListener("click", function () {
+              self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
+            });
+          }
+          else if (data.path[0].id === 'btnSee') {
+            div.innerHTML = modalsee;
+            var_lista.appendChild(div);
+            var parent = this.parentNode;
+            self.funcmodalsee(parent.getElementsByTagName('td')[0].getAttribute('id'));
+          }
+          else if (data.path[0].id === 'btnEdit') {
+            div.innerHTML = modaledit;
+            var_lista.appendChild(div);
+            var parent = this.parentNode;
+            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
+          }
+        })
+      }
+    })
+  }
+
 
 }
