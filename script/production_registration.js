@@ -6,6 +6,7 @@ const dados = new databaseuser();
 
 teste.data();
 dados.objectuser();
+
 document.getElementById("deadline").addEventListener("click", function() {
     document.getElementById('boxday').style.display = "flex";
 	document.getElementById('boxfabrication').style.display = "none";
@@ -42,7 +43,6 @@ document.getElementById('batch1').value = Number(batch);
 
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-    let active = false;
    
     let production = {
         product: document.getElementById('unique').value, 
@@ -63,6 +63,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
         teste.daysProduction(production);
     } else if (production.fabrication !=='' && production.deadline !=='' && production.labelActiveValidate) {
         teste.validateProduction(production);
+        
     }
 
 });

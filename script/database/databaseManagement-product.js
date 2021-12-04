@@ -413,7 +413,7 @@ var modaldelete = `
 
 export default class databasemanagementproduct {
 
- 
+ // MODAL DE VISUALIZAR
   funcmodalsee(dados) {
     const firebaseref = firebase.database().ref("product");
     firebaseref.once('value', (resultado) => {
@@ -432,6 +432,7 @@ export default class databasemanagementproduct {
 
   }
 
+  // MODAL DE EDITAR
   funcmodaledit(a) {
 
     var self = this;
@@ -474,6 +475,7 @@ export default class databasemanagementproduct {
 
   }
 
+  // FUNCAO P/ ATUALIZAR DADOS
   funcUpd(chave, nome, tipo, valor) {
     const database = firebase.database();
     let active = false;
@@ -484,17 +486,22 @@ export default class databasemanagementproduct {
     window.location.reload(active);
   };
 
+  // MODAL DE DELETAR
   funcmodaldelete(dados) {
 
     let valu = '';
     let active = false;
     const database = firebase.database();
     const firebaseref = firebase.database().ref("product");
+
     firebaseref.once('value', (resultado) => {
       resultado.forEach(element => {
-        if (element.child("value").val() == dados) {
+
+        if (element.key == dados) {
+
           valu = element.key;
           database.ref('product/' + valu).remove();
+          
           window.location.reload(active);
         }
       });
@@ -502,43 +509,53 @@ export default class databasemanagementproduct {
 
   }
 
+  // CRIACAO DA TABELA
   managementproduct() {
 
     var self = this;
 
+    // CRIACAO E POPULAR OS DADOS NA TABELA
     const firebaseref = firebase.database().ref("product");
     firebaseref.once('value', function (all) {
-      Object.keys(all.val()).map((keyname)=> {
-          var tr = document.createElement('tr');
-          tr.classList.add('dot');
-          dados =
-          "<td id="+ keyname +">" + keyname + "</td>" +
-          "<td>" + '    ' + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
-          
-          tr.innerHTML = dados;
-          var_lista.appendChild(tr);
-          
-        })
 
+      Object.keys(all.val()).map((keyname)=> {
+
+        var tr = document.createElement('tr');
+        tr.classList.add('dot');
+        tr.setAttribute("id",keyname);
+        dados =
+        "<td id="+ keyname +">" + keyname + "</td>" +
+        "<td>" + '    ' + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+        
+        tr.innerHTML = dados;
+        var_lista.appendChild(tr);
+          
+      })
+
+      // VALIDACAO DO MODAL CLICADO
       var everclass = document.querySelectorAll(".dot td");
       for (var i = 0; i < everclass.length; i++) {
 
         everclass[i].addEventListener("click", function (data) {
+
           var parent = this.parentNode;
           var div = document.createElement('div');
+
           if (data.path[0].id === 'btnDelete') {
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function () {
-              self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
+              self.funcmodaldelete(parent.getAttribute('id'))
             });
           }
+
           else if (data.path[0].id === 'btnSee') {
             div.innerHTML = modalsee;
             var_lista.appendChild(div);
             var parent = this.parentNode;
             self.funcmodalsee(parent.getElementsByTagName('td')[0].getAttribute('id'));
           }
+
           else if (data.path[0].id === 'btnEdit') {
             div.innerHTML = modaledit;
             var_lista.appendChild(div);
