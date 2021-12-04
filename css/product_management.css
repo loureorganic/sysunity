@@ -42,22 +42,7 @@ table button {
   width: 60px;
   padding: 0;
 }
-#table-sabores,
-#table-valor,
-#table-sabores2,
-#table-valor2,
-#thead-sabores,
-#thead-valor,
-#thead-sabores2,
-#thead-valor2,
-#tbody-vendas-id,
-#tbody-valor-id,
-#tbody-vendas-id2,
-#tbody-valor-id2,
-#thead-tr-sabores,
-#thead-tr-valor,
-#thead-tr-sabores2,
-#thead-tr-valor2,
+
 input {
   text-align: center;
   background-color: white;
@@ -67,21 +52,11 @@ input {
 #div-table-sabores-valores2 {
   overflow-y: scroll;
   height: 105px;
+  width: 100%;
 }
-#div-table-sabores,
-#div-table-sabores2 {
-  width: 400px;
-  margin: 10px;
-}
-
-#div-table-valor,
-#div-table-valor2 {
-  width: 100px;
-  margin: 10px;
-}
-#user-email-id,
-#user-email-id2 {
-  margin-bottom: 15px;
+#nome-id,
+#nome-id2 {
+  margin-bottom: 10px;
 }
 #btnSee {
   margin-left: 300px;
@@ -140,12 +115,24 @@ input {
   margin-bottom: 0;
   color: black;
 }
+.modal-body form h4 {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 6px;
+  margin-bottom: 0;
+  margin-left: 145px;
+  color: black;
+}
 .modal-body form input {
   border-radius: 4px;
   border-width: 1px;
   height: 32px;
   border-style: solid;
   border-color: #085d8c;
+}
+#input-sabores-id,
+#input-sabores2-id{
+  width: 80%;
 }
 .modal-body .user-email label {
   display: flex;
@@ -164,7 +151,7 @@ input {
 }
 .save .btn-group {
   width: 30%;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 #btn_salvar {
   height: 40px;

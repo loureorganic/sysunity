@@ -20,169 +20,96 @@ var modalsee = `
 
       <form>
 
-        <div id="user-email-id" class="user-email">
+        <div id="nome-id" class="user-email">
           <label for="">Nome
             <input id="nome" type="text" placeholder="" disabled/>
           </label>
         </div>
+        <div id="sabores-valor-id" class="user-email">
+          <h4>Sabores</h4>
+          <h4>Valor</h4>
+        </div>
         <div id="div-table-sabores-valores" class="user-email">
-          <div id="div-table-sabores" class="user-email">
-            <table id="table-sabores">
-              <thead id="thead-sabores">
-                <tr id="thead-tr-sabores">
-                  <th>Sabores</th>
-                </tr>
-              </thead>
-              <tbody id="tbody-vendas-id" class="tbody-vendas">
+            <table id="table-sabores-valores">
+              <tbody id="tbody-sabores-valores" class="tbody-vendas">
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
+                  </td>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
+                  </td>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
+                  </td>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
-                </tr>    
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
+                  </td>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
+                  </td>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
+                  </td>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
+                  </td>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
+                  </td>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-sabores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>                         
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div id="div-table-valor"  class="user-email">
-            <table id="table-valor">
-              <thead id="thead-valor">
-                <tr id="thead-tr-valor">
-                  <th>Valor</th>
-                </tr>
-              </thead>
-              <tbody id="tbody-valor-id" class="tbody-vendas">
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>  
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>                           
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  <input id="tipo" type="text" placeholder="" disabled/>
+                  <td id="input-valores-id">
+                    <input id="tipo" type="text" placeholder="" disabled />
                   </td>
                 </tr>
               </tbody>
@@ -210,174 +137,84 @@ var modaledit = `
       </div>
       <div class="modal-body">
         <form>
-          <div id="user-email-id2" class="user-email">
+          <div id="nome-id2" class="user-email">
             <label for="">Nome
               <input id="nome" type="text" placeholder=""/>
             </label>
           </div>
+          <div id="sabores-valor-id2" class="user-email">
+            <h4>Sabores</h4>
+            <h4>Valor</h4>
+          </div>
           <div id="div-table-sabores-valores2" class="user-email">
-            <div id="div-table-sabores2" class="user-email">
-              <table id="table-sabores2">
-                <thead id="thead-sabores2">
-                  <tr id="thead-tr-sabores2">
-                    <th>Sabores</th>
-                  </tr>
-                </thead>
-                <tbody id="tbody-vendas-id" class="tbody-vendas">
-                  <tr>
-                    <td>
+            <table id="table-sabores-valores2">
+              <tbody id="tbody-sabores-valores2" class="tbody-vendas">
+                <tr>
+                  <td id="input-sabores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                  <td id="input-valores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="input-sabores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                  <td id="input-valores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>    
-                  <tr>
-                    <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="input-sabores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                  <td id="input-valores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="input-sabores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                  <td id="input-valores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="input-sabores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                  <td id="input-valores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="input-sabores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                  <td id="input-valores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="input-sabores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>                         
-                  <tr>
-                    <td>
+                  </td>
+                  <td id="input-valores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div id="div-table-valor2"  class="user-email">
-              <table id="table-valor2">
-                <thead id="thead-valor2">
-                  <tr id="thead-tr-valor2">
-                    <th>Valor</th>
-                  </tr>
-                </thead>
-                <tbody id="tbody-valor-id2" class="tbody-vendas">
-                  <tr>
-                    <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="input-sabores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                  </td>
+                  <td id="input-valores2-id">
                     <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>  
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>                           
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <input id="tipo" type="text" placeholder=""/>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                  </td>
+                </tr>                
+              </tbody>
+            </table>
           </div>
           <div class="save">
             <div class="btn-group">
