@@ -35,8 +35,17 @@ Number(document.getElementById('package01').value);
 new Date(document.getElementById('fabricationdate').value);
 new Date(document.getElementById('deadlinedate').value);
 
+ 
 let today = new Date();
 let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+let cadastrationDate = date;
+let cadastrationHour = today.toLocaleTimeString();
+
+let generalTimeBatch = cadastrationDate.toString()+ '-' + cadastrationHour.toString();
+let batch = generalTimeBatch.replace(/:/g, '-').replace(/-/g, '')
+document.getElementById('batch1').value = Number(batch);
+    
+
 
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
@@ -44,7 +53,6 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
     i++;
     console.log(i);
-    document.getElementById('batch1').value = i;
    
     let production = {
         product: document.getElementById('unique').value, 
@@ -55,6 +63,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
         packagequantity: Number(document.getElementById('unity').value),
         packageperunity: Number(document.getElementById('package01').value),
         initialdatavalidate: date,
+        batch: Number(batch), 
         labelActiveDays: document.getElementById('deadline').checked,
         labelActiveValidate: document.getElementById('date').checked,
         totalquantity: Number(document.getElementById('unity').value) * Number(document.getElementById('package01').value)

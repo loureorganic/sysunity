@@ -58,6 +58,7 @@ export default class databasecreateproduction{
     database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
     database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
     database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
+    database.ref('production/'+newClientKey+'/batch').set(production.batch);
     database.ref('production/'+newClientKey+'/user').set(a.key);
      });
    }
@@ -89,6 +90,7 @@ export default class databasecreateproduction{
     database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
     database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
     database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
+    database.ref('production/'+newClientKey+'/batch').set(production.batch);
     database.ref('production/'+newClientKey+'/user').set(a.key);
     });
    }
