@@ -421,8 +421,8 @@ export default class databasemanagementproduct {
         
         if (keyname === dados) {
           document.getElementById("nome").value = keyname;
-          document.getElementById("tipo").value = element.val().type;
-          document.getElementById("valor").value = element.val().value;
+          // document.getElementById("tipo").value = element.val().type;
+          // document.getElementById("valor").value = element.val().value;
           
         }
         
@@ -440,36 +440,33 @@ export default class databasemanagementproduct {
     const firebaseref = firebase.database().ref("product");
     firebaseref.once('value', (resultado) => {
 
-      resultado.forEach(element => {
+    Object.keys(resultado.val()).map((keyname)=> {
+      
+      if (keyname === a) {
+        document.getElementById("nome").placeholder = keyname;
 
-        if (element.child("value").val() == a) {
+        var btn = document.getElementById("btn_salvar");
+        btn.addEventListener("click", function (e) {
+          var inputnome = document.getElementById("nome").value;
+          var inputtipo = document.getElementById("tipo").value;
+          var inputvalor = document.getElementById("valor").value;
 
-          document.getElementById("nome").placeholder = element.val().name;
-          document.getElementById("tipo").placeholder = element.val().type;
-          document.getElementById("valor").placeholder = element.val().value;
+          if (inputnome === "") {
+            inputnome = element.val().name;
+          }
+          if (inputtipo === "") {
+            inputtipo = element.val().type;
+          }
+          if (inputvalor === "") {
+            inputvalor = element.val().value;
+          }
 
-          var btn = document.getElementById("btn_salvar");
-          btn.addEventListener("click", function (e) {
-            var inputnome = document.getElementById("nome").value;
-            var inputtipo = document.getElementById("tipo").value;
-            var inputvalor = document.getElementById("valor").value;
-
-            if (inputnome === "") {
-              inputnome = element.val().name;
-            }
-            if (inputtipo === "") {
-              inputtipo = element.val().type;
-            }
-            if (inputvalor === "") {
-              inputvalor = element.val().value;
-            }
-
-            self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
-          })
-
-        }
-
-      });
+          self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
+        })
+        
+      }
+      
+    })
 
     })
 
@@ -545,7 +542,7 @@ export default class databasemanagementproduct {
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function () {
-              self.funcmodaldelete(parent.getAttribute('id'))
+              self.funcmodaldelete(parent.getAttribute('id'));
             });
           }
 
@@ -560,7 +557,7 @@ export default class databasemanagementproduct {
             div.innerHTML = modaledit;
             var_lista.appendChild(div);
             var parent = this.parentNode;
-            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
+            self.funcmodaledit(parent.getElementsByTagName('td')[0].getAttribute('id'));
           }
         })
       }
