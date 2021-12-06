@@ -9,7 +9,7 @@ var modalsee = `
 
 <div class="modal-dialog modal-dialog-centered">
 
-  <div class="modal-content">
+  <div class="modal-content" id="modal-content">
 
     <div class="modal-header">
       <h5 class="modal-title">Visualizar Produto</h5>
@@ -172,29 +172,31 @@ var modaldelete = `
 export default class databasemanagementproduct {
 
  // MODAL DE VISUALIZAR
-  funcmodalsee(dados) {
+  funcmodalsee(data) {
     const firebaseref = firebase.database().ref("product");
     firebaseref.once('value', (resultado) => {
+      var key;
+      var var_lista2;
+      var dadostotais;
+      var dados;
+      // var dados2;
+      console.log(document.getElementById("modal-content"))
+      let tr = document.createElement('tr');
       Object.keys(resultado.val()).map((keyname)=> {
-        
-        if (1 === 1) {
+        if (keyname === data) {
           document.getElementById("nome").value = keyname;
-          let tr = document.createElement('tr');
-          var dados;
-          var dados2;
-          var dadostotais;
-          var var_lista2 = document.getElementById("tbody-sabores-valores");  
-          
-          Object.keys(resultado.val()[keyname]).map((type)=>{
-            console.log(type)
-            dados = "<td id='input-sabores-id' >" + "<input id='tipo' type='text' placeholder='"+ type +"' disabled />" + "</td>" 
-            dados2 = "<td id='input-valores-id' >" + "<input id='tipo' type='text' placeholder='"+ type +"' disabled />" + "</td>" 
-            dadostotais = dados + dados2;    
-          })
-          // console.log(dadostotais);
-          tr.innerHTML = dadostotais;
-          var_lista2.appendChild(tr);
+          key = keyname;
+          var_lista2 = document.getElementById("tbody-sabores-valores");
         }
+      })
+      Object.keys(resultado.val()[key]).map((type)=>{
+        console.log(type)
+        dados = "<td id='input-sabores-id' >" + "<input id='tipo' type='text' placeholder='"+ type +"' disabled />" + "</td>" 
+        // dados2 = "<td id='input-valores-id' >" + "<input id='tipo' type='text' placeholder='"+ type +"' disabled />" + "</td>" 
+        dadostotais = dados;    
+        tr.innerHTML += dadostotais;
+        console.log(tr);
+        var_lista2.appendChild(tr);
       })
 
     })
