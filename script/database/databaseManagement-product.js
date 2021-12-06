@@ -177,21 +177,21 @@ export default class databasemanagementproduct {
     firebaseref.once('value', (resultado) => {
       Object.keys(resultado.val()).map((keyname)=> {
         
-        if (keyname === dados) {
+        if (1 === 1) {
           document.getElementById("nome").value = keyname;
           let tr = document.createElement('tr');
           var dados;
           var dados2;
           var dadostotais;
           var var_lista2 = document.getElementById("tbody-sabores-valores");  
-          //FALTA TRANSFORMAR ISSO EM STRING E FAZER O APPEND CHILD
-          //VC CONSEGUE FAZER :)
+          
           Object.keys(resultado.val()[keyname]).map((type)=>{
+            console.log(type)
             dados = "<td id='input-sabores-id' >" + "<input id='tipo' type='text' placeholder='"+ type +"' disabled />" + "</td>" 
             dados2 = "<td id='input-valores-id' >" + "<input id='tipo' type='text' placeholder='"+ type +"' disabled />" + "</td>" 
             dadostotais = dados + dados2;    
           })
-          console.log(dadostotais);
+          // console.log(dadostotais);
           tr.innerHTML = dadostotais;
           var_lista2.appendChild(tr);
         }
