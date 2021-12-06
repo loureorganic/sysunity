@@ -14,10 +14,15 @@ var modalsee = ` <div class="modal" id="MyModal">
     </div>
     <div class="modal-body">
       <form>
-        <div class="user-email">
-          <label for="">Item
-            <input id="item" type="text" placeholder="" disabled />
+        <div class="user-email">          
+          <label for="">Produto
+            <input id="produto" type="text" placeholder="" disabled />
           </label>
+          <label for="">Tipo
+            <input id="tipo" type="text" placeholder="" disabled />
+          </label>
+        </div>
+        <div class="user-email">
           <label for="">Lote
             <input id="lote" type="text" placeholder="" disabled />
           </label>
@@ -64,10 +69,15 @@ var modaledit = ` <div class="modal" id="MyModalEditar">
     </div>
     <div class="modal-body">
       <form>
-        <div class="user-email">
-          <label for="">Item
-            <input id="item" type="text" placeholder="" />
+        <div class="user-email">          
+          <label for="">Produto
+            <input id="produto" type="text" placeholder="" disabled />
           </label>
+          <label for="">Tipo
+            <input id="tipo" type="text" placeholder="" disabled />
+          </label>
+        </div>
+        <div class="user-email">
           <label for="">Lote
             <input id="lote" type="text" placeholder="" />
           </label>
