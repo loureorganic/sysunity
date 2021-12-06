@@ -53,7 +53,7 @@ var modalsee = ` <div class="modal" id="MyModal">
                   <input id="inputQtn" type="text" placeholder="20" disabled />
                 </td>
                 <td>
-                  <input id="inputValor" type="text" placeholder="R$ 0,69" disabled />
+                  id="inputValor" type="text" placeholder="R$ 0,69" disabled />
                 </td>
               </tr>
               <tr>

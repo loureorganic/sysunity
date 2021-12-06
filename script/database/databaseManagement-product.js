@@ -32,14 +32,7 @@ var modalsee = `
         <div id="div-table-sabores-valores" class="user-email">
             <table id="table-sabores-valores">
               <tbody id="tbody-sabores-valores" class="tbody-vendas">
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
+              
               </tbody>
             </table>
           </div>
@@ -186,17 +179,22 @@ export default class databasemanagementproduct {
         
         if (keyname === dados) {
           document.getElementById("nome").value = keyname;
-          var tr = document.createElement('tr');
+          let tr = document.createElement('tr');
+          var dados;
+          var dados2;
+          var dadostotais;
           var var_lista2 = document.getElementById("tbody-sabores-valores");  
           //FALTA TRANSFORMAR ISSO EM STRING E FAZER O APPEND CHILD
           //VC CONSEGUE FAZER :)
-          //  <td id="input-sabores-id">
-          //           <input id="tipo" type="text" placeholder="" disabled />
-          //         </td>
-          console.log(var_lista2);
-          
+          Object.keys(resultado.val()[keyname]).map((type)=>{
+            dados = "<td id='input-sabores-id' >" + "<input id='tipo' type='text' placeholder='"+ type +"' disabled />" + "</td>" 
+            dados2 = "<td id='input-valores-id' >" + "<input id='tipo' type='text' placeholder='"+ type +"' disabled />" + "</td>" 
+            dadostotais = dados + dados2;    
+          })
+          console.log(dadostotais);
+          tr.innerHTML = dadostotais;
+          var_lista2.appendChild(tr);
         }
-        
       })
 
     })
