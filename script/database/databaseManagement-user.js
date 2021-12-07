@@ -1,5 +1,8 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
+var btnsee = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-see')" +' > Visualizar </button>';
+var btnedit = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-edit')" +' > Editar </button>';
+var btndelete = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-delete')" +' > Deletar </button>';
 
 // DECLARACAO DOS MODAIS
 var modalsee = ``;

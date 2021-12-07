@@ -184,93 +184,87 @@
                 </tr>
             </thead>
             <tbody id="tablebody"></tbody>
-            <button id="btnMod">Chamar Modal</button>
           </table>       
         </section>
       </section>
     </div>
   </div> 
 </div>
-  <!-- CSS DO MODAL -->
-  <style>
-    .mod{
-      background-color: #ABD2CE;
-      border-radius: 5px;
-      height: 100px;
-      width: 60%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-    }
-
-    .container{
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,.5);
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      z-index: 2000;
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container.mostrar {
-      display: flex;
-    }
-
-    @keyframes modal {
-      from {
-        opacity: 0;
-        transform: translate3d(0, -60px, 0);
-      }
-      to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-      }
-    }
-
-    .mostrar .mod {
-      animation: modal .3s;
-    }
-
-    .fechar{
-      margin-left: 530px;
-    }
-
-  </style>
 
   <!-- MODAL -->
-  <div id="modal-promo" class="container">
+  <div id="modal-see" class="container">
     <div class="mod">
       <button class="fechar">x</button>
-      <h4 style="text-align: center;">Usuário</h4>
+      <h5 style="text-align: center;">Visualizar Produto</h5>
       <form>
-        <input type="text" id="inp" placeholder="Digite o usuário">
+        <h5>Nome</h5>
+        <input type="text" name="" id="nome-pro" disabled>
+        <h5>Tipo</h5>
+        <input type="text" name="" id="" disabled>
+        <h5>Valor</h5>
+        <input type="text" name="" id="" disabled>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-edit" class="container">
+    <div class="mod">
+      <button class="fechar">x</button>
+      <h5 style="text-align: center;">Editar Produto</h5>
+      <form>
+        <h5>Nome</h5>
+        <input type="text" name="" id="nome-pro" disabled>
+        <h5>Tipo</h5>
+        <input type="text" name="" id="" disabled>
+        <h5>Valor</h5>
+        <input type="text" name="" id="" disabled>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-delete" class="container">
+    <div class="mod">
+      <button class="fechar">x</button>
+      <h4 style="text-align: center;">Deletar o produto</h4>
+      <form>
+        <button>Sim</button>
+        <button>Não</button>
       </form>
     </div>
   </div>
 
   <script>
-
+    
     function iniciaModal(modalID) {
       const modal = document.getElementById(modalID);
       if(modal){
-        modal.classList.add('mostrar');
+          modal.classList.add('mostrar');
 
-        modal.addEventListener("click", (e) => {
+          modal.addEventListener("click", (e) => {
           if(e.target.id == modalID || e.target.className == 'fechar'){
             modal.classList.remove('mostrar');
           }
         })
       }
+      if(modalID == "modal-see"){
+        this.funcmodalsee("Pastel");
+      }
     }
-    
-    const btn = document.querySelector('#btnMod');
-    btn.addEventListener("click", () => iniciaModal('modal-promo'));
+
+    function funcmodalsee(dados) {
+    const firebaseref = firebase.database().ref("product");
+    firebaseref.once('value', (resultado) => {
+      Object.keys(resultado.val()).map((keyname)=> {
+        
+        if (keyname === dados) {
+          document.getElementById("nome-pro").value = keyname;  
+        }
+        
+      })
+
+    })
+
+  }
 
   </script>
 
