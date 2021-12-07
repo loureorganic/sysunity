@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <title>SysUnity</title>
@@ -18,11 +19,14 @@
   <link rel="icon" href="./images/y.png" sizes="any">
 
 </head>
+
 <body>
+
   <div class="loader">
     <img src="images/833.gif" alt="Loading..." />
   </div>
-  <!-- <div id="teste"></div> -->
+
+  
   <div class="content">
     <div id="home-content">
     <div class="centro">
@@ -180,14 +184,99 @@
                 </tr>
             </thead>
             <tbody id="tablebody"></tbody>
+            <button id="btnMod">Chamar Modal</button>
           </table>       
         </section>
       </section>
     </div>
   </div> 
 </div>
+  <!-- CSS DO MODAL -->
+  <style>
+    .mod{
+      background-color: #ABD2CE;
+      border-radius: 5px;
+      height: 100px;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+
+    .container{
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,.5);
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container.mostrar {
+      display: flex;
+    }
+
+    @keyframes modal {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .mostrar .mod {
+      animation: modal .3s;
+    }
+
+    .fechar{
+      margin-left: 530px;
+    }
+
+  </style>
+
+  <!-- MODAL -->
+  <div id="modal-promo" class="container">
+    <div class="mod">
+      <button class="fechar">x</button>
+      <h4 style="text-align: center;">Usuário</h4>
+      <form>
+        <input type="text" id="inp" placeholder="Digite o usuário">
+      </form>
+    </div>
+  </div>
+
+  <script>
+
+    function iniciaModal(modalID) {
+      const modal = document.getElementById(modalID);
+      if(modal){
+        modal.classList.add('mostrar');
+
+        modal.addEventListener("click", (e) => {
+          if(e.target.id == modalID || e.target.className == 'fechar'){
+            modal.classList.remove('mostrar');
+          }
+        })
+      }
+    }
+    
+    const btn = document.querySelector('#btnMod');
+    btn.addEventListener("click", () => iniciaModal('modal-promo'));
+
+  </script>
+
   <script src="script/preloader.js"></script>
   <script type="module" src="script/product_management.js"></script>
   <script type="module" src="script/modal.js"></script>
+
 </body>
 </html>

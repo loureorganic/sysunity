@@ -304,37 +304,37 @@ export default class databasemanagementproduct {
       })
 
       // VALIDACAO DO MODAL CLICADO
-      var everclass = document.querySelectorAll(".dot td");
-      for (var i = 0; i < everclass.length; i++) {
+      // var everclass = document.querySelectorAll(".dot td");
+      // for (var i = 0; i < everclass.length; i++) {
 
-        everclass[i].addEventListener("click", function (data) {
+      //   everclass[i].addEventListener("click", function (data) {
 
-          var parent = this.parentNode;
-          var div = document.createElement('div');
+      //     var parent = this.parentNode;
+      //     var div = document.createElement('div');
 
-          if (data.path[0].id === 'btnDelete') {
-            div.innerHTML = modaldelete;
-            var_lista.appendChild(div);
-            document.getElementById('confirm').addEventListener("click", function () {
-              self.funcmodaldelete(parent.getAttribute('id'))
-            });
-          }
+      //     if (data.path[0].id === 'btnDelete') {
+      //       div.innerHTML = modaldelete;
+      //       var_lista.appendChild(div);
+      //       document.getElementById('confirm').addEventListener("click", function () {
+      //         self.funcmodaldelete(parent.getAttribute('id'))
+      //       });
+      //     }
 
-          else if (data.path[0].id === 'btnSee') {
-            div.innerHTML = modalsee;
-            var_lista.appendChild(div);
-            var parent = this.parentNode;
-            self.funcmodalsee(parent.getElementsByTagName('td')[0].getAttribute('id'));
-          }
+      //     else if (data.path[0].id === 'btnSee') {
+      //       div.innerHTML = modalsee;
+      //       var_lista.appendChild(div);
+      //       var parent = this.parentNode;
+      //       self.funcmodalsee(parent.getElementsByTagName('td')[0].getAttribute('id'));
+      //     }
 
-          else if (data.path[0].id === 'btnEdit') {
-            div.innerHTML = modaledit;
-            var_lista.appendChild(div);
-            var parent = this.parentNode;
-            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
-          }
-        })
-      }
+      //     else if (data.path[0].id === 'btnEdit') {
+      //       div.innerHTML = modaledit;
+      //       var_lista.appendChild(div);
+      //       var parent = this.parentNode;
+      //       self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
+      //     }
+      //   })
+      // }
     })
   }
 
