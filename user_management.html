@@ -196,31 +196,37 @@
   <div id="modal-see" class="container">
 
     <div class="mod">
-
-      <button class="fechar">x</button>
-      <h5 style="text-align: center;">Visualizar Usuário</h5>
-
-      <form>
-        
-        <h5>Nome</h5>
-        <input type="text" name="" id="nome" disabled>
-
-        <h5>Sobrenome</h5>
-        <input type="text" name="" id="sobrenome" disabled>
-
-        <h5>Usuário</h5>
-        <input type="text" name="" id="nomedeusuario" disabled>
-
-        <h5>Email</h5>
-        <input type="text" name="" id="email" disabled>
-
-        <h5>Cargo</h5>
-        <input type="text" name="" id="office" disabled>
-
-        <h5>Acesso</h5>
-        <input type="text" name="" id="access" disabled>
-
-      </form>
+      <div class="top-modal">
+      <h5>Visualizar Usuário</h5>
+      <button class="fechar"></button>
+    </div>
+      
+    <form>
+      <div class="user-email">
+        <label for="">Nome
+          <input id="nome" type="text" placeholder="" disabled/>
+        </label>
+        <label for="">Sobrenome
+          <input id="sobrenome" type="text" placeholder="" disabled/>
+        </label>
+      </div>
+      <div class="user-email">
+        <label for="">Usuário
+          <input id="nomedeusuario" type="text" placeholder="" disabled/>
+        </label>
+        <label for="">Email
+          <input id="email" type="text" placeholder="" disabled/>
+        </label>
+      </div>
+      <div class="office-access">   
+        <label for="">Cargo
+          <input id="office" type="text" placeholder="" disabled/>
+        </label>
+        <label for="">Nivel de acesso
+          <input id="acess" type="text" placeholder="" disabled/>
+        </label> 
+      </div>
+    </form>
 
     </div>
   </div>
