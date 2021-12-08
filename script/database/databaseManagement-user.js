@@ -1,15 +1,8 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var btnsee = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-see')" +' > Visualizar </button>';
-var btnedit = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-edit')" +' > Editar </button>';
-var btndelete = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-delete')" +' > Deletar </button>';
-
-// DECLARACAO DOS MODAIS
-var modalsee = ``;
-
-var modaledit = ``;
-
-var modaldelete = ``;
+var btnsee = '<button id="btnSee" class="button button2" > Visualizar </button>';
+var btnedit = '<button id="btnEdit" class="button button2" > Editar </button>';
+var btndelete = '<button id="btnDelete" class="button button2" > Deletar </button>';
 
 
 export default class databasemanagementuser {
@@ -24,21 +17,23 @@ export default class databasemanagementuser {
 
     firebaseref.once('value',(resultado)=>{
 
-    resultado.forEach(element => {
+      resultado.forEach(element => {
 
-      if(element.child("username").val() == dados) {
-        valu = element.key;
-        database.ref('user/'+valu).remove();
-        window.location.reload(active);
+        if(element.child("username").val() == dados) {
+          
+          valu = element.key;
+          database.ref('user/'+valu).remove();
 
-      }
-    });
-  })
+          window.location.reload(active);
 
- }
+        }
+      });
+    })
 
-  // Funcao de atualizacao dos dados
-  funcUpd(chave, nome, sobrenome, nomeusuario, email, job, acesslevel){
+  }
+
+  // FUNCAO ATUALIZAR OS DADOS
+  funcUpd(chave, nome, sobrenome, nomeusuario, email){
     
     const database = firebase.database();
     let active = false;
@@ -46,13 +41,13 @@ export default class databasemanagementuser {
     database.ref('user/'+chave+'/lastname').set(sobrenome);
     database.ref('user/'+chave+'/username').set(nomeusuario);
     database.ref('user/'+chave+'/email').set(email);
-    database.ref('user/'+chave+'/job').set(job);
-    database.ref('user/'+chave+'/acesslevel').set(acesslevel);
+    // database.ref('user/'+chave+'/job').set(job);
+    // database.ref('user/'+chave+'/acesslevel').set(acesslevel);
     window.location.reload(active);
 
   };
 
-  // Modal de visualizar
+  // MODAL VISUALIZAR
   funcmodalsee(dados){
     const firebaseref = firebase.database().ref("user");
     firebaseref.once('value',(resultado)=>{
@@ -76,7 +71,7 @@ export default class databasemanagementuser {
 
   }
   
-  // Modal de editar
+  // MODAL EDITAR
   funcmodaledit(a){
 
     var self = this;
@@ -88,21 +83,25 @@ export default class databasemanagementuser {
 
         if(element.child("username").val() == a) {
 
-          document.getElementById("nome").placeholder = element.val().firstname;
-          document.getElementById("sobrenome").placeholder = element.val().lastname;
-          document.getElementById("nomedeusuario").placeholder = element.val().username;
-          document.getElementById("email").placeholder = element.val().email; 
+          document.getElementById("Nome").placeholder = element.val().firstname;
+          document.getElementById("Sobrenome").placeholder = element.val().lastname;
+          document.getElementById("Nomedeusuario").placeholder = element.val().username;
+          document.getElementById("Email").placeholder = element.val().email;
+          document.getElementById("Office").placeholder = element.val().office;
+          document.getElementById("Access").placeholder = element.val().access;
           
           var btn = document.getElementById("btn_salvar");
+
           btn.addEventListener("click", function(e){
-            var inputn = document.getElementById("nome").value;
-            var inputsn = document.getElementById("sobrenome").value;
-            var inputnu = document.getElementById("nomedeusuario").value;
-            var inpute = document.getElementById("email").value;
-            var select1 = document.getElementById("access");
-            var select2 = document.getElementById("office");
-            var text1 = select1.options[select1.selectedIndex].text;
-            var text2 = select2.options[select2.selectedIndex].text;
+
+            var inputn = document.getElementById("Nome").value;
+            var inputsn = document.getElementById("Sobrenome").value;
+            var inputnu = document.getElementById("Nomedeusuario").value;
+            var inpute = document.getElementById("Email").value;
+            var select1 = document.getElementById("Access");
+            var select2 = document.getElementById("Office");
+            // var text1 = select1.options[select1.selectedIndex].text;
+            // var text2 = select2.options[select2.selectedIndex].text;
 
             if(inputn === ""){
               inputn = element.val().firstname;
@@ -117,7 +116,7 @@ export default class databasemanagementuser {
               inpute = element.val().email;
             }
 
-            self.funcUpd(element.key, inputn, inputsn, inputnu, inpute, text1, text2);
+            self.funcUpd(element.key, inputn, inputsn, inputnu, inpute);
           })
             
         }
@@ -163,29 +162,42 @@ export default class databasemanagementuser {
           var div = document.createElement('div');
 
           if(data.path[0].id === 'btnDelete'){
-            div.innerHTML = modaldelete;
-            var_lista.appendChild(div);
-            document.getElementById('confirm').addEventListener("click", function(){
-              self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
-            });
-
+            self.iniciaModal("modal-delete", parent.getElementsByTagName('td')[1].innerHTML)
           }
 
           else if(data.path[0].id === 'btnSee'){
-            div.innerHTML = modalsee;
-            var_lista.appendChild(div);
-            var parent = this.parentNode;
-            self.funcmodalsee(parent.getElementsByTagName('td')[1].innerHTML);
+            self.iniciaModal("modal-see", parent.getElementsByTagName('td')[1].innerHTML);
           }
 
           else if(data.path[0].id === 'btnEdit'){
-            div.innerHTML = modaledit;
-            var_lista.appendChild(div);  
-            var parent = this.parentNode;
-            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
+            self.iniciaModal("modal-edit", parent.getElementsByTagName('td')[1].innerHTML);
           }
         })
       }
     })
-  }            
+  }
+
+  iniciaModal(modalID, user) {
+    const modal = document.getElementById(modalID);
+    if(modal){
+        modal.classList.add('mostrar');
+
+        modal.addEventListener("click", (e) => {
+        if(e.target.id == modalID || e.target.className == 'fechar'){
+          modal.classList.remove('mostrar');
+        }
+      })
+    }
+
+    if(modalID == "modal-see") {
+      this.funcmodalsee(user);
+    } 
+    else if(modalID == "modal-edit") {
+      this.funcmodaledit(user);
+    } 
+    else if(modalID == "modal-delete") {
+      this.funcmodaldelete(user)
+    }
+  }
+
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <title>SysUnity</title>
@@ -192,88 +193,76 @@
 
   <!-- MODAL -->
   <div id="modal-see" class="container">
+
     <div class="mod">
+
       <button class="fechar">x</button>
-      <h5 style="text-align: center;">Visualizar Produto</h5>
+      <h5 style="text-align: center;">Visualizar Usuário</h5>
+
       <form>
+        
         <h5>Nome</h5>
-        <input type="text" name="" id="nome-pro" disabled>
+        <input type="text" name="" id="nome" disabled>
+
         <h5>Sobrenome</h5>
-        <input type="text" name="" id="" disabled>
+        <input type="text" name="" id="sobrenome" disabled>
+
         <h5>Usuário</h5>
-        <input type="text" name="" id="" disabled>
+        <input type="text" name="" id="nomedeusuario" disabled>
+
+        <h5>Email</h5>
+        <input type="text" name="" id="email" disabled>
+
+        <h5>Cargo</h5>
+        <input type="text" name="" id="office" disabled>
+
+        <h5>Acesso</h5>
+        <input type="text" name="" id="access" disabled>
+
       </form>
+
     </div>
   </div>
 
   <div id="modal-edit" class="container">
+
     <div class="mod">
+
       <button class="fechar">x</button>
-      <h5 style="text-align: center;">Editar Produto</h5>
+      <h5 style="text-align: center;">Editar Usuário</h5>
+
       <form>
+
         <h5>Nome</h5>
-        <input type="text" name="" id="nome" disabled>
-        <h5>Tipo</h5>
-        <input type="text" name="" id="sobrenome" disabled>
-        <h5>Valor</h5>
-        <input type="text" name="" id="nomeusuario" disabled>
+        <input type="text" id="Nome" placeholder="">
+
+        <h5>Sobrenome</h5>
+        <input type="text" id="Sobrenome" placeholder="">
+
+        <h5>Usuário</h5>
+        <input type="text" id="Nomedeusuario" placeholder="">
+
+        <h5>Email</h5>
+        <input type="text" id="Email" placeholder="">
+
+        <h5>Cargo</h5>
+        <input type="text" id="Office" placeholder="">
+
+        <h5>Acesso</h5>
+        <input type="text" id="Access" placeholder="">
+
+        <button id="btn_salvar" type="button">SALVAR</button>
+
       </form>
+
     </div>
   </div>
 
   <div id="modal-delete" class="container">
     <div class="mod">
-      <button class="fechar">x</button>
-      <h4 style="text-align: center;">Deletar o usuario</h4>
-      <form>
-        <button>Sim</button>
-        <button>Não</button>
-      </form>
+      <h4 style="text-align: center;">Usuário Deletado</h4>
     </div>
   </div>
-
-  <script>
-    
-    function iniciaModal(modalID) {
-      const modal = document.getElementById(modalID);
-      if(modal){
-          modal.classList.add('mostrar');
-
-          modal.addEventListener("click", (e) => {
-          if(e.target.id == modalID || e.target.className == 'fechar'){
-            modal.classList.remove('mostrar');
-          }
-        })
-      }
-      if(modalID == "modal-see"){
-        this.funcmodalsee();
-      }
-    }
-
-    function funcmodalsee(dados){
-      const firebaseref = firebase.database().ref("user");
-      firebaseref.once('value',(resultado)=>{
-
-        resultado.forEach(element => {
-
-          if(element.child("username").val() == dados) {
-
-            document.getElementById("nome").value = element.val().firstname;
-            document.getElementById("sobrenome").value = element.val().lastname;
-            document.getElementById("nomedeusuario").value = element.val().username;
-            document.getElementById("email").value = element.val().email;
-            document.getElementById("office").value = element.val().job;
-            document.getElementById("access").value = element.val().acesslevel;
-
-          }
-              
-        });
-
-      })
-
-    }
-
-  </script>
 
   <script src="script/preloader.js"></script>
   <script type="module" src="script/user_management.js"></script>
