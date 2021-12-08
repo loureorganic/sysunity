@@ -1,12 +1,11 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var btnsee = '<button type="button" id="btnSee" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
-var btnedit = '<button type="button" id="btnEdit" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
+var btnedit = '<button type="button" id="btnEdit" class="edit" ></button>';
 var btndelete = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
 
 // Declaracao dos modais
 var modalsee = `
-<div class="modal" id="MyModal">
+<div class="modal show">
 
 <div class="modal-dialog modal-dialog-centered">
 
@@ -267,9 +266,12 @@ export default class databasemanagementuser {
           var usuario = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
+          let btnsee = '<button type="button" class="visibility" id="'+curecord.key +'"data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
+          // btnsee.setAttribute('class', 'visibility');
+          // btnsee.setAttribute('id', curecord.key);
           dados =
           "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
-          "<td id='username2' >" + usuario.username + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+          "<td id='"+curecord.key+"'>" + usuario.username + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
@@ -277,33 +279,14 @@ export default class databasemanagementuser {
       )
       
       // Validando qual modal foi clicado
-      var everclass = document.querySelectorAll(".dot td");
-      for( var i = 0; i < everclass.length; i++){
-        
-        everclass[i].addEventListener("click", function(data){
-          var parent = this.parentNode;
-          var div = document.createElement('div');
-          if(data.path[0].id === 'btnDelete'){
-            div.innerHTML = modaldelete;
-            var_lista.appendChild(div);
-            document.getElementById('confirm').addEventListener("click", function(){
-              self.funcmodaldelete(parent.getElementsByTagName('td')[1].innerHTML)
-            });
-          }
-          else if(data.path[0].id === 'btnSee'){
-            div.innerHTML = modalsee;
-            var_lista.appendChild(div);
-            var parent = this.parentNode;
-            self.funcmodalsee(parent.getElementsByTagName('td')[1].innerHTML);
-          }
-          else if(data.path[0].id === 'btnEdit'){
-            div.innerHTML = modaledit;
-            var_lista.appendChild(div);  
-            var parent = this.parentNode;
-            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
-          }
-        })
-      }
+      var elementsArray = document.querySelectorAll(".visibility");
+elementsArray.forEach(function(elem) {
+  console.log('beforefect', elem)
+  elem.addEventListener("click", function() {
+      console.log(elem.id);
+     });
+});
+      
     })
   }            
 }
