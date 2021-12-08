@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <title>SysUnity</title>
@@ -18,11 +19,14 @@
   <link rel="icon" href="./images/y.png" sizes="any">
 
 </head>
+
 <body>
+
   <div class="loader">
     <img src="images/833.gif" alt="Loading..." />
   </div>
-  <!-- <div id="teste"></div> -->
+
+  
   <div class="content">
     <div id="home-content">
     <div class="centro">
@@ -186,8 +190,87 @@
     </div>
   </div> 
 </div>
+
+  <!-- MODAL -->
+  <div id="modal-see" class="container">
+    <div class="mod">
+      <button class="fechar">x</button>
+      <h5 style="text-align: center;">Visualizar Produto</h5>
+      <form>
+        <h5>Nome</h5>
+        <input type="text" name="" id="nome-pro" disabled>
+        <h5>Tipo</h5>
+        <input type="text" name="" id="" disabled>
+        <h5>Valor</h5>
+        <input type="text" name="" id="" disabled>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-edit" class="container">
+    <div class="mod">
+      <button class="fechar">x</button>
+      <h5 style="text-align: center;">Editar Produto</h5>
+      <form>
+        <h5>Nome</h5>
+        <input type="text" name="" id="nome-pro" disabled>
+        <h5>Tipo</h5>
+        <input type="text" name="" id="" disabled>
+        <h5>Valor</h5>
+        <input type="text" name="" id="" disabled>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-delete" class="container">
+    <div class="mod">
+      <button class="fechar">x</button>
+      <h4 style="text-align: center;">Deletar o produto</h4>
+      <form>
+        <button>Sim</button>
+        <button>Não</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    
+    function iniciaModal(modalID) {
+      const modal = document.getElementById(modalID);
+      if(modal){
+          modal.classList.add('mostrar');
+
+          modal.addEventListener("click", (e) => {
+          if(e.target.id == modalID || e.target.className == 'fechar'){
+            modal.classList.remove('mostrar');
+          }
+        })
+      }
+      if(modalID == "modal-see"){
+        this.funcmodalsee("Pastel");
+      }
+    }
+
+    function funcmodalsee(dados) {
+    const firebaseref = firebase.database().ref("product");
+    firebaseref.once('value', (resultado) => {
+      Object.keys(resultado.val()).map((keyname)=> {
+        
+        if (keyname === dados) {
+          document.getElementById("nome-pro").value = keyname;  
+        }
+        
+      })
+
+    })
+
+  }
+
+  </script>
+
   <script src="script/preloader.js"></script>
   <script type="module" src="script/product_management.js"></script>
   <script type="module" src="script/modal.js"></script>
+
 </body>
 </html>

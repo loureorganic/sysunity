@@ -1,180 +1,14 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var btnsee = '<button type="button" id="btnSee" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
-var btnedit = '<button type="button" id="btnEdit" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
-var btndelete = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
+var btnsee = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-see')" +' > Visualizar </button>';
+var btnedit = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-edit')" +' > Editar </button>';
+var btndelete = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-delete')" +' > Deletar </button>';
 
-var modalsee = `
-<div class="modal" id="MyModal">
+var modalsee = ``;
 
-<div class="modal-dialog modal-dialog-centered">
+var modaledit = ``;
 
-  <div class="modal-content">
-
-    <div class="modal-header">
-      <h5 class="modal-title">Visualizar Produto</h5>
-      <button type="button" class="delete" data-bs-dismiss="modal"></button>
-    </div>
-
-    <div class="modal-body">
-
-      <form>
-
-        <div id="nome-id" class="user-email">
-          <label for="">Nome
-            <input id="nome" type="text" placeholder="" disabled/>
-          </label>
-        </div>
-        <div id="sabores-valor-id" class="user-email">
-          <h4>Sabores</h4>
-          <h4>Valor</h4>
-        </div>
-        <div id="div-table-sabores-valores" class="user-email">
-            <table id="table-sabores-valores">
-              <tbody id="tbody-sabores-valores" class="tbody-vendas">
-                <tr>
-                  <td id="input-sabores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                  <td id="input-valores-id">
-                    <input id="tipo" type="text" placeholder="" disabled />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</div>
-
-</div>`;
-
-var modaledit = `
-<div class="modal" id="MyModalEditar">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title2">Editar Produto</h5>
-          <button type="button" class="delete" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div id="nome-id2" class="user-email">
-            <label for="">Nome
-              <input id="nome" type="text" placeholder=""/>
-            </label>
-          </div>
-          <div id="sabores-valor-id2" class="user-email">
-            <h4>Sabores</h4>
-            <h4>Valor</h4>
-          </div>
-          <div id="div-table-sabores-valores2" class="user-email">
-            <table id="table-sabores-valores2">
-              <tbody id="tbody-sabores-valores2" class="tbody-vendas">
-                <tr>
-                  <td id="input-sabores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                  <td id="input-valores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                  <td id="input-valores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                  <td id="input-valores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                  <td id="input-valores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                  <td id="input-valores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                  <td id="input-valores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                  <td id="input-valores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                </tr>
-                <tr>
-                  <td id="input-sabores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                  <td id="input-valores2-id">
-                    <input id="tipo" type="text" placeholder=""/>
-                  </td>
-                </tr>                
-              </tbody>
-            </table>
-          </div>
-          <div class="save">
-            <div class="btn-group">
-              <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>`;
-
-var modaldelete = `
-<div class="modal" id="MyModalDeletar">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title3">Deletar Produto</h5>
-        <button type="button" class="delete" data-bs-dismiss="modal"></button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <h3>Tem certeza que deseja deletar esse produto?</h3>
-        <div class="alternative">
-          <button type="button" id="confirm" class="btn btn-primary">SIM</button>
-          <button type="button" id="deny" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-</div>`;
+var modaldelete = ``;
 
 export default class databasemanagementproduct {
 
@@ -193,7 +27,6 @@ export default class databasemanagementproduct {
           //  <td id="input-sabores-id">
           //           <input id="tipo" type="text" placeholder="" disabled />
           //         </td>
-          console.log(var_lista2);
           
         }
         
@@ -302,41 +135,40 @@ export default class databasemanagementproduct {
         var_lista.appendChild(tr);
           
       })
-
+      
       // VALIDACAO DO MODAL CLICADO
-      var everclass = document.querySelectorAll(".dot td");
-      for (var i = 0; i < everclass.length; i++) {
+      // var everclass = document.querySelectorAll(".dot td");
+      // for (var i = 0; i < everclass.length; i++) {
 
-        everclass[i].addEventListener("click", function (data) {
+      //   everclass[i].addEventListener("click", function (data) {
 
-          var parent = this.parentNode;
-          var div = document.createElement('div');
+      //     var parent = this.parentNode;
+      //     var div = document.createElement('div');
 
-          if (data.path[0].id === 'btnDelete') {
-            div.innerHTML = modaldelete;
-            var_lista.appendChild(div);
-            document.getElementById('confirm').addEventListener("click", function () {
-              self.funcmodaldelete(parent.getAttribute('id'))
-            });
-          }
+      //     if (data.path[0].id === 'btnDelete') {
+      //       div.innerHTML = modaldelete;
+      //       var_lista.appendChild(div);
+      //       document.getElementById('confirm').addEventListener("click", function () {
+      //         self.funcmodaldelete(parent.getAttribute('id'))
+      //       });
+      //     }
 
-          else if (data.path[0].id === 'btnSee') {
-            div.innerHTML = modalsee;
-            var_lista.appendChild(div);
-            var parent = this.parentNode;
-            self.funcmodalsee(parent.getElementsByTagName('td')[0].getAttribute('id'));
-          }
+      //     else if (data.path[0].id === 'btnSee') {
+      //       div.innerHTML = modalsee;
+      //       var_lista.appendChild(div);
+      //       var parent = this.parentNode;
+      //       self.funcmodalsee(parent.getElementsByTagName('td')[0].getAttribute('id'));
+      //     }
 
-          else if (data.path[0].id === 'btnEdit') {
-            div.innerHTML = modaledit;
-            var_lista.appendChild(div);
-            var parent = this.parentNode;
-            self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
-          }
-        })
-      }
+      //     else if (data.path[0].id === 'btnEdit') {
+      //       div.innerHTML = modaledit;
+      //       var_lista.appendChild(div);
+      //       var parent = this.parentNode;
+      //       self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
+      //     }
+      //   })
+      // }
     })
   }
-
 
 }

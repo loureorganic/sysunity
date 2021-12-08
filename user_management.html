@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <title>SysUnity</title>
@@ -19,10 +20,11 @@
 
 </head>
 <body>
+
   <div class="loader">
     <img src="images/833.gif" alt="Loading..." />
   </div>
-  <!-- <div id="teste"></div> -->
+  
   <div class="content">
     <div id="home">
     <div class="centro">
@@ -166,6 +168,7 @@
             </li>
           </ul>
         </header>
+        
         <!--Título da tela-->
         <section class="section-title">
           <h2>Gerenciamento de usuário</h2>   
@@ -188,8 +191,92 @@
     </div>
   </div> 
 </div>
+
+  <!-- MODAL -->
+  <div id="modal-see" class="container">
+
+    <div class="mod">
+
+      <button class="fechar">x</button>
+      <h5 style="text-align: center;">Visualizar Usuário</h5>
+
+      <form>
+        
+        <h5>Nome</h5>
+        <input type="text" name="" id="nome" disabled>
+
+        <h5>Sobrenome</h5>
+        <input type="text" name="" id="sobrenome" disabled>
+
+        <h5>Usuário</h5>
+        <input type="text" name="" id="nomedeusuario" disabled>
+
+        <h5>Email</h5>
+        <input type="text" name="" id="email" disabled>
+
+        <h5>Cargo</h5>
+        <input type="text" name="" id="office" disabled>
+
+        <h5>Acesso</h5>
+        <input type="text" name="" id="access" disabled>
+
+      </form>
+
+    </div>
+  </div>
+
+  <div id="modal-edit" class="container">
+
+    <div class="mod">
+
+      <button class="fechar">x</button>
+      <h5 style="text-align: center;">Editar Usuário</h5>
+
+      <form>
+
+        <h5>Nome</h5>
+        <input type="text" id="Nome" placeholder="">
+
+        <h5>Sobrenome</h5>
+        <input type="text" id="Sobrenome" placeholder="">
+
+        <h5>Usuário</h5>
+        <input type="text" id="Nomedeusuario" placeholder="">
+
+        <h5>Email</h5>
+        <input type="text" id="Email" placeholder="">
+
+        <h5>Cargo</h5>
+        <input type="text" id="Office" placeholder="">
+
+        <h5>Acesso</h5>
+        <input type="text" id="Access" placeholder="">
+
+        <button id="btn_salvar" type="button">SALVAR</button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <div id="modal-delete" class="container">
+    <div class="mod">
+      <h4 style="text-align: center;">Deletar Usuário</h4>
+
+      <form>
+        <h3>Tem certeza que deseja deletar a produção?</h3>
+
+        <button type="button" id="confirm">SIM</button>
+        <button type="button" class="fechar">NÃO</button>
+
+      </form>
+
+    </div>
+  </div>
+
   <script src="script/preloader.js"></script>
   <script type="module" src="script/user_management.js"></script>
   <script type="module" src="script/modal.js"></script>
+
 </body>
 </html>

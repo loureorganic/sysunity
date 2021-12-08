@@ -110,7 +110,8 @@ var modaledit = ` <div class="modal" id="MyModalEditar">
 </div>
 </div> `;
 
-var modaldelete = ` <div class="modal" id="MyModalDeletar">
+var modaldelete = ` 
+<div class="modal" id="MyModalDeletar">
 <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content">
     <div class="modal-header">
@@ -169,8 +170,7 @@ export default class databasemanagementproduction {
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function(){
-              self.funcmodaldelete(parent.getAttribute('id'))
-              console.log(parent.getAttribute('id'))           
+              self.funcmodaldelete(parent.getAttribute('id'))       
             });
           }
 
@@ -247,7 +247,9 @@ export default class databasemanagementproduction {
     firebaseref.once('value',(resultado)=>{
       
       resultado.forEach(element => {
+
         if(element.child("type").val() == a) {
+          
           document.getElementById("item").placeholder = element.val().product + " de " + element.val().type;
           document.getElementById("lote").placeholder = "Em andamento";
           document.getElementById("funcionario").placeholder = "Em andamento";

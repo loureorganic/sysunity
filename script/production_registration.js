@@ -45,6 +45,7 @@ document.getElementById('batch1').value = Number(batch);
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
    
     let production = {
+        
         product: document.getElementById('unique').value, 
         type: document.getElementById('unique1').value,
         days: document.getElementById('days').value, 
@@ -57,13 +58,20 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
         labelActiveDays: document.getElementById('deadline').checked,
         labelActiveValidate: document.getElementById('date').checked,
         totalquantity: Number(document.getElementById('unity').value) * Number(document.getElementById('package01').value)
+        
     }
 
     if(production.days !== '' && production.labelActiveDays){
-        teste.daysProduction(production);
-    } else if (production.fabrication !=='' && production.deadline !=='' && production.labelActiveValidate) {
+
+        // teste.daysProduction(production);
+
+    }
+    else if (production.fabrication !=='' && production.deadline !=='' && production.labelActiveValidate) {
+
         teste.validateProduction(production);
         
     }
 
 });
+
+// CAPTURAR O PRODUTO, O TIPO, O LOTE, A DATA DE PRODUCAO, A DATA DE VENCIMENTO E A UNIDADE
