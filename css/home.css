@@ -196,7 +196,7 @@ h3{
     align-items: center;
 }
 
-.sidebar li:hover{
+.sidebar a:hover{
     background-color: #085D8C;
 }
 
