@@ -23,7 +23,6 @@ a{
 #home-logo{
     font-size: large;
     font-weight: 700;
-
 }
 .content{
     display: flex;
@@ -196,7 +195,7 @@ h3{
     align-items: center;
 }
 
-.sidebar a:hover{
+.sidebar h6:hover{
     background-color: #085D8C;
 }
 
