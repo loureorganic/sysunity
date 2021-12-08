@@ -7,9 +7,11 @@ body {
 }
 #alertalogin{
     font-size: 10px;
+    color: red;
 }
 #alertausuario{
     font-size: 10px;
+    color: red;
 }
 .container{
     display: flex;

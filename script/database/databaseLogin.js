@@ -8,6 +8,7 @@ export default class Login{
         const firebaseref = firebase.database().ref("user");
         firebaseref.once('value',(resultado)=>{
             let user = false;
+            let errtotal = false;
             let erruser = false;
             let errsenha = false;
             resultado.forEach(element => {
@@ -23,15 +24,27 @@ export default class Login{
                else if (element.child("username").val() == usuario && element.child("password").val() != senha)
                {
                    errsenha = true;
-               }
+               } else if (element.child("username").val() != usuario && element.child("password").val() != senha)
+               {
+                   errtotal = true;
+                   console.log('ehere');
+                }   
+                console.log(errtotal);
             });
-            if(!user && erruser) 
+
+            if (errsenha == true && erruser == true){
+                console.log('oi');
+                this.errosenhaeusuario();
+            } else if(!user && erruser) 
             {
                 this.errousuario();
             }
             else if (!user && errsenha) {
                 this.errosenha();
+            } else if (errtotal){
+                this.errosenhaeusuario();
             }
+           
         })
     };
 
@@ -52,6 +65,14 @@ export default class Login{
             icon: 'error',
             title: 'Oops...',
             text: 'Senha incorreta informada!',
+          })
+     }
+
+     errosenhaeusuario(){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Usuário e senha incorretos!',
           })
      }
 

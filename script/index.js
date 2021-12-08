@@ -3,21 +3,47 @@ import Login from "./database/databaseLogin.js";
 
 document.getElementById("btn_Entrar").addEventListener("click", function() {
 
-	const dadosdosusuario = (document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
 	let AlertaSenhaLogin = document.getElementById("alertalogin");
 	let AlertaUsuarioLogin = document.getElementById("alertausuario");
-	if(document.getElementById('usuario_login').value == "" || document.getElementById('usuario_login').value == " "){
-		document.getElementById('usuario_login').style.borderColor = "red";
-		document.getElementById('usuario_login').focus();
-		AlertaUsuarioLogin.style.display = "block";
-	}
+	let inputSenha = document.getElementById('senha_login');
+	let inputLogin = document.getElementById('usuario_login');
 
-		if(document.getElementById('senha_login').value == "" || document.getElementById('senha_login').value == " "){
-			document.getElementById('senha_login').style.borderColor = "red";
-			document.getElementById('senha_login').focus();
+	if(inputLogin.value == "" || inputLogin.value == " "){
+		inputLogin.style.borderColor = "red";
+		inputLogin.focus();
+		AlertaUsuarioLogin.style.display = "block";
+	}else{
+		AlertaUsuarioLogin.style.display = "none";
+		inputLogin.style.borderColor = "black";
+	}
+	inputLogin.addEventListener('change', function(){
+		if(inputLogin.value == "" || inputLogin.value == " "){
+			inputLogin.style.borderColor = "red";
+			inputLogin.focus();
+			AlertaUsuarioLogin.style.display = "block";
+		}else{
+			AlertaUsuarioLogin.style.display = "none";
+			inputLogin.style.borderColor = "black";
+		}
+	}) 
+	if(inputSenha.value == "" || inputSenha.value == " "){
+		inputSenha.style.borderColor = "red";
+		inputSenha.focus();
+		AlertaSenhaLogin.style.display = "block";
+	} else {
+		inputSenha.style.borderColor = "black";
+		AlertaSenhaLogin.style.display = "none";
+	}
+	inputSenha.addEventListener('change', function(){
+		if(inputSenha.value == "" || inputSenha.value == " "){
+			inputSenha.style.borderColor = "red";
+			inputSenha.focus();
 			AlertaSenhaLogin.style.display = "block";
 		} else {
-			new Login(document.getElementById('usuario_login').value, document.getElementById('senha_login').value);
+			inputSenha.style.borderColor = "black";
+			AlertaSenhaLogin.style.display = "none";
 		}
-
+	}) 
+	if(inputSenha.value != "" && inputLogin.value != "")
+	new Login(inputLogin.value, inputSenha.value);
 });
