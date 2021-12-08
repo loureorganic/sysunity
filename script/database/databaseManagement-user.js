@@ -20,12 +20,15 @@ export default class databasemanagementuser {
       resultado.forEach(element => {
 
         if(element.child("username").val() == dados) {
-          
-          valu = element.key;
-          database.ref('user/'+valu).remove();
 
-          window.location.reload(active);
+          var btn = document.getElementById("confirm");
+          btn.addEventListener("click", function(e){
 
+            valu = element.key;
+            database.ref('user/'+valu).remove();
+  
+            window.location.reload(active);
+          })
         }
       });
     })
@@ -178,11 +181,14 @@ export default class databasemanagementuser {
   }
 
   iniciaModal(modalID, user) {
-    const modal = document.getElementById(modalID);
-    if(modal){
-        modal.classList.add('mostrar');
 
-        modal.addEventListener("click", (e) => {
+    const modal = document.getElementById(modalID);
+
+    if(modal){
+
+      modal.classList.add('mostrar');
+
+      modal.addEventListener("click", (e) => {
         if(e.target.id == modalID || e.target.className == 'fechar'){
           modal.classList.remove('mostrar');
         }
