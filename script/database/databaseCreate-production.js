@@ -127,16 +127,20 @@ export default class databasecreateproduction{
           window.location.reload(active);
 
         } 
-        else if(e.target.className == 'confirm') {
+        else if(e.target.id == 'confirm') {
+          const doc = new jsPDF()
 
-          const doc = new jsPDF("retrato","mm",[597,410])
-          doc.setFont("helvetica")
-          doc.setFontStyle("bold")
-          doc.setFontSize(11)
-          doc.text("O nome do produto: " + production.product)
+          doc.text("Olá Mundo", 10, 10);
+          doc.save();
 
-          doc.autoPrint()
-          doc.output("dataurlnewwindow")
+          // const doc = new jsPDF("retrato","mm",[597,410])
+          // doc.setFont("helvetica")
+          // doc.setFontStyle("bold")
+          // doc.setFontSize(11)
+          // doc.text("O nome do produto: ")
+
+          // doc.autoPrint()
+          // doc.output("dataurlnewwindow")
 
         }
       })
