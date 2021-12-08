@@ -34,6 +34,7 @@ export default class databasecreateproduction{
   }
 
    daysProduction(production){ 
+
     let today = new Date();
     let cadastrationDate = today.toLocaleDateString();
     let cadastrationHour = today.toLocaleTimeString();
@@ -65,10 +66,12 @@ export default class databasecreateproduction{
       database.ref('production/'+newClientKey+'/batch').set(production.batch);
       database.ref('production/'+newClientKey+'/user').set(a.key);
 
+      // window.location.reload(active);
     });
    }
 
    validateProduction(production){
+
     let today = new Date();
     let cadastrationDate = today.toLocaleDateString();
     let cadastrationHour = today.toLocaleTimeString();
@@ -77,6 +80,7 @@ export default class databasecreateproduction{
     const firebaseref = firebase.database().ref("user");
 
     firebaseref.once('value').then(function (snapshot) {
+
       snapshot.forEach(element => {
         if(element.key === authUser)
         {
@@ -87,23 +91,56 @@ export default class databasecreateproduction{
       let active = false;
     
       const database = firebase.database();
-      let newClientKey = database.ref().child('production').push().key;
-      database.ref('production/'+newClientKey+'/product').set(production.product);
-      database.ref('production/'+newClientKey+'/type').set(production.type);
-      database.ref('production/'+newClientKey+'/fabricationdate').set(production.fabrication);
-      database.ref('production/'+newClientKey+'/deadlinedate').set(production.deadline);
-      database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
-      database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
-      database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
-      database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
-      database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
-      database.ref('production/'+newClientKey+'/batch').set(production.batch);
-      database.ref('production/'+newClientKey+'/user').set(a.key);
+      // let newClientKey = database.ref().child('production').push().key;
+      // database.ref('production/'+newClientKey+'/product').set(production.product);
+      // database.ref('production/'+newClientKey+'/type').set(production.type);
+      // database.ref('production/'+newClientKey+'/fabricationdate').set(production.fabrication);
+      // database.ref('production/'+newClientKey+'/deadlinedate').set(production.deadline);
+      // database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
+      // database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
+      // database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
+      // database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
+      // database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
+      // database.ref('production/'+newClientKey+'/batch').set(production.batch);
+      // database.ref('production/'+newClientKey+'/user').set(a.key);
 
-      window.location.reload(active);
-
+      // window.location.reload(active);
     });
+
+    this.clickImprimir(production);
   }
 
+  clickImprimir(production) {
+
+    const modal = document.getElementById("modal-note");
+    let active = false;
+
+    if(modal){
+
+      modal.classList.add('mostrar');
+
+      modal.addEventListener("click", (e) => {
+
+        if(e.target.id == modal || e.target.className == 'fechar'){
+
+          modal.classList.remove('mostrar');
+          window.location.reload(active);
+
+        } 
+        else if(e.target.className == 'confirm') {
+
+          const doc = new jsPDF("retrato","mm",[597,410])
+          doc.setFont("helvetica")
+          doc.setFontStyle("bold")
+          doc.setFontSize(11)
+          doc.text("O nome do produto: " + production.product)
+
+          doc.autoPrint()
+          doc.output("dataurlnewwindow")
+
+        }
+      })
+    }
+  }
    
 }

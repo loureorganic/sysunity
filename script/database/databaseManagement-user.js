@@ -181,6 +181,7 @@ export default class databasemanagementuser {
   }
 
   iniciaModal(modalID, user) {
+    console.log(modalID)
 
     const modal = document.getElementById(modalID);
 
