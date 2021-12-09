@@ -111,8 +111,10 @@ h2{
     display: flex;
     width: 60%;
 }
+.product-type-quantity .product{
+    width: 40%;
+}
 .product-type-quantity .type{
-    display: flex;
     width: 30%;
 }
 .product-type-quantity select{
@@ -200,6 +202,7 @@ h2{
     border-radius: 4px;
     font-size: 15px;
     height: 32px;
+    width: 100%;
 }
 
 .payment option{

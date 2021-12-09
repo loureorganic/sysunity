@@ -205,13 +205,17 @@
                 
                   <div class="p-t-q-p-t" id="boxsale">
                     <div class="product-type-quantity">
-                      <label>Produto
-                        <input id="" type="text" placeholder=""/>
-                        <p id="" style="display: none;">O Campo precisa ser preenchido</p>
-                      </label>
+                      <div class="product">
+                        <label>Produto
+                          <select id="product"></select>
+                          <option value=""></option>
+                          <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                        </label>
+                      </div>
                       <div class="type">
                         <label>Tipo
-                          <input id="" type="text" placeholder=""/>
+                          <select id="type"></select>
+                          <option value=""></option>
                           <p id="" style="display: none;">O Campo precisa ser preenchido</p>
                         </label>
                       </div>
@@ -228,7 +232,7 @@
                       <label>Total
                         <input id="total" type="text" placeholder=""/>
                         <p id="alerta_total" style="display: none;">O Campo precisa ser preenchido</p>
-                        <span>Adicionar</span>
+                        <button type="button">Adicionar</button>
                       </label>
                     </div>
                   </div>
@@ -273,7 +277,8 @@
             <div class="payment-value" id="boxpayment">
               <div class="payment">
                 <label>Forma de Pagamento
-                  <input id="payment_method" type="text" placeholder=""/>
+                  <select id="payment_method"></select>
+                  <option value=""></option>
                   <p id="alerta_formapagamento" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
@@ -281,7 +286,7 @@
                 <label>Valor total
                   <input id="total-value" type="text" placeholder=""/>
                   <p id="alerta_valortotal" style="display: none;">O Campo precisa ser preenchido</p>
-                  <span>Adicionar</span>
+                  <button type="button">Adicionar</button>
                 </label>
               </div>
             </div>
