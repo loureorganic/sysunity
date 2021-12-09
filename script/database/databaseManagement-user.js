@@ -36,7 +36,7 @@ export default class databasemanagementuser {
   }
 
   // FUNCAO ATUALIZAR OS DADOS
-  funcUpd(chave, nome, sobrenome, nomeusuario, email){
+  funcUpd(chave, nome, sobrenome, nomeusuario, email, acesslevel, job){
     
     const database = firebase.database();
     let active = false;
@@ -44,8 +44,8 @@ export default class databasemanagementuser {
     database.ref('user/'+chave+'/lastname').set(sobrenome);
     database.ref('user/'+chave+'/username').set(nomeusuario);
     database.ref('user/'+chave+'/email').set(email);
-    // database.ref('user/'+chave+'/job').set(job);
-    // database.ref('user/'+chave+'/acesslevel').set(acesslevel);
+    database.ref('user/'+chave+'/job').set(job);
+    database.ref('user/'+chave+'/acesslevel').set(acesslevel);
     window.location.reload(active);
 
   };
@@ -86,25 +86,25 @@ export default class databasemanagementuser {
 
         if(element.child("username").val() == a) {
 
-          document.getElementById("Nome").placeholder = element.val().firstname;
-          document.getElementById("Sobrenome").placeholder = element.val().lastname;
-          document.getElementById("Nomedeusuario").placeholder = element.val().username;
-          document.getElementById("Email").placeholder = element.val().email;
-          document.getElementById("Office").placeholder = element.val().office;
-          document.getElementById("Access").placeholder = element.val().access;
+          document.getElementById("nome2").placeholder = element.val().firstname;
+          document.getElementById("sobrenome2").placeholder = element.val().lastname;
+          document.getElementById("nomedeusuario2").placeholder = element.val().username;
+          document.getElementById("email2").placeholder = element.val().email;
+          document.getElementById("office2").placeholder = element.val().office;
+          document.getElementById("access2").placeholder = element.val().access;
           
           var btn = document.getElementById("btn_salvar");
 
           btn.addEventListener("click", function(e){
 
-            var inputn = document.getElementById("Nome").value;
-            var inputsn = document.getElementById("Sobrenome").value;
-            var inputnu = document.getElementById("Nomedeusuario").value;
-            var inpute = document.getElementById("Email").value;
-            var select1 = document.getElementById("Access");
-            var select2 = document.getElementById("Office");
-            // var text1 = select1.options[select1.selectedIndex].text;
-            // var text2 = select2.options[select2.selectedIndex].text;
+            var inputn = document.getElementById("nome2").value;
+            var inputsn = document.getElementById("sobrenome2").value;
+            var inputnu = document.getElementById("nomedeusuario2").value;
+            var inpute = document.getElementById("email2").value;
+            var select1 = document.getElementById("access2");
+            var select2 = document.getElementById("office2");
+            var text1 = select1.options[select1.selectedIndex].text;
+            var text2 = select2.options[select2.selectedIndex].text;
 
             if(inputn === ""){
               inputn = element.val().firstname;
@@ -119,7 +119,7 @@ export default class databasemanagementuser {
               inpute = element.val().email;
             }
 
-            self.funcUpd(element.key, inputn, inputsn, inputnu, inpute);
+            self.funcUpd(element.key, inputn, inputsn, inputnu, inpute, text1, text2);
           })
             
         }
@@ -191,6 +191,9 @@ export default class databasemanagementuser {
 
       modal.addEventListener("click", (e) => {
         if(e.target.id == modalID || e.target.className == 'fechar'){
+          modal.classList.remove('mostrar');
+        }
+        if(e.target.id == 'deny') {
           modal.classList.remove('mostrar');
         }
       })
