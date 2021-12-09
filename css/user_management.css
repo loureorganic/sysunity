@@ -41,82 +41,7 @@ table button{
     width: 60px;
     padding: 0;
 }
-.visibility{
-    margin-left: 150px;
-}
-.edit{
-    margin-left: 30px;
-}
-.delete{
-    margin-left: 30px;
-}
-.visibility::before{
-    content: url(../images/visibility_white_24dp.svg);
-}
-.edit::before{
-    content: url(../images/create_white_24dp.svg);
-}
-.delete::before{
-    content: url(../images/delete_white_24dp.svg);
-}
-.modal-header{
-    background: #085D8C;
-    color: #fff;
-    height: 70px;
-    border-inline: none;
-}
-.modal-header h5{
-    font-size: 24px;
-    font-weight: 700;
-}
-.modal-header .delete{
-    background: none;
-}
-.modal-header .delete::before{
-    content: url(../images/close_white_24dp.svg);
-}
-.modal-body{
-    padding-top: 10px;
-}
-.modal-body form{
-    display: flex;
-    flex-direction: column;
-    margin-top: -12px;
-}
-.modal-body form h3{
-    padding-top: 20px;
-    color: black;
-    font-weight: 400;
-    text-align: center;
-}
-.modal-body form input{
-    width: 100%;
-}
-.modal-body form label {
-    font-weight: 600;
-    font-size: 16px;
-    padding: 6px;
-    margin-bottom: 0;
-    color: black;
-}
-.modal-body form input {
-    border-radius: 4px;
-    border-width: 1px;
-    height: 32px;
-    border-style: solid;
-    border-color: #085D8C;
-}
-.modal-body .user-email label{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-}
-.modal-body .office-access label {
-    align-items: flex-start;
-}
-.modal-body .office-access select {
-    width: 100%;
-}
+
 .save{
     display: flex;
     justify-content: end;
@@ -302,6 +227,8 @@ table button{
     display: flex;
     padding: 18px;
     background-color: #085D8C;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .top-modal h5{
@@ -310,7 +237,6 @@ table button{
 }
 
 .fechar{
-    margin-left: 400px;
     background: none;
     border: none;
 }
@@ -323,6 +249,7 @@ form{
     display: flex;
     flex-direction: column;
     margin-bottom: 18px;
+    padding: 12px;
 }
 form label {
     font-weight: 600;
