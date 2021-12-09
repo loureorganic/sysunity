@@ -111,8 +111,9 @@ h2{
     display: flex;
     width: 60%;
 }
-.product-type-quantity label{
-    width: 40%;
+.product-type-quantity .type{
+    display: flex;
+    width: 30%;
 }
 .product-type-quantity select{
     width: 100%;
@@ -163,7 +164,6 @@ h2{
 .total-general-2{
     display: flex;
     width: 25%;
-    margin-top: -25px;
 }
 
 .discount-general{
@@ -213,7 +213,7 @@ h2{
 }
 
 .total-value{
-    margin-left: 60px;
+    margin-left: 80px;
 }
 
 .total-value button{
