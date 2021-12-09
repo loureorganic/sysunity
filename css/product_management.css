@@ -280,8 +280,14 @@ input {
   margin: 10px;
 }
 
+#gridModal{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .mod{
-  background-color: #ABD2CE;
+  margin-top: -48px;
+  background-color: #fff;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -291,16 +297,17 @@ input {
 }
 
 .container{
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
   background: rgba(0,0,0,.5);
-  position: fixed;
-  top: 0px;
-  left: 0px;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 2000;
   display: none;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .container.mostrar {
@@ -309,12 +316,12 @@ input {
 
 @keyframes modal {
   from {
-    opacity: 0;
-    transform: translate3d(0, -60px, 0);
+      opacity: 0;
+      transform: translate3d(0, -60px, 0);
   }
   to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
   }
 }
 
@@ -322,14 +329,76 @@ input {
   animation: modal .3s;
 }
 
+.top-modal{
+  display: flex;
+  padding: 18px;
+  background-color: #085D8C;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.top-modal h5{
+  color:#fff;
+  font-weight: 700;
+}
+
 .fechar{
-  margin-left: 530px;
-  background-color: crimson;
-  color: #fff;
+  background: none;
+  border: none;
+}
+
+.fechar::before{
+  content: url(../images/close_white_24dp.svg);
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  padding: 12px;
+}
+form label {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 6px;
+  margin-bottom: 0;
+  color: black;
+}
+form input {
+  border-radius: 4px;
+  border-width: 1px;
+  height: 32px;
+  border-style: solid;
+  border-color: #085D8C;
+  width: 100%;
+}
+.mod .name label{
+  display: flex;
+  width: 100%;
+  flex-direction:column;
+}
+.mod .flavors{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mod .flavors label{
+  display: flex;
+  flex-direction:column;
+  width: 100%;
+}
+
+.mod .flavors input{
+  margin-bottom: 3px;
+}
+
+.mod .values{
+  display: flex;
+  width: 40%;
 }
 
 .button{
-  background-color: #4CAF50; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -347,4 +416,13 @@ input {
 }
 .button2:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#btnSee::before{
+  content: url(../images/visibility_white_24dp.svg);
+}
+#btnEdit::before{
+  content: url(../images/edit_white_24dp.svg);
+}
+#btnDelete::before{
+  content: url(../images/delete_white_24dp.svg);
 }
