@@ -73,5 +73,3 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     }
 
 });
-
-// CAPTURAR O PRODUTO, O TIPO, O LOTE, A DATA DE PRODUCAO, A DATA DE VENCIMENTO E A UNIDADE
