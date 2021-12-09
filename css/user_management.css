@@ -241,7 +241,19 @@ table button{
     margin: 10px;
 }
 
-/* TENTATIVA DO MODAL */
+#username1{
+    padding-top: 25px;
+}
+
+#username2{
+    padding-top: 25px;
+}
+
+#gridModal{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .mod{
     margin-top: -48px;
     background-color: #fff;

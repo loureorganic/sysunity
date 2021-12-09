@@ -147,8 +147,8 @@ export default class databasemanagementuser {
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           dados =
-          "<td>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
-          "<td id='username2' >" + usuario.username + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+          "<td id='username1'>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
+          "<td id='username2' >" + usuario.username + "</td>" + "<td id='gridModal' >" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
