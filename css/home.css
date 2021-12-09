@@ -195,8 +195,8 @@ h3{
     align-items: center;
 }
 
-.sidebar h6:hover{
-    background-color: #085D8C;
+.sidebar-logo a:hover{
+    color: #085D8C;
 }
 
 .btn-toggle {
