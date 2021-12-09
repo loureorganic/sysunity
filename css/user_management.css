@@ -340,7 +340,6 @@ form input {
 }
 
 .button{
-    background-color: #4CAF50; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -358,4 +357,13 @@ form input {
 }
 .button2:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#btnSee::before{
+    content: url(../images/visibility_white_24dp.svg);
+}
+#btnEdit::before{
+    content: url(../images/edit_white_24dp.svg);
+}
+#btnDelete::before{
+    content: url(../images/delete_white_24dp.svg);
 }

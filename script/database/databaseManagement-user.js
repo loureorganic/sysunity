@@ -1,8 +1,8 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var btnsee = '<button id="btnSee" class="button button2" > Visualizar </button>';
-var btnedit = '<button id="btnEdit" class="button button2" > Editar </button>';
-var btndelete = '<button id="btnDelete" class="button button2" > Deletar </button>';
+var btnsee = '<button id="btnSee" class="button button2" ></button>';
+var btnedit = '<button id="btnEdit" class="button button2" ></button>';
+var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
 
 export default class databasemanagementuser {
