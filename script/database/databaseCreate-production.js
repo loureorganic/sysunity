@@ -128,19 +128,24 @@ export default class databasecreateproduction{
 
         } 
         else if(e.target.id == 'confirm') {
-          const doc = new jsPDF()
 
-          doc.text("Olá Mundo", 10, 10);
-          doc.save();
+          // CAPTURAR O PRODUTO, O TIPO, O LOTE, A DATA DE PRODUCAO, A DATA DE VENCIMENTO E A UNIDADE
+          // const doc = new jsPDF()
 
-          // const doc = new jsPDF("retrato","mm",[597,410])
-          // doc.setFont("helvetica")
-          // doc.setFontStyle("bold")
-          // doc.setFontSize(11)
-          // doc.text("O nome do produto: ")
-
-          // doc.autoPrint()
-          // doc.output("dataurlnewwindow")
+          
+          const doc = new jsPDF("portrait","mm",[210,297])
+          console.log(doc.getFontList())
+          doc.setFont("helvetica")
+          doc.setFontStyle("normal")
+          doc.setFontSize(11)
+          doc.text("Produto: " + production.product + " de " + production.type, 10, 10)
+          doc.text("Data de produção: " + production.fabrication, 10, 20)
+          doc.text("Data de produção: " + production.deadline, 10, 30)
+          doc.text("Unidades: " + production.totalquantity, 10, 40)
+          doc.text("Lote: " + production.batch, 10, 50)          
+          doc.save("bilhete-producao");
+          // doc.autoPrint();
+          // doc.output("dataurlnewwindow");
 
         }
       })
