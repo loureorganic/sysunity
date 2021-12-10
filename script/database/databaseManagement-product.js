@@ -1,8 +1,8 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var btnsee = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-see')" +' > Visualizar </button>';
-var btnedit = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-edit')" +' > Editar </button>';
-var btndelete = '<button id="btnMod" class="button button2" onclick= '+ "iniciaModal('modal-delete')" +' > Deletar </button>';
+var btnsee = '<button id="btnSee" class="button button2" onclick= '+ "iniciaModal('modal-see')" +' >  </button>';
+var btnedit = '<button id="btnEdit" class="button button2" onclick= '+ "iniciaModal('modal-edit')" +' >  </button>';
+var btndelete = '<button id="btnDelete" class="button button2" onclick= '+ "iniciaModal('modal-delete')" +' >  </button>';
 
 var modalsee = ``;
 
@@ -129,7 +129,7 @@ export default class databasemanagementproduct {
         tr.setAttribute("id",keyname);
         dados =
         "<td id="+ keyname +">" + keyname + "</td>" +
-        "<td>" + '    ' + "</td>" + "<td>" + btnsee + btnedit + btndelete + "</td>";
+        "<td>" + '    ' + "</td>" + "<td id='gridModal' >" + btnsee + btnedit + btndelete + "</td>";
         
         tr.innerHTML = dados;
         var_lista.appendChild(tr);
