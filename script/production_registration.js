@@ -63,7 +63,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
     if(production.days !== '' && production.labelActiveDays){
 
-        // teste.daysProduction(production);
+        teste.daysProduction(production);
 
     }
     else if (production.fabrication !=='' && production.deadline !=='' && production.labelActiveValidate) {

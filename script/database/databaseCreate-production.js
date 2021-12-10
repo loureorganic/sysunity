@@ -21,10 +21,14 @@ export default class databasecreateproduction{
   }
 
   data(){
+
     const firebaseref = firebase.database().ref("product");
+
     firebaseref.once('value', function(all){
+
       var select = document.createElement('select');
       select.setAttribute('id', 'unique');
+
       Object.keys(all.val()).map((keyname)=> {
         var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
         select.innerHTML += dados2;
@@ -40,6 +44,7 @@ export default class databasecreateproduction{
     let cadastrationHour = today.toLocaleTimeString();
     let a;
     let authUser = localStorage.getItem("id");
+    let active = false;
 
     const firebaseref = firebase.database().ref("user");
     firebaseref.once('value').then(function (snapshot) {
@@ -66,7 +71,7 @@ export default class databasecreateproduction{
       database.ref('production/'+newClientKey+'/batch').set(production.batch);
       database.ref('production/'+newClientKey+'/user').set(a.key);
 
-      // window.location.reload(active);
+      window.location.reload(active);
     });
    }
 
