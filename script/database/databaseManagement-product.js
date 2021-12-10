@@ -1,32 +1,34 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var btnsee = '<button id="btnSee" class="button button2" onclick= '+ "iniciaModal('modal-see')" +' >  </button>';
-var btnedit = '<button id="btnEdit" class="button button2" onclick= '+ "iniciaModal('modal-edit')" +' >  </button>';
-var btndelete = '<button id="btnDelete" class="button button2" onclick= '+ "iniciaModal('modal-delete')" +' >  </button>';
+var btnsee = '<button id="btnSee" class="button button2" ></button>';
+var btnedit = '<button id="btnEdit" class="button button2" ></button>';
+var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
-var modalsee = ``;
-
-var modaledit = ``;
-
-var modaldelete = ``;
 
 export default class databasemanagementproduct {
 
  // MODAL DE VISUALIZAR
   funcmodalsee(dados) {
+
     const firebaseref = firebase.database().ref("product");
+
     firebaseref.once('value', (resultado) => {
+
       Object.keys(resultado.val()).map((keyname)=> {
         
         if (keyname === dados) {
+          
           document.getElementById("nome").value = keyname;
+
           var tr = document.createElement('tr');
-          var var_lista2 = document.getElementById("tbody-sabores-valores");  
-          //FALTA TRANSFORMAR ISSO EM STRING E FAZER O APPEND CHILD
-          //VC CONSEGUE FAZER :)
-          //  <td id="input-sabores-id">
-          //           <input id="tipo" type="text" placeholder="" disabled />
-          //         </td>
+          var var_lista2 = document.getElementById("tbody-sabores-valores");
+
+          // FALTA TRANSFORMAR ISSO EM STRING E FAZER O APPEND CHILD
+          // VC CONSEGUE FAZER :) KKKKKK
+
+          // <td id="input-sabores-id">
+          //   <input id="tipo" type="text" placeholder="" disabled />
+          // </td>
           
         }
         
@@ -37,43 +39,58 @@ export default class databasemanagementproduct {
   }
 
   // MODAL DE EDITAR
-  funcmodaledit(a) {
+  funcmodaledit(dados) {
 
     var self = this;
-
     const firebaseref = firebase.database().ref("product");
+
     firebaseref.once('value', (resultado) => {
 
-      resultado.forEach(element => {
+      firebaseref.once('value', (resultado) => {
 
-        if (element.child("value").val() == a) {
+        Object.keys(resultado.val()).map((keyname)=> {
+          
+          if (keyname === dados) {
+            
+            document.getElementById("nome2").placeholder = keyname;
+            
+          }
+          
+        })
+  
+      })
 
-          document.getElementById("nome").placeholder = element.val().name;
-          document.getElementById("tipo").placeholder = element.val().type;
-          document.getElementById("valor").placeholder = element.val().value;
+      // resultado.forEach(element => {
+      //   console.log(element.val())
 
-          var btn = document.getElementById("btn_salvar");
-          btn.addEventListener("click", function (e) {
-            var inputnome = document.getElementById("nome").value;
-            var inputtipo = document.getElementById("tipo").value;
-            var inputvalor = document.getElementById("valor").value;
+      //   if (element.child("value").val() == dados) {
 
-            if (inputnome === "") {
-              inputnome = element.val().name;
-            }
-            if (inputtipo === "") {
-              inputtipo = element.val().type;
-            }
-            if (inputvalor === "") {
-              inputvalor = element.val().value;
-            }
+      //     document.getElementById("nome").placeholder = element.val().name;
+      //     document.getElementById("tipo").placeholder = element.val().type;
+      //     document.getElementById("valor").placeholder = element.val().value;
 
-            self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
-          })
+      //     var btn = document.getElementById("btn_salvar");
+      //     btn.addEventListener("click", function (e) {
+      //       var inputnome = document.getElementById("nome").value;
+      //       var inputtipo = document.getElementById("tipo").value;
+      //       var inputvalor = document.getElementById("valor").value;
 
-        }
+      //       if (inputnome === "") {
+      //         inputnome = element.val().name;
+      //       }
+      //       if (inputtipo === "") {
+      //         inputtipo = element.val().type;
+      //       }
+      //       if (inputvalor === "") {
+      //         inputvalor = element.val().value;
+      //       }
 
-      });
+      //       self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
+      //     })
+
+      //   }
+
+      // });
 
     })
 
@@ -99,14 +116,19 @@ export default class databasemanagementproduct {
     const firebaseref = firebase.database().ref("product");
 
     firebaseref.once('value', (resultado) => {
+
       resultado.forEach(element => {
 
         if (element.key == dados) {
 
-          valu = element.key;
-          database.ref('product/' + valu).remove();
-          
-          window.location.reload(active);
+          var btn = document.getElementById("confirm");
+          btn.addEventListener("click", function(e){
+
+            valu = element.key;
+            database.ref('product/' + valu).remove();
+  
+            window.location.reload(active);
+          })
         }
       });
     })
@@ -118,8 +140,9 @@ export default class databasemanagementproduct {
 
     var self = this;
 
-    // CRIACAO E POPULAR OS DADOS NA TABELA
     const firebaseref = firebase.database().ref("product");
+    
+    // CRIACAO E POPULAR OS DADOS NA TABELA
     firebaseref.once('value', function (all) {
 
       Object.keys(all.val()).map((keyname)=> {
@@ -127,6 +150,7 @@ export default class databasemanagementproduct {
         var tr = document.createElement('tr');
         tr.classList.add('dot');
         tr.setAttribute("id",keyname);
+
         dados =
         "<td id="+ keyname +">" + keyname + "</td>" +
         "<td>" + '    ' + "</td>" + "<td id='gridModal' >" + btnsee + btnedit + btndelete + "</td>";
@@ -137,38 +161,59 @@ export default class databasemanagementproduct {
       })
       
       // VALIDACAO DO MODAL CLICADO
-      // var everclass = document.querySelectorAll(".dot td");
-      // for (var i = 0; i < everclass.length; i++) {
+      var everclass = document.querySelectorAll(".dot td");
+      for (var i = 0; i < everclass.length; i++) {
 
-      //   everclass[i].addEventListener("click", function (data) {
+        everclass[i].addEventListener("click", function (data) {
 
-      //     var parent = this.parentNode;
-      //     var div = document.createElement('div');
+          var parent = this.parentNode;
+          var div = document.createElement('div');
 
-      //     if (data.path[0].id === 'btnDelete') {
-      //       div.innerHTML = modaldelete;
-      //       var_lista.appendChild(div);
-      //       document.getElementById('confirm').addEventListener("click", function () {
-      //         self.funcmodaldelete(parent.getAttribute('id'))
-      //       });
-      //     }
 
-      //     else if (data.path[0].id === 'btnSee') {
-      //       div.innerHTML = modalsee;
-      //       var_lista.appendChild(div);
-      //       var parent = this.parentNode;
-      //       self.funcmodalsee(parent.getElementsByTagName('td')[0].getAttribute('id'));
-      //     }
+          if(data.path[0].id === 'btnDelete'){
+            self.iniciaModal("modal-delete", parent.getElementsByTagName('td')[0].innerHTML)
+          }
 
-      //     else if (data.path[0].id === 'btnEdit') {
-      //       div.innerHTML = modaledit;
-      //       var_lista.appendChild(div);
-      //       var parent = this.parentNode;
-      //       self.funcmodaledit(parent.getElementsByTagName('td')[1].innerHTML);
-      //     }
-      //   })
-      // }
+          else if(data.path[0].id === 'btnSee'){
+            self.iniciaModal("modal-see", parent.getElementsByTagName('td')[0].innerHTML);
+          }
+
+          else if(data.path[0].id === 'btnEdit'){
+            self.iniciaModal("modal-edit", parent.getElementsByTagName('td')[0].innerHTML);
+          }
+
+        })
+      }
     })
+  }
+
+  iniciaModal(modalID, product) {
+
+    const modal = document.getElementById(modalID);
+
+    if(modal){
+
+      modal.classList.add('mostrar');
+
+      modal.addEventListener("click", (e) => {
+        if(e.target.id == modalID || e.target.className == 'fechar'){
+          modal.classList.remove('mostrar');
+        }
+        if(e.target.id == 'deny') {
+          modal.classList.remove('mostrar');
+        }
+      })
+    }
+
+    if(modalID == "modal-see") {
+      this.funcmodalsee(product);
+    } 
+    else if(modalID == "modal-edit") {
+      this.funcmodaledit(product);
+    } 
+    else if(modalID == "modal-delete") {
+      this.funcmodaldelete(product)
+    }
   }
 
 }

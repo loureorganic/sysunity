@@ -179,6 +179,7 @@ table button{
     justify-content: space-evenly;
 }
 
+/* MODAL */
 .mod{
     margin-top: -48px;
     background-color: #fff;
@@ -202,20 +203,6 @@ table button{
     justify-content: center;
     align-items: center;
 }
-
-/* .container {
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,.5);
-    position:fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2000;
-    display: none;
-    justify-content: center;
-    align-items: center;
-} */
 
 .loader2.mostrar {
     display: flex;
@@ -307,15 +294,19 @@ form input {
     height: 50px;
     border-radius: 5px;
 }
+
 .button2:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
 #btnSee::before{
     content: url(../images/visibility_white_24dp.svg);
 }
+
 #btnEdit::before{
     content: url(../images/edit_white_24dp.svg);
 }
+
 #btnDelete::before{
     content: url(../images/delete_white_24dp.svg);
 }

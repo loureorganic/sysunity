@@ -52,7 +52,9 @@ export default class databasemanagementuser {
 
   // MODAL VISUALIZAR
   funcmodalsee(dados){
+
     const firebaseref = firebase.database().ref("user");
+
     firebaseref.once('value',(resultado)=>{
 
       resultado.forEach(element => {
@@ -130,13 +132,14 @@ export default class databasemanagementuser {
 
   }
 
+  // CRIACAO DA TABELA
   managementuser() {
 
     var self = this;
 
     const firebaseref = firebase.database().ref("user");
 
-    // CRIACAO DA TABELA
+    // CRIACAO E POPULAR OS DADOS NA TABELA
     firebaseref.once('value', function(all){
 
       all.forEach(
@@ -146,12 +149,14 @@ export default class databasemanagementuser {
           var usuario = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
+
           dados =
           "<td id='username1'>" + usuario.firstname + " " + usuario.lastname + "</td>" + 
           "<td id='username2' >" + usuario.username + "</td>" + "<td id='gridModal' >" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
+
         }
       )
       
@@ -170,18 +175,19 @@ export default class databasemanagementuser {
 
           else if(data.path[0].id === 'btnSee'){
             self.iniciaModal("modal-see", parent.getElementsByTagName('td')[1].innerHTML);
+            console.log(parent.getElementsByTagName('td')[1].innerHTML)
           }
 
           else if(data.path[0].id === 'btnEdit'){
             self.iniciaModal("modal-edit", parent.getElementsByTagName('td')[1].innerHTML);
           }
+
         })
       }
     })
   }
 
   iniciaModal(modalID, user) {
-    console.log(modalID)
 
     const modal = document.getElementById(modalID);
 
