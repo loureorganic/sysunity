@@ -4,6 +4,11 @@ var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
+var label = document.getElementById("sab");
+var td = document.createElement('td');
+
+var label2 = document.getElementById("sab2");
+
 
 export default class databasemanagementproduct {
 
@@ -11,6 +16,19 @@ export default class databasemanagementproduct {
   funcmodalsee(dados) {
 
     const firebaseref = firebase.database().ref("product");
+
+    firebaseref.once('value', function(all){
+
+      td.setAttribute('id', 'unique1');
+
+      Object.keys(all.val()[dados]).find((a)=>{
+
+        let dados = "<input id='flavor1' type='text' value=" + a + " disabled/>";
+        td.innerHTML += dados;
+        label.appendChild(td);
+
+      })
+    })
 
     firebaseref.once('value', (resultado) => {
 
@@ -43,6 +61,19 @@ export default class databasemanagementproduct {
 
     var self = this;
     const firebaseref = firebase.database().ref("product");
+
+    firebaseref.once('value', function(all){
+
+      td.setAttribute('id', 'unique1');
+
+      Object.keys(all.val()[dados]).find((a)=>{
+
+        let dados = "<input id='flavor1' type='text' placeholder=" + a + " />";
+        td.innerHTML += dados;
+        label2.appendChild(td);
+
+      })
+    })
 
     firebaseref.once('value', (resultado) => {
 
