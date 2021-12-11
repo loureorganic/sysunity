@@ -28,7 +28,7 @@
         <ul class="list-unstyled ps-0">
           <li class="mb-1">
             <div class="sidebar-logo">
-              <h6><a href="home.html" id="home"> SysUnity</a></h6>
+              <h6><a href="home.html" id="home-logo"> SysUnity</a></h6>
             </div>
           </li>
           <li class="mb-1">
@@ -91,38 +91,45 @@
             </div>
           </li>
           <div class="mb">
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
-                  <div class="set1">
-                    <img src="./images/baseline_local_shipping_white_48dp.png" alt="" width="22">
-                    <li><a href="orders.html" class="link-dark rounded">Encomendas</a></li>
-                  </div>
-                </button>
-              </li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
-                  <div class="set1">
-                    <img src="./images/baseline_history_white_48dp.png" alt="" width="22">
-                    <li><a href="historic.html" class="link-dark rounded">Histórico</a></li>
-                  </div>
-                </button>
-              </li>
-              <li class="mb-1">
-                  <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
-                  <div class="set1">
-                    <li><a href="settings.html" class="link-dark rounded">Configurações</a></li>
-                  </div>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <div class="set1">
+                  <img src="./images/baseline_local_shipping_white_48dp.png" alt="" width="22">
+                  <li><a href="orders.html" class="link-dark rounded">Encomendas</a></li>
+                </div>
+              </button>
+            </li>
+          </div>
+          <div class="mb">
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <div class="set1">
+                  <img src="./images/baseline_history_white_48dp.png" alt="" width="22">
+                  <li><a href="historic.html" class="link-dark rounded">Histórico</a></li>
+                </div>
+              </button>
+            </li>
+          </div>
+          <div class="mb">
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <div class="set1">
                   <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
-                </button>
-              </li>
-              <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
-                  <div class="set1">
-                    <img src="./images/baseline_help_center_white_48dp.png" alt="" width="22">
-                    <li><a href="prop.html" class="link-dark rounded">Suporte</a></li>
-                  </div>
-                </button>
-              </li>  
+                  <li><a href="settings.html" class="link-dark rounded">Configurações</a></li>
+                </div>
+              </button>
+            </li>
+          </div>
+          <div class="mb">
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <div class="set1">
+                  <img src="./images/baseline_help_center_white_48dp.png" alt="" width="22">
+                  <li><a href="prop.html" class="link-dark rounded">Suporte</a></li>
+                </div>
+              </button>
+            </li>
+          </div> 
     </ul>
 </section>
           
@@ -157,7 +164,12 @@
         </header>
 
         <section class="report">
-          <h2>Relatório de produtos</h2>
+          <div class="title">
+            <h2>Relatório de produtos</h2>
+            <a  href="">
+              <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
+            </a> 
+          </div>
           <div class="graphics-double">  
             <canvas id="grafico"></canvas>
             <canvas id="grafico2"></canvas> 

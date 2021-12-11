@@ -31,7 +31,12 @@ h2{
     padding: 0px 30px 0px 30px;
     margin-top: 18px;
 }
-
+.title{
+    width: 90%;
+}
+.title h2{
+    width: 97%;
+}
 .form{
     display: flex;
     flex-direction: column;
