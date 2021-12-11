@@ -1,134 +1,8 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var btnsee = '<button type="button" id="btnSee" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
-var btnedit = '<button type="button" id="btnEdit" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
-var btndelete = '<button id="btnDelete" class="delete" type="button" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
-
-// Declaracao dos modais
-var modalsee = ` <div class="modal" id="MyModal">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title">Visualizar Produção</h5>
-      <button type="button" class="delete" data-bs-dismiss="modal"></button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="user-email">
-          <label for="">Item
-            <input id="item" type="text" placeholder="" disabled />
-          </label>
-          <label for="">Lote
-            <input id="lote" type="text" placeholder="" disabled />
-          </label>
-          <label for="">Funcionário
-            <input id="funcionario" type="text" placeholder="" disabled />
-          </label>
-        </div>
-        <div class="user-email">
-          <label for="">Quantidade em Estoque
-            <input id="qntEstoque" type="text" placeholder="" disabled />
-          </label>
-          <label for="">Quantidade Produzida
-            <input id="qntProduzida" type="text" placeholder="" disabled />
-          </label>                          
-        </div>
-        <div class="user-email">
-          <label for="">Data de Produção
-            <input id="dataProdução" type="text" placeholder="" disabled />
-          </label>
-          <label for="">Data de Venciemento
-            <input id="dataVenciemnto" type="text" placeholder="" disabled />
-          </label>                          
-        </div>
-        <div class="user-email">
-          <label for="">Prazo
-            <input id="prazo" type="text" placeholder="" disabled />
-          </label>                          
-          <label for="">Total da Produção
-            <input id="totalProducao" type="text" placeholder="" disabled />
-          </label>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-</div> `;
-
-var modaledit = ` <div class="modal" id="MyModalEditar">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title2">Editar Produção</h5>
-      <button type="button" class="delete" data-bs-dismiss="modal"></button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="user-email">
-          <label for="">Item
-            <input id="item" type="text" placeholder="" />
-          </label>
-          <label for="">Lote
-            <input id="lote" type="text" placeholder="" />
-          </label>
-          <label for="">Funcionário
-            <input id="funcionario" type="text" placeholder="" />
-          </label>
-        </div>
-        <div class="user-email">
-          <label for="">Quantidade em Estoque
-            <input id="qntEstoque" type="text" placeholder="" />
-          </label>
-          <label for="">Quantidade Produzida
-            <input id="qntProduzida" type="text" placeholder="" />
-          </label>                          
-        </div>
-        <div class="user-email">
-          <label for="">Data de Produção
-            <input id="dataProdução" type="text" placeholder="" />
-          </label>
-          <label for="">Data de Venciemento
-            <input id="dataVenciemnto" type="text" placeholder="" />
-          </label>                          
-        </div>
-        <div class="user-email">
-          <label for="">Prazo
-            <input id="prazo" type="text" placeholder="" />
-          </label>                          
-          <label for="">Total da Produção
-            <input id="totalProducao" type="text" placeholder="" />
-          </label>
-        </div>
-        <div class="save">
-          <div class="btn-group">
-            <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-</div> `;
-
-var modaldelete = ` <div class="modal" id="MyModalDeletar">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title3">Deletar Produção</h5>
-      <button type="button" class="delete" data-bs-dismiss="modal"></button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <h3>Tem certeza que deseja deletar a produção?</h3>
-        <div class="alternative">
-          <button type="button" id="confirm" class="btn btn-primary">SIM</button>
-          <button type="button" id="deny" class="btn btn-secondary" data-bs-dismiss="modal">NÃO</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-</div> `;
+var btnsee = '<button id="btnSee" class="button button2" ></button>';
+var btnedit = '<button id="btnEdit" class="button button2" ></button>';
+var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
 export default class databasemanagementproduction {
 
@@ -141,17 +15,21 @@ export default class databasemanagementproduction {
 
     // CRIACAO E POPULAR OS DADOS NA TABELA
     firebaseref.once('value', function(all){
+
       all.forEach(
+        
         function(curecord){
+
           var producao = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           tr.setAttribute("id",curecord.key);
           dados = 
           "<td>" + producao.product + "</td>" + "<td>" + producao.type + 
-          "</td>" + "<td>" + producao.batch + "</td>" + "<td "+"id='suc'>" + btnsee + btnedit + btndelete + "</td>";
+          "</td>" + "<td>" + producao.batch + "</td>" + "<td "+"id='gridModal'>" + btnsee + btnedit + btndelete + "</td>";
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
+          
         }
       )
       
@@ -169,8 +47,7 @@ export default class databasemanagementproduction {
             div.innerHTML = modaldelete;
             var_lista.appendChild(div);
             document.getElementById('confirm').addEventListener("click", function(){
-              self.funcmodaldelete(parent.getAttribute('id'))
-              console.log(parent.getAttribute('id'))           
+              self.funcmodaldelete(parent.getAttribute('id'))       
             });
           }
 
@@ -247,7 +124,9 @@ export default class databasemanagementproduction {
     firebaseref.once('value',(resultado)=>{
       
       resultado.forEach(element => {
+
         if(element.child("type").val() == a) {
+          
           document.getElementById("item").placeholder = element.val().product + " de " + element.val().type;
           document.getElementById("lote").placeholder = "Em andamento";
           document.getElementById("funcionario").placeholder = "Em andamento";

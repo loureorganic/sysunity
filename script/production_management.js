@@ -3,9 +3,12 @@ import databasemanagementproduction from "./database/databaseManagement-producti
 
 const managementproduction = new databasemanagementproduction();
 managementproduction.managementproduction();
+
+const dados = new databaseuser();
+dados.objectuser();
+
 let data = document.getElementById('suc');
+
 document.getElementById('a').addEventListener('click', function(){
   managementproduction.managementproduction();
 });
-const dados = new databaseuser();
-dados.objectuser();

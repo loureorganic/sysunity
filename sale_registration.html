@@ -16,111 +16,126 @@
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
   <script src="script/database/database-connection.js"></script>
 </head>
+
 <body>
+  <div class="loader">
+    <img src="images/833.gif" alt="Loading..." />
+  </div>
   <div class="content">
-    <div id="home">
-    <div class="centro">
-      <section class="sidebar">
-        <ul class="list-unstyled ps-0">
-          <li class="mb-1">
-            <div class="sidebar-logo">
-              <h6><a href="home.html" id="home"> SysUnity</a></h6>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-              <div class="set1">
-                <img src="./images/outline_manage_accounts_white_48dp.png" alt="" width="22">
-                <span>Usuários</span>
+    <div id="home-content">
+      <div class="centro">
+        <section class="sidebar">
+          <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+              <div class="sidebar-logo">
+                <h6><a href="home.html" id="home-logo"> SysUnity</a></h6>
               </div>
-            </button>
-            <div class="collapse" id="home-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="user_registration.html" class="link-dark rounded"> <p>Cadastrar usuário</p></a></li>
-                <li><a href="user_management.html" class="link-dark rounded">Gerenciar usuário</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-              <div class="set1">
-                <img class="dashboard-shop" src="./images/baseline_shopping_bag_white_48dp.png" alt="" width="22">
-                <span>Vendas</span>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="#home-collapse" aria-expanded="false">
+                <div class="set1">
+                  <img src="./images/outline_manage_accounts_white_48dp.png" alt="" width="22">
+                  <span>Usuários</span>
+                </div>
+              </button>
+              <div class="collapse" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="user_registration.html" class="link-dark rounded">Cadastrar usuários</a></li>
+                  <li><a href="user_management.html" class="link-dark rounded">Gerenciar usuários</a></li>
+                </ul>
               </div>
-            </button>
-            <div class="collapse" id="dashboard-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="sale_registration.html" class="link-dark rounded">Cadastrar vendas</a></li>
-                <li><a href="sale_management.html" class="link-dark rounded">Gerenciar vendas</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              <div class="set1">
-                <img src="./images/baseline_inventory_2_white_48dp.png" alt="" width="22">
-                <span>Produtos</span>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="#dashboard-collapse" aria-expanded="false">
+                <div class="set1">
+                  <img class="dashboard-shop" src="./images/baseline_shopping_bag_white_48dp.png" alt="" width="22">
+                  <span>Vendas</span>
+                </div>
+              </button>
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="sale_registration.html" class="link-dark rounded">Cadastrar vendas</a></li>
+                  <li><a href="sale_management.html" class="link-dark rounded">Gerenciar vendas</a></li>
+                </ul>
               </div>
-            </button>
-            <div class="collapse" id="orders-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="product_registration.html" class="link-dark rounded">Cadastrar produtos</a></li>
-                <li><a href="production_registration.html" class="link-dark rounded">Cadastrar nova produção</a></li>
-                <li><a href="product_management.html" class="link-dark rounded">Gerenciar produtos</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-              <div class="set1">
-                <img src="./images/baseline_leaderboard_white_48dp.png" alt="" width="22">
-                <span>Relatórios</span>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="#orders-collapse" aria-expanded="false">
+                <div class="set1">
+                  <img src="./images/baseline_inventory_2_white_48dp.png" alt="" width="22">
+                  <span>Produtos</span>
+                </div>
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="product_registration.html" class="link-dark rounded">Cadastrar produtos</a></li>
+                  <li><a href="production_registration.html" class="link-dark rounded">Cadastrar nova produção</a></li>
+                  <li><a href="product_management.html" class="link-dark rounded">Gerenciar produtos</a></li>
+                  <li><a href="production_management.html" class="link-dark rounded">Gerenciar produção</a></li>
+                </ul>
               </div>
-            </button>
-            <div class="collapse" id="account-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
-                <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
-                <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produtos</a></li>
-              </ul>
-            </div>
-          </li>
-          <div class="mb">
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse"
+                data-bs-target="#account-collapse" aria-expanded="false">
+                <div class="set1">
+                  <img src="./images/baseline_leaderboard_white_48dp.png" alt="" width="22">
+                  <span>Relatórios</span>
+                </div>
+              </button>
+              <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
+                  <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
+                  <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produtos</a></li>
+                </ul>
+              </div>
+            </li>
+            <div class="mb">
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
+                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
                   <div class="set1">
                     <img src="./images/baseline_local_shipping_white_48dp.png" alt="" width="22">
                     <li><a href="orders.html" class="link-dark rounded">Encomendas</a></li>
                   </div>
                 </button>
               </li>
+            </div>
+            <div class="mb">
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
+                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
                   <div class="set1">
                     <img src="./images/baseline_history_white_48dp.png" alt="" width="22">
                     <li><a href="historic.html" class="link-dark rounded">Histórico</a></li>
                   </div>
                 </button>
               </li>
+            </div>
+            <div class="mb">
               <li class="mb-1">
-                  <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
+                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
                   <div class="set1">
+                    <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
                     <li><a href="settings.html" class="link-dark rounded">Configurações</a></li>
                   </div>
-                  <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
                 </button>
               </li>
+            </div>
+            <div class="mb">
               <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed  shadow-none" data-bs-toggle="collapse" data-bs-target="collapse" aria-expanded="true">
+                <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
                   <div class="set1">
                     <img src="./images/baseline_help_center_white_48dp.png" alt="" width="22">
                     <li><a href="prop.html" class="link-dark rounded">Suporte</a></li>
                   </div>
                 </button>
-              </li>  
-          </div>
-        </ul>
-      </section>
+              </li>
+            </div>
+          </ul>
+        </section>
           
       <!--Barra de alerta-->
       <section class="content-table">
@@ -190,13 +205,17 @@
                 
                   <div class="p-t-q-p-t" id="boxsale">
                     <div class="product-type-quantity">
-                      <label>Produto
-                        <input id="" type="text" placeholder=""/>
-                        <p id="" style="display: none;">O Campo precisa ser preenchido</p>
-                      </label>
+                      <div class="product">
+                        <label>Produto
+                          <select id="product"></select>
+                          <option value=""></option>
+                          <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                        </label>
+                      </div>
                       <div class="type">
                         <label>Tipo
-                          <input id="" type="text" placeholder=""/>
+                          <select id="type"></select>
+                          <option value=""></option>
                           <p id="" style="display: none;">O Campo precisa ser preenchido</p>
                         </label>
                       </div>
@@ -213,7 +232,7 @@
                       <label>Total
                         <input id="total" type="text" placeholder=""/>
                         <p id="alerta_total" style="display: none;">O Campo precisa ser preenchido</p>
-                        <span>Adicionar</span>
+                        <button type="button">Adicionar</button>
                       </label>
                     </div>
                   </div>
@@ -258,7 +277,8 @@
             <div class="payment-value" id="boxpayment">
               <div class="payment">
                 <label>Forma de Pagamento
-                  <input id="payment_method" type="text" placeholder=""/>
+                  <select id="payment_method"></select>
+                  <option value=""></option>
                   <p id="alerta_formapagamento" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
@@ -266,7 +286,7 @@
                 <label>Valor total
                   <input id="total-value" type="text" placeholder=""/>
                   <p id="alerta_valortotal" style="display: none;">O Campo precisa ser preenchido</p>
-                  <span>Adicionar</span>
+                  <button type="button">Adicionar</button>
                 </label>
               </div>
             </div>
@@ -291,6 +311,7 @@
   </div>
 </div> 
 </div>
+<script src="script/preloader.js"></script>
 <script type="module" src="script/sale_registration.js"></script>
 </body>
 </html>
