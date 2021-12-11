@@ -9,6 +9,7 @@ document.getElementById("sab2");
 document.getElementById("val2");
 
 var td = document.createElement('td');
+var td2 = document.createElement('td');
 
 
 export default class databasemanagementproduct {
@@ -20,6 +21,9 @@ export default class databasemanagementproduct {
 
     if (td.hasChildNodes){
       td.innerHTML = '';
+    }
+    if (td2.hasChildNodes){
+      td2.innerHTML = '';
     }
 
     firebaseref.once('value', function(all){
@@ -41,8 +45,8 @@ export default class databasemanagementproduct {
       Object.keys(abe).find((a)=>{
 
         let dados = "<input id='flavor1' type='text' value=" + a + " disabled/>";
-        td.innerHTML += dados;
-        document.getElementById("sab").appendChild(td);
+        td2.innerHTML += dados;
+        document.getElementById("sab").appendChild(td2);
 
       })
 
