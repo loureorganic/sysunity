@@ -1,13 +1,13 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
+
 var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
-var label = document.getElementById("sab");
-var label2 = document.getElementById("sab2");
-var label3 = document.getElementById("val");
-var label4 = document.getElementById("val2");
+document.getElementById("sab2");
+document.getElementById("val2");
+
 var td = document.createElement('td');
 
 
@@ -24,49 +24,37 @@ export default class databasemanagementproduct {
 
     firebaseref.once('value', function(all){
 
-      // td.setAttribute('id', 'unique1');
+      // CRIACAO DO INPUT NOME
+      Object.keys(all.val()).map((keyname)=> {
+        
+        if (keyname === dados) {
+          
+          document.getElementById("nome").value = keyname;
+          
+        }
+        
+      })
 
       let abe = all.val()[dados];
 
+      // CRIACAO DO INPUT SABOR
+      Object.keys(abe).find((a)=>{
+
+        let dados = "<input id='flavor1' type='text' value=" + a + " disabled/>";
+        td.innerHTML += dados;
+        document.getElementById("sab").appendChild(td);
+
+      })
+
+      // CRIACAO DO INPUT VALOR
       Object.keys(abe).forEach(function(item) {
 
         let cab = abe[item].value
 
         let dados = "<input id='value1' type='text' value=" + cab + " disabled/>";
         td.innerHTML += dados;
-        label3.appendChild(td);
+        document.getElementById("val").appendChild(td);
 
-      })
-
-      Object.keys(abe).find((a)=>{
-
-        let dados = "<input id='flavor1' type='text' value=" + a + " disabled/>";
-        td.innerHTML += dados;
-        label.appendChild(td);
-
-      })
-    })
-
-    firebaseref.once('value', (resultado) => {
-
-      Object.keys(resultado.val()).map((keyname)=> {
-        
-        if (keyname === dados) {
-          
-          document.getElementById("nome").value = keyname;
-
-          var tr = document.createElement('tr');
-          var var_lista2 = document.getElementById("tbody-sabores-valores");
-
-          // FALTA TRANSFORMAR ISSO EM STRING E FAZER O APPEND CHILD
-          // VC CONSEGUE FAZER :) KKKKKK
-
-          // <td id="input-sabores-id">
-          //   <input id="tipo" type="text" placeholder="" disabled />
-          // </td>
-          
-        }
-        
       })
 
     })
@@ -83,78 +71,40 @@ export default class databasemanagementproduct {
       td.innerHTML = '';
     }
 
+    // CRIACAO DO INPUT NOME
     firebaseref.once('value', function(all){
+
+      Object.keys(all.val()).map((keyname)=> {
+          
+        if (keyname === dados) {
+          
+          document.getElementById("nome2").placeholder = keyname;
+          
+        }
+        
+      })
 
       let abe = all.val()[dados];
 
+      // CRIACAO DO INPUT SABOR
+      Object.keys(abe).find((a)=>{
+
+        let dados = "<input id='flavor1' type='text' placeholder=" + a + " />";
+        td.innerHTML += dados;
+        document.getElementById("sab2").appendChild(td);
+
+      })
+
+      // CRIACAO DO INPUT VALOR
       Object.keys(abe).forEach(function(item) {
 
         let cab = abe[item].value
 
         let dados = "<input id='value1' type='text' placeholder=" + cab + " />";
         td.innerHTML += dados;
-        label4.appendChild(td);
+        document.getElementById("val2").appendChild(td);
 
       })
-
-      td.setAttribute('id', 'unique1');
-
-      Object.keys(all.val()[dados]).find((a)=>{
-
-        let dados = "<input id='flavor1' type='text' placeholder=" + a + " />";
-        td.innerHTML += dados;
-        label2.appendChild(td);
-
-      })
-    })
-
-    firebaseref.once('value', (resultado) => {
-
-      firebaseref.once('value', (resultado) => {
-
-        Object.keys(resultado.val()).map((keyname)=> {
-          
-          if (keyname === dados) {
-            
-            document.getElementById("nome2").placeholder = keyname;
-            
-          }
-          
-        })
-  
-      })
-
-      // resultado.forEach(element => {
-      //   console.log(element.val())
-
-      //   if (element.child("value").val() == dados) {
-
-      //     document.getElementById("nome").placeholder = element.val().name;
-      //     document.getElementById("tipo").placeholder = element.val().type;
-      //     document.getElementById("valor").placeholder = element.val().value;
-
-      //     var btn = document.getElementById("btn_salvar");
-      //     btn.addEventListener("click", function (e) {
-      //       var inputnome = document.getElementById("nome").value;
-      //       var inputtipo = document.getElementById("tipo").value;
-      //       var inputvalor = document.getElementById("valor").value;
-
-      //       if (inputnome === "") {
-      //         inputnome = element.val().name;
-      //       }
-      //       if (inputtipo === "") {
-      //         inputtipo = element.val().type;
-      //       }
-      //       if (inputvalor === "") {
-      //         inputvalor = element.val().value;
-      //       }
-
-      //       self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
-      //     })
-
-      //   }
-
-      // });
 
     })
 
