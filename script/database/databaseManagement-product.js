@@ -5,9 +5,10 @@ var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
 var label = document.getElementById("sab");
-var td = document.createElement('td');
-
 var label2 = document.getElementById("sab2");
+var label3 = document.getElementById("val");
+var label4 = document.getElementById("val2");
+var td = document.createElement('td');
 
 
 export default class databasemanagementproduct {
@@ -17,11 +18,27 @@ export default class databasemanagementproduct {
 
     const firebaseref = firebase.database().ref("product");
 
+    if (td.hasChildNodes){
+      td.innerHTML = '';
+    }
+
     firebaseref.once('value', function(all){
 
-      td.setAttribute('id', 'unique1');
+      // td.setAttribute('id', 'unique1');
 
-      Object.keys(all.val()[dados]).find((a)=>{
+      let abe = all.val()[dados];
+
+      Object.keys(abe).forEach(function(item) {
+
+        let cab = abe[item].value
+
+        let dados = "<input id='value1' type='text' value=" + cab + " disabled/>";
+        td.innerHTML += dados;
+        label3.appendChild(td);
+
+      })
+
+      Object.keys(abe).find((a)=>{
 
         let dados = "<input id='flavor1' type='text' value=" + a + " disabled/>";
         td.innerHTML += dados;
@@ -62,7 +79,23 @@ export default class databasemanagementproduct {
     var self = this;
     const firebaseref = firebase.database().ref("product");
 
+    if (td.hasChildNodes){
+      td.innerHTML = '';
+    }
+
     firebaseref.once('value', function(all){
+
+      let abe = all.val()[dados];
+
+      Object.keys(abe).forEach(function(item) {
+
+        let cab = abe[item].value
+
+        let dados = "<input id='value1' type='text' placeholder=" + cab + " />";
+        td.innerHTML += dados;
+        label4.appendChild(td);
+
+      })
 
       td.setAttribute('id', 'unique1');
 
