@@ -26,7 +26,7 @@ export default class databasemanagementproduction {
           tr.setAttribute("id",curecord.key);
           dados = 
           "<td>" + producao.product + "</td>" + "<td>" + producao.type + 
-          "</td>" + "<td>" + producao.batch + "</td>" + "<td "+"id='suc'>" + btnsee + btnedit + btndelete + "</td>";
+          "</td>" + "<td>" + producao.batch + "</td>" + "<td "+"id='gridModal'>" + btnsee + btnedit + btndelete + "</td>";
           tr.innerHTML = dados;
           var_lista.appendChild(tr);
           

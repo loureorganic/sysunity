@@ -203,19 +203,99 @@
   </div>
 
   <!-- MODAL DE VISUALZAR -->
-  <div id="modal-see" class="loader2">
+<div id="modal-see" class="loader2">
 
+  <div class="mod">
+    <div class="top-modal">
+    <h5>Visualizar Produto</h5>
+    <button class="fechar"></button>
   </div>
-
-  <!-- MODAL DE EDITAR -->
-  <div id="modal-edit" class="loader2">
-
-  </div>
-
-  <!-- MODAL DE DELETAR -->
-  <div id="modal-delete" class="loader2">
     
+  <form>
+    <div class="name">
+
+      <label for="">Nome
+        <input id="nome" type="text" placeholder="" disabled/>
+      </label>
+
+    </div>
+    <div class="flavors">
+
+      <label for="" id="sab">Sabores
+        
+      </label> 
+
+      <div class="values">
+
+        <label for="">Valor
+          <input id="value1" type="text" placeholder="" disabled/>
+        </label>
+
+      </div>
+    </div>
+  </form>
+
   </div>
+</div>
+
+<!-- MODAL DE EDITAR -->
+<div id="modal-edit" class="loader2">
+
+  <div class="mod">
+    <div class="top-modal">
+    <h5>Editar Produto</h5>
+    <button class="fechar"></button>
+  </div>
+
+  <form>
+    <div class="name">
+
+      <label for="">Nome
+        <input id="nome2" type="text" placeholder="" disabled/>
+      </label>
+
+    </div>
+    <div class="flavors">
+
+      <label for="" id="sab2">Sabores
+
+      </label> 
+      <div class="values">
+
+        <label for="">Valor
+          <!-- <input id="value1" type="text" placeholder="" disabled/> -->
+        </label>
+
+      </div>
+    </div>
+    <div class="save">
+      <div class="btn-group">
+        <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
+      </div>
+    </div>
+  </form>
+
+  </div>
+</div>
+
+<!-- MODAL DE DELETAR -->
+<div id="modal-delete" class="loader2">
+  <div class="mod">
+    <div class="top-modal">
+      <h5>Deletar Produto</h5>
+      <button class="fechar"></button>
+    </div>
+
+    <form>
+      <h3 style="color:black">Tem certeza que deseja deletar esse produto?</h3>
+      <div class="alternative">
+        <button type="button" class="btn btn-primary" id="confirm">SIM</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="deny">NÃO</button>
+      </div>
+    </form>
+
+  </div>
+</div>
 
   <!-- SCRIPTS -->
   <script type="module" src="./script/production_management.js"></script>
