@@ -348,48 +348,49 @@ table button{
     align-items: center;
 }
 
-.group .product{
-    width: 35%;
+.mod .top-table{
+    background-color: white;
+    text-align: center;
 }
 
-.group .type{
-    width: 35%;
+.mod .data-table{
+    background-color: white;
+    border: 1px solid #085d8c;
+    text-align: center;
 }
 
-.group .lot{
-    width: 25%;
+.mod h6{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 18px;
 }
 
-.group .package{
-    width: 25%;
+.mod .payment input{
+    width: 80%;
 }
 
-.group .units{
-    width: 25%;
+.mod .payday input{
+    width: 80%;
 }
 
-.group .quantity{
-    width: 45%;
+.mod .amount-paid input{
+    width: 70%;
 }
 
-.group .employee{
-    width: 30%;
+.mod .date-sale input{
+    width: 80%;
 }
 
-.group .date-production{
-    width: 25%;
+.mod .seller input{
+    width: 80%;
 }
 
-.group .due-date{
-    width: 30%;
+.mod .delivery input{
+    width: 80%;
 }
 
-.group .value-production{
-    width: 40%;
-}
-
-.group .time{
-    width: 20%;
+.mod .total input{
+    width: 60%;
 }
 
 .fechar{
@@ -421,32 +422,11 @@ form input {
     border-style: solid;
     border-color: #085D8C;
     width: 100%;
-  }
-.mod .name label{
-    display: flex;
-    width: 100%;
-    flex-direction:column;
-  }
-.mod .flavors{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-  
-.mod .flavors label{
-    display: flex;
-    flex-direction:column;
-    width: 100%;
-  }
-  
-.mod .flavors input{
-    margin-bottom: 3px;
-  }
-  
-.mod .values{
-    display: flex;
-    width: 40%;
-  }
+}
+
+form table{
+    overflow-y: scroll;
+}
   
 .button{
     border: none;
