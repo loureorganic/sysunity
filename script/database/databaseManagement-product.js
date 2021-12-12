@@ -131,15 +131,16 @@ export default class databasemanagementproduct {
 
             if(input3 === ""){
               input3 = keyname;
-            } else{
-              const database = firebase.database();
-              let active = false;
-              console.log(dados)
-              console.log(input3)
-              database.ref('product/' + dados).set(input3);
-              window.location.reload(active);
-            }
-            
+            } 
+            // else{
+            //   const database = firebase.database();
+            //   let active = false;
+            //   console.log(dados)
+            //   console.log(input3)
+            //   database.ref('product/' + dados).set(input3);
+            //   window.location.reload(active);
+            // }
+              
           }
           
         }) 
@@ -164,6 +165,13 @@ export default class databasemanagementproduct {
 
           if(input1 === ""){
             input1 = cab;
+          }
+          else{
+            const database = firebase.database();
+            let active = false;
+            
+            database.ref('product/' + dados + '/' + input2 + '/value').set(input1);
+            window.location.reload(active);
           }
   
         })
