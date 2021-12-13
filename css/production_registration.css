@@ -253,7 +253,7 @@ h2{
     align-items: center;
   }
   
-.loader2 .mostrar {
+.loader2.mostrar {
     display: flex;
   }
   
