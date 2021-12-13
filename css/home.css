@@ -169,6 +169,19 @@ a{
     align-items: center;
     justify-content: center;
 }
+.title{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 0.5px solid;
+}
+.title h2{
+    width: 97%;
+}
+.filter-color_icon{
+    width: 30px;
+    filter: invert(17%) sepia(95%) saturate(2201%) hue-rotate(183deg) brightness(101%) contrast(94%);
+}
 
 h3{
     font-size: 32px;

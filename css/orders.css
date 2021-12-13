@@ -18,6 +18,12 @@
 .dataTables_wrapper{
     width: 90%;
 }
+.title{
+    width: 93%;
+}
+.title h2{
+    width: 97%;
+}
 .section-table label{
     margin-bottom: 20px;
 }
