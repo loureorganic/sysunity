@@ -248,16 +248,20 @@
   </div> 
 </div>
 
-<div id="modal-note" class="container">
+<!-- MODAL DE IMPRESSÃO -->
+<div id="modal-note" class="loader2">
   <div class="mod">
-    <h4 style="text-align: center;">Deletar Usuário</h4>
+    <div class="top-modal">
+      <h5>Imprimir Bilhete</h5>
+      <button class="fechar"></button>
+    </div>
 
     <form>
-      <h5>Você deseja imprimir um bilhete?</h5>
-
-      <button type="button" id="confirm">SIM</button>
-      <button type="button" class="fechar">NÃO</button>
-
+      <h3 style="color: black;">Você deseja imprimir um bilhete?</h3>
+      <div class="alternative">
+        <button type="button" class="btn btn-primary" id="confirm">SIM</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="deny">NÃO</button>
+      </div>
     </form>
 
   </div>
@@ -265,6 +269,7 @@
 
 <script src="script/preloader.js"></script>
 <script type="module" src="script/production_registration.js"></script>
+<script type="module" src="script/modal.js"></script>
 
 </body>
 
