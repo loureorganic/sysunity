@@ -1,3 +1,9 @@
+import databaseuser from "./database/databaseUser.js";
+
+const dados = new databaseuser();
+dados.objectinitial();
+dados.objectuser();
+
 const grafico1 = document.getElementById('grafico').getContext('2d');
 const myChart = new Chart(grafico1, {
     type: 'bar',

@@ -1,5 +1,7 @@
+import databaseuser from "./database/databaseUser.js";
 
-
+const dados = new databaseuser();
+dados.objectuser();
 
 document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "flex";
