@@ -1,8 +1,9 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
-var btnsee = '<button type="button" class="visibility" data-bs-toggle="modal" data-bs-target="#MyModal"></button>';
-var btnedit = '<button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#MyModalEditar"></button>';
-var btndelete = '<button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#MyModalDeletar"></button>';
+
+var btnsee = '<button id="btnSee" class="button button2" ></button>';
+var btnedit = '<button id="btnEdit" class="button button2" ></button>';
+var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
 var modalsee = ` <div class="modal" id="MyModal">
 <div class="modal-dialog modal-dialog-centered modal-lg">
