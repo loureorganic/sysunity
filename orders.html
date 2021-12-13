@@ -192,13 +192,176 @@
           </tr>
         </thead>
         <tbody id="tablebody"></tbody>
-       
+          <tr>
+            <td>12/08/2021</td>
+            <td>1524</td>
+            <td>Entregue</td>
+            <td>pago</td>
+          </tr>
       </table>
     </section>
   </section>
   </div>
   </div>
   </div>
+
+  <!-- MODAL DE VISUALZAR -->
+<div id="modal-see" class="loader2">
+  <div class="mod">
+    <div class="top-modal">
+      <h5>Visualizar Encomenda</h5>
+      <button class="fechar"></button>
+    </div>
+    <form>
+
+      <table>
+        <tr>
+          <th class="top-table">Item</th>
+          <th class="top-table">Quantidade</th>
+          <th class="top-table">Valor</th>
+        </tr>
+        <tr>
+          <td class="data-table">Coxinha de frango</td>
+          <td class="data-table">20</td>
+          <td class="data-table">R$ 0,69</td>
+        </tr>
+        <tr>
+          <td class="data-table">Coxinha de frango</td>
+          <td class="data-table">20</td>
+          <td class="data-table">R$ 0,69</td>
+        </tr>
+      </table>
+
+      <h6>Informações de pagamento</h6>
+
+      <div class="group">
+        <div class="payment">
+          <label for="">Forma de pagamento
+            <input id="formapagamento" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+        <div class="payday">
+          <label for="">Data de pagamento
+            <input id="datapagamento" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+        <div class="amount-paid">
+          <label for="">Valor pago
+            <input id="valorpago" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="date-sale">
+          <label for="">Data da venda
+            <input id="datavenda" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+        <div class="seller">
+          <label for="">Vendedor
+            <input id="vendedor" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+        <div class="delivery">
+          <label for="">Data de entrega
+            <input id="dataentrega" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+        <div class="total">
+          <label for="">Total
+            <input id="total" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- MODAL DE EDITAR -->
+<div id="modal-edit" class="loader2">
+
+  <div class="mod">
+    <div class="top-modal">
+    <h5>Editar Vendas</h5>
+    <button class="fechar"></button>
+
+  </div>
+
+  <form>
+
+    <table>
+      <tr>
+        <th class="top-table">Item</th>
+        <th class="top-table">Quantidade</th>
+        <th class="top-table">Valor</th>
+      </tr>
+      <tr>
+        <td class="data-table">Coxinha de frango</td>
+        <td class="data-table">20</td>
+        <td class="data-table">R$ 0,69</td>
+      </tr>
+      <tr>
+        <td class="data-table">Coxinha de frango</td>
+        <td class="data-table">20</td>
+        <td class="data-table">R$ 0,69</td>
+      </tr>
+    </table>
+
+    <h6>Informações de pagamento</h6>
+
+    <div class="group">
+      <div class="payment">
+        <label for="">Forma de pagamento
+          <input id="formapagamento" type="text" placeholder="" />
+        </label>
+      </div>
+      <div class="payday">
+        <label for="">Data de pagamento
+          <input id="datapagamento" type="text" placeholder="" />
+        </label>
+      </div>
+      <div class="amount-paid">
+        <label for="">Valor pago
+          <input id="valorpago" type="text" placeholder="" />
+        </label>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="date-sale">
+        <label for="">Data da venda
+          <input id="datavenda" type="text" placeholder="" />
+        </label>
+      </div>
+      <div class="seller">
+        <label for="">Vendedor
+          <input id="vendedor" type="text" placeholder="" />
+        </label>
+      </div>
+      <div class="delivery">
+        <label for="">Data de entrega
+          <input id="dataentrega" type="text" placeholder="" />
+        </label>
+      </div>
+      <div class="total">
+        <label for="">Total
+          <input id="total" type="text" placeholder="" />
+        </label>
+      </div>
+    </div>
+
+    <div class="save">
+      <div class="btn-group">
+        <button class="btn btn-primary" id="btn_salvar" type="button">SALVAR</button>
+      </div>
+    </div>
+  </form>
+
+  </div>
+</div>
+
   <script type="module" src="script/order.js"></script>
   <script src="script/preloader.js"></script>
   <script type="module" src="script/modal.js"></script>
