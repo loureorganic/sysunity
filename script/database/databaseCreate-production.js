@@ -138,7 +138,13 @@ export default class databasecreateproduction{
           modal.classList.remove('mostrar');
           window.location.reload(active);
 
-        } 
+        }
+        if(e.target.id == 'deny') {
+
+          modal.classList.remove('mostrar');
+          window.location.reload(active);
+          
+        }
         else if(e.target.id == 'confirm') {
 
           // CAPTURAR O PRODUTO, O TIPO, O LOTE, A DATA DE PRODUCAO, A DATA DE VENCIMENTO E A UNIDADE
@@ -181,7 +187,11 @@ export default class databasecreateproduction{
           modal.classList.remove('mostrar');
           window.location.reload(active);
 
-        } 
+        }
+        if(e.target.id == 'deny') {
+          modal.classList.remove('mostrar');
+          window.location.reload(active);
+        }
         else if(e.target.id == 'confirm') {
 
           // CAPTURAR O PRODUTO, O TIPO, O LOTE, A DATA DE PRODUCAO, A DATA DE VENCIMENTO E A UNIDADE
