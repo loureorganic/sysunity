@@ -1,9 +1,6 @@
 var dados = ""
 var var_lista = document.getElementById("tablebody");
 
-let fname;
-let lname;
-
 var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
@@ -103,6 +100,7 @@ export default class databasemanagementproduction {
       resultado.forEach(element => {
         
         if(element.child("type").val() == dados) {
+          console.log(element.val().user)
           
           u = element.val().user;
           document.getElementById("produto").value = element.val().product;
@@ -111,7 +109,7 @@ export default class databasemanagementproduction {
           document.getElementById("pacotes").value = element.val().packagequantity;
           document.getElementById("unidades").value = element.val().packageperunity;
           document.getElementById("quantidade").value = element.val().totalquantity;
-          // document.getElementById("funcionario").value = "Em Andamento";
+          document.getElementById("funcionario").value = element.val().user;
           document.getElementById("dataproducao").value = element.val().fabricationdate;
           document.getElementById("datavencimento").value = element.val().deadlinedate;
           document.getElementById("valortotalprocucao").value = "Em Andamento";
@@ -128,8 +126,6 @@ export default class databasemanagementproduction {
   
           if(element.key == u) {
             document.getElementById("funcionario").value = element.val().firstname + " " + element.val().lastname;
-            fname = element.val().firstname;
-            lname = element.val().lastname;
           }
               
         });
@@ -143,6 +139,20 @@ export default class databasemanagementproduction {
 
   // MODAL DE EDITAR
   funcmodaledit(a){
+
+    const usfirebaseref = firebase.database().ref("user");
+
+    // GAMBIARRA
+    usfirebaseref.once('value',(resultado)=>{
+  
+      resultado.forEach(element => {
+
+        document.getElementById("funcionario2").placeholder = element.val().firstname + " " + element.val().lastname;
+            
+      });
+      // GAMBIARRA
+    
+    })
 
     var self = this;
 
@@ -160,7 +170,7 @@ export default class databasemanagementproduction {
           document.getElementById("pacotes2").placeholder = element.val().packagequantity;
           document.getElementById("unidades2").placeholder = element.val().packageperunity;
           document.getElementById("quantidade2").placeholder = element.val().totalquantity;
-          document.getElementById("funcionario2").placeholder = "Em Andamento";
+          // document.getElementById("funcionario2").placeholder = element.val().firstname + " " + element.val().lastname;
           document.getElementById("dataproducao2").placeholder = element.val().fabricationdate;
           document.getElementById("datavencimento2").placeholder = element.val().deadlinedate;
           document.getElementById("valortotalprocucao2").placeholder = "Em Andamento";
@@ -184,10 +194,38 @@ export default class databasemanagementproduction {
             if(produto === ""){
               produto = element.val().product;
             }
+            if(tipo === ""){
+              tipo = element.val().type;
+            }
+            if(lote === ""){
+              lote = element.val().batch;
+            }
+            if(pacotes === ""){
+              pacotes = element.val().packagequantity;
+            }
+            if(unidades === ""){
+              unidades = element.val().packageperunity;
+            }
+            if(quantidade === ""){
+              quantidade = element.val().totalquantity;
+            }
+            // if(funcionario === ""){
+            //   funcionario = element.val().product;
+            // }
+            if(dataproducao === ""){
+              dataproducao = element.val().fabricationdate;
+            }
+            if(datavencimento === ""){
+              datavencimento = element.val().deadlinedate;
+            }
+            // if(valortotalprocucao === ""){
+            //   valortotalprocucao = element.val().product;
+            // }
+            if(prazo === ""){
+              prazo = element.val().validate;
+            }
             
-            
-            
-            self.funcUpd(element.key, dataProducao, dataVenciemnto, totalProducao, prazo);
+            self.funcUpd(element.key, produto, tipo, lote, pacotes, unidades, quantidade, funcionario, dataproducao, datavencimento, prazo);
           })
             
         }
@@ -199,14 +237,20 @@ export default class databasemanagementproduction {
   }
 
   // FUNCAO P/ ATUALIZAR DADOS
-  funcUpd(chave, dataprodução, datavenciemnto, totalProducao, pra){
+  funcUpd(chave, produto, tipo, lote, pacotes, unidades, quantidade, funcionario, dataproducao, datavencimento, prazo){
 
     const database = firebase.database();
     let active = false;
-    database.ref('production/'+chave+'/fabricationdate').set(dataprodução);
-    database.ref('production/'+chave+'/deadlinedate').set(datavenciemnto);
-    database.ref('production/'+chave+'/totalquantity').set(totalProducao);
-    database.ref('production/'+chave+'/validate').set(pra);
+    database.ref('production/'+chave+'/product').set(produto);
+    database.ref('production/'+chave+'/type').set(tipo);
+    database.ref('production/'+chave+'/batch').set(lote);
+    database.ref('production/'+chave+'/packagequantity').set(pacotes);
+    database.ref('production/'+chave+'/packageperunity').set(unidades);
+    database.ref('production/'+chave+'/totalquantity').set(quantidade);
+    database.ref('production/'+chave+'/user').set(funcionario);
+    database.ref('production/'+chave+'/fabricationdate').set(dataproducao);
+    database.ref('production/'+chave+'/deadlinedate').set(datavencimento);
+    database.ref('production/'+chave+'/validate').set(prazo);
     
     window.location.reload(active);
 
@@ -222,11 +266,16 @@ export default class databasemanagementproduction {
     firebaseref.once('value',(resultado)=>{
 
     resultado.forEach(element => {
-      if(element.key == dados) {
-        valu = element.key;
-        // database.ref('production/'+valu).remove();
 
-        // window.location.reload(active);
+      if(element.key == dados) {
+
+        var btn = document.getElementById("confirm");
+        btn.addEventListener("click", function(e){
+          valu = element.key;
+          database.ref('production/'+valu).remove();
+
+          window.location.reload(active);
+        })
       }
     });
   })
