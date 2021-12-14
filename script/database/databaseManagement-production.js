@@ -48,11 +48,11 @@ export default class databasemanagementproduction {
           }
 
           else if(data.path[0].id === 'btnSee'){
-            self.iniciaModal("modal-see", parent.getElementsByTagName('td')[1].innerHTML);
+            self.iniciaModal("modal-see", parent.getElementsByTagName('td')[1].innerHTML, parent.getElementsByTagName('td')[0].innerHTML);
           }
 
           else if(data.path[0].id === 'btnEdit'){
-            self.iniciaModal("modal-edit",parent.getElementsByTagName('td')[1].innerHTML);
+            self.iniciaModal("modal-edit",parent.getElementsByTagName('td')[1].innerHTML, parent.getElementsByTagName('td')[0].innerHTML);
           }
         })
       }
@@ -60,7 +60,7 @@ export default class databasemanagementproduction {
   }
 
     // CRIACAO DO MODAL
-    iniciaModal(modalID, product) {
+    iniciaModal(modalID, product, nproduct) {
 
       const modal = document.getElementById(modalID);
   
@@ -79,10 +79,10 @@ export default class databasemanagementproduction {
       }
   
       if(modalID == "modal-see") {
-        this.funcmodalsee(product);
+        this.funcmodalsee(product, nproduct);
       } 
       else if(modalID == "modal-edit") {
-        this.funcmodaledit(product);
+        this.funcmodaledit(product, nproduct);
       } 
       else if(modalID == "modal-delete") {
         this.funcmodaldelete(product)
@@ -90,11 +90,14 @@ export default class databasemanagementproduction {
     }
 
   // MODAL DE VISUALIZAR
-  funcmodalsee(dados){
-    const firebaseref = firebase.database().ref("production");
-    const usfirebaseref = firebase.database().ref("user");
-    let u;   
+  funcmodalsee(dados, nomep){
     
+    const firebaseref = firebase.database().ref("production");
+    const pfirebaseref = firebase.database().ref("product");
+    const usfirebaseref = firebase.database().ref("user");
+    let u;
+    let vl;
+
     firebaseref.once('value',(resultado)=>{
       
       resultado.forEach(element => {
@@ -102,6 +105,8 @@ export default class databasemanagementproduction {
         if(element.child("type").val() == dados) {
           
           u = element.val().user;
+          vl = element.val().totalquantity;
+
           document.getElementById("produto").value = element.val().product;
           document.getElementById("tipo").value = element.val().type;
           document.getElementById("lote").value = element.val().batch;
@@ -110,7 +115,6 @@ export default class databasemanagementproduction {
           document.getElementById("quantidade").value = element.val().totalquantity;
           document.getElementById("funcionario").value = element.val().user;
           
-          document.getElementById("valortotalprocucao").value = "Em Andamento";
 
           if(typeof element.val().fabricationdate === "undefined" && typeof element.val().deadlinedate === "undefined") {
 
@@ -146,6 +150,18 @@ export default class databasemanagementproduction {
         }
         
       });
+
+      // GAMBIARRA
+      pfirebaseref.once('value', function(all){
+        let abe = all.val()[nomep];
+        Object.keys(abe).forEach(function(item) {
+  
+          let cab = abe[item].value;
+
+          document.getElementById("valortotalprocucao").value = cab * vl;
+        })
+      })
+      // GAMBIARRA
       
       // GAMBIARRA
       usfirebaseref.once('value',(resultado)=>{
@@ -157,32 +173,20 @@ export default class databasemanagementproduction {
           }
               
         });
-        // GAMBIARRA
       
       })
+      // GAMBIARRA
 
     })
 
   }
 
   // MODAL DE EDITAR
-  funcmodaledit(a){
+  funcmodaledit(a, nomep){
 
-    const usfirebaseref = firebase.database().ref("user");
-
-    // GAMBIARRA
-    usfirebaseref.once('value',(resultado)=>{
-  
-      resultado.forEach(element => {
-
-        document.getElementById("funcionario2").placeholder = element.val().firstname + " " + element.val().lastname;
-            
-      });
-      // GAMBIARRA
-    
-    })
-
+    const pfirebaseref = firebase.database().ref("product");
     var self = this;
+    let vl;
 
     const firebaseref = firebase.database().ref("production");
 
@@ -191,6 +195,8 @@ export default class databasemanagementproduction {
       resultado.forEach(element => {
 
         if(element.child("type").val() == a) {
+
+          vl = element.val().totalquantity;
 
           if(typeof element.val().fabricationdate === "undefined" && typeof element.val().deadlinedate === "undefined") {
             document.getElementById("dataproducao2").placeholder = "Não existe";
@@ -228,7 +234,6 @@ export default class databasemanagementproduction {
           document.getElementById("pacotes2").placeholder = element.val().packagequantity;
           document.getElementById("unidades2").placeholder = element.val().packageperunity;
           document.getElementById("quantidade2").placeholder = element.val().totalquantity;
-          document.getElementById("valortotalprocucao2").placeholder = "Em Andamento";
 
           var btn = document.getElementById("btn_salvar");
           btn.addEventListener("click", function(e){
@@ -285,6 +290,32 @@ export default class databasemanagementproduction {
         }
           
       });
+
+      // GAMBIARRA
+      pfirebaseref.once('value', function(all){
+        let abe = all.val()[nomep];
+        Object.keys(abe).forEach(function(item) {
+
+          let cab = abe[item].value;
+
+          document.getElementById("valortotalprocucao2").value = cab * vl;
+        })
+      })
+      // GAMBIARRA
+
+      const usfirebaseref = firebase.database().ref("user");
+
+      // GAMBIARRA
+      usfirebaseref.once('value',(resultado)=>{
+    
+        resultado.forEach(element => {
+
+          document.getElementById("funcionario2").placeholder = element.val().firstname + " " + element.val().lastname;
+              
+        });
+      
+      })
+      // GAMBIARRA
       
     })
 
