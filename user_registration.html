@@ -166,9 +166,30 @@
         <section class="registration">
             <div class="title">
               <h2>Cadastro de Usuário</h2>
-                <a  href="">
+                
+                <!-- Button trigger modal -->
+                <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
                   <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
-                </a>          
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Suporte de Cadastro de Usuário</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <h6>• Insira os dados em cada campo: nome, sobrenome, usuário e email.</h6>
+                          <h6>• Selecione uma opção de cargo e nível de acesso.</h6>
+                          <h6>• Clicar no botão cadastrar.</h6>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </div>            
                 <div class="form">
                   <div class="user-email">
@@ -223,13 +244,13 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body modal-dialog modal-lg">
-              <img src="images/GREEN-checked.png" alt="">
-   <h1>Usuário cadastrado com sucesso!</h1>
-                             <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'user_management.html'">IR PARA TELA DE GERENCIAMENTO</button>
+                            <img src="images/GREEN-checked.png" alt="">
+                            <h1>Usuário cadastrado com sucesso!</h1>
+                            <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'user_management.html'">IR PARA TELA DE GERENCIAMENTO</button>
                           </div>
                       </div>
                   </div>
-              </div>  
+              </div> 
         </section>
       </section>
     </div>

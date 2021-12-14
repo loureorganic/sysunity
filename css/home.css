@@ -178,6 +178,36 @@ a{
 .title h2{
     width: 97%;
 }
+
+.title button{
+    background: none;
+    border: none;
+}
+
+.modal-content{
+    margin-top: 15%;
+}
+
+.modal-header{
+    background: #085D8C;
+    color: #fff;
+    height: 50px;
+}
+.modal-header h5{
+    font-size: 20px;
+    font-weight: 700;
+}
+.modal-body form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+.modal-body form h6{
+    padding-top: 12px;
+    color: black;
+    font-weight: 600;
+}
+
 .filter-color_icon{
     width: 30px;
     filter: invert(17%) sepia(95%) saturate(2201%) hue-rotate(183deg) brightness(101%) contrast(94%);
