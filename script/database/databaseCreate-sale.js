@@ -42,4 +42,23 @@ export default class databasecreatesale{
             window.location.reload(active);
           })
     }
+
+    optionProducts(){
+        const firebaseref = firebase.database().ref("production");
+
+        firebaseref.once('value', function(all){
+            let elementsFiltered;
+            
+            all.forEach((text) => {
+                console.log(text.val().product);
+                
+            })
+
+        //   Object.keys(all.val()).map((keyname)=> {
+        //     var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
+        //     select.innerHTML += dados2;
+        //     label.appendChild(select);
+        //   })
+        })
+    }
 }
