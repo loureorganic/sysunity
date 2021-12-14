@@ -687,7 +687,7 @@ export default class databasemanagementsale{
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           dados =
-          "<td>" + venda.date + "</td>" + "<td>" + venda.seller + "</td>" + "<td>" + venda.total + "</td>" +
+          "<td id='dateVenda'>" + venda.date + "</td>" + "<td id='sellerVenda'>" + venda.seller + "</td>" + "<td id='totalVenda'>" + venda.total + "</td>" +
           "<td>" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;

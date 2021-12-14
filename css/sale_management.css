@@ -32,7 +32,9 @@
     text-align: center;
     padding-left: 85px;
 }
-
+#dateVenda, #sellerVenda, #totalVenda{
+    padding-top: 25px;
+}
 tbody tr{
     background-color: #f3f3f3;
 }
@@ -48,7 +50,6 @@ table button{
     width: 60px;
     padding: 0;
 }
-
 .save{
     display: flex;
     justify-content: end;
