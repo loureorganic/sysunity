@@ -1,3 +1,4 @@
+var label = document.getElementById('productLabel')
 export default class databasecreatesale{
 
     createsale(){
@@ -47,17 +48,24 @@ export default class databasecreatesale{
         const firebaseref = firebase.database().ref("production");
 
         firebaseref.once('value', function(all){
-            let elementsFiltered;
-            
+            let elementsFiltered = [];
+            var array = [];
+            let select = document.createElement('select');
             all.forEach((text) => {
                 console.log(text.val().product);
-                
+                array.push(text.val().product);
             })
-
+            console.log(array);
+            elementsFiltered = array.filter(function(item, pos) {
+                return array.indexOf(item) == pos;
+            })
+            console.log('filtered', elementsFiltered);
+           elementsFiltered.map((item)=> {
+           var dados = "<option " + "id="+item +" >" + item + "</option>"
+           select.innerHTML += dados;
+           label.appendChild(select);
+})
         //   Object.keys(all.val()).map((keyname)=> {
-        //     var dados2 = "<option " + "id="+keyname +" >" + keyname + "</option>"
-        //     select.innerHTML += dados2;
-        //     label.appendChild(select);
         //   })
         })
     }
