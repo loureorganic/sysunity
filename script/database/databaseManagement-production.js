@@ -100,7 +100,6 @@ export default class databasemanagementproduction {
       resultado.forEach(element => {
         
         if(element.child("type").val() == dados) {
-          console.log(element.val().user)
           
           u = element.val().user;
           document.getElementById("produto").value = element.val().product;
@@ -110,10 +109,39 @@ export default class databasemanagementproduction {
           document.getElementById("unidades").value = element.val().packageperunity;
           document.getElementById("quantidade").value = element.val().totalquantity;
           document.getElementById("funcionario").value = element.val().user;
-          document.getElementById("dataproducao").value = element.val().fabricationdate;
-          document.getElementById("datavencimento").value = element.val().deadlinedate;
+          
           document.getElementById("valortotalprocucao").value = "Em Andamento";
-          document.getElementById("prazo").value = element.val().validate;
+
+          if(typeof element.val().fabricationdate === "undefined" && typeof element.val().deadlinedate === "undefined") {
+
+            document.getElementById("dataproducao").value = "Não existe";
+            document.getElementById("datavencimento").value = "Não existe";
+
+          } else if(element.val().fabricationdate === "" && element.val().deadlinedate === "") {
+
+            document.getElementById("dataproducao").value = "Não existe";
+            document.getElementById("datavencimento").value = "Não existe";
+
+          }
+          else {
+            document.getElementById("dataproducao").value = element.val().fabricationdate;
+            document.getElementById("datavencimento").value = element.val().deadlinedate;
+          }
+
+          if(typeof element.val().validate === "undefined") {
+
+            document.getElementById("prazo").value = "Não existe";
+
+          } else if(element.val().validate === "") {
+
+            document.getElementById("prazo").value = "Não existe";
+
+          }
+          else {
+
+            document.getElementById("prazo").value = element.val().validate;
+
+          }
           
         }
         
@@ -164,17 +192,43 @@ export default class databasemanagementproduction {
 
         if(element.child("type").val() == a) {
 
+          if(typeof element.val().fabricationdate === "undefined" && typeof element.val().deadlinedate === "undefined") {
+            document.getElementById("dataproducao2").placeholder = "Não existe";
+            document.getElementById("datavencimento2").placeholder = "Não existe";
+            document.getElementById("dataproducao2").disabled = true;
+            document.getElementById("datavencimento2").disabled = true;
+          } else if(element.val().fabricationdate === "" && element.val().deadlinedate === "") {
+            document.getElementById("dataproducao2").placeholder = "Não existe";
+            document.getElementById("datavencimento2").placeholder = "Não existe";
+            document.getElementById("dataproducao2").disabled = true;
+            document.getElementById("datavencimento2").disabled = true;
+          }
+          else {
+            document.getElementById("dataproducao2").placeholder = element.val().fabricationdate;
+            document.getElementById("datavencimento2").placeholder = element.val().deadlinedate;
+            document.getElementById("dataproducao2").disabled = false;
+            document.getElementById("datavencimento2").disabled = false;
+          }
+
+          if(typeof element.val().validate === "undefined") {
+            document.getElementById("prazo2").placeholder = "Não existe";
+            document.getElementById("prazo2").disabled = true;
+          } else if(element.val().validate === "") {
+            document.getElementById("prazo2").placeholder = "Não existe";
+            document.getElementById("prazo2").disabled = true;
+          }
+          else {
+            document.getElementById("prazo2").placeholder = element.val().validate;
+            document.getElementById("prazo2").disabled = false;
+          }
+
           document.getElementById("produto2").placeholder = element.val().product;
           document.getElementById("tipo2").placeholder = element.val().type;
           document.getElementById("lote2").placeholder = element.val().batch;
           document.getElementById("pacotes2").placeholder = element.val().packagequantity;
           document.getElementById("unidades2").placeholder = element.val().packageperunity;
           document.getElementById("quantidade2").placeholder = element.val().totalquantity;
-          // document.getElementById("funcionario2").placeholder = element.val().firstname + " " + element.val().lastname;
-          document.getElementById("dataproducao2").placeholder = element.val().fabricationdate;
-          document.getElementById("datavencimento2").placeholder = element.val().deadlinedate;
           document.getElementById("valortotalprocucao2").placeholder = "Em Andamento";
-          document.getElementById("prazo2").placeholder = element.val().validate;
 
           var btn = document.getElementById("btn_salvar");
           btn.addEventListener("click", function(e){
@@ -212,20 +266,20 @@ export default class databasemanagementproduction {
             // if(funcionario === ""){
             //   funcionario = element.val().product;
             // }
-            if(dataproducao === ""){
-              dataproducao = element.val().fabricationdate;
-            }
-            if(datavencimento === ""){
-              datavencimento = element.val().deadlinedate;
-            }
+            // if(dataproducao === ""){
+            //   dataproducao = element.val().fabricationdate;
+            // }
+            // if(datavencimento === ""){
+            //   datavencimento = element.val().deadlinedate;
+            // }
             // if(valortotalprocucao === ""){
             //   valortotalprocucao = element.val().product;
             // }
-            if(prazo === ""){
-              prazo = element.val().validate;
-            }
+            // if(prazo === ""){
+            //   prazo = element.val().validate;
+            // }
             
-            self.funcUpd(element.key, produto, tipo, lote, pacotes, unidades, quantidade, funcionario, dataproducao, datavencimento, prazo);
+            self.funcUpd(element.key, produto, tipo, lote, pacotes, unidades, quantidade, dataproducao, datavencimento, prazo);
           })
             
         }
@@ -237,7 +291,7 @@ export default class databasemanagementproduction {
   }
 
   // FUNCAO P/ ATUALIZAR DADOS
-  funcUpd(chave, produto, tipo, lote, pacotes, unidades, quantidade, funcionario, dataproducao, datavencimento, prazo){
+  funcUpd(chave, produto, tipo, lote, pacotes, unidades, quantidade, dataproducao, datavencimento, prazo){
 
     const database = firebase.database();
     let active = false;
@@ -247,7 +301,7 @@ export default class databasemanagementproduction {
     database.ref('production/'+chave+'/packagequantity').set(pacotes);
     database.ref('production/'+chave+'/packageperunity').set(unidades);
     database.ref('production/'+chave+'/totalquantity').set(quantidade);
-    database.ref('production/'+chave+'/user').set(funcionario);
+    // database.ref('production/'+chave+'/user').set(funcionario);
     database.ref('production/'+chave+'/fabricationdate').set(dataproducao);
     database.ref('production/'+chave+'/deadlinedate').set(datavencimento);
     database.ref('production/'+chave+'/validate').set(prazo);
