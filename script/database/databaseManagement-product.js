@@ -240,7 +240,7 @@ export default class databasemanagementproduct {
         tr.setAttribute("id",keyname);
 
         dados =
-        "<td id="+ keyname +">" + keyname + "</td>" +
+        "<td id='saborProduto'>" + keyname + "</td>" +
         "<td>" + '    ' + "</td>" + "<td id='gridModal' >" + btnsee + btnedit + btndelete + "</td>";
         
         tr.innerHTML = dados;

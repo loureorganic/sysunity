@@ -32,7 +32,9 @@
     text-align: center;
     padding-left: 85px;
 }
-
+#dateVenda, #sellerVenda, #totalVenda{
+    padding-top: 25px;
+}
 tbody tr{
     background-color: #f3f3f3;
 }
@@ -57,15 +59,7 @@ table button{
 .delete{
     margin-left: 30px;
 }
-.visibility::before{
-    content: url(../images/visibility_white_24dp.svg);
-}
-.edit::before{
-    content: url(../images/create_white_24dp.svg);
-}
-.delete::before{
-    content: url(../images/delete_white_24dp.svg);
-}
+
 .modal-header{
     background: #085D8C;
     color: #fff;
@@ -127,6 +121,12 @@ table button{
 }
 .modal-body h4{
     text-align: center;
+}
+#data, #vendedor{
+    width: 8rem;
+}
+#vendedor{
+    padding-left: 0;
 }
 .modal-body .user-email label{
     display: flex;

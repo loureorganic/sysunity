@@ -32,10 +32,22 @@
 #opcoes{
     text-align: center;
     padding-left: 85px;
+    width: 2rem;
 }
 
+#nome-table, #tipo-table, #lote-table{
+    width: 9rem;
+    text-align: center;
+}
+#nomeProduct, #typeProduct, #batchProduct{
+    padding-top: 25px;
+}
 tbody tr{
     background-color: #f3f3f3;
+    text-align: center;
+}
+tbody tr td{
+    padding-top: 25px;
 }
 thead{
     width: 100%;
@@ -185,7 +197,7 @@ table button{
 }
 
 #btnSee{
-    margin-left: 100px;
+    margin-left: 70px;
 }
 
 /* MODAL */
