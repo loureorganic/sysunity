@@ -5,12 +5,11 @@ var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
-document.getElementById("sab2");
-document.getElementById("val2");
 
 var td = document.createElement('td');
 var td2 = document.createElement('td');
-
+var td3 = document.createElement('td');
+var td4 = document.createElement('td');
 
 export default class databasemanagementproduct {
 
@@ -22,6 +21,7 @@ export default class databasemanagementproduct {
     if (td.hasChildNodes){
       td.innerHTML = '';
     }
+
     if (td2.hasChildNodes){
       td2.innerHTML = '';
     }
@@ -71,8 +71,12 @@ export default class databasemanagementproduct {
     var self = this;
     const firebaseref = firebase.database().ref("product");
 
-    if (td.hasChildNodes){
-      td.innerHTML = '';
+    if (td3.hasChildNodes){
+      td3.innerHTML = '';
+    }
+
+    if (td4.hasChildNodes){
+      td4.innerHTML = '';
     }
 
     // CRIACAO DO INPUT NOME
@@ -93,9 +97,9 @@ export default class databasemanagementproduct {
       // CRIACAO DO INPUT SABOR
       Object.keys(abe).find((a)=>{
 
-        let dados = "<input id='flavor1' type='text' placeholder=" + a + " />";
-        td.innerHTML += dados;
-        document.getElementById("sab2").appendChild(td);
+        let dados = "<input id=" + a + " type='text' placeholder=" + a + " />";
+        td3.innerHTML += dados;
+        document.getElementById("sab2").appendChild(td3);
 
       })
 
@@ -104,10 +108,75 @@ export default class databasemanagementproduct {
 
         let cab = abe[item].value
 
-        let dados = "<input id='value1' type='text' placeholder=" + cab + " />";
-        td.innerHTML += dados;
-        document.getElementById("val2").appendChild(td);
+        let dados = "<input id=" + cab + " type='text' placeholder=" + cab + " />";
+        td4.innerHTML += dados;
+        document.getElementById("val2").appendChild(td4);
 
+      })
+
+      var btn = document.getElementById("btn_salvar");
+
+      // ENVIAR DADOS
+      btn.addEventListener("click", function(e) {
+
+        let input1;
+        let input2;
+        let input3;
+
+        Object.keys(all.val()).map((keyname)=> {
+          
+          if (keyname === dados) {
+            
+            input3 = document.getElementById('nome2').value;
+
+            if(input3 === ""){
+              input3 = keyname;
+            } 
+            // else{
+            //   const database = firebase.database();
+            //   let active = false;
+            //   console.log(dados)
+            //   console.log(input3)
+            //   database.ref('product/' + dados).set(input3);
+            //   window.location.reload(active);
+            // }
+              
+          }
+          
+        }) 
+  
+        let abe = all.val()[dados];
+  
+        Object.keys(abe).find((a)=>{
+  
+          input2 = document.getElementById(a).value;
+
+          if(input2 === ""){
+            input2 = a;
+          }
+  
+        })
+
+        Object.keys(abe).forEach(function(item) {
+
+          let cab = abe[item].value;
+  
+          input1 = document.getElementById(cab).value;
+
+          if(input1 === ""){
+            input1 = cab;
+          }
+          else{
+            const database = firebase.database();
+            let active = false;
+            
+            database.ref('product/' + dados + '/' + input2 + '/value').set(input1);
+            window.location.reload(active);
+          }
+  
+        })
+
+        // self.funcUpd(input3, input2, input1);
       })
 
     })
@@ -115,12 +184,13 @@ export default class databasemanagementproduct {
   }
 
   // FUNCAO P/ ATUALIZAR DADOS
-  funcUpd(chave, nome, tipo, valor) {
-    const database = firebase.database();
-    let active = false;
-    database.ref('product/' + chave + '/name').set(nome);
-    database.ref('product/' + chave + '/type').set(tipo);
-    database.ref('product/' + chave + '/value').set(valor);
+  funcUpd(chave, nome, tipo) {
+
+    // const database = firebase.database();
+    // let active = false;
+    // database.ref('product/' + chave + '/name').set(nome);
+    // database.ref('product/' + chave + '/type').set(tipo);
+    // database.ref('product/' + chave + '/value').set(valor);
 
     window.location.reload(active);
   };
@@ -205,6 +275,7 @@ export default class databasemanagementproduct {
     })
   }
 
+  // CRIACAO DO MODAL
   iniciaModal(modalID, product) {
 
     const modal = document.getElementById(modalID);
