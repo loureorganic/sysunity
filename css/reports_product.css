@@ -5,6 +5,10 @@ h2{
     font-size: 25px;
     font-weight: 700;
 }
+.title{
+    width: 97%;
+    margin-left: 19px;
+}
 
 .report{
     display: flex;
