@@ -169,6 +169,7 @@ a{
     align-items: center;
     justify-content: center;
 }
+
 .title{
     display: flex;
     flex-direction: row;
@@ -192,11 +193,22 @@ a{
     background: #085D8C;
     color: #fff;
     height: 50px;
+    padding: 24px;
 }
+
 .modal-header h5{
     font-size: 20px;
     font-weight: 700;
 }
+
+.modal-header .btn-close{
+    margin-top: -14px;
+}
+
+.modal-header .btn-close::before{
+    content: url(../images/close_white_24dp.svg);
+}
+
 .modal-body form{
     display: flex;
     flex-direction: column;
@@ -205,7 +217,7 @@ a{
 .modal-body form h6{
     padding-top: 12px;
     color: black;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .filter-color_icon{
