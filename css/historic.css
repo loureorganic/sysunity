@@ -1,0 +1,10 @@
+@import url(main.css);
+@import url(home.css);
+@import url(sale_management.css);
+
+thead tr th{
+    text-align: center;
+}
+tbody tr td{
+    text-align: center;
+}
