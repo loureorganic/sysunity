@@ -51,6 +51,7 @@ export default class databasecreatesale{
             let elementsFiltered = [];
             var array = [];
             let select = document.createElement('select');
+           select.setAttribute('id', 'productItems');
             all.forEach((text) => {
                 console.log(text.val().product);
                 array.push(text.val().product);
@@ -69,4 +70,19 @@ export default class databasecreatesale{
         //   })
         })
     }
+    typeSelect(data){
+    
+        const firebaseref = firebase.database().ref("production");
+    
+        firebaseref.once('value', function(all){
+    
+        //   select1.setAttribute('id', 'unique1');
+        all.forEach((item)=>{
+            if(item.val().product === data){
+                console.log(item.val());
+            }
+        })
+          })
+      }
+
 }

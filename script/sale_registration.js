@@ -15,6 +15,11 @@ document.getElementById("order").addEventListener("click", function() {
 	document.getElementById('boxsale').style.display = "flex";
 })
 
+document.getElementById('productLabel').addEventListener("click", function() {
+	let data = document.getElementById('productItems').value;
+	salesBackEnd.typeSelect(data)
+})
+
 // document.getElementById("order2").addEventListener("click", function() {
 // 	document.getElementById('boxdiscount-general').style.display = "flex";
 // 	document.getElementById('boxpayment').style.display = "flex";
