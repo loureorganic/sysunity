@@ -28,7 +28,7 @@
 }
 
 tbody tr {
-  background-color: #abd2ce;
+  background-color: #f3f3f3;
 }
 thead {
   width: 100%;
@@ -37,7 +37,7 @@ thead {
   font-size: 17px;
 }
 table button {
-  background-color: #abd2ce;
+  background-color: #f3f3f3;
   border: transparent;
   width: 60px;
   padding: 0;
@@ -293,11 +293,13 @@ form input {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 #btnSee::before{
-  content: url(../images/visibility_white_24dp.svg);
+  content: url(../images/visibility_black_24dp.svg);
 }
+
 #btnEdit::before{
-  content: url(../images/edit_white_24dp.svg);
+  content: url(../images/edit_black_24dp.svg);
 }
+
 #btnDelete::before{
-  content: url(../images/delete_white_24dp.svg);
+  content: url(../images/delete_black_24dp.svg);
 }
