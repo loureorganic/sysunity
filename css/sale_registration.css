@@ -43,7 +43,7 @@ h2{
     margin: 18px;
     background: #f5f5f5;
     padding: 24px;
-    width: 80%;
+    width: 100%;
     border-radius: 4px;
     margin-left: 0;
 }
@@ -148,19 +148,20 @@ h2{
 
 .price-total{
     display: flex;
-    width: 40%;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .price-total label{
-    width: 45%;
+    width: 25%;
 }
 
 .price-total button{
     display: flex;
+    justify-content: flex-end;
     font-weight: 600;
     border: none;
     background: none;
+    width: 100%;
 }
 
 .price-total button::before{
@@ -168,9 +169,13 @@ h2{
     margin-top: 2px;
 }
 
+.price-total button:hover{
+    filter: invert(14%) sepia(98%) saturate(3821%) hue-rotate(189deg) brightness(90%) contrast(94%);
+}
+
 .production-available{
     display: flex;
-    width: 80%;
+    flex: 1;
 }
 
 .total-general-2{
