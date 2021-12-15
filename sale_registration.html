@@ -312,7 +312,27 @@
                 <button class="btn btn-primary" id="btn_setinha" type="button"><</button>
               </div>
               <div class="btn-group">
-                <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
+                <button class="btn btn-primary" id="btn_cadastrar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">CADASTRAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Checked -->
+        <div class="modal fade" id="checked" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="button-close">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <img src="images/GREEN-checked.png" alt="" width="50%"/>
+                  <h1>Vendas cadastrada com sucesso!</h1>
+                  <div class="btn-links">
+                    <button type="button" class="btn-paraGerenciamento" >IMPRIMIR VIA DO CLIENTE</button>
+                    <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'sale_management.html'">IR ATÉ ENCOMENDAS</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
