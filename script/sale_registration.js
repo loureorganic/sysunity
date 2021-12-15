@@ -4,7 +4,8 @@ const dados = new databaseuser();
 dados.objectuser();
 
 const salesBackEnd = new databasecreatesale();
-salesBackEnd.optionProducts()
+salesBackEnd.optionProducts();
+
 document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "flex";
 	document.getElementById('boxsale').style.display = "none";
@@ -17,7 +18,11 @@ document.getElementById("order").addEventListener("click", function() {
 
 document.getElementById('productLabel').addEventListener("click", function() {
 	let data = document.getElementById('productItems').value;
-	salesBackEnd.typeSelect(data)
+	salesBackEnd.typeSelect(data);
+})
+
+document.getElementById('typeLabel').addEventListener('click', function(){
+	salesBackEnd.bestProduction(document.getElementById('productItems').value, document.getElementById('productType').value)
 })
 
 // document.getElementById("order2").addEventListener("click", function() {

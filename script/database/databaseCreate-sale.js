@@ -72,15 +72,11 @@ export default class databasecreatesale{
         if(select.hasChildNodes){
             select.innerHTML = '';
         }
-
-
         const firebaseref = firebase.database().ref("production");
-    
         firebaseref.once('value', function(all){
             let arrayTypesValid = [];
             let arrayTypes = [];
           
-        //   select1.setAttribute('id', 'unique1');
         all.forEach((item)=>{
             if(item.val().product === data){
                 arrayTypes.push(item.val().type);
@@ -98,4 +94,16 @@ export default class databasecreatesale{
           })
       }
 
+      bestProduction(product, type){
+          let arrayProductions = [];
+        const firebaseref = firebase.database().ref("production");
+        firebaseref.once('value', function(all){
+            all.forEach((text) => {
+               if(text.val().product === product && text.val().type === type){
+                   console.log(text.val())
+                   arrayProductions.push(text.val())
+               }
+            })
+        })
+      }
 }
