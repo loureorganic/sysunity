@@ -155,7 +155,7 @@ h2{
     width: 25%;
 }
 
-.price-total button{
+.button-adc button{
     display: flex;
     justify-content: flex-end;
     font-weight: 600;
@@ -164,12 +164,12 @@ h2{
     width: 100%;
 }
 
-#buttonAdd button::before{
+.button-adc button::before{
     content: url(../images/add_black_24dp.svg);
     margin-top: 2px;
 }
 
-#buttonAdd button:hover{
+.button-adc button:hover{
     filter: invert(14%) sepia(98%) saturate(3821%) hue-rotate(189deg) brightness(90%) contrast(94%);
 }
 
