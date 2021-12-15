@@ -2,6 +2,20 @@
 @import url(home.css);
 @import url(sale_management.css);
 
+h4{
+    font-size: 20px;
+    color: white;
+}
+
+#div-titles{
+    background-color: #085D8C;
+}
+
+#div-table{
+    overflow-y: scroll;
+    height: 305px;
+    width: 100%;
+}
 thead tr th{
     text-align: center;
 }
