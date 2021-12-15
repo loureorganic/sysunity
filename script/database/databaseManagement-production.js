@@ -47,11 +47,11 @@ export default class databasemanagementproduction {
           }
 
           else if(data.path[0].id === 'btnSee'){
-            self.iniciaModal("modal-see", parent.getElementsByTagName('td')[1].innerHTML, parent.getElementsByTagName('td')[0].innerHTML);
+            self.iniciaModal("modal-see", parent.getElementsByTagName('td')[1].innerHTML, parent.getElementsByTagName('td')[0].innerHTML, parent.getElementsByTagName('td')[2].innerHTML);
           }
 
           else if(data.path[0].id === 'btnEdit'){
-            self.iniciaModal("modal-edit", parent.getElementsByTagName('td')[1].innerHTML, parent.getElementsByTagName('td')[0].innerHTML);
+            self.iniciaModal("modal-edit", parent.getElementsByTagName('td')[1].innerHTML, parent.getElementsByTagName('td')[0].innerHTML, parent.getElementsByTagName('td')[2].innerHTML);
           }
         })
       }
@@ -59,7 +59,7 @@ export default class databasemanagementproduction {
   }
 
   // CRIACAO DO MODAL
-  iniciaModal(modalID, product, nproduct) {
+  iniciaModal(modalID, product, nproduct, c) {
 
     const modal = document.getElementById(modalID);
 
@@ -78,10 +78,10 @@ export default class databasemanagementproduction {
     }
 
     if(modalID == "modal-see") {
-      this.funcmodalsee(product, nproduct);
+      this.funcmodalsee(product, nproduct, c);
     } 
     else if(modalID == "modal-edit") {
-      this.funcmodaledit(product, nproduct);
+      this.funcmodaledit(product, nproduct, c);
     } 
     else if(modalID == "modal-delete") {
       this.funcmodaldelete(product)
@@ -89,7 +89,7 @@ export default class databasemanagementproduction {
   }
 
   // MODAL DE VISUALIZAR
-  funcmodalsee(dados, nomep){
+  funcmodalsee(dados, nomep, ch){
     
     const firebaseref = firebase.database().ref("production");
     const pfirebaseref = firebase.database().ref("product");
@@ -101,7 +101,7 @@ export default class databasemanagementproduction {
       
       resultado.forEach(element => {
         
-        if(element.child("type").val() == dados) {
+        if(element.child("batch").val() == ch) {
           
           u = element.val().user;
           vl = element.val().totalquantity;
@@ -183,10 +183,11 @@ export default class databasemanagementproduction {
   }
 
   // MODAL DE EDITAR
-  funcmodaledit(a, nomep){
+  funcmodaledit(a, nomep, ch){
 
     const pfirebaseref = firebase.database().ref("product");
     var self = this;
+    let u;
     let vl;
 
     const firebaseref = firebase.database().ref("production");
@@ -195,9 +196,10 @@ export default class databasemanagementproduction {
       
       resultado.forEach(element => {
 
-        if(element.child("type").val() == a) {
+        if(element.child("batch").val() == ch) {
 
           vl = element.val().totalquantity;
+          u = element.val().user;
 
           if(typeof element.val().fabricationdate === "undefined" && typeof element.val().deadlinedate === "undefined") {
             document.getElementById("dataproducao2").placeholder = "Não existe";
@@ -308,10 +310,12 @@ export default class databasemanagementproduction {
 
       // GAMBIARRA
       usfirebaseref.once('value',(resultado)=>{
-    
+  
         resultado.forEach(element => {
-
-          document.getElementById("funcionario2").placeholder = element.val().firstname + " " + element.val().lastname;
+  
+          if(element.key == u) {
+            document.getElementById("funcionario2").placeholder = element.val().firstname + " " + element.val().lastname;
+          }
               
         });
       
