@@ -168,6 +168,11 @@ h2{
     margin-top: 2px;
 }
 
+.production-available{
+    display: flex;
+    width: 80%;
+}
+
 .total-general-2{
     display: flex;
     width: 25%;
