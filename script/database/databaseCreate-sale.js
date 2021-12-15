@@ -67,6 +67,7 @@ export default class databasecreatesale{
             })
         })
     }
+
     typeSelect(data){
     
         if(select.hasChildNodes){
@@ -94,8 +95,13 @@ export default class databasecreatesale{
           })
       }
 
-      bestProduction(product, type){
+   
+
+    bestProduction(product, type){
           let arrayProductions = [];
+          let minorDate = "31:31:31";
+          let minorHour = "31:31:31";
+          let bestProduction;
         const firebaseref = firebase.database().ref("production");
         firebaseref.once('value', function(all){
             all.forEach((text) => {
@@ -104,6 +110,23 @@ export default class databasecreatesale{
                    arrayProductions.push(text.val())
                }
             })
+            arrayProductions.map((item)=>{
+                if(item.cadastrationDate < minorDate){
+                    minorDate = item.cadastrationDate;
+                    minorHour = item.cadastrationHour;
+                    bestProduction = item;
+                
+                }
+                else if(item.cadastrationDate === minorDate){
+                    if(item.cadastrationHour < minorHour){
+                        minorHour = item.cadastrationHour;
+                        bestProduction = item;
+                    }
+                }
+                console.log(minorDate);
+                console.log(minorHour);
+                document.getElementById('production-available').value = bestProduction.batch
+            })
         })
-      }
+    }
 }
