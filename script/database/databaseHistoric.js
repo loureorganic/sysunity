@@ -106,6 +106,17 @@ export default class Historic{
                                     var_lista.appendChild(tr);
 
                                 }
+                                if(historico.action === "cadastrarProductOption") {
+                                    
+                                    a = element.val().firstname;
+                                    b = element.val().lastname;
+
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Cadastrou um tipo para um produto" + "</td>" + "<td>" + a + " " + b + "</td>";
+
+                                    tr.innerHTML = dados;
+                                    var_lista.appendChild(tr);
+
+                                }
                                 if(historico.action === "editarProduct") {
                                     
                                     a = element.val().firstname;
