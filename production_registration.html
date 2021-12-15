@@ -147,8 +147,9 @@
             <li id="usuario">
               <div class="btn-group">
                 <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <h6 id="user">
-                    </h6>
+                  <h6 id="user">
+                    Taila Santos
+                  </h6>
                 </button>
                 <ul class="dropdown-menu">
                   <li>
@@ -168,11 +169,35 @@
         </header>
         <section class="registration">
           <div class="title">
-          <h2>Cadastro de Nova Produção</h2>
-            <a  href="">
-              <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
-            </a> 
+          <h2>Cadastrar nova produção</h2>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
+            <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
+          </button>
+          <!-- Modal Support -->
+          <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Suporte de Cadastro de Produção</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form style="margin-top:0px">
+                    <h5>Para realizar o cadastro de uma produção, você deverá seguir os seguintes passos:</h5>
+                    <h6>• Escolher a opção e tipo da produção.</h6>
+                    <h6>• Selecionar o tipo de validade.</h6>
+                    <h6>• Caso a opção seja prazo, preencha os campos com a quantidade de dias válidos.</h6>
+                    <h6>• Caso a opção seja data, informa a data de fabricação e a de validade.</h6>
+                    <h6>• Preencha o campo número de pacotes e selecione a unidade.</h6>
+                    <h6>• Obs.: O campo lote é gerido pelo sistema.</h6>
+                    <h6>• Para finalizar, você deverá clicar no botão cadastrar.</h6>
+                    <h6>• Caso deseje sair desta página, clique no "x" acima.</h6>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
+      </div>
             <div class="form">
               <div class="name-tipe-batch">
                 <div class="name">
@@ -237,18 +262,37 @@
 
               <div class="register" >
                 <div class="btn-group">
-                  <button class="btn btn-primary" id="btn_cadastrar" type="button" >CADASTRAR</button>
+                  <button class="btn btn-primary" id="btn_cadastrar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">CADASTRAR</button>
                 </div>
               </div>
-              
+            </div>
+            <!-- Modal Checked -->
+            <div class="modal fade" id="checked" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="button-close">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <img src="images/GREEN-checked.png" alt="" width="50%"/>
+                      <h1>Produção cadastrada com sucesso!</h1>
+                      <div class="btn-links">
+                        <button type="button" class="btn-paraGerenciamento" >IMPRIMIR TICKETS DE PRODUÇÃO</button>
+                        <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'production_management.html'">IR PARA TELA DE GERENCIAMENTO</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </section>
       </div>
   </div> 
 </div>
-
-<!-- MODAL DE IMPRESSÃO -->
+<!--
+ <!- MODAL DE IMPRESSÃO ->
 <div id="modal-note" class="loader2">
   <div class="mod">
     <div class="top-modal">
@@ -266,10 +310,10 @@
 
   </div>
 </div>
-
+--->
 <script src="script/preloader.js"></script>
 <script type="module" src="script/production_registration.js"></script>
-<script type="module" src="script/modal.js"></script>
+<!-- <script type="module" src="script/modal.js"></script> -->
 
 </body>
 

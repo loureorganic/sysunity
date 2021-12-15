@@ -144,47 +144,47 @@ h2{
     border: 1px solid black;
     margin: 10px;
 }
-.modal-header{
-    height: 10px;
+
+#checked .button-close{
+    display: flex;
+    justify-content: flex-end;
+    padding: 6px;
 }
-.modal-body{
+#checked form{
+    display: flex;
+}
+
+#checked .modal-body{
     margin: 0;
     padding-top: 0;
 }
-.modal-lg{
+#checked form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 770px;
 }
-.modal-lg img{
-    width: 60%;
-    margin: 0;
-}
-.modal-lg h1{
+#checked form h1{
     text-align: center;
     color: rgba(130, 130, 130, 1); 
     font-weight: bold;
-    font-size: 30px; 
-    line-height: 10px;
+    font-size: 30px;
 }
-.btn-paraGerenciamento{
+#checked .btn-paraGerenciamento{
     height: 40px;
     font-weight:600;
     font-size: 16px;
     color: white;
     background: #085D8C;
-    border-radius: 10px;
+    border-radius: 5px;
     border-color: #085D8C;
     border-block: none;
     border-inline: none;
+    padding: 0 24px;
 }
-.modal-content{
+#checked .modal-content{
     cursor: pointer;
+    margin-top: 0;
 }
-.modal-footer {
-    border: 0;
-}
-.modal-header{
+#checked .modal-footer {
     border: 0;
 }

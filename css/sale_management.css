@@ -32,9 +32,11 @@
     text-align: center;
     padding-left: 85px;
 }
-
+#dateVenda, #sellerVenda, #totalVenda{
+    padding-top: 25px;
+}
 tbody tr{
-    background-color: #ABD2CE;
+    background-color: #f3f3f3;
 }
 thead{
     width: 100%;
@@ -43,101 +45,10 @@ thead{
     font-size: 17px;
 }
 table button{
-    background-color:  #ABD2CE;
+    background-color:  #f3f3f3;
     border: transparent;
     width: 60px;
     padding: 0;
-}
-.visibility{
-    margin-left: 210px;
-}
-.edit{
-    margin-left: 30px;
-}
-.delete{
-    margin-left: 30px;
-}
-.visibility::before{
-    content: url(../images/visibility_white_24dp.svg);
-}
-.edit::before{
-    content: url(../images/create_white_24dp.svg);
-}
-.delete::before{
-    content: url(../images/delete_white_24dp.svg);
-}
-.modal-header{
-    background: #085D8C;
-    color: #fff;
-    height: 50px;
-}
-.modal-header h5{
-    font-size: 24px;
-    font-weight: 700;
-}
-.modal-header .delete{
-    background: none;
-}
-.modal-header .delete::before{
-    content: url(../images/close_white_24dp.svg);
-}
-.modal-body form{
-    display: flex;
-    flex-direction: column;
-    margin-top: 12px;
-}
-.modal-body form h3{
-    padding-top: 20px;
-    color: black;
-    font-weight: 400;
-    text-align: center;
-}
-.modal-body form input{
-    width: 100%;
-}
-.modal-body form label {
-    font-weight: 600;
-    font-size: 16px;
-    padding: 6px;
-    margin-bottom: 0;
-    color: black;
-}
-.modal-body form input {
-    border-radius: 4px;
-    border-width: 1px;
-    height: 32px;
-    border-style: solid;
-    border-color: #085D8C;
-}
-#div-table, #div-table2{
-    overflow-y: scroll; 
-    height: 265px;
-}
-.user-email table, #thead-vendas, #thead-vendas2{
-    background-color: white;
-    width: 100%;
-}
-#table-vendas,#table-vendas2, #thead-vendas, #thead-vendas2, #tbody-vendas-id, #tbody-vendas-id2, #thead-tr-vendas, #thead-tr-vendas2, input{
-    text-align: center;
-    background-color: white;
-    color: black;
-}
-.tbody-vendas tr{
-    background-color: white;
-}
-.modal-body h4{
-    text-align: center;
-}
-.modal-body .user-email label{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-}
-.modal-body .office-access label {
-    align-items: flex-start;
-}
-.modal-body .office-access select {
-    width: 100%;
 }
 .save{
     display: flex;
@@ -408,20 +319,20 @@ table button{
     content: url(../images/close_white_24dp.svg);
   }
   
-form{
+.mod form{
     display: flex;
     flex-direction: column;
     margin-bottom: 18px;
     padding: 12px;
-  }
-form label {
+}
+.mod form label {
     font-weight: 600;
     font-size: 16px;
     padding: 6px;
     margin-bottom: 0;
     color: black;
-  }
-form input {
+}
+.mod form input {
     border-radius: 4px;
     border-width: 1px;
     height: 32px;
@@ -430,7 +341,7 @@ form input {
     width: 100%;
 }
 
-form table{
+.mod form table{
     overflow-y: scroll;
 }
   
@@ -454,11 +365,13 @@ form table{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
 #btnSee::before{
-    content: url(../images/visibility_white_24dp.svg);
-  }
+    content: url(../images/visibility_black_24dp.svg);
+}
+
 #btnEdit::before{
-    content: url(../images/edit_white_24dp.svg);
-  }
+    content: url(../images/edit_black_24dp.svg);
+}
+
 #btnDelete::before{
-    content: url(../images/delete_white_24dp.svg);
-  }
+    content: url(../images/delete_black_24dp.svg);
+}

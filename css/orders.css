@@ -1,6 +1,5 @@
 @import url(main.css);
 @import url(home.css);
-@import url(user_registration.css);
 
 .section-title{
     height: 60px;
@@ -51,97 +50,7 @@ table button{
     width: 60px;
     padding: 0;
 }
-.visibility{
-    margin-left: 210px;
-}
-.edit{
-    margin-left: 30px;
-}
-.delete{
-    margin-left: 30px;
-}
-.visibility::before{
-    content: url(../images/visibility_white_24dp.svg);
-}
-.edit::before{
-    content: url(../images/create_white_24dp.svg);
-}
-.delete::before{
-    content: url(../images/delete_white_24dp.svg);
-}
-.modal-header{
-    background: #085D8C;
-    color: #fff;
-    height: 50px;
-}
-.modal-header h5{
-    font-size: 24px;
-    font-weight: 700;
-}
-.modal-header .delete{
-    background: none;
-}
-.modal-header .delete::before{
-    content: url(../images/close_white_24dp.svg);
-}
-.modal-body form{
-    display: flex;
-    flex-direction: column;
-    margin-top: 12px;
-}
-.modal-body form h3{
-    padding-top: 20px;
-    color: black;
-    font-weight: 400;
-    text-align: center;
-}
-.modal-body form input{
-    width: 100%;
-}
-.modal-body form label {
-    font-weight: 600;
-    font-size: 16px;
-    padding: 6px;
-    margin-bottom: 0;
-    color: black;
-}
-.modal-body form input {
-    border-radius: 4px;
-    border-width: 1px;
-    height: 32px;
-    border-style: solid;
-    border-color: #085D8C;
-}
-#div-table, #div-table2{
-    overflow-y: scroll; 
-    height: 265px;
-}
-.user-email table, #thead-vendas, #thead-vendas2{
-    background-color: white;
-    width: 100%;
-}
-#table-vendas,#table-vendas2, #thead-vendas, #thead-vendas2, #tbody-vendas-id, #tbody-vendas-id2, #thead-tr-vendas, #thead-tr-vendas2, input{
-    text-align: center;
-    background-color: white;
-    color: black;
-}
-.tbody-vendas tr{
-    background-color: white;
-}
-.modal-body h4{
-    text-align: center;
-}
-.modal-body .user-email label{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-}
-.modal-body .office-access label {
-    align-items: flex-start;
-}
-.modal-body .office-access select {
-    width: 100%;
-}
+
 .save{
     display: flex;
     justify-content: end;
@@ -272,8 +181,202 @@ table button{
     }
 }
 
+.delivered, .paid{
+    font-weight: 600;
+    color: #fff;
+    background-color: #2ECC71!important;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+}
+
 .thumb {
     height: 100px;
     border: 1px solid black;
     margin: 10px;
 }
+
+#gridModal{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#btnSee{
+    margin-left: 100px;
+}
+
+/* MODAL */
+.mod{
+    margin-top: -48px;
+    margin: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  
+.loader2 {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.loader2.mostrar {
+    display: flex;
+  }
+  
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+  }
+  
+.mostrar .mod {
+    animation: modal .3s;
+  }
+  
+.top-modal{
+    display: flex;
+    padding: 18px;
+    background-color: #085D8C;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+.top-modal h5{
+    color:#fff;
+    font-weight: 700;
+  }
+  
+.group{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.group label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mod .top-table{
+    background-color: white;
+    text-align: center;
+}
+
+.mod .data-table{
+    background-color: white;
+    border: 1px solid #085d8c;
+    text-align: center;
+}
+
+.mod h6{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 18px;
+}
+
+.mod .payment input{
+    width: 80%;
+}
+
+.mod .payday input{
+    width: 80%;
+}
+
+.mod .amount-paid input{
+    width: 70%;
+}
+
+.mod .date-sale input{
+    width: 80%;
+}
+
+.mod .seller input{
+    width: 80%;
+}
+
+.mod .delivery input{
+    width: 80%;
+}
+
+.mod .total input{
+    width: 60%;
+}
+
+.fechar{
+    background: none;
+    border: none;
+  }
+  
+.fechar::before{
+    content: url(../images/close_white_24dp.svg);
+  }
+  
+.mod form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    padding: 12px;
+  }
+.mod form label {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px;
+    margin-bottom: 0;
+    color: black;
+  }
+.mod form input {
+    border-radius: 4px;
+    border-width: 1px;
+    height: 32px;
+    border-style: solid;
+    border-color: #085D8C;
+    width: 100%;
+}
+
+.mod form table{
+    overflow-y: scroll;
+}
+  
+.button{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 132px;
+    height: 50px;
+    border-radius: 5px;
+  }
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+#btnSee::before{
+    content: url(../images/visibility_white_24dp.svg);
+  }
+#btnEdit::before{
+    content: url(../images/edit_white_24dp.svg);
+  }

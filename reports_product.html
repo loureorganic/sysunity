@@ -161,13 +161,33 @@
           </ul>
         </header>
 
-        <section class="report">
+        <section class="section-title">
           <div class="title">
-            <h2>Relatório de produtos</h2>
-            <a  href="">
-              <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
-            </a> 
-          </div>
+            <h2>Relatórios de produtos</h2>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
+                <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
+              </button>
+              <!-- Modal Support -->
+              <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Suporte de Relatórios de Produtos</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form style="margin-top: 0;">
+                        <h5>Nesta página, você terá 3 (três) opções de gráficos.</h5>
+                        <h6>• Sendo eles de barra, linear e rosca com base nos produtos e quantidade cadastrados.</h6>
+                        <h6>• Caso queira sair desta página, clique no "x" acima.</h6>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
           <div class="graphics-double">  
             <canvas id="grafico"></canvas>
             <canvas id="grafico2"></canvas> 

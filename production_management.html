@@ -176,10 +176,30 @@
           <section class="section-title" id="a">
             <div class="title">
               <h2 >Gerenciamento da produção</h2>
-              <a  href="">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
                 <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
-              </a>
-            </div>
+              </button>
+              <!-- Modal Support -->
+              <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Suporte de Gerenciamento da Produção</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <h5>Nesta página, terá uma tabela com nome, tipo, lote. Para realizar alterações escolha uma opção:</h5>
+                        <h6>• Visualizar: você deverá clicar no olho e terá acesso as produções cadastradas no sistema.</h6>
+                        <h6>• Editar: você deverá clicar no lápis, inserir os dados e clicar no botão para salvar as alterações.</h6>
+                        <h6>• Deletar: você deverá clicar na lixeira, e confirmar se quer excluir ou não.</h6>
+                        <h6>• Para finalizar, você deverá clicar no botão cadastrar.</h6>
+                        <h6>• Caso deseje sair desta página, clique no "x" acima.</h6>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </section>
 
           <!--Tabela -> Gerenciamento de Produtos-->
@@ -187,9 +207,9 @@
             <table id="myTable" class="table">
               <thead>
                   <tr>
-                      <th>Nome</th>
-                      <th>Tipo</th>
-                      <th>Lote</th>
+                    <th id="nome-table">Nome</th>
+                    <th id="tipo-table">Tipo</th>
+                    <th id="lote-table">Lote</th>
                       <th id="opcoes">Opções</th>
                   </tr>
               </thead>
@@ -248,7 +268,7 @@
       <div class="group">
         <div class="employee">
           <label for="">Funcionário
-            <input id="funcinario" type="text" placeholder="" disabled/>
+            <input id="funcionario" type="text" placeholder="" disabled/>
           </label>
         </div>
         <div class="date-production">
@@ -293,17 +313,17 @@
     <div class="group">
       <div class="product">
         <label for="">Produto
-          <input id="produto" type="text" placeholder="" />
+          <input id="produto2" type="text" placeholder="" />
         </label>
       </div>
       <div class="type">
         <label for="">Tipo
-          <input id="tipo" type="text" placeholder="" />
+          <input id="tipo2" type="text" placeholder="" />
         </label>
       </div>
       <div class="lot">
         <label for="">Lote
-          <input id="lote" type="text" placeholder="" />
+          <input id="lote2" type="text" placeholder="" disabled/>
         </label>
       </div>
     </div>
@@ -311,17 +331,17 @@
     <div class="group">
       <div class="package">
         <label for="">Pacotes
-          <input id="pacotes" type="text" placeholder="" />
+          <input id="pacotes2" type="text" placeholder="" />
         </label>
       </div>
       <div class="units">
         <label for="">Unidades
-          <input id="unidades" type="text" placeholder="" />
+          <input id="unidades2" type="text" placeholder="" />
         </label>
       </div>
       <div class="quantity">
         <label for="">Quantidade produzida
-          <input id="quantidade" type="text" placeholder="" />
+          <input id="quantidade2" type="text" placeholder="" />
         </label>
       </div>
     </div>
@@ -329,17 +349,17 @@
     <div class="group">
       <div class="employee">
         <label for="">Funcionário
-          <input id="funcinario" type="text" placeholder="" />
+          <input id="funcionario2" type="text" placeholder="" disabled/>
         </label>
       </div>
       <div class="date-production">
         <label for="">Data de produção
-          <input id="dataproducao" type="text" placeholder="" />
+          <input id="dataproducao2" type="text" placeholder="" />
         </label>
       </div>
       <div class="due-date">
         <label for="">Data de vencimento
-          <input id="datavencimento" type="text" placeholder="" />
+          <input id="datavencimento2" type="text" placeholder="" />
         </label>
       </div>
     </div>
@@ -347,12 +367,12 @@
     <div class="group">
       <div class="value-production">
         <label for="">Valor total da produção
-          <input id="valortotalprocucao" type="text" placeholder="" />
+          <input id="valortotalprocucao2" type="text" placeholder="" disabled/>
         </label>
       </div>
       <div class="time">
         <label for="">Prazo
-          <input id="prazo" type="text" placeholder="" />
+          <input id="prazo2" type="text2" placeholder="" />
         </label>
       </div>
     </div>

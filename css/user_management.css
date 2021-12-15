@@ -34,7 +34,7 @@
 }
 
 tbody tr{
-    background-color: #ABD2CE;
+    background-color: #f3f3f3;
 }
 thead{
     width: 100%;
@@ -43,7 +43,7 @@ thead{
     font-size: 17px;
 }
 table button{
-    background-color:  #ABD2CE;
+    background-color:   #f3f3f3;
     border: transparent;
     width: 60px;
     padding: 0;
@@ -132,12 +132,7 @@ table button{
         margin-left: 0px;
     }
 }
-.edit::before{
-    content: url(../images/create_white_24dp.svg);
-}
-.delete::before{
-    content: url(../images/delete_white_24dp.svg);
-}
+
 .loader {
     position: fixed;
     z-index: 99;
@@ -252,20 +247,20 @@ table button{
     content: url(../images/close_white_24dp.svg);
 }
 
-form{
+.mod form{
     display: flex;
     flex-direction: column;
     margin-bottom: 18px;
     padding: 12px;
 }
-form label {
+.mod form label {
     font-weight: 600;
     font-size: 16px;
     padding: 6px;
     margin-bottom: 0;
     color: black;
 }
-form input {
+.mod form input {
     border-radius: 4px;
     border-width: 1px;
     height: 32px;
@@ -307,13 +302,13 @@ form input {
 }
 
 #btnSee::before{
-    content: url(../images/visibility_white_24dp.svg);
+    content: url(../images/visibility_black_24dp.svg);
 }
 
 #btnEdit::before{
-    content: url(../images/edit_white_24dp.svg);
+    content: url(../images/edit_black_24dp.svg);
 }
 
 #btnDelete::before{
-    content: url(../images/delete_white_24dp.svg);
+    content: url(../images/delete_black_24dp.svg);
 }

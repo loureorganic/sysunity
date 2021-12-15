@@ -172,11 +172,32 @@
     <!--Título da tela-->
     <section class="section-title">
       <div class="title">
-        <h2>Gerenciamento de vendas</h2>
-        <a  href="">
-          <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
-        </a> 
-      </div>
+        <h2>Gerenciamento de Vendas</h2>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
+            <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
+          </button>
+          <!-- Modal Support -->
+          <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Suporte de Gerenciamento de Vendas</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <h5>Nesta página, terá uma tabela com data, vendedor e valor. Para realizar alterações escolha uma opção:</h5>
+                    <h6>• Visualizar: você deverá clicar no olho e terá acesso as vendas cadastradas no sistema.</h6>
+                    <h6>• Editar: você deverá clicar no lápis, inserir os dados e clicar no botão para salvar as alterações.</h6>
+                    <h6>• Deletar: você deverá clicar na lixeira, e confirmar se quer excluir ou não.</h6>
+                    <h6>• Para finalizar, você deverá clicar no botão cadastrar.</h6>
+                    <h6>• Caso deseje sair desta página, clique no "x" acima.</h6>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> 
     </section>
 
     <!--Tabela -> Gerenciamento de Usuarios-->
@@ -184,8 +205,8 @@
       <table id="myTable" class="table">
         <thead>
           <tr>
-            <th>Data</th>
-            <th>Vendedor</th>
+            <th id="data">Data</th>
+            <th id="vendedor">Vendedor</th>
             <th>Total</th>
             <th id="opcoes">Opções</th>
           </tr>
@@ -207,7 +228,7 @@
     </div>
     <form>
 
-      <table>
+      <!-- <table>
         <tr>
           <th class="top-table">Item</th>
           <th class="top-table">Quantidade</th>
@@ -223,7 +244,7 @@
           <td class="data-table">20</td>
           <td class="data-table">R$ 0,69</td>
         </tr>
-      </table>
+      </table> -->
 
       <h6>Informações de pagamento</h6>
 
@@ -284,7 +305,7 @@
 
   <form>
 
-    <table>
+    <!-- <table>
       <tr>
         <th class="top-table">Item</th>
         <th class="top-table">Quantidade</th>
@@ -300,7 +321,7 @@
         <td class="data-table">20</td>
         <td class="data-table">R$ 0,69</td>
       </tr>
-    </table>
+    </table> -->
 
     <h6>Informações de pagamento</h6>
 
