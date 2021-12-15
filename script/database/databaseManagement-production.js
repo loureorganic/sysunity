@@ -152,7 +152,9 @@ export default class databasemanagementproduction {
 
       // GAMBIARRA
       pfirebaseref.once('value', function(all){
+
         let abe = all.val()[nomep];
+
         Object.keys(abe).forEach(function(item) {
   
           let cab = abe[item].value;
@@ -335,6 +337,16 @@ export default class databasemanagementproduction {
     database.ref('production/'+chave+'/fabricationdate').set(dataproducao);
     database.ref('production/'+chave+'/deadlinedate').set(datavencimento);
     database.ref('production/'+chave+'/validate').set(prazo);
+
+    let today = new Date();
+    let authUser = localStorage.getItem("id");
+    let cadastrationDate = today.toLocaleDateString();
+    let cadastrationHour = today.toLocaleTimeString();
+    let newClientKey = database.ref().child('user').push().key;
+    database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+    database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+    database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+    database.ref('historic/'+newClientKey+'/action').set("editarProduction");
     
     window.location.reload(active);
 
@@ -356,8 +368,19 @@ export default class databasemanagementproduction {
         var btn = document.getElementById("confirm");
 
         btn.addEventListener("click", function(e){
+
           valu = element.key;
           database.ref('production/'+valu).remove();
+
+          let today = new Date();
+          let authUser = localStorage.getItem("id");
+          let cadastrationDate = today.toLocaleDateString();
+          let cadastrationHour = today.toLocaleTimeString();
+          let newClientKey = database.ref().child('user').push().key;
+          database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+          database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+          database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+          database.ref('historic/'+newClientKey+'/action').set("deletarProduction");
 
           window.location.reload(active);
         })

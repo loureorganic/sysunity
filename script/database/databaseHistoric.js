@@ -67,7 +67,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Cadastrou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Cadastrou uma venda" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
@@ -78,7 +78,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Editou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Editou uma venda" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
@@ -89,7 +89,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Deletou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Deletou uma venda" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
@@ -100,7 +100,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Cadastrou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Cadastrou um produto" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
@@ -111,7 +111,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Editou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Editou um produto" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
@@ -122,7 +122,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Deletou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Deletou um produto" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
@@ -133,7 +133,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Cadastrou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Cadastrou uma produção" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
@@ -144,7 +144,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Editou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Editou uma produção" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
@@ -155,7 +155,7 @@ export default class Historic{
                                     a = element.val().firstname;
                                     b = element.val().lastname;
 
-                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Deletou um usuário" + "</td>" + "<td>" + a + " " + b + "</td>";
+                                    dados = "<td>" + historico.date + " às " + historico.hour + "</td>" + "<td>" + "Deletou uma produção" + "</td>" + "<td>" + a + " " + b + "</td>";
 
                                     tr.innerHTML = dados;
                                     var_lista.appendChild(tr);
