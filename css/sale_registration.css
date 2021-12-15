@@ -326,3 +326,52 @@ h2{
     border: 1px solid black;
     margin: 10px;
 }
+
+#checked .button-close{
+    display: flex;
+    justify-content: flex-end;
+    padding: 6px;
+}
+#checked form{
+    display: flex;
+}
+
+#checked .modal-body{
+    margin: 0;
+    padding-top: 0;
+}
+#checked form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#checked form h1{
+    text-align: center;
+    color: rgba(130, 130, 130, 1); 
+    font-weight: bold;
+    font-size: 30px;
+}
+#checked .btn-paraGerenciamento{
+    height: 40px;
+    font-weight:600;
+    font-size: 16px;
+    color: white;
+    background: #085D8C;
+    border-radius: 5px;
+    border-color: #085D8C;
+    border-block: none;
+    border-inline: none;
+    padding: 0 24px;
+}
+#checked .btn-links{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+#checked .modal-content{
+    cursor: pointer;
+    margin-top: 0;
+}
+#checked .modal-footer {
+    border: 0;
+}
