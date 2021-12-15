@@ -1,13 +1,28 @@
 @import url(main.css);
 @import url(home.css);
 
-h2{
+.section-title{
+    height: 60px;
+    padding-left: 70px;
+    padding-top: 17px;
+}
+.section-title  h2{
     font-size: 25px;
     font-weight: 700;
 }
+.section-table{
+    padding-left: 70px;    
+    padding-right: 70px;    
+}
+.dataTables_wrapper{
+    width: 90%;
+}
 .title{
+    width: 92.5%;
+    margin-left: 0;
+}
+.title h2{
     width: 97%;
-    margin-left: 19px;
 }
 
 .report{
