@@ -1,3 +1,6 @@
+var label = document.getElementById('productLabel');
+var labelType = document.getElementById('typeLabel');
+let select = document.createElement('select');
 export default class databasecreatesale{
 
     createsale(){
@@ -42,4 +45,57 @@ export default class databasecreatesale{
             window.location.reload(active);
           })
     }
+
+    optionProducts(){
+        const firebaseref = firebase.database().ref("production");
+
+        firebaseref.once('value', function(all){
+            let elementsFiltered = [];
+            var array = [];
+            let select = document.createElement('select');
+           select.setAttribute('id', 'productItems');
+            all.forEach((text) => {
+                array.push(text.val().product);
+            })
+            elementsFiltered = array.filter(function(item, pos) {
+                return array.indexOf(item) == pos;
+            })
+           elementsFiltered.map((item)=> {
+           var dados = "<option " + "id="+item +" >" + item + "</option>"
+           select.innerHTML += dados;
+           label.appendChild(select);
+            })
+        })
+    }
+    typeSelect(data){
+    
+        if(select.hasChildNodes){
+            select.innerHTML = '';
+        }
+
+
+        const firebaseref = firebase.database().ref("production");
+    
+        firebaseref.once('value', function(all){
+            let arrayTypesValid = [];
+            let arrayTypes = [];
+          
+        //   select1.setAttribute('id', 'unique1');
+        all.forEach((item)=>{
+            if(item.val().product === data){
+                arrayTypes.push(item.val().type);
+            }
+        })
+        arrayTypesValid = arrayTypes.filter(function(item, pos) {
+            return arrayTypes.indexOf(item) == pos;
+        })
+        select.setAttribute('id', 'productType');
+        arrayTypesValid.map((item)=>{
+            var dados = "<option " + "id="+item +" >" + item + "</option>"
+            select.innerHTML += dados;
+        })
+        labelType.appendChild(select);
+          })
+      }
+
 }
