@@ -21,7 +21,7 @@ document.getElementById("date").addEventListener("click", function() {
 Number(document.getElementById('unity').value);
 
 document.getElementById('label1').addEventListener("click", function() {
-    let data = document.getElementById(P'unique').value;
+    let data = document.getElementById('unique').value;
     teste.secondData(data)
 })
 

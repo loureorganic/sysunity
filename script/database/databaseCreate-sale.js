@@ -1,4 +1,6 @@
-var label = document.getElementById('productLabel')
+var label = document.getElementById('productLabel');
+var labelType = document.getElementById('typeLabel');
+let select = document.createElement('select');
 export default class databasecreatesale{
 
     createsale(){
@@ -53,35 +55,46 @@ export default class databasecreatesale{
             let select = document.createElement('select');
            select.setAttribute('id', 'productItems');
             all.forEach((text) => {
-                console.log(text.val().product);
                 array.push(text.val().product);
             })
-            console.log(array);
             elementsFiltered = array.filter(function(item, pos) {
                 return array.indexOf(item) == pos;
             })
-            console.log('filtered', elementsFiltered);
            elementsFiltered.map((item)=> {
            var dados = "<option " + "id="+item +" >" + item + "</option>"
            select.innerHTML += dados;
            label.appendChild(select);
-})
-        //   Object.keys(all.val()).map((keyname)=> {
-        //   })
+            })
         })
     }
     typeSelect(data){
     
+        if(select.hasChildNodes){
+            select.innerHTML = '';
+        }
+
+
         const firebaseref = firebase.database().ref("production");
     
         firebaseref.once('value', function(all){
-    
+            let arrayTypesValid = [];
+            let arrayTypes = [];
+          
         //   select1.setAttribute('id', 'unique1');
         all.forEach((item)=>{
             if(item.val().product === data){
-                console.log(item.val());
+                arrayTypes.push(item.val().type);
             }
         })
+        arrayTypesValid = arrayTypes.filter(function(item, pos) {
+            return arrayTypes.indexOf(item) == pos;
+        })
+        select.setAttribute('id', 'productType');
+        arrayTypesValid.map((item)=>{
+            var dados = "<option " + "id="+item +" >" + item + "</option>"
+            select.innerHTML += dados;
+        })
+        labelType.appendChild(select);
           })
       }
 
