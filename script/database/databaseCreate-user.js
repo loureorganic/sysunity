@@ -9,6 +9,11 @@ export default class databasecreateuser{
             database.ref('user/'+newClientKey+'/email').set(email);
             database.ref('user/'+newClientKey+'/job').set(job);
             database.ref('user/'+newClientKey+'/acesslevel').set(acesslevel);
+            database.ref('historic/'+newClientKey+'/action').set('cadastrationUser');
+            database.ref('historic/'+newClientKey+'/usereacted').set(usuariodaacao);
+            database.ref('historic/'+newClientKey+'/time').set(time);
+            database.ref('historic/'+newClientKey+'/date').set(date);
+        
         }
             
 
