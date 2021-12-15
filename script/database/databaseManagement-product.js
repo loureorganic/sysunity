@@ -485,6 +485,16 @@ export default class databasemanagementproduct {
               database.ref('product/' + newPro + '/' + newTy).set(newTy);
               database.ref('product/' + newPro + '/' + newTy + '/value').set(newVal);
 
+              let today = new Date();
+              let authUser = localStorage.getItem("id");
+              let cadastrationDate = today.toLocaleDateString();
+              let cadastrationHour = today.toLocaleTimeString();
+              let newClientKey = database.ref().child('user').push().key;
+              database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+              database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+              database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+              database.ref('historic/'+newClientKey+'/action').set("editarProduct");
+
               window.location.reload(active);
             }
               
@@ -531,6 +541,16 @@ export default class databasemanagementproduct {
 
             valu = element.key;
             database.ref('product/' + valu).remove();
+
+            let today = new Date();
+            let authUser = localStorage.getItem("id");
+            let cadastrationDate = today.toLocaleDateString();
+            let cadastrationHour = today.toLocaleTimeString();
+            let newClientKey = database.ref().child('user').push().key;
+            database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+            database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+            database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+            database.ref('historic/'+newClientKey+'/action').set("deletarProduct");
   
             window.location.reload(active);
           })

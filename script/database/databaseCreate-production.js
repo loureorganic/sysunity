@@ -51,7 +51,6 @@ export default class databasecreateproduction{
     let cadastrationHour = today.toLocaleTimeString();
     let a;
     let authUser = localStorage.getItem("id");
-    let active = false;
 
     const firebaseref = firebase.database().ref("user");
     firebaseref.once('value').then(function (snapshot) {
@@ -77,6 +76,12 @@ export default class databasecreateproduction{
       database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
       database.ref('production/'+newClientKey+'/batch').set(production.batch);
       database.ref('production/'+newClientKey+'/user').set(a.key);
+
+      let newClientKey2 = database.ref().child('user').push().key;
+      database.ref('historic/'+newClientKey2+'/userAction').set(authUser);
+      database.ref('historic/'+newClientKey2+'/date').set(cadastrationDate);
+      database.ref('historic/'+newClientKey2+'/hour').set(cadastrationHour);
+      database.ref('historic/'+newClientKey2+'/action').set("cadastrarProduction");
 
     });
     
@@ -116,6 +121,16 @@ export default class databasecreateproduction{
       database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
       database.ref('production/'+newClientKey+'/batch').set(production.batch);
       database.ref('production/'+newClientKey+'/user').set(a.key);
+
+      let today = new Date();
+      let authUser = localStorage.getItem("id");
+      let cadastrationDate = today.toLocaleDateString();
+      let cadastrationHour = today.toLocaleTimeString();
+      let newClientKey2 = database.ref().child('user').push().key;
+      database.ref('historic/'+newClientKey2+'/userAction').set(authUser);
+      database.ref('historic/'+newClientKey2+'/date').set(cadastrationDate);
+      database.ref('historic/'+newClientKey2+'/hour').set(cadastrationHour);
+      database.ref('historic/'+newClientKey2+'/action').set("deletarProduct");
 
     });
 
