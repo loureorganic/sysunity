@@ -35,6 +35,9 @@ document.getElementById('typeLabel').addEventListener('click', function(){
 // 	document.getElementById('boxpayment').style.display = "flex";
 // })
 
+document.getElementById('buttonAdd').addEventListener("click", function(){
+	salesBackEnd.optionProductsNew();
+})
 
 let authUser = localStorage.getItem("id");
 const firebaseref = firebase.database().ref("user");

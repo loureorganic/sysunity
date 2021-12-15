@@ -1,6 +1,10 @@
 var label = document.getElementById('productLabel');
 var labelType = document.getElementById('typeLabel');
 let select = document.createElement('select');
+let labelQuantity = document.getElementById('labelQuantity');
+let labelPrice = document.getElementById('labelPrice');
+let labelTotal = document.getElementById('labelTotal');
+let labelProductionRecommended = document.getElementById('labelProductionRecommended');
 export default class databasecreatesale{
 
     createsale(){
@@ -68,6 +72,47 @@ export default class databasecreatesale{
         })
     }
 
+    optionProductsNew(){
+        const firebaseref = firebase.database().ref("production");
+
+        firebaseref.once('value', function(all){
+            let elementsFiltered = [];
+            var array = [];
+            let select = document.createElement('select');
+           select.setAttribute('id', 'productItems');
+            all.forEach((text) => {
+                array.push(text.val().product);
+            })
+            elementsFiltered = array.filter(function(item, pos) {
+                return array.indexOf(item) == pos;
+            })
+           elementsFiltered.map((item)=> {
+           var dados = "<option " + "id="+item +" >" + item + "</option>"
+           select.innerHTML += dados;
+           label.appendChild(select);
+            })
+        })
+        let inputType = document.createElement('select');
+        let quantity = document.createElement('input');
+        let priceUnity = document.createElement('input');
+        let total = document.createElement('input');      
+        let productionRecommended = document.createElement('input');
+        quantity.setAttribute('id', 'quantity');
+        quantity.setAttribute('type', 'text');
+        priceUnity.setAttribute('id', 'price');
+        priceUnity.setAttribute('type', 'text');
+        total.setAttribute('id', 'price');
+        total.setAttribute('type', 'text');
+        productionRecommended.setAttribute('id', 'price');
+        productionRecommended.setAttribute('type', 'text');
+        labelQuantity.appendChild(quantity);
+        labelPrice.appendChild(priceUnity);
+        labelTotal.appendChild(total);
+        labelProductionRecommended.appendChild(productionRecommended)
+        // labelItemsAdded.innerHTML += priceUnity; 
+        // labelItemsAdded.innerHTML += total; 
+    }
+
     typeSelect(data){
     
         if(select.hasChildNodes){
@@ -95,7 +140,6 @@ export default class databasecreatesale{
           })
       }
 
-   
 
     bestProduction(product, type){
           let arrayProductions = [];
