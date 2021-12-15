@@ -1,3 +1,12 @@
+import databaseuser from "./database/databaseUser.js";
+import databasesettings from "./database/databaseSettings-user.js";
+
+const conf = new databasesettings;
+conf.settingsuser();
+
+const dados = new databaseuser();
+dados.objectuser();
+
 Number(document.getElementById('telefone').value);
 Number(document.getElementById('senhaAlterada').value);
 Number(document.getElementById('confirmaSenhaAlterada').value);

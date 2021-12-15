@@ -26,15 +26,20 @@
   text-align: center;
   padding-left: 85px;
 }
+#saborProduto{
+  padding-top: 25px;
+}
 
 tbody tr {
   background-color: #f3f3f3;
+  text-align: center;
 }
 thead {
   width: 100%;
   background-color: #085d8c;
   color: white;
   font-size: 17px;
+  text-align: center;
 }
 table button {
   background-color: #f3f3f3;
@@ -226,20 +231,20 @@ input {
   content: url(../images/close_white_24dp.svg);
 }
 
-form{
+.mod form{
   display: flex;
   flex-direction: column;
   margin-bottom: 18px;
   padding: 12px;
 }
-form label {
+.mod form label {
   font-weight: 600;
   font-size: 16px;
   padding: 6px;
   margin-bottom: 0;
   color: black;
 }
-form input {
+.mod form input {
   border-radius: 4px;
   border-width: 1px;
   height: 32px;

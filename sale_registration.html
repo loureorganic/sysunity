@@ -178,7 +178,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form style="margin-top:0px">
                         <h5>Para realizar o cadastro de uma venda, você deverá seguir os seguintes passos: </h5>
                         <h6>• Selecionar a opção do tipo de venda (geral ou encomenda).</h6>
                         <h6>• Preencher os campos de acordo com a opção selecionada (exemplo: se o tipo de venda selecionada for geral,deverá preencher os campos de vendedor, data, total geral).</h6>
@@ -215,28 +215,23 @@
                 <div class="form">
                   <div class="seller-date" id="boxdate">
                     <label>Vendedor
-                      <input id="seller" type="text" placeholder=""/>
+                      <input id="seller" type="text" placeholder="" disabled/>
                       <p id="alerta_vendedor" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                     <label>Data
-                      <input id="date" type="text" placeholder=""/>
+                      <input id="date" type="date" placeholder=""/>
                       <p id="alerta_data" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                   </div>
-                
                   <div class="p-t-q-p-t" id="boxsale">
                     <div class="product-type-quantity">
                       <div class="product">
-                        <label>Produto
-                          <select id="product"></select>
-                          <option value=""></option>
+                        <label id="productLabel">Produto
                           <p id="" style="display: none;">O Campo precisa ser preenchido</p>
                         </label>
                       </div>
                       <div class="type">
-                        <label>Tipo
-                          <select id="type"></select>
-                          <option value=""></option>
+                        <label id="typeLabel">Tipo
                           <p id="" style="display: none;">O Campo precisa ser preenchido</p>
                         </label>
                       </div>
@@ -257,6 +252,14 @@
                       </label>
                     </div>
                   </div>
+
+                  <div class="production-available">
+                    <label>Produção recomendada
+                      <input id="production-available" type="text" placeholder="" disabled/>
+                      <p id="alerta_production-available" style="display: none;">O Campo precisa ser preenchido</p>
+                    </label>
+                  </div>
+
                   <div class="total-general-2" id="boxproduct">
                     <label>Total geral
                       <input id="total-general" type="text" placeholder=""/>
@@ -312,7 +315,27 @@
                 <button class="btn btn-primary" id="btn_setinha" type="button"><</button>
               </div>
               <div class="btn-group">
-                <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
+                <button class="btn btn-primary" id="btn_cadastrar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">CADASTRAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Checked -->
+        <div class="modal fade" id="checked" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="button-close">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <img src="images/GREEN-checked.png" alt="" width="50%"/>
+                  <h1>Vendas cadastrada com sucesso!</h1>
+                  <div class="btn-links">
+                    <button type="button" class="btn-paraGerenciamento" >IMPRIMIR VIA DO CLIENTE</button>
+                    <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'sale_management.html'">IR ATÉ ENCOMENDAS</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
