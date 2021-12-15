@@ -43,8 +43,7 @@ export default class databasemanagementproduction {
           var div = document.createElement('div');
 
           if(data.path[0].id === 'btnDelete'){
-            self.iniciaModal("modal-delete",parent.getAttribute('id'));     
-            
+            self.iniciaModal("modal-delete", parent.getAttribute('id')); 
           }
 
           else if(data.path[0].id === 'btnSee'){
@@ -52,42 +51,42 @@ export default class databasemanagementproduction {
           }
 
           else if(data.path[0].id === 'btnEdit'){
-            self.iniciaModal("modal-edit",parent.getElementsByTagName('td')[1].innerHTML, parent.getElementsByTagName('td')[0].innerHTML);
+            self.iniciaModal("modal-edit", parent.getElementsByTagName('td')[1].innerHTML, parent.getElementsByTagName('td')[0].innerHTML);
           }
         })
       }
     })
   }
 
-    // CRIACAO DO MODAL
-    iniciaModal(modalID, product, nproduct) {
+  // CRIACAO DO MODAL
+  iniciaModal(modalID, product, nproduct) {
 
-      const modal = document.getElementById(modalID);
-  
-      if(modal){
-  
-        modal.classList.add('mostrar');
-  
-        modal.addEventListener("click", (e) => {
-          if(e.target.id == modalID || e.target.className == 'fechar'){
-            modal.classList.remove('mostrar');
-          }
-          if(e.target.id == 'deny') {
-            modal.classList.remove('mostrar');
-          }
-        })
-      }
-  
-      if(modalID == "modal-see") {
-        this.funcmodalsee(product, nproduct);
-      } 
-      else if(modalID == "modal-edit") {
-        this.funcmodaledit(product, nproduct);
-      } 
-      else if(modalID == "modal-delete") {
-        this.funcmodaldelete(product)
-      }
+    const modal = document.getElementById(modalID);
+
+    if(modal){
+
+      modal.classList.add('mostrar');
+
+      modal.addEventListener("click", (e) => {
+        if(e.target.id == modalID || e.target.className == 'fechar'){
+          modal.classList.remove('mostrar');
+        }
+        if(e.target.id == 'deny') {
+          modal.classList.remove('mostrar');
+        }
+      })
     }
+
+    if(modalID == "modal-see") {
+      this.funcmodalsee(product, nproduct);
+    } 
+    else if(modalID == "modal-edit") {
+      this.funcmodaledit(product, nproduct);
+    } 
+    else if(modalID == "modal-delete") {
+      this.funcmodaldelete(product)
+    }
+  }
 
   // MODAL DE VISUALIZAR
   funcmodalsee(dados, nomep){
@@ -355,12 +354,14 @@ export default class databasemanagementproduction {
       if(element.key == dados) {
 
         var btn = document.getElementById("confirm");
+
         btn.addEventListener("click", function(e){
           valu = element.key;
           database.ref('production/'+valu).remove();
 
           window.location.reload(active);
         })
+        
       }
     });
   })
