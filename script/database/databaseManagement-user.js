@@ -1,5 +1,6 @@
-var dados = ""
+var dados = "";
 var var_lista = document.getElementById("tablebody");
+
 var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
@@ -24,6 +25,17 @@ export default class databasemanagementuser {
           var btn = document.getElementById("confirm");
           btn.addEventListener("click", function(e){
 
+            let today = new Date();
+            const database = firebase.database();
+            let authUser = localStorage.getItem("id");
+            let cadastrationDate = today.toLocaleDateString();
+            let cadastrationHour = today.toLocaleTimeString();
+            let newClientKey = database.ref().child('user').push().key;
+            database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+            database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+            database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+            database.ref('historic/'+newClientKey+'/action').set("deletarUser");
+
             valu = element.key;
             database.ref('user/'+valu).remove();
   
@@ -46,6 +58,17 @@ export default class databasemanagementuser {
     database.ref('user/'+chave+'/email').set(email);
     database.ref('user/'+chave+'/job').set(job);
     database.ref('user/'+chave+'/acesslevel').set(acesslevel);
+
+    let today = new Date();
+    let authUser = localStorage.getItem("id");
+    let cadastrationDate = today.toLocaleDateString();
+    let cadastrationHour = today.toLocaleTimeString();
+    let newClientKey = database.ref().child('user').push().key;
+    database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+    database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+    database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+    database.ref('historic/'+newClientKey+'/action').set("editarUser");
+
     window.location.reload(active);
 
   };
