@@ -52,6 +52,7 @@ export default class databasemanagementuser {
     
     const database = firebase.database();
     let active = false;
+
     database.ref('user/'+chave+'/firstname').set(nome);
     database.ref('user/'+chave+'/lastname').set(sobrenome);
     database.ref('user/'+chave+'/username').set(nomeusuario);
@@ -64,6 +65,7 @@ export default class databasemanagementuser {
     let cadastrationDate = today.toLocaleDateString();
     let cadastrationHour = today.toLocaleTimeString();
     let newClientKey = database.ref().child('user').push().key;
+    
     database.ref('historic/'+newClientKey+'/userAction').set(authUser);
     database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
     database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);

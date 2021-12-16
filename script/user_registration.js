@@ -16,7 +16,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     }
 
 	if(user.nome!= "" && user.nome != " " && user.sobrenome!= "" && user.sobrenome != " " && user.nomedeusuario != "" && user.nomedeusuario != " " && user.email != "" && user.email != " "){
-		data.createuser(user.nome,user.sobrenome, user.nomedeusuario, user.email, document.getElementById('office').value, document.getElementById('access').value); 
+		// data.createuser(user.nome,user.sobrenome, user.nomedeusuario, user.email, document.getElementById('office').value, document.getElementById('access').value); 
 	}
 
 
