@@ -43,6 +43,28 @@ document.getElementById('batch1').value = Number(batch);
 
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
+
+    if(document.getElementById('days').value === "") {
+
+    document.getElementById('days').style.borderColor = "red";
+    document.getElementById('alerta_dias').style.display = 'flex';
+
+    } else{
+
+    document.getElementById('days').style.borderColor = "blue";
+    document.getElementById('alerta_dias').style.display = "none";
+
+    } if(document.getElementById('unity').value === "") {
+
+    document.getElementById('unity').style.borderColor = "red";
+    document.getElementById('alerta_unidade').style.display = 'flex';
+
+    } else{
+
+    document.getElementById('unity').style.borderColor = "blue";
+    document.getElementById('alerta_unidade').style.display = "none";
+
+    }
    
     let production = {
         
@@ -61,15 +83,20 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
         
     }
 
-    if(production.days !== '' && production.labelActiveDays){
+
+    if(production.days !== '' && production.labelActiveDays && document.getElementById('unity').value !== ""){
 
         teste.daysProduction(production);
 
     }
     else if (production.fabrication !=='' && production.deadline !=='' && production.labelActiveValidate) {
 
+        document.getElementById('days').style.borderColor = "blue";
+        document.getElementById('alerta_dias').style.display = "none";
+
         teste.validateProduction(production);
         
     }
+
 
 });
