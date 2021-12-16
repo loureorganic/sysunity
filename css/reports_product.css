@@ -18,8 +18,8 @@
     width: 90%;
 }
 .title{
-    width: 92.5%;
-    margin-left: 0;
+    width: 100%;
+    margin-left: -24px;
 }
 .title h2{
     width: 97%;
@@ -46,6 +46,7 @@
     display: flex;
     width: 40%;
     align-self: center;
+    margin: 24px 0px 0px 50px;
 }
 
 .navbar{
@@ -54,12 +55,21 @@
     top: 200px;
     right: 30px;
     width: 5%;
-    height: 30%;
     flex-direction: column;
     background: #A7C7FF;
     border-radius: 5px;
+    padding: 24px 0px;
 }
-
-.navbar .icons{
-    filter: invert(14%) sepia(98%) saturate(3821%) hue-rotate(189deg) brightness(90%) contrast(94%);
+.navbar .icons .btn-graphics{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    background: none;
+}
+.navbar .icons img{
+    padding: 12px 0px;
+}
+.navbar .icons img:hover{
+    filter: invert(15%) sepia(48%) saturate(7196%) hue-rotate(189deg) brightness(92%) contrast(94%);
 }
