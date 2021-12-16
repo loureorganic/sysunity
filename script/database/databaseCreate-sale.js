@@ -92,7 +92,6 @@ export default class databasecreatesale{
            label.appendChild(select);
             })
         })
-        let inputType = document.createElement('select');
         let quantity = document.createElement('input');
         let priceUnity = document.createElement('input');
         let total = document.createElement('input');      
@@ -108,13 +107,38 @@ export default class databasecreatesale{
         labelQuantity.appendChild(quantity);
         labelPrice.appendChild(priceUnity);
         labelTotal.appendChild(total);
-        labelProductionRecommended.appendChild(productionRecommended)
-        // labelItemsAdded.innerHTML += priceUnity; 
-        // labelItemsAdded.innerHTML += total; 
+        labelProductionRecommended.appendChild(productionRecommended);
     }
 
     typeSelect(data){
     
+        if(select.hasChildNodes){
+            select.innerHTML = '';
+        }
+        const firebaseref = firebase.database().ref("production");
+        firebaseref.once('value', function(all){
+            let arrayTypesValid = [];
+            let arrayTypes = [];
+          
+        all.forEach((item)=>{
+            if(item.val().product === data){
+                arrayTypes.push(item.val().type);
+            }
+        })
+        arrayTypesValid = arrayTypes.filter(function(item, pos) {
+            return arrayTypes.indexOf(item) == pos;
+        })
+        select.setAttribute('id', 'productType');
+        arrayTypesValid.map((item)=>{
+            var dados = "<option " + "id="+item +" >" + item + "</option>"
+            select.innerHTML += dados;
+        })
+        labelType.appendChild(select);
+          })
+      }
+   
+      typeSelectNew(data){
+        let select = document.createElement('select');
         if(select.hasChildNodes){
             select.innerHTML = '';
         }
