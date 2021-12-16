@@ -116,13 +116,19 @@ export default class databasecreatesale{
             arrayTypesValid = arrayTypes.filter(function(item, pos) {
                 return arrayTypes.indexOf(item) == pos;
             })
+
+            arrayTypesValid.forEach((item)=>{
+                if(document.getElementById(item)){
+                    console.log(document.getElementById(item).value == item);
+                }
+                else{
+                    var dados = "<option " + "id="+item +" >" + item + "</option>";
+                    selecttype.innerHTML += dados;
+                }
+
+            })
             
-            arrayTypesValid.map((item)=>{
-                console.log(item)
-            var dados = "<option " + "id="+item +" >" + item + "</option>"
-            console.log(dados);
-            selecttype.innerHTML += dados;
-        })
+             
 
         
           })

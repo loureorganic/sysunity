@@ -41,7 +41,7 @@ document.getElementById('buttonAdd').addEventListener("click", function(){
 	salesBackEnd.optionProductsNew(i);
 })
 
-document.getElementById('productLabel').addEventListener("mouseleave", function() {
+document.getElementById('productLabel').addEventListener("click", function() {
 	let productsSelected = document.querySelectorAll('.productItems');
 	for (var i = 0; i < productsSelected.length; i++) {
 
