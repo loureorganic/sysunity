@@ -3,9 +3,10 @@ import databasecreatesale from "./database/databaseCreate-sale.js";
 const dados = new databaseuser();
 dados.objectuser();
 
+let i = 0;
+var myArray = [];
 const salesBackEnd = new databasecreatesale();
-salesBackEnd.optionProducts();
-
+salesBackEnd.optionProductsNew(i)
 document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('boxdate').style.display = "flex";
 	document.getElementById('boxsale').style.display = "none";
@@ -16,14 +17,15 @@ document.getElementById("order").addEventListener("click", function() {
 	document.getElementById('boxsale').style.display = "flex";
 })
 
-document.getElementById('productLabel').addEventListener("click", function() {
-	let data = document.getElementById('productItems').value;
-	salesBackEnd.typeSelect(data);
-})
+// document.getElementById('productLabel').addEventListener("click", function() {
+// 	let data = document.getElementById('productItems').value;
+// 	salesBackEnd.typeSelect(data);
+// })
 
-document.getElementById('typeLabel').addEventListener('click', function(){
-	salesBackEnd.bestProduction(document.getElementById('productItems').value, document.getElementById('productType').value)
-})
+
+// document.getElementById('typeLabel').addEventListener('click', function(){
+// 	salesBackEnd.bestProduction(document.getElementById('productItems').value, document.getElementById('productType').value)
+// })
 
 // document.getElementById("order2").addEventListener("click", function() {
 // 	document.getElementById('boxdiscount-general').style.display = "flex";
@@ -34,9 +36,27 @@ document.getElementById('typeLabel').addEventListener('click', function(){
 // 	document.getElementById('boxdiscount-general').style.display = "none";
 // 	document.getElementById('boxpayment').style.display = "flex";
 // })
-
 document.getElementById('buttonAdd').addEventListener("click", function(){
-	salesBackEnd.optionProductsNew();
+	i++; 
+	salesBackEnd.optionProductsNew(i);
+})
+
+document.getElementById('productLabel').addEventListener("mouseleave", function() {
+	let productsSelected = document.querySelectorAll('.productItems');
+	for (var i = 0; i < productsSelected.length; i++) {
+
+		productsSelected[i].addEventListener("click", function(data) {
+			salesBackEnd.typeSelect(document.getElementById(data.path[0].id).value, data.path[0].id)
+		})
+	}
+
+	// console.log({myArray});
+	// myArray.map((item)=> {
+	// 	item.addEventListener('click', function(){
+	// 		console.log(item);
+	// 		//  salesBackEnd.typeSelect()
+	// 	})
+	// })
 })
 
 let authUser = localStorage.getItem("id");
