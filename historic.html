@@ -171,10 +171,30 @@
         <!--Título da tela-->
         <section class="section-title">
           <div class="title">
-            <h2>Histórico de modificações</h2>   
-            <a  href="">
-              <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
-            </a> 
+            <h2>Histórico de modificações</h2>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
+                <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
+              </button>
+              <!-- Modal Support -->
+              <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Suporte de Histórico</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <h5>Para realizar cadastro de um usuário, você deverá seguir os seguintes passos: </h5>
+                        <h6>• Inserir os dados em cada campo: nome, sobrenome, usuário e email.</h6>
+                        <h6>• Selecionar uma opção de cargo e nível de acesso.</h6>
+                        <h6>• Para finalizar, você deverá clicar no botão cadastrar.</h6>
+                        <h6>• Caso deseje sair desta página, clique no "x" acima.</h6>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </section>
 
