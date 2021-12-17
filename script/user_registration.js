@@ -8,6 +8,48 @@ const data = new databasecreateuser();
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
+	if(document.getElementById('nome').value === "") {
+
+		document.getElementById('nome').style.borderColor = "red";
+		document.getElementById('alerta_nome_usuario').style.display = 'flex';
+	
+		} else{
+	
+		document.getElementById('nome').style.borderColor = "blue";
+		document.getElementById('alerta_nome_usuario').style.display = "none";
+	
+		} if(document.getElementById('sobrenome').value === "") {
+	
+		document.getElementById('sobrenome').style.borderColor = "red";
+		document.getElementById('alerta_sobrenome').style.display = 'flex';
+	
+		} else{
+	
+		document.getElementById('sobrenome').style.borderColor = "blue";
+		document.getElementById('alerta_sobrenome').style.display = "none";
+	
+		} if(document.getElementById('email').value === "") {
+	
+		document.getElementById('email').style.borderColor = "red";
+		document.getElementById('alerta_email').style.display = 'flex';
+	
+		} else{
+	
+		document.getElementById('email').style.borderColor = "blue";
+		document.getElementById('alerta_email').style.display = 'none';
+	
+		} if(document.getElementById("nomedeusuario").value === "") {
+	
+		document.getElementById('nomedeusuario').style.borderColor = "red";
+		document.getElementById('alerta_usuario').style.display = 'flex';
+	
+		} else{
+	
+		document.getElementById('nomedeusuario').style.borderColor = "blue";
+		document.getElementById('alerta_usuario').style.display = 'none';
+		
+		}
+
 	let user = {
 		nome: document.getElementById('nome').value,
 		sobrenome: document.getElementById('sobrenome').value,
@@ -16,7 +58,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     }
 
 	if(user.nome!= "" && user.nome != " " && user.sobrenome!= "" && user.sobrenome != " " && user.nomedeusuario != "" && user.nomedeusuario != " " && user.email != "" && user.email != " "){
-		data.createuser(user.nome,user.sobrenome, user.nomedeusuario, user.email, document.getElementById('office').value, document.getElementById('access').value); 
+		data.createuser(user.nome,user.sobrenome, user.nomedeusuario, user.email, document.getElementById('office').value, document.getElementById('access').value);
 	}
 
 
