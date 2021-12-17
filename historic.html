@@ -171,37 +171,51 @@
         <!--Título da tela-->
         <section class="section-title">
           <div class="title">
-            <h2>Histórico de modificações</h2>   
-            <a  href="">
-              <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
-            </a> 
+            <h2>Histórico de modificações</h2>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
+                <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
+              </button>
+              <!-- Modal Support -->
+              <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Suporte de Histórico</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <h5>Nesta página, irá ter uma tabela com datas, descrição e usuário.</h5>
+                        <h6>• Você terá acesso ao que foi modificado no sistema, por quem de acordo com a data.</h6>
+                        <h6>• Caso deseje sair desta página, clique no "x" acima.</h6>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </section>
 
         <!--Tabela -> Gerenciamento de Usuarios-->
         <section class="section-table" >
-          <table id="myTable" class="table">
-            <thead>
-                <tr>
-                    <th>Datas</th>
-                    <th>Descrição</th>
-                    <th>Usuário</th>
-                </tr>
-            </thead>
-            <tbody id="tablebody"></tbody>
-           <!-- <tbody id="">
-             <tr>
-                <td>12/08/2021</td>
-                <td id="descricao">---------------------------------------------</td>
-                <td>Wesley Eugênio</td>
-              </tr>
-              <tr>
-                <td>13/08/2021</td>
-                <td id="descricao">---------------------------------------------</td>
-                <td>Palloma Ruysa</td>
-              </tr>
-           </tbody> -->
-          </table>       
+         <div id="div-title">
+              <div id="data"><h4>Datas</h4></div>
+              <div id="desc"><h4>Descrição</h4></div>
+              <div id="user-table"><h4>Usuário</h4></div>
+         </div>
+          <div id="div-table">
+            <table id="myTable" class="table">
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                  </tr>
+              </thead>
+                <tbody id="tablebody"></tbody>
+            </table> 
+          </div>
+                
         </section>
 
       </section>
