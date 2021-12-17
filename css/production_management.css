@@ -28,20 +28,49 @@
 .section-table label{
     margin-bottom: 20px;
 }
-
+h4{
+    font-size: 19px;
+    color: white;
+    width: auto;
+    margin-bottom: 0;  
+    font-weight: bold;
+  }
+  
+#div-title{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    background-color: #085D8C;
+}
+#nome-table{
+    width: 10%;
+    padding-left: 25px;
+    text-align: start;
+}
+#tipo-table{
+    width: 10%;
+    padding-left: 36px;
+    text-align: start;
+}
+#lote-table{
+    width: 32%;
+    padding-left: 76px;
+    text-align: start;
+}  
 #opcoes{
     text-align: center;
-    padding-left: 85px;
-    width: 2rem;
-}
+    padding-right: 40px;
+    width: 55%;
+}  
+#div-table{
+    overflow: auto;
+    height: 350px;
+    width: 100%;
+  }
 
-#nome-table, #tipo-table, #lote-table{
-    width: 9rem;
-    text-align: center;
-}
-#nomeProduct, #typeProduct, #batchProduct{
-    padding-top: 25px;
-}
 tbody tr{
     background-color: #f3f3f3;
     text-align: center;
