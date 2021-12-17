@@ -119,7 +119,7 @@
               <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
                 <div class="set1">
                   <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
-                  <li><a href="settings.html" class="link-dark rounded">Configurações</a></li>
+                  <li><a href="settings_user.html" class="link-dark rounded">Configurações</a></li>
                 </div>
               </button>
             </li>
@@ -199,28 +199,24 @@
 
         <!--Tabela -> Gerenciamento de Usuarios-->
         <section class="section-table" >
-          <table id="myTable" class="table">
-            <thead>
-                <tr>
-                    <th>Datas</th>
-                    <th>Descrição</th>
-                    <th>Usuário</th>
-                </tr>
-            </thead>
-            <tbody id="tablebody"></tbody>
-           <!-- <tbody id="">
-             <tr>
-                <td>12/08/2021</td>
-                <td id="descricao">---------------------------------------------</td>
-                <td>Wesley Eugênio</td>
-              </tr>
-              <tr>
-                <td>13/08/2021</td>
-                <td id="descricao">---------------------------------------------</td>
-                <td>Palloma Ruysa</td>
-              </tr>
-           </tbody> -->
-          </table>       
+         <div id="div-title">
+              <div id="data"><h4>Datas</h4></div>
+              <div id="desc"><h4>Descrição</h4></div>
+              <div id="user-table"><h4>Usuário</h4></div>
+         </div>
+          <div id="div-table">
+            <table id="myTable" class="table">
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                  </tr>
+              </thead>
+                <tbody id="tablebody"></tbody>
+            </table> 
+          </div>
+                
         </section>
 
       </section>

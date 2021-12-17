@@ -1,13 +1,28 @@
 @import url(main.css);
 @import url(home.css);
 
-h2{
+.section-title{
+    height: 60px;
+    padding-left: 70px;
+    padding-top: 17px;
+}
+.section-title  h2{
     font-size: 25px;
     font-weight: 700;
 }
+.section-table{
+    padding-left: 70px;    
+    padding-right: 70px;    
+}
+.dataTables_wrapper{
+    width: 90%;
+}
 .title{
+    width: 100%;
+    margin-left: -24px;
+}
+.title h2{
     width: 97%;
-    margin-left: 19px;
 }
 
 .report{
@@ -31,4 +46,30 @@ h2{
     display: flex;
     width: 40%;
     align-self: center;
+    margin: 24px 0px 0px 50px;
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 200px;
+    right: 30px;
+    width: 5%;
+    flex-direction: column;
+    background: #A7C7FF;
+    border-radius: 5px;
+    padding: 24px 0px;
+}
+.navbar .icons .btn-graphics{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    background: none;
+}
+.navbar .icons img{
+    padding: 12px 0px;
+}
+.navbar .icons img:hover{
+    filter: invert(15%) sepia(48%) saturate(7196%) hue-rotate(189deg) brightness(92%) contrast(94%);
 }

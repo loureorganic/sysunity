@@ -86,7 +86,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
 		} else if(document.getElementById('tipe1').value != "" && document.getElementById('value1').value != ""){
 
-		data.creatoption(data1, document.getElementById("tipe1").value, document.getElementById("value1").value );
+		// data.creatoption(data1, document.getElementById("tipe1").value, document.getElementById("value1").value );
 		}
 	}
 });
