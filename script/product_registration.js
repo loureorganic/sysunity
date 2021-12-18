@@ -77,7 +77,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 					}
 				})
 			}
-		data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
+			data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
 		}
 	}
 
@@ -116,7 +116,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 					}
 				})
 			}
-		data.creatoption(data1, document.getElementById("tipe1").value, document.getElementById("value1").value );
+			data.creatoption(data1, document.getElementById("tipe1").value, document.getElementById("value1").value );
 		}
 	}
 });
