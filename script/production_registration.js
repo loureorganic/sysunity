@@ -94,7 +94,7 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
         document.getElementById('days').style.borderColor = "blue";
         document.getElementById('alerta_dias').style.display = "none";
 
-        teste.validateProduction(production);
+        // teste.validateProduction(production);
         
     }
 
