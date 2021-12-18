@@ -102,3 +102,22 @@ const myChart3 = new Chart(grafico3, {
         }
     }
 });
+
+document.getElementById("button_bar").addEventListener('click', function(){
+    document.getElementById("grafico").style.display = "flex";
+    document.getElementById("grafico2").style.display = "none";
+    document.getElementById("grafico3").style.display = "none";
+});
+
+
+document.getElementById("button_line").addEventListener('click', function(){
+    document.getElementById("grafico").style.display = "none";
+    document.getElementById("grafico2").style.display = "flex";
+    document.getElementById("grafico3").style.display = "none";
+});
+
+document.getElementById("button_doughnut").addEventListener('click', function(){
+    document.getElementById("grafico").style.display = "none";
+    document.getElementById("grafico2").style.display = "none";
+    document.getElementById("grafico3").style.display = "flex";
+});
