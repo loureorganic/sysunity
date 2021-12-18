@@ -35,6 +35,11 @@
     margin-top: 18px;
 }
 
+.graphics-group{
+    display: flex;
+    margin-left: 42px;
+}
+
 .graphics-double{
     display: flex;
     width: 50%;
