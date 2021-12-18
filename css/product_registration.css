@@ -149,31 +149,37 @@ h2{
     }
 }
 
-#checked .button-close{
+#modal-reg .button-close{
     display: flex;
     justify-content: flex-end;
     padding: 6px;
 }
-#checked form{
-    display: flex;
+.fechar{
+    background: none;
+    border: none;
+}
+  
+.fechar::before{
+    content: url(../images/close_white_24dp.svg);
+    filter: invert(15%) sepia(48%) saturate(7196%) hue-rotate(189deg) brightness(92%) contrast(94%);
 }
 
-#checked .modal-body{
+#modal-reg .modal-body{
     margin: 0;
     padding-top: 0;
 }
-#checked form{
+#modal-reg form{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#checked form h1{
+#modal-reg form h1{
     text-align: center;
     color: rgba(130, 130, 130, 1); 
     font-weight: bold;
     font-size: 30px;
 }
-#checked .btn-paraGerenciamento{
+#modal-reg .btn-paraGerenciamento{
     height: 40px;
     font-weight:600;
     font-size: 16px;
@@ -184,11 +190,5 @@ h2{
     border-block: none;
     border-inline: none;
     padding: 0 24px;
-}
-#checked .modal-content{
-    cursor: pointer;
-    margin-top: 0;
-}
-#checked .modal-footer {
-    border: 0;
+    margin-bottom: 24px;
 }

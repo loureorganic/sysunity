@@ -254,24 +254,7 @@
         <!-- BOTÃO DE CADASTRO -->
         <div class="register">
           <div class="btn-group">
-            <button class="btn btn-primary" id="btn_cadastrar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">CADASTRAR</button>
-          </div>
-        </div>
-      </div>
-      <!-- Modal Checked -->
-      <div class="modal fade" id="checked" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="button-close">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <img src="images/GREEN-checked.png" alt="" width="50%"/>
-                <h1>Produto cadastrado com sucesso!</h1>
-                <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'product_management.html'">IR PARA TELA DE GERENCIAMENTO</button>
-              </form>
-            </div>
+            <button class="btn btn-primary" id="btn_cadastrar" type="button">CADASTRAR</button>
           </div>
         </div>
       </div>
@@ -280,6 +263,24 @@
   </div>
   </div>
   </div>
+
+<!-- MODAL DE CHECKED -->
+<div id="modal-reg" class="loader2">
+
+  <div class="mod">
+    <div class="button-close">
+      <button class="fechar"></button>
+    </div>
+    <div class="mod-body">
+      <form>
+        <img src="images/GREEN-checked.png" alt="" width="50%"/>
+        <h1>Produto cadastrado com sucesso!</h1>
+        <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'user_management.html'">IR PARA TELA DE GERENCIAMENTO</button>
+      </form>
+    </div>
+  </div>
+</div>
+
   <!-- CHAMADA DOS SCRIPTS -->
   <script src="script/preloader.js"></script>
   <script type="module" src="script/product_registration.js"></script>
