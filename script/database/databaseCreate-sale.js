@@ -77,9 +77,9 @@ export default class databasecreatesale{
         let priceUnity = document.createElement('input');
         let total = document.createElement('input');      
         let productionRecommended = document.createElement('input');
-        quantity.setAttribute('id', 'quantity');
+        quantity.setAttribute('id', 'quantity' + idTypeSelect);
         quantity.setAttribute('type', 'text');
-        priceUnity.setAttribute('id', 'price');
+        priceUnity.setAttribute('id', 'price' + idTypeSelect);
         priceUnity.setAttribute('type', 'text');
         total.setAttribute('id', 'price');
         total.setAttribute('type', 'text');
@@ -121,13 +121,20 @@ export default class databasecreatesale{
                     var dados = "<option " + "id="+item +" >" + item + "</option>";
                     selecttype.innerHTML += dados;
             })
-            
-             
-
+            console.log(document.getElementById(id).value);
+            console.log(document.getElementById(labelvalue).value);
+            this.valueUnity(document.getElementById(id).value,document.getElementById(labelvalue).value, id);
         
           })
       }
 
+      valueUnity(item, type, id){
+        let quantity = 'quantity' + id; 
+         
+        const firebaseref = firebase.database().ref("production");
+
+        // document.getElementById(quantity).value;
+      }
 
     bestProduction(product, type){
           let arrayProductions = [];
