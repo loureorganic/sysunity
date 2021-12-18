@@ -41,15 +41,18 @@ document.getElementById('buttonAdd').addEventListener("click", function(){
 	salesBackEnd.optionProductsNew(i);
 })
 
+
 document.getElementById('productLabel').addEventListener("click", function() {
-	let productsSelected = document.querySelectorAll('.productItems');
-	for (var i = 0; i < productsSelected.length; i++) {
-
-		productsSelected[i].addEventListener("click", function(data) {
-			salesBackEnd.typeSelect(document.getElementById(data.path[0].id).value, data.path[0].id)
-		})
-	}
-
+	document.getElementById('0').addEventListener('change', function(){
+	
+		let productsSelected = document.querySelectorAll('.productItems');
+		for (var i = 0; i < productsSelected.length; i++) {
+			productsSelected[i].addEventListener("click", function(data) {
+				salesBackEnd.typeSelect(document.getElementById(data.path[0].id).value, data.path[0].id)
+			})
+		}
+		
+	})
 	// console.log({myArray});
 	// myArray.map((item)=> {
 	// 	item.addEventListener('click', function(){

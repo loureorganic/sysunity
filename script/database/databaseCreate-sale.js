@@ -99,9 +99,8 @@ export default class databasecreatesale{
         
         let labelvalue = 'p' + id;
        let  selecttype = document.getElementById(labelvalue);
-
-        if(selecttype.hasChildNodes){
-            selecttype.innerHTML = '';
+       if(selecttype.hasChildNodes){
+           selecttype.innerHTML = '';
         }
         const firebaseref = firebase.database().ref("production");
         firebaseref.once('value', function(all){
@@ -117,15 +116,10 @@ export default class databasecreatesale{
                 return arrayTypes.indexOf(item) == pos;
             })
 
-            arrayTypesValid.forEach((item)=>{
-                if(document.getElementById(item)){
-                    console.log(document.getElementById(item).value == item);
-                }
-                else{
+            arrayTypesValid.forEach((item)=>{     
+                  
                     var dados = "<option " + "id="+item +" >" + item + "</option>";
                     selecttype.innerHTML += dados;
-                }
-
             })
             
              
