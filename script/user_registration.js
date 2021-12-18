@@ -58,6 +58,21 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
     }
 
 	if(user.nome!= "" && user.nome != " " && user.sobrenome!= "" && user.sobrenome != " " && user.nomedeusuario != "" && user.nomedeusuario != " " && user.email != "" && user.email != " "){
+		const modal = document.getElementById("modal-reg");
+
+		if(modal){
+
+		modal.classList.add('mostrar');
+
+		modal.addEventListener("click", (e) => {
+			if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+			modal.classList.remove('mostrar');
+			}
+			if(e.target.id == 'deny') {
+			modal.classList.remove('mostrar');
+			}
+		})
+		}
 		data.createuser(user.nome,user.sobrenome, user.nomedeusuario, user.email, document.getElementById('office').value, document.getElementById('access').value);
 	}
 
