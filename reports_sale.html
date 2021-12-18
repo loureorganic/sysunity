@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>SysUnity</title>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="css/reports_product.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="./images/y.png"   sizes="any"  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
+  <script src="script/database/database-connection.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <div class="loader">
+    <img src="images/833.gif" alt="Loading..." />
+  </div>
+  <div class="content">
+    <div id="home">
+    <div class="centro">
+      <section class="sidebar">
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <div class="sidebar-logo">
+              <h6><a href="home.html" id="home-logo"> SysUnity</a></h6>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+              <div class="set1">
+                <img src="./images/outline_manage_accounts_white_48dp.png" alt="" width="22">
+                <span>Usuários</span>
+              </div>
+            </button>
+            <div class="collapse" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="user_registration.html" class="link-dark rounded">Cadastro de usuários</a></li>
+                <li><a href="user_management.html" class="link-dark rounded">Gerenciamento de usuários</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+              <div class="set1">
+                <img class="dashboard-shop" src="./images/baseline_shopping_bag_white_48dp.png" alt="" width="22">
+                <span>Vendas</span>
+              </div>
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="sale_registration.html" class="link-dark rounded">Cadastro de vendas</a></li>
+                <li><a href="sale_management.html" class="link-dark rounded">Gerenciamento de vendas</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              <div class="set1">
+                <img src="./images/baseline_inventory_2_white_48dp.png" alt="" width="22">
+                <span>Produtos</span>
+              </div>
+            </button>
+            <div class="collapse" id="orders-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="product_registration.html" class="link-dark rounded">Cadastro de produtos</a></li>
+                <li><a href="production_registration.html" class="link-dark rounded">Cadastro de nova produção</a></li>
+                <li><a href="product_management.html" class="link-dark rounded">Gerenciamento de produtos</a></li>
+                <li><a href="production_management.html" class="link-dark rounded">Gerenciamento de produção</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed shadow-none" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+              <div class="set1">
+                <img src="./images/baseline_leaderboard_white_48dp.png" alt="" width="22">
+                <span>Relatórios</span>
+              </div>
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
+                <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
+                <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produção</a></li>
+              </ul>
+            </div>
+          </li>
+          <div class="mb">
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <div class="set1">
+                  <img src="./images/baseline_local_shipping_white_48dp.png" alt="" width="22">
+                  <li><a href="orders.html" class="link-dark rounded">Encomendas</a></li>
+                </div>
+              </button>
+            </li>
+          </div>
+          <div class="mb">
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <div class="set1">
+                  <img src="./images/baseline_history_white_48dp.png" alt="" width="22">
+                  <li><a href="historic.html" class="link-dark rounded">Histórico</a></li>
+                </div>
+              </button>
+            </li>
+          </div>
+          <div class="mb">
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <div class="set1">
+                  <img src="./images/baseline_settings_white_48dp.png" alt="" width="22">
+                  <li><a href="settings_user.html" class="link-dark rounded">Configurações</a></li>
+                </div>
+              </button>
+            </li>
+          </div>
+          <div class="mb">
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed shadow-none">
+                <div class="set1">
+                  <img src="./images/baseline_help_center_white_48dp.png" alt="" width="22">
+                  <li><a href="prop.html" class="link-dark rounded">Suporte</a></li>
+                </div>
+              </button>
+            </li>
+          </div> 
+    </ul>
+</section>
+          
+<!--Barra de alerta-->
+<section class="content-table">
+  <header class="bar-status">
+    <div class="welcome">    
+      <h1 id="hello">Relatórios</h1>
+    </div>
+    <ul class="bar-login">
+      <li id="usuario">
+        <div class="btn-group">
+          <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <h6 id="user">
+                Taila Santos
+              </h6>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="settings_user.html">Configurações
+              <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
+             </a>
+            </li>
+            <li>
+              <a href="index.html">Sair
+              <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
+              </a> 
+            </li>
+          </ul>
+        </header>
+
+        <section class="section-title">
+          <div class="title">
+            <h2>Relatórios de vendas</h2>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
+                <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
+              </button>
+              <!-- Modal Support -->
+              <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Suporte de Relatórios de Vendas</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form style="margin-top: 0;">
+                        <h5>Nesta página, você terá 3 (três) opções de gráficos.</h5>
+                        <h6>• Sendo eles de barra, linear e rosca com base nas vendas cadastradas.</h6>
+                        <h6>• Ao lado possui uma sidebar, a qual permite a escolha de qual gráfico deseja que fique à mostra na tela, enquanto os outros serão ocultos.</h6>
+                        <h6>• Caso queira sair desta página, clique no "x" acima.</h6>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="graphics-single">  
+              <canvas id="grafico3"></canvas>
+            </div>
+            <div class="graphics-single"> 
+              <canvas id="grafico"></canvas>
+            </div>
+            <div class="graphics-single"> 
+              <canvas id="grafico2"></canvas> 
+            </div>
+        </section>
+        <section class="navbar">
+          <div class="icons">
+            <button type="button" class="btn-graphics" id="button_bar">
+              <img src="./images/leaderboard_white_24dp.svg" alt="" width="50" id="icon_bar">
+            </button>
+            <button type="button" class="btn-graphics" id="button_line">
+              <img src="./images/show_chart_white_24dp.svg" alt="" width="50" id="icon_line">
+            </button>
+            <button type="button" class="btn-graphics" id="button_doughnut">
+              <img src="./images/trip_origin_white_36dp.svg" alt="" width="50" id="icon_doughnut">
+            </button>
+          </div>
+        </section>
+      
+  <script src="script/preloader.js"></script>
+  <script type="module" src="script/reports_sale.js"></script>
+</body>
+</html>
