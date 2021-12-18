@@ -66,7 +66,8 @@ document.getElementById("btn_salvar").addEventListener("click", function() {
 
 	if(document.getElementById('senhaAlterada').value !== document.getElementById('confirmaSenhaAlterada').value) {
 
-		console.log("As senhas estão diferentes")
+		document.getElementsByClassName('igual_senha').style.borderColor = "red";
+		document.getElementsByClassName('igual_senha').style.display = 'flex';
 
 	} else if(document.getElementById('nome').value !== "" && document.getElementById('email').value !== "" && document.getElementById("senhaAlterada").value !== "" && document.getElementById("confirmaSenhaAlterada").value !== "" && document.getElementById('sobrenome').value !== "") {
 
