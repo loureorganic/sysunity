@@ -44,15 +44,28 @@ export default class databasecreateproduction{
     })
   }
 
-   daysProduction(production){ 
+   daysProduction(production){
 
     let today = new Date();
     let cadastrationDate = today.toLocaleDateString();
     let cadastrationHour = today.toLocaleTimeString();
     let a;
+    let cab;
     let authUser = localStorage.getItem("id");
 
+    const pfirebaseref = firebase.database().ref("product");
     const firebaseref = firebase.database().ref("user");
+
+    pfirebaseref.once('value', function(all){
+
+      let abe = all.val()[production.product];
+
+      Object.keys(abe).forEach(function(item) {
+
+        cab = abe[item].value;
+      })
+    })
+
     firebaseref.once('value').then(function (snapshot) {
 
       snapshot.forEach(element => {
@@ -75,6 +88,7 @@ export default class databasecreateproduction{
       database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
       database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
       database.ref('production/'+newClientKey+'/batch').set(production.batch);
+      database.ref('production/'+newClientKey+'/value').set(cab);
       database.ref('production/'+newClientKey+'/user').set(a.key);
 
       let newClientKey2 = database.ref().child('user').push().key;
@@ -103,7 +117,6 @@ export default class databasecreateproduction{
         if(element.key === authUser)
         {
           a = element;
-          console.log(element.key, authUser, a)
         }
       });
 
@@ -168,7 +181,6 @@ export default class databasecreateproduction{
 
           
           const doc = new jsPDF("portrait","mm",[210,297])
-          console.log(doc.getFontList())
           doc.setFont("helvetica")
           doc.setFontStyle("normal")
           doc.setFontSize(11)
@@ -215,7 +227,6 @@ export default class databasecreateproduction{
 
           
           const doc = new jsPDF("portrait","mm",[210,297])
-          console.log(doc.getFontList())
           doc.setFont("helvetica")
           doc.setFontStyle("normal")
           doc.setFontSize(11)
