@@ -384,6 +384,142 @@
   </div>
 </div>
 
+
+<!-- MODAL DE VISUALZAR -->
+<div id="modal-see" class="container">
+
+  <div class="mod">
+    <div class="top-modal">
+    <h5>Visualizar Encomenda</h5>
+    <button class="fechar"></button>
+  </div>
+    
+  <form>
+    <div class="mod-body-top">
+      <label for="">Data de entrega
+        <input id="dataentrega" type="text" placeholder="" disabled/>
+      </label>
+      <label for="">Nº de pedido
+        <input id="numeropedido" type="text" placeholder="" disabled/>
+      </label>
+      <label for="">Pagamento
+        <button class="delivered">pago</button>
+      </label>
+      <label for="">Vendedor
+        <input id="seller" type="text" placeholder="" disabled/>
+      </label>
+      <label for="">Status
+        <button class="delivered">entregue</button>
+      </label>
+    </div>
+
+    <table>
+      <tr>
+        <th class="top-table">Item</th>
+        <th class="top-table">Quantidade</th>
+        <th class="top-table">Valor unitário</th>
+      </tr>
+      <tr>
+        <td class="data-table">Coxinha de frango</td>
+        <td class="data-table">20</td>
+        <td class="data-table">R$ 0,69</td>
+      </tr>
+      <tr>
+        <td class="data-table">Coxinha de frango</td>
+        <td class="data-table">20</td>
+        <td class="data-table">R$ 0,69</td>
+      </tr>
+    </table>
+    
+    <div class="mod-body-bottom">
+      <label for="">Valor total
+        <input id="valortotal" type="text" placeholder="" disabled/>
+      </label>
+      <div class="confirm">
+        <div class="group-delivered">
+          <label for="">Encomenda cadastrada
+            <button class="delivered">sim</button>
+          </label>
+        </div>
+        <div class="group-delivered">
+          <label for="">Encomenda registrada
+            <button class="delivered">sim</button>
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+
+<!-- MODAL DE EDITAR -->
+<div id="modal-edit" class="container">
+
+  <div class="mod">
+    <div class="top-modal">
+    <h5>Editar Encomenda</h5>
+    <button class="fechar"></button>
+  </div>
+    
+  <form>
+    <div class="mod-body-top">
+      <label for="">Data de entrega
+        <input id="dataentrega" type="text" placeholder=""/>
+      </label>
+      <label for="">Nº de pedido
+        <input id="numeropedido" type="text" placeholder=""/>
+      </label>
+      <label for="">Pagamento
+        <button class="delivered">pago</button>
+      </label>
+      <label for="">Vendedor
+        <input id="seller" type="text" placeholder=""/>
+      </label>
+      <label for="">Status
+        <button class="delivered">entregue</button>
+      </label>
+    </div>
+
+    <table>
+      <tr>
+        <th class="top-table">Item</th>
+        <th class="top-table">Quantidade</th>
+        <th class="top-table">Valor unitário</th>
+      </tr>
+      <tr>
+        <td class="data-table">Coxinha de frango</td>
+        <td class="data-table">20</td>
+        <td class="data-table">R$ 0,69</td>
+      </tr>
+      <tr>
+        <td class="data-table">Coxinha de frango</td>
+        <td class="data-table">20</td>
+        <td class="data-table">R$ 0,69</td>
+      </tr>
+    </table>
+    
+    <div class="mod-body-bottom">
+      <label for="">Valor total
+        <input id="valortotal" type="text" placeholder=""/>
+      </label>
+      <div class="confirm">
+        <div class="group-delivered">
+          <label for="">Encomenda cadastrada
+            <button class="delivered">sim</button>
+          </label>
+        </div>
+        <div class="group-delivered">
+          <label for="">Encomenda registrada
+            <button class="delivered">sim</button>
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+
+
   <script type="module" src="script/order.js"></script>
   <script src="script/preloader.js"></script>
   <script type="module" src="script/modal.js"></script>
