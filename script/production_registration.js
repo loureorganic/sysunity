@@ -86,10 +86,42 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
     if(production.days !== '' && production.labelActiveDays && document.getElementById('unity').value !== ""){
 
+        const modal = document.getElementById("modal-reg");
+
+			if(modal){
+
+				modal.classList.add('mostrar');
+
+				modal.addEventListener("click", (e) => {
+					if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+					modal.classList.remove('mostrar');
+					}
+					if(e.target.id == 'deny') {
+					modal.classList.remove('mostrar');
+					}
+				})
+			}
+
         teste.daysProduction(production);
 
     }
-    else if (production.fabrication !=='' && production.deadline !=='' && production.labelActiveValidate) {
+    else if (production.fabrication !=='' && production.deadline !=='' && production.labelActiveValidate && document.getElementById('unity').value !== "") {
+
+        const modal = document.getElementById("modal-reg");
+
+			if(modal){
+
+				modal.classList.add('mostrar');
+
+				modal.addEventListener("click", (e) => {
+					if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+					modal.classList.remove('mostrar');
+					}
+					if(e.target.id == 'deny') {
+					modal.classList.remove('mostrar');
+					}
+				})
+			}
 
         document.getElementById('days').style.borderColor = "blue";
         document.getElementById('alerta_dias').style.display = "none";

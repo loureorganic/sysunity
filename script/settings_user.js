@@ -66,9 +66,25 @@ document.getElementById("btn_salvar").addEventListener("click", function() {
 
 	if(document.getElementById('senhaAlterada').value !== document.getElementById('confirmaSenhaAlterada').value) {
 
-		console.log("As senhas estão diferentes")
+		alert("As senhas não são iguais!")
 
 	} else if(document.getElementById('nome').value !== "" && document.getElementById('email').value !== "" && document.getElementById("senhaAlterada").value !== "" && document.getElementById("confirmaSenhaAlterada").value !== "" && document.getElementById('sobrenome').value !== "") {
+
+		const modal = document.getElementById("modal-reg");
+
+			if(modal){
+
+				modal.classList.add('mostrar');
+
+				modal.addEventListener("click", (e) => {
+					if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+					modal.classList.remove('mostrar');
+					}
+					if(e.target.id == 'deny') {
+					modal.classList.remove('mostrar');
+					}
+				})
+			}
 
 		let settings_user = {
 			nome: document.getElementById('nome').value,

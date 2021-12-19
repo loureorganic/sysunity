@@ -62,7 +62,22 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
 		} else if(document.getElementById('name').value != "" && document.getElementById('tipe').value != ""){
 
-		data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
+			const modal = document.getElementById("modal-reg");
+
+			if(modal){
+
+				modal.classList.add('mostrar');
+
+				modal.addEventListener("click", (e) => {
+					if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+					modal.classList.remove('mostrar');
+					}
+					if(e.target.id == 'deny') {
+					modal.classList.remove('mostrar');
+					}
+				})
+			}
+			data.createproduct(document.getElementById('name').value, document.getElementById('tipe').value, document.getElementById('value').value);
 		}
 	}
 
@@ -86,7 +101,22 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
 		} else if(document.getElementById('tipe1').value != "" && document.getElementById('value1').value != ""){
 
-		// data.creatoption(data1, document.getElementById("tipe1").value, document.getElementById("value1").value );
+			const modal = document.getElementById("modal-reg");
+
+			if(modal){
+
+				modal.classList.add('mostrar');
+
+				modal.addEventListener("click", (e) => {
+					if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+					modal.classList.remove('mostrar');
+					}
+					if(e.target.id == 'deny') {
+					modal.classList.remove('mostrar');
+					}
+				})
+			}
+			data.creatoption(data1, document.getElementById("tipe1").value, document.getElementById("value1").value );
 		}
 	}
 });
