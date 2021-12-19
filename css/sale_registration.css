@@ -151,10 +151,6 @@ h2{
     justify-content: space-between;
 }
 
-.price-total label{
-    width: 25%;
-}
-
 .button-adc button{
     display: flex;
     justify-content: flex-end;
