@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="css/historic.css" />
+  <link rel="stylesheet" type="text/css" href="css/storage.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -151,7 +151,7 @@
       <section class="content-table">
         <header class="bar-status">
           <div class="welcome">    
-            <h1 id="hello">Histórico</h1>            
+            <h1 id="hello">Estoque</h1>            
           </div>
           <ul class="bar-login">
             <li id="usuario">
@@ -181,7 +181,7 @@
         <!--Título da tela-->
         <section class="section-title">
           <div class="title">
-            <h2>Histórico de modificações</h2>
+            <h2>Gerenciamento de estoque</h2>
               <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
                 <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
               </button>
@@ -190,7 +190,7 @@
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Suporte de Histórico</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Suporte de Estoque</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -208,21 +208,24 @@
 
         <!--Tabela -> Gerenciamento de Usuarios-->
         <section class="section-table" >
-         <div id="div-title">
-              <div id="data"><h4>Datas</h4></div>
-              <div id="desc"><h4>Descrição</h4></div>
-              <div id="user-table"><h4>Usuário</h4></div>
-         </div>
           <div id="div-table">
             <table id="myTable" class="table">
               <thead>
                   <tr>
-                      <th></th>
-                      <th></th>
-                      <th></th>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th style="text-align: center;">Quantidade disponivel</th>
+                    <th>Valor total</th>
                   </tr>
               </thead>
-                <tbody id="tablebody"></tbody>
+                <tbody id="tablebody">
+                  <tr>
+                    <th id="nome">coxinha</th>
+                    <th id="tipo">frango</th>
+                    <th id="quantidadedisponivel" style="text-align: center;">123123</th>
+                    <th id="valortotal">R$ 100,00</th>
+                  </tr>
+                </tbody>
             </table> 
           </div>
                 
