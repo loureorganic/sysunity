@@ -89,19 +89,19 @@ export default class databasecreateproduction{
       });
 
       const database = firebase.database();
-      // let newClientKey = database.ref().child('production').push().key;
-      // database.ref('production/'+newClientKey+'/product').set(production.product);
-      // database.ref('production/'+newClientKey+'/type').set(production.type);
-      // database.ref('production/'+newClientKey+'/validate').set(production.days);
-      // database.ref('production/'+newClientKey+'/initialdatavalidate').set(production.initialdatavalidate);
-      // database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
-      // database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
-      // database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
-      // database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
-      // database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
-      // database.ref('production/'+newClientKey+'/batch').set(production.batch);
-      // database.ref('production/'+newClientKey+'/value').set(cab);
-      // database.ref('production/'+newClientKey+'/user').set(a.key);
+      let newClientKey = database.ref().child('production').push().key;
+      database.ref('production/'+newClientKey+'/product').set(production.product);
+      database.ref('production/'+newClientKey+'/type').set(production.type);
+      database.ref('production/'+newClientKey+'/validate').set(production.days);
+      database.ref('production/'+newClientKey+'/initialdatavalidate').set(production.initialdatavalidate);
+      database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
+      database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
+      database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
+      database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
+      database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
+      database.ref('production/'+newClientKey+'/batch').set(production.batch);
+      database.ref('production/'+newClientKey+'/value').set(cab);
+      database.ref('production/'+newClientKey+'/user').set(a.key);
 
       sfirebaseref.once('value').then(function (resultado) {
 
@@ -115,36 +115,34 @@ export default class databasecreateproduction{
             oldty = element.child("type").val();
             oldtotalVal = element.child("totalValue").val();
             oldtotal = element.child("total").val();
+
+            console.log(oldpro, oldty, oldtotalVal, oldtotal)
   
             database.ref('storage/' + element.key).remove();
   
             newpro = production.product;
             newty = production.type;
             newtotal = production.totalquantity;
-            // newtotalVal = production.totalquantity * cab;
+            newtotalVal = production.totalquantity * cab;
+
+            console.log(newpro, newty, newtotalVal, newtotal)
   
             let newClientKey4 = database.ref().child('storage').push().key;
             database.ref('storage/'+newClientKey4+'/product').set(newpro);
             database.ref('storage/'+newClientKey4+'/type').set(newty);
             database.ref('storage/'+newClientKey4+'/total').set(newtotal + oldtotal);
-            // database.ref('storage/'+newClientKey3+'/totalValue').set(newtotalVal + oldtotalVal);
+            database.ref('storage/'+newClientKey4+'/totalValue').set(newtotalVal + oldtotalVal);
   
           }
           
         })
       })
 
-      // let newClientKey3 = database.ref().child('storage').push().key;
-      // database.ref('storage/'+newClientKey3+'/product').set(production.product);
-      // database.ref('storage/'+newClientKey3+'/type').set(production.type);
-      // database.ref('storage/'+newClientKey3+'/total').set(production.totalquantity);
-      // database.ref('storage/'+newClientKey3+'/totalValue').set(production.totalquantity * cab);
-
-      // let newClientKey2 = database.ref().child('user').push().key;
-      // database.ref('historic/'+newClientKey2+'/userAction').set(authUser);
-      // database.ref('historic/'+newClientKey2+'/date').set(cadastrationDate);
-      // database.ref('historic/'+newClientKey2+'/hour').set(cadastrationHour);
-      // database.ref('historic/'+newClientKey2+'/action').set("cadastrarProduction");
+      let newClientKey2 = database.ref().child('user').push().key;
+      database.ref('historic/'+newClientKey2+'/userAction').set(authUser);
+      database.ref('historic/'+newClientKey2+'/date').set(cadastrationDate);
+      database.ref('historic/'+newClientKey2+'/hour').set(cadastrationHour);
+      database.ref('historic/'+newClientKey2+'/action').set("cadastrarProduction");
 
     });
     

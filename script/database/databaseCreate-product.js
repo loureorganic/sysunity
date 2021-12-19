@@ -42,11 +42,18 @@ export default class databasecreateproduct{
         let authUser = localStorage.getItem("id");
         let cadastrationDate = today.toLocaleDateString();
         let cadastrationHour = today.toLocaleTimeString();
+
         let newClientKey = database.ref().child('user').push().key;
         database.ref('historic/'+newClientKey+'/userAction').set(authUser);
         database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
         database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
         database.ref('historic/'+newClientKey+'/action').set("cadastrarProduct");
+
+        let newClientKey3 = database.ref().child('storage').push().key;
+        database.ref('storage/'+newClientKey3+'/product').set(name);
+        database.ref('storage/'+newClientKey3+'/type').set(type);
+        database.ref('storage/'+newClientKey3+'/total').set(0);
+        database.ref('storage/'+newClientKey3+'/totalValue').set(0);
 
         const modal = document.getElementById("modal-reg");
 
