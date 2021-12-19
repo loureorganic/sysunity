@@ -7,89 +7,427 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-        #bd-1{
-            display: flex;
-            height: 100px;
-            width: 380px;
-            background-color: white;
-            border: 2px solid #335163;
-            border-radius: 3px;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-content: flex-start;
+        #div-table {
+            overflow: scroll;
+            height: 300px;
         }
-        #bd-2{
-            width: 100%;
-            height: 20%;
-            display: flex;
-            margin-bottom: 2%;
-        }
-        #bd-3{
-            width: 100%;
-            height: 75%;
-            font-family: 'Poppins';
-        }
-        #a{
-            width: 60%;
-            height: 100%;
-            font-family: 'Poppins';
-            margin-left: 5px;
-            color: dimgrey;
-        }
-        #b{
-            width: 40%;
-            height: 100%;
+
+        .top-table {
+            width: 30%;
             text-align: center;
-            font-family: 'Poppins';
-            color: dimgrey;
         }
-        #c{
-            width: 100%;
-            height: 33%;
-            font-family: 'Poppins';
-            margin-left: 5px;
-            color: dimgrey;
-        }
-        #d{
-            width: 100%;
-            height: 33%;
-            font-family: 'Poppins';
-            margin-left: 5px;
-            color: dimgrey;
-        }
-        #e{
-            width: 100%;
-            height: 33%;
-            font-family: 'Poppins';
-            margin-left: 5px;
-            color: gray;
+
+        .data-table {
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <div id="bd-1">
-        <div id="bd-2">
-            <div id="a">
-                Produto <b style="color: black;">Coxinha de Frnago</b>
-            </div>
-            <div id="b">
-                Lote <b style="color: black;">18945</b>
-            </div>
-        </div>
-        <div id="bd-3">
-            <div id="c">
-                Data de produção <b style="color: black;">20/11/2021</b>
-            </div>
-            <div id="d">
-                Data de vencimento <b style="color: black;">30/12/2022</b>
-            </div>
-            <div id="e">
-                Unidades <b style="color: black;">25</b>
-            </div>
-        </div>
+    <div id="div-table">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th class="top-table" onclick="sortTable(document.getElementById('myTable'),'asc',0)">Item
+                        <img src="./images/expand_less_black_24dp.svg" alt="" width="23">
+                    </th>
+                    <th class="top-table" onclick="sortTable(document.getElementById('myTable'),'asc',0)">Quantidade
+                        <img src="./images/arrowDown.png" alt="" width="23">
+                    </th>
+                    <th class="top-table" onclick="sortTable(document.getElementById('myTable'),'asc',0)">Valor
+                        <img src="./images/arrowDown.png" alt="" width="23">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="data-table">Coxinha de frango</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo com catupri</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo com catupri</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo com catupri</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo com catupri</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo com catupri</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 2,32</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo com catupri</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de carne</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de carne</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de carne</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de carne</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de carne</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de carne</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de carne</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango com catupry</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango com catupry</td>
+                    <td class="data-table">27</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango com catupry</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango com catupry</td>
+                    <td class="data-table">17</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango com catupry</td>
+                    <td class="data-table">17</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango com catupry</td>
+                    <td class="data-table">17</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango com catupry</td>
+                    <td class="data-table">17</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango com catupry</td>
+                    <td class="data-table">17</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">17</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">17</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">19</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">19</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">19</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">19</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">19</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">23</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">23</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">23</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">23</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">23</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">23</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de queijo</td>
+                    <td class="data-table">23</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">32</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">32</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">32</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">32</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">32</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">32</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">32</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">32</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">100</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">100</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">100</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">100</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">100</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">100</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha mista</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+                <tr>
+                    <td class="data-table">Coxinha de frango</td>
+                    <td class="data-table">20</td>
+                    <td class="data-table">R$ 0,69</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <script>
+        function sortTable(table, dir, n) {
+            var rows, switching, i, x, y, shouldSwitch, switchcount = 0;
+            switching = true;
+            /*Faça um loop que continuará até
+            nenhuma troca foi feita:*/
+            while (switching) {
+                //comece dizendo: nenhuma troca é feita:
+                switching = false;
+                rows = table.rows;
+                /*Faça um loop por todas as linhas da tabela (exceto o
+                primeiro, que contém cabeçalhos da tabela):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                    //comece dizendo que não deve haver alternância:
+                    shouldSwitch = false;
+                    /*Obtenha os dois elementos que você deseja comparar,
+                    um da linha atual e o outro da próxima:*/
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /*verifique se as duas linhas devem mudar de lugar,
+                    com base na direção, asc ou desc:*/
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            //Nesse caso, marque como uma opção e interrompa o loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            //Nesse caso, marque como uma opção e interrompa o loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    /*Se um interruptor foi marcado, faça-o
+                    e marque que uma troca foi feita:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Cada vez que uma troca for concluída, aumente essa contagem em 1:
+                    switchcount++;
+                } else {
+                    /*Se nenhuma mudança foi feita E a direção for "asc",
+                    defina a direção para "desc" e execute o loop while novamente.*/
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+        var myTable = document.getElementById('myTable');
+        sortTable(myTable, 'asc', 0);
+
+        //Button click:
+        let ord = false;
+        document.getElementById("button1").onclick = function () {
+            if (!ord) {
+                sortTable(myTable, 'asc', 0);
+                //sortTable(myTable, 'asc', 1);
+                ord = true;
+            } else {
+                sortTable(myTable, 'desc', 0);
+                //sortTable(myTable, 'desc', 1);
+                ord = false;
+            }
+        }
+    </script>
 </body>
 
 </html>
