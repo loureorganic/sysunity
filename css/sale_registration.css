@@ -151,22 +151,41 @@ h2{
     justify-content: space-between;
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 .button-adc button{
     display: flex;
     justify-content: flex-end;
     font-weight: 600;
     border: none;
     background: none;
-    width: 100%;
 }
 
 .button-adc button::before{
     content: url(../images/add_black_24dp.svg);
-    margin-top: 2px;
 }
 
 .button-adc button:hover{
     filter: invert(14%) sepia(98%) saturate(3821%) hue-rotate(189deg) brightness(90%) contrast(94%);
+}
+
+.button-del button{
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 600;
+    border: none;
+    background: none;
+}
+
+.button-del button::before{
+    content: url(../images/remove_black_24dp.svg);
+}
+
+.button-del button:hover{
+    filter: invert(20%) sepia(74%) saturate(2288%) hue-rotate(351deg) brightness(90%) contrast(97%);
 }
 
 .production-available{
