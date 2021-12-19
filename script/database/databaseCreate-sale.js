@@ -5,6 +5,8 @@ let labelQuantity = document.getElementById('labelQuantity');
 let labelPrice = document.getElementById('labelPrice');
 let labelTotal = document.getElementById('labelTotal');
 let totalend = [];
+let confirmButton = document.getElementById('btn_confirmar');
+
 export default class databasecreatesale{
 
     // createsale(){
@@ -90,21 +92,19 @@ export default class databasecreatesale{
         labelType.appendChild(selectTypes);
     }
     
-    valueUnit(product, type, id){
+    valueUnit(product, type, id, id2){
         let quantity = 'price' + id; 
         let quantityReal = 'quantity' + id;
         let labelvalue = 'p' + id;
-        let totalGeneral = 'pricetotal' + id;
+        let totalGeneral = 'pricetotal' + id;   
         const firebaseref = firebase.database().ref("production");
-        
+     
         firebaseref.once('value', function(all){
           all.forEach((item)=>{
                 if(item.val().product == product && item.val().type == document.getElementById(labelvalue).value){
                     document.getElementById(quantityReal).addEventListener("change", function(){
                        if(item.val().value){
-                           totalend.push(parseFloat(document.getElementById(quantityReal).value * item.val().value).toFixed(2));
                            document.getElementById(totalGeneral).value = parseFloat(document.getElementById(quantityReal).value * item.val().value).toFixed(2);
-                           console.log({totalend});
                        }
                     });
                     if(item.val().value){
@@ -116,7 +116,19 @@ export default class databasecreatesale{
       // document.getElementById(quantity).value;
     }
 
-    typeSelect(option, id){
+    valueGeneral(id){
+        let total = 0;
+     let totalInputs = id + 1;
+        for (var i = 0; i < totalInputs; i++){
+            let totalGeneral = 'pricetotal' + i;
+            console.log(document.getElementById(totalGeneral).value);
+           total = total +  Number(document.getElementById(totalGeneral).value);
+           console.log('valortotal', total);
+        }
+        document.getElementById('total-general').value = parseFloat(total).toFixed(2);
+    }
+
+    typeSelect(option, id, id2){
         
         let labelvalue = 'p' + id;
        let  selecttype = document.getElementById(labelvalue);
@@ -144,6 +156,6 @@ export default class databasecreatesale{
             })
         
           })
-        this.valueUnit(document.getElementById(id).value,document.getElementById(labelvalue).value, id);
+        this.valueUnit(document.getElementById(id).value,document.getElementById(labelvalue).value, id, id2);
     }
 }

@@ -3,30 +3,62 @@ import databasecreatesale from "./database/databaseCreate-sale.js";
 const dados = new databaseuser();
 dados.objectuser();
 
-let i = 0;
+let id = 0;
 var myArray = [];
+let order;
+let publics;
 const salesBackEnd = new databasecreatesale();
-salesBackEnd.optionProductsNew(i)
+salesBackEnd.optionProductsNew(id)
+
+
+
+document.getElementById('container').style.display = 'none';
+
+
 document.getElementById("public").addEventListener("click", function() {
+	publics = true;
+	order = false;
 	document.getElementById('boxdate').style.display = "flex";
 	document.getElementById('boxsale').style.display = "none";
 })
 
 document.getElementById("order").addEventListener("click", function() {
+order = true; 
+publics = false;
+
 	document.getElementById('boxdate').style.display = "flex";
 	document.getElementById('boxsale').style.display = "flex";
 })
 
-// document.getElementById('productLabel').addEventListener("click", function() {
-// 	let data = document.getElementById('productItems').value;
-// 	salesBackEnd.typeSelect(data);
-// })
 
+document.getElementById('btn_confirmar').addEventListener('click', function(){
+	console.log({id})
+	salesBackEnd.valueGeneral(id);
+	console.log({order, publics});
+})
 
-// document.getElementById('typeLabel').addEventListener('click', function(){
-// 	salesBackEnd.bestProduction(document.getElementById('productItems').value, document.getElementById('productType').value)
-// })
+document.getElementById('options').addEventListener('click', function(){
+	if(order){
+		document.getElementById('container').style.display = 'flex';
+	}
+	else if(publics){
+		document.getElementById('container').style.display = 'flex';
+	}
+	else{
+		document.getElementById('container').style.display = 'none';
+	}
+})
 
+document.getElementById('payment-tab').addEventListener("click", () => {
+	if(order){
+	document.getElementById('boxdiscount-general').style.display = "flex";
+	document.getElementById('boxpayment').style.display = "flex";
+	}
+	else if (publics){
+	document.getElementById('boxdiscount-general').style.display = "none";
+	document.getElementById('boxpayment').style.display = "flex";
+	}
+})
 // document.getElementById("order2").addEventListener("click", function() {
 // 	document.getElementById('boxdiscount-general').style.display = "flex";
 // 	document.getElementById('boxpayment').style.display = "flex";
@@ -37,8 +69,8 @@ document.getElementById("order").addEventListener("click", function() {
 // 	document.getElementById('boxpayment').style.display = "flex";
 // })
 document.getElementById('buttonAdd').addEventListener("click", function(){
-	i++; 
-	salesBackEnd.optionProductsNew(i);
+	id++; 
+	salesBackEnd.optionProductsNew(id);
 })
 
 document.getElementById('productLabel').addEventListener("click", function() {
@@ -46,7 +78,7 @@ document.getElementById('productLabel').addEventListener("click", function() {
 	for (var i = 0; i < productsSelected.length; i++) {
 
 		productsSelected[i].addEventListener("click", function(data) {
-			salesBackEnd.typeSelect(document.getElementById(data.path[0].id).value, data.path[0].id)
+			salesBackEnd.typeSelect(document.getElementById(data.path[0].id).value, data.path[0].id, id)
 		})
 	}
 
