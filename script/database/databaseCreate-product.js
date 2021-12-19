@@ -1,6 +1,8 @@
 var dados = ""
 var label = document.getElementById('label1');
 var select = document.getElementById("selectNameProduto")
+var boolean = false;
+var boolean2 = false;
 export default class databasecreateproduct{
 
   // CRIAÇÃO DO PRODUTO NO BANCO
@@ -16,33 +18,57 @@ export default class databasecreateproduct{
           
         if (keyname === name) {
           
-          console.log("Esses produto já existe no banco de dados")
+          boolean = true;
           
         }
-        else {
-
-          let newProductKey = database.ref().child('product').push().key;
-          database.ref('product/'+name).set(name);
-          database.ref('product/'+name+'/'+type).set(type);
-          database.ref('product/'+name+'/'+type+'/value').set(value);
-
-          let today = new Date();
-          let authUser = localStorage.getItem("id");
-          let cadastrationDate = today.toLocaleDateString();
-          let cadastrationHour = today.toLocaleTimeString();
-          let newClientKey = database.ref().child('user').push().key;
-          database.ref('historic/'+newClientKey+'/userAction').set(authUser);
-          database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
-          database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
-          database.ref('historic/'+newClientKey+'/action').set("cadastrarProduct");
-
-          window.location.reload(active);
-        }
+        
       })
+
+      console.log(boolean)
+
+      if(boolean == true) {
+
+        alert("Esse produto já existe no banco de dados")
+
+      }
+      else {
+
+        let newProductKey = database.ref().child('product').push().key;
+        database.ref('product/'+name).set(name);
+        database.ref('product/'+name+'/'+type).set(type);
+        database.ref('product/'+name+'/'+type+'/value').set(value);
+
+        let today = new Date();
+        let authUser = localStorage.getItem("id");
+        let cadastrationDate = today.toLocaleDateString();
+        let cadastrationHour = today.toLocaleTimeString();
+        let newClientKey = database.ref().child('user').push().key;
+        database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+        database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+        database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+        database.ref('historic/'+newClientKey+'/action').set("cadastrarProduct");
+
+        const modal = document.getElementById("modal-reg");
+
+        if(modal){
+
+          modal.classList.add('mostrar');
+
+          modal.addEventListener("click", (e) => {
+            if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+            modal.classList.remove('mostrar');
+            }
+            if(e.target.id == 'deny') {
+            modal.classList.remove('mostrar');
+            window.location.reload(active);
+            }
+          })
+        }
+      }
     })
   }
 
-  // CRIAÇÃO DOS DADOS NO SELECT
+  // CRIAÇÃO DO TIPO
   creatoption(optionselected, type, value){
 
     const firebaseref = firebase.database().ref("product");
@@ -53,33 +79,54 @@ export default class databasecreateproduct{
 
       // CRIACAO DO INPUT SABOR
       Object.keys(abe).find((a)=>{
-        console.log(a)
 
         if (a === type) {
           
-          console.log("Esse tipo de produto já existe no banco de dados")
+          boolean2 = true;
           
-        }
-        else {
-
-          // const database = firebase.database();
-          // let active = false;
-          // database.ref('product/'+optionselected+'/'+type).set(type);
-          // database.ref('product/'+optionselected+'/'+type+'/value').set(value);
-          
-          // let today = new Date();
-          // let authUser = localStorage.getItem("id");
-          // let cadastrationDate = today.toLocaleDateString();
-          // let cadastrationHour = today.toLocaleTimeString();
-          // let newClientKey = database.ref().child('user').push().key;
-          // database.ref('historic/'+newClientKey+'/userAction').set(authUser);
-          // database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
-          // database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
-          // database.ref('historic/'+newClientKey+'/action').set("cadastrarProductOption");
-
-          // window.location.reload(active);
         }
       })
+
+      if(boolean2 == true) {
+
+        alert("Esse tipo já existe no banco de dados")
+
+      } else {
+
+        const database = firebase.database();
+        let active = false;
+        database.ref('product/'+optionselected+'/'+type).set(type);
+        database.ref('product/'+optionselected+'/'+type+'/value').set(value);
+        
+        let today = new Date();
+        let authUser = localStorage.getItem("id");
+        let cadastrationDate = today.toLocaleDateString();
+        let cadastrationHour = today.toLocaleTimeString();
+        let newClientKey = database.ref().child('user').push().key;
+        database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+        database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+        database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+        database.ref('historic/'+newClientKey+'/action').set("cadastrarProductOption");
+
+        const modal = document.getElementById("modal-reg");
+
+        if(modal){
+
+          modal.classList.add('mostrar');
+
+          modal.addEventListener("click", (e) => {
+            if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+            modal.classList.remove('mostrar');
+            }
+            if(e.target.id == 'deny') {
+            modal.classList.remove('mostrar');
+            window.location.reload(active);
+            }
+          })
+        }
+
+      }
+
     })
   }
 
