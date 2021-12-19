@@ -4,7 +4,6 @@ let select = document.createElement('select');
 let labelQuantity = document.getElementById('labelQuantity');
 let labelPrice = document.getElementById('labelPrice');
 let labelTotal = document.getElementById('labelTotal');
-let labelProductionRecommended = document.getElementById('labelProductionRecommended');
 export default class databasecreatesale{
 
     // createsale(){
@@ -76,23 +75,35 @@ export default class databasecreatesale{
         let quantity = document.createElement('input');
         let priceUnity = document.createElement('input');
         let total = document.createElement('input');      
-        let productionRecommended = document.createElement('input');
         quantity.setAttribute('id', 'quantity' + idTypeSelect);
         quantity.setAttribute('type', 'text');
         priceUnity.setAttribute('id', 'price' + idTypeSelect);
         priceUnity.setAttribute('type', 'text');
         total.setAttribute('id', 'price');
         total.setAttribute('type', 'text');
-        productionRecommended.setAttribute('id', 'price');
-        productionRecommended.setAttribute('type', 'text');
         labelQuantity.appendChild(quantity);
         labelPrice.appendChild(priceUnity);
         labelTotal.appendChild(total);
-        labelProductionRecommended.appendChild(productionRecommended);
 
         let selectTypes = document.createElement('select');
         selectTypes.setAttribute('id', 'p' + idTypeSelect);
         labelType.appendChild(selectTypes);
+    }
+    
+    valueUnit(product, type, id){
+        let quantity = 'quantity' + id; 
+        let labelvalue = 'p' + id;
+        const firebaseref = firebase.database().ref("production");
+        firebaseref.once('value', function(all){
+          all.forEach((item)=>{
+            
+                if(item.val().product == product && item.val().type == document.getElementById(labelvalue).value){
+                    console.log(item.val());
+                    // console.log(item.val().value);
+                }
+          })
+      })
+      // document.getElementById(quantity).value;
     }
 
     typeSelect(option, id){
@@ -121,28 +132,25 @@ export default class databasecreatesale{
                     var dados = "<option " + "id="+item +" >" + item + "</option>";
                     selecttype.innerHTML += dados;
             })
-            console.log(document.getElementById(id).value);
-            console.log(document.getElementById(labelvalue).value);
-            this.valueUnity(document.getElementById(id).value,document.getElementById(labelvalue).value, id);
         
           })
-      }
+        // this.valueUnit(document.getElementById(id).value,document.getElementById(labelvalue).value, id);
+        // this.bestProduction(document.getElementById(id).value, id);
+    }
 
-      valueUnity(item, type, id){
-        let quantity = 'quantity' + id; 
-         
-        const firebaseref = firebase.database().ref("production");
 
-        // document.getElementById(quantity).value;
-      }
-
-    bestProduction(product, type){
+    bestProduction(product, id){
           let arrayProductions = [];
           let minorDate = "31:31:31";
           let minorHour = "31:31:31";
           let bestProduction;
-        const firebaseref = firebase.database().ref("production");
-        firebaseref.once('value', function(all){
+          let positionType =  'p' + id;
+          let bestProductionLocal = 'bestProduction' + id;
+          console.log(product);
+          const firebaseref = firebase.database().ref("production");
+          firebaseref.once('value', function(all){
+              let type = document.getElementById(positionType).value;
+              console.log(document.getElementById(positionType).value);
             all.forEach((text) => {
                if(text.val().product === product && text.val().type === type){
                    arrayProductions.push(text.val())
@@ -161,7 +169,7 @@ export default class databasecreatesale{
                         bestProduction = item;
                     }
                 }
-                document.getElementById('production-available').value = bestProduction.batch
+                document.getElementById(bestProductionLocal).value = bestProduction.batch;
             })
         })
     }
