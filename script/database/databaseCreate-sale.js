@@ -4,6 +4,7 @@ let select = document.createElement('select');
 let labelQuantity = document.getElementById('labelQuantity');
 let labelPrice = document.getElementById('labelPrice');
 let labelTotal = document.getElementById('labelTotal');
+let totalend = [];
 export default class databasecreatesale{
 
     // createsale(){
@@ -53,7 +54,6 @@ export default class databasecreatesale{
 
     optionProductsNew(idTypeSelect){
         const firebaseref = firebase.database().ref("production");
-
         firebaseref.once('value', function(all){
             let elementsFiltered = [];
             var array = [];
@@ -96,16 +96,15 @@ export default class databasecreatesale{
         let labelvalue = 'p' + id;
         let totalGeneral = 'pricetotal' + id;
         const firebaseref = firebase.database().ref("production");
-     
+        
         firebaseref.once('value', function(all){
           all.forEach((item)=>{
                 if(item.val().product == product && item.val().type == document.getElementById(labelvalue).value){
-                    console.log(item.val());
-                    console.log(item.val().value);
                     document.getElementById(quantityReal).addEventListener("change", function(){
                        if(item.val().value){
-                           
+                           totalend.push(parseFloat(document.getElementById(quantityReal).value * item.val().value).toFixed(2));
                            document.getElementById(totalGeneral).value = parseFloat(document.getElementById(quantityReal).value * item.val().value).toFixed(2);
+                           console.log({totalend});
                        }
                     });
                     if(item.val().value){
