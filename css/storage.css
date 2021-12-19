@@ -1,0 +1,9 @@
+@import url(main.css);
+@import url(home.css);
+@import url(sale_management.css);
+@import url(historic.css);
+
+.title {
+    width: 93.5%;
+    margin-left: 0;
+}
