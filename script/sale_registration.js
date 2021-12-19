@@ -4,24 +4,30 @@ const dados = new databaseuser();
 dados.objectuser();
 
 let id = 0;
+let idPayment = 0;
 var myArray = [];
 let order;
 let publics;
 const salesBackEnd = new databasecreatesale();
 salesBackEnd.optionProductsNew(id)
-
+salesBackEnd.paymentWay(idPayment);
 
 
 document.getElementById('container').style.display = 'none';
 
-
+document.getElementById('buttonAddPayment').addEventListener('click', function(){
+	idPayment++;
+salesBackEnd.paymentWay(idPayment);
+})
 document.getElementById("public").addEventListener("click", function() {
 	publics = true;
 	order = false;
 	document.getElementById('boxdate').style.display = "flex";
 	document.getElementById('boxsale').style.display = "none";
 })
-
+document.getElementById('btn_confirmar_payment').addEventListener('click', function(){
+	salesBackEnd.valueFinal(idPayment);
+})
 document.getElementById("order").addEventListener("click", function() {
 order = true; 
 publics = false;
@@ -32,9 +38,7 @@ publics = false;
 
 
 document.getElementById('btn_confirmar').addEventListener('click', function(){
-	console.log({id})
 	salesBackEnd.valueGeneral(id);
-	console.log({order, publics});
 })
 
 document.getElementById('options').addEventListener('click', function(){

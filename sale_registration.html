@@ -277,13 +277,11 @@
                       <button type="button" id="buttonDel">Deletar</button>
                     </div>
                   </div>
-
                   <div class="register">
                     <div class="btn-group" style="padding-top: 18px; width: 20%;">
                       <button class="btn btn-primary" id="btn_confirmar" type="button">CONFIRMAR</button>
                     </div>
                   </div>
-
                     <div class="total-general-2" id="boxproduct">
                     <label>Total geral
                       <input id="total-general" type="text" placeholder=""/>
@@ -307,30 +305,30 @@
                 </label>
                 <div class="total-general">
                 <label>Total geral
-                  <input id="total-general" type="text" placeholder=""/>
+                  <input id="totalGeneralPayment" type="text" placeholder=""/>
                   <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
             </div>
             <div class="payment-value" id="boxpayment">
               <div class="payment">
-                <label>Forma de Pagamento
-                  <select id="payment_method"></select>
-                  <option value=""></option>
+                <label id="labelPaymentWay">Forma de Pagamento
                   <p id="alerta_formapagamento" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
               <div class="total-value">
-                <label>Valor total
-                  <input id="total-value" type="text" placeholder=""/>
+                <label id="labelTotalGeneral">Valor total
                   <p id="alerta_valortotal" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
             </div>
             <div class="buttons" style="margin-top: -18px;">
               <div class="button-adc">
-                <button type="button" id="buttonAdd">Adicionar</button>
+                <button type="button" id="buttonAddPayment">Adicionar</button>
               </div>
+                <div class="btn-group" style="padding-top: 18px; width: 20%;">
+                  <button class="btn btn-primary" id="btn_confirmar_payment" type="button">CONFIRMAR</button>
+                </div>
             </div>
             <div class="total-paid" id="boxpayment">
               <label>Total pago

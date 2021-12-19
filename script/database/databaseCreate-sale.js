@@ -6,7 +6,8 @@ let labelPrice = document.getElementById('labelPrice');
 let labelTotal = document.getElementById('labelTotal');
 let totalend = [];
 let confirmButton = document.getElementById('btn_confirmar');
-
+let labelPayment = document.getElementById('labelPaymentWay');
+let labelTotalGeneral = document.getElementById('labelTotalGeneral');
 export default class databasecreatesale{
 
     // createsale(){
@@ -31,6 +32,28 @@ export default class databasecreatesale{
     //         window.location.reload(active);
     //       })
     // }
+
+    valueFinal(idPayment){
+        let total = 0;
+        let totalInputs = idPayment + 1;
+        for (let i = 0; i < totalInputs; i++){
+            let totalGeneral = 'total-value' + i;
+            total = total + parseFloat(document.getElementById(totalGeneral).value).toFixed(2);  
+        }
+        document.getElementById('total-paid').value = parseFloat(total).toFixed(2);
+    }
+    paymentWay(id){
+        let select = document.createElement('select');
+        var dados = "<option id='PIX'>PIX</option>" + "<option id='Dinheiro'>Dinheiro</option>" + "<option id='credito'>Cartão de crédito</option>" +  "<option id='debito'>Cartão de Débito</option>"
+        let input = document.createElement('input');
+        input.setAttribute('type', 'text');
+        input.setAttribute('id', 'total-value' + id)
+        select.innerHTML += dados;
+        select.setAttribute('id', 'payment_method' + id);
+        labelPayment.appendChild(select);
+        labelTotalGeneral.appendChild(input);
+    }
+
 
     optionProducts(){
         const firebaseref = firebase.database().ref("production");
@@ -121,11 +144,10 @@ export default class databasecreatesale{
      let totalInputs = id + 1;
         for (var i = 0; i < totalInputs; i++){
             let totalGeneral = 'pricetotal' + i;
-            console.log(document.getElementById(totalGeneral).value);
            total = total +  Number(document.getElementById(totalGeneral).value);
-           console.log('valortotal', total);
         }
         document.getElementById('total-general').value = parseFloat(total).toFixed(2);
+        document.getElementById('totalGeneralPayment').value = parseFloat(total).toFixed(2);
     }
 
     typeSelect(option, id, id2){
