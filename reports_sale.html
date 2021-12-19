@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="css/settings_user.css" />
+  <link rel="stylesheet" type="text/css" href="css/reports_product.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="./images/y.png"   sizes="any"  >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
   <script src="script/database/database-connection.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <div class="loader">
@@ -27,7 +28,7 @@
         <ul class="list-unstyled ps-0">
           <li class="mb-1">
             <div class="sidebar-logo">
-              <h6><a href="home.html" id="home"> SysUnity</a></h6>
+              <h6><a href="home.html" id="home-logo"> SysUnity</a></h6>
             </div>
           </li>
           <li class="mb-1">
@@ -128,98 +129,91 @@
                 </div>
               </button>
             </li>
-          </div>
-        </ul>
-      </section>
+          </div> 
+    </ul>
+</section>
           
-      <!--Barra de alerta-->
-      <section class="content-table">
-        <header class="bar-status">
-          <div class="welcome">    
-            <h1 id="hello">Usuários</h1>            
-          </div>
-          <ul class="bar-login">
-            <li id="usuario">
-              <div class="btn-group">
-                <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <h6 id="user">
-                      Taila Santos
-                    </h6>
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="settings_user.html">Configurações
-                    <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="index.html">Sair
-                    <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
-                    </a> 
-                  </li>
-                </ul>
-              </div>
+<!--Barra de alerta-->
+<section class="content-table">
+  <header class="bar-status">
+    <div class="welcome">    
+      <h1 id="hello">Relatórios</h1>
+    </div>
+    <ul class="bar-login">
+      <li id="usuario">
+        <div class="btn-group">
+          <button class="btn btn-secondary btn-lg dropdown-toggle . shadow-none " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <h6 id="user">
+                Taila Santos
+              </h6>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="settings_user.html">Configurações
+              <img src="images/baseline_settings_black_48dp.png" alt="" width="15%">
+             </a>
+            </li>
+            <li>
+              <a href="index.html">Sair
+              <img src="images/baseline_logout_black_48dp.png" alt="" width="15%">
+              </a> 
             </li>
           </ul>
         </header>
-        <section id="titleScreen">
-            <h2>Configurações</h2>
-        </section>
-        <section class="registration">
-            <section class="form">
-                <label for="">Nome
-                    <input id="nome" name="" required="" type="text" placeholder=""/>
-                    <p id="alerta_nome_usuario" style="display: none;">O Campo precisa ser preenchido</p>
-                </label>
-                <label for="">Sobrenome
-                  <input id="sobrenome" name="" required="" type="tel" placeholder=""/>
-                  <p id="alerta_sobrenome" style="display: none;">O Campo precisa ser preenchido</p>
-                </label>
-                <label for="">Email
-                    <input id="email" name="" required="" type="text" placeholder=""/>
-                    <p id="alerta_email" style="display: none;">O Campo precisa ser preenchido</p>
-                </label>    
-                <label for="">Senha
-                    <input id="senhaAlterada" name="" required="" type="password" placeholder=""/>
-                    <p id="alerta_senha" style="display: none;">O Campo precisa ser preenchido</p>
-                </label>
-                <label for="">Confirmar a senha
-                    <input id="confirmaSenhaAlterada" name="" required="" type="password" placeholder=""/>
-                    <p id="alerta_confrimar_senha" style="display: none;">O Campo precisa ser preenchido</p>
-                    <p class="igual_senha" style="display: none;">As senhas não são iguais</p>
-                </label> 
-                <div class="register">
-                  <div class="btn-group">
-                    <button class="btn btn-primary" id="btn_salvar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">SALVAR</button>
-                  </div>
-                </div>
-                
-                  
-                  <!-- Modal Checked -->
-                  <div class="modal fade" id="checked" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="button-close">
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <form>
-                            <img src="images/GREEN-checked.png" alt="" width="50%"/>
-                            <h1>Alteração realizada com sucesso!</h1>
-                            <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'home.html'">IR PARA TELA INICIAL</button>
-                          </form>
-                        </div>
-                      </div>
+
+        <section class="section-title">
+          <div class="title">
+            <h2>Relatórios de vendas</h2>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#supportModal">
+                <img src="images/help_center_black_24dp.svg" alt="help" class="filter-color_icon">
+              </button>
+              <!-- Modal Support -->
+              <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Suporte de Relatórios de Vendas</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form style="margin-top: 0;">
+                        <h5>Nesta página, você terá 3 (três) opções de gráficos.</h5>
+                        <h6>• Sendo eles de barra, linear e rosca com base nas vendas cadastradas.</h6>
+                        <h6>• Ao lado possui uma sidebar, a qual permite a escolha de qual gráfico deseja que fique à mostra na tela, enquanto os outros serão ocultos.</h6>
+                        <h6>• Caso queira sair desta página, clique no "x" acima.</h6>
+                      </form>
                     </div>
                   </div>
-
-            </section>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="graphics-single">  
+              <canvas id="grafico3"></canvas>
+            </div>
+            <div class="graphics-single"> 
+              <canvas id="grafico"></canvas>
+            </div>
+            <div class="graphics-single"> 
+              <canvas id="grafico2"></canvas> 
+            </div>
         </section>
-      </section>
-    </div>
-  </div> 
-</div>
-<script src="script/preloader.js"></script>
-<script type="module" src="script/settings_user.js"></script>
+        <section class="navbar">
+          <div class="icons">
+            <button type="button" class="btn-graphics" id="button_bar">
+              <img src="./images/leaderboard_white_24dp.svg" alt="" width="50" id="icon_bar">
+            </button>
+            <button type="button" class="btn-graphics" id="button_line">
+              <img src="./images/show_chart_white_24dp.svg" alt="" width="50" id="icon_line">
+            </button>
+            <button type="button" class="btn-graphics" id="button_doughnut">
+              <img src="./images/trip_origin_white_36dp.svg" alt="" width="50" id="icon_doughnut">
+            </button>
+          </div>
+        </section>
+      
+  <script src="script/preloader.js"></script>
+  <script type="module" src="script/reports_sale.js"></script>
 </body>
 </html>

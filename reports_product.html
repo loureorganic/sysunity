@@ -86,7 +86,7 @@
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
                 <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
-                <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produtos</a></li>
+                <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produção</a></li>
               </ul>
             </div>
           </li>
@@ -179,6 +179,7 @@
                       <form style="margin-top: 0;">
                         <h5>Nesta página, você terá 3 (três) opções de gráficos.</h5>
                         <h6>• Sendo eles de barra, linear e rosca com base nos produtos e quantidade cadastrados.</h6>
+                        <h6>• Ao lado possui uma sidebar, a qual permite a escolha de qual gráfico deseja que fique à mostra na tela, enquanto os outros serão ocultos.</h6>
                         <h6>• Caso queira sair desta página, clique no "x" acima.</h6>
                       </form>
                     </div>
@@ -200,14 +201,14 @@
         </section>
         <section class="navbar">
           <div class="icons">
-            <button type="button" class="btn-graphics">
-              <img src="./images/leaderboard_white_24dp.svg" alt="" width="50">
+            <button type="button" class="btn-graphics" id="button_bar">
+              <img src="./images/leaderboard_white_24dp.svg" alt="" width="50" id="icon_bar">
             </button>
-            <button type="button" class="btn-graphics">
-              <img src="./images/show_chart_white_24dp.svg" alt="" width="50">
+            <button type="button" class="btn-graphics" id="button_line">
+              <img src="./images/show_chart_white_24dp.svg" alt="" width="50" id="icon_line">
             </button>
-            <button type="button" class="btn-graphics">
-              <img src="./images/trip_origin_white_36dp.svg" alt="" width="50">
+            <button type="button" class="btn-graphics" id="button_doughnut">
+              <img src="./images/trip_origin_white_36dp.svg" alt="" width="50" id="icon_doughnut">
             </button>
           </div>
         </section>

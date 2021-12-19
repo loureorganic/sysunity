@@ -7,9 +7,9 @@ const grafico1 = document.getElementById('grafico').getContext('2d');
 const myChart = new Chart(grafico1, {
     type: 'bar',
     data: {
-        labels: ['produto1', 'produto2', 'produto3'],
+        labels: ['venda1', 'venda2', 'venda3'],
         datasets: [{
-            label: 'Produtos',
+            label: 'Vendas',
             data: [10, 20, 30],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -37,9 +37,9 @@ const grafico2 = document.getElementById('grafico2').getContext('2d');
 const myChart2 = new Chart(grafico2, {
     type: 'line',
     data: {
-        labels: ['produto1', 'produto2', 'produto3'],
+        labels: ['venda1', 'venda2', 'venda3'],
         datasets: [{
-            label: 'Produtos',
+            label: 'Vendas',
             data: [10, 80, 30],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -77,9 +77,9 @@ const grafico3 = document.getElementById('grafico3').getContext('2d');
 const myChart3 = new Chart(grafico3, {
     type: 'doughnut',
     data: {
-        labels: ['produto1', 'produto2', 'produto3'],
+        labels: ['venda1', 'venda2', 'venda3'],
         datasets: [{
-            label: 'Produtos',
+            label: 'Vendas',
             data: [10, 20, 30],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
