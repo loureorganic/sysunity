@@ -216,6 +216,7 @@ table button{
     justify-content: center;
     align-content: center;
     align-items: center;
+    width: 60%;
   }
   
 .loader2 {
@@ -261,15 +262,59 @@ table button{
 .top-modal h5{
     color:#fff;
     font-weight: 700;
+}
+
+.fechar{
+    background: none;
+    border: none;
   }
   
-.group{
+.fechar::before{
+    content: url(../images/close_white_24dp.svg);
+  }
+  
+.mod form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    padding: 12px;
+  }
+.mod form label {
+    font-weight: 700;
+    font-size: 16px;
+    padding: 6px;
+    margin-bottom: 0;
+    color: black;
+  }
+.mod form input {
+    border-radius: 4px;
+    border-width: 1px;
+    height: 32px;
+    border-style: solid;
+    border-color: #085D8C;
+    width: 100%;
+}
+
+.mod form table{
+    overflow-y: scroll;
+}
+
+.mod form input{
+    width: 80%;
+    text-align: center;
+}
+
+.mod form button{
+    border: 0;
+}
+
+.mod-body-top{
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.group label{
+.mod-body-top label{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -292,67 +337,33 @@ table button{
     margin-top: 18px;
 }
 
-.mod .payment input{
-    width: 80%;
-}
-
-.mod .payday input{
-    width: 80%;
-}
-
-.mod .amount-paid input{
-    width: 70%;
-}
-
-.mod .date-sale input{
-    width: 80%;
-}
-
-.mod .seller input{
-    width: 80%;
-}
-
-.mod .delivery input{
-    width: 80%;
-}
-
-.mod .total input{
-    width: 60%;
-}
-
-.fechar{
-    background: none;
-    border: none;
-  }
-  
-.fechar::before{
-    content: url(../images/close_white_24dp.svg);
-  }
-  
-.mod form{
+.mod-body-bottom{
     display: flex;
-    flex-direction: column;
-    margin-bottom: 18px;
-    padding: 12px;
-  }
-.mod form label {
-    font-weight: 600;
-    font-size: 16px;
-    padding: 6px;
-    margin-bottom: 0;
-    color: black;
-  }
-.mod form input {
-    border-radius: 4px;
-    border-width: 1px;
-    height: 32px;
-    border-style: solid;
-    border-color: #085D8C;
+    justify-content: space-between;
     width: 100%;
 }
 
-.mod form table{
-    overflow-y: scroll;
+.mod-body-bottom{
+    display: flex;
+    align-items: center;
+}
+
+.mod-body-bottom label input{
+    width: 50%; 
+}
+
+.mod-body-bottom .confirm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.mod .group-delivered label{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: -6px;
 }
   
 .button{

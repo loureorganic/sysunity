@@ -188,30 +188,31 @@
                     <p id="alerta_confrimar_senha" style="display: none;">O Campo precisa ser preenchido</p>
                     <p class="igual_senha" style="display: none;">As senhas não são iguais</p>
                 </label> 
-            </section>
-            <section class="column-img-btn">
-                <section class="register">
-                    <div class="btn-group">
-                      <button class="btn btn-primary" id="btn_salvar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">SALVAR</button>
-                    </div>
-                </section>
-
-                <!-- MODAL DE CHECKED -->
-                  <div id="modal-reg" class="loader2">
-
-                    <div class="mod">
-                      <div class="button-close">
-                        <button class="fechar"></button>
-                      </div>
-                      <div class="mod-body">
-                        <form>
-                          <img src="images/GREEN-checked.png" alt="" width="50%"/>
-                          <h1>Alteração realizada com sucesso!</h1>
-                          <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'home.html'">IR PARA TELA INICIAL</button>
-                        </form>
+                <div class="register">
+                  <div class="btn-group">
+                    <button class="btn btn-primary" id="btn_salvar" type="button"  data-bs-toggle="modal" data-bs-target="#checked">SALVAR</button>
+                  </div>
+                </div>
+                
+                  
+                  <!-- Modal Checked -->
+                  <div class="modal fade" id="checked" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="button-close">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <img src="images/GREEN-checked.png" alt="" width="50%"/>
+                            <h1>Alteração realizada com sucesso!</h1>
+                            <button type="button" class="btn-paraGerenciamento" onclick="window.location.href = 'home.html'">IR PARA TELA INICIAL</button>
+                          </form>
+                        </div>
                       </div>
                     </div>
                   </div>
+
             </section>
         </section>
       </section>
