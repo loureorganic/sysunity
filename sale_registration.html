@@ -299,7 +299,7 @@
             </div>
             <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
 
-            <div class="form">
+            <div class="form" style="width: 70%;">
               <div class="discount-general" id="boxdiscount-general">
                 <label>Desconto
                   <input id="discount" type="text" placeholder=""/>
@@ -315,8 +315,11 @@
             <div class="payment-value" id="boxpayment">
               <div class="payment">
                 <label>Forma de Pagamento
-                  <select id="payment_method"></select>
-                  <option value=""></option>
+                  <select id="payment_method">
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="credito">Crédito</option>
+                    <option value="debito">Débito</option>
+                  </select>
                   <p id="alerta_formapagamento" style="display: none;">O Campo precisa ser preenchido</p>
                 </label>
               </div>
@@ -327,9 +330,12 @@
                 </label>
               </div>
             </div>
-            <div class="buttons" style="margin-top: -18px;">
+            <div class="buttons">
               <div class="button-adc">
                 <button type="button" id="buttonAdd">Adicionar</button>
+              </div>
+              <div class="button-del" style="margin-right: 80px;">
+                <button type="button" id="buttonDel">Deletar</button>
               </div>
             </div>
             <div class="total-paid" id="boxpayment">
