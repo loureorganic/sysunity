@@ -345,7 +345,7 @@ export default class databasemanagementproduct {
         
         if (keyname === dados) {
           
-          document.getElementById("nome").value = keyname;
+          document.getElementById("nome1").value = keyname;
           
         }
         

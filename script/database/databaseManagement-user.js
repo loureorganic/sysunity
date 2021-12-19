@@ -86,7 +86,7 @@ export default class databasemanagementuser {
 
         if(element.child("username").val() == dados) {
 
-          document.getElementById("nome").value = element.val().firstname;
+          document.getElementById("nome1").value = element.val().firstname;
           document.getElementById("sobrenome").value = element.val().lastname;
           document.getElementById("nomedeusuario").value = element.val().username;
           document.getElementById("email").value = element.val().email;
@@ -200,7 +200,6 @@ export default class databasemanagementuser {
 
           else if(data.path[0].id === 'btnSee'){
             self.iniciaModal("modal-see", parent.getElementsByTagName('td')[1].innerHTML);
-            console.log(parent.getElementsByTagName('td')[1].innerHTML)
           }
 
           else if(data.path[0].id === 'btnEdit'){
