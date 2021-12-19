@@ -79,7 +79,7 @@ export default class databasecreatesale{
         quantity.setAttribute('type', 'text');
         priceUnity.setAttribute('id', 'price' + idTypeSelect);
         priceUnity.setAttribute('type', 'text');
-        total.setAttribute('id', 'price');
+        total.setAttribute('id', 'pricetotal' + idTypeSelect);
         total.setAttribute('type', 'text');
         labelQuantity.appendChild(quantity);
         labelPrice.appendChild(priceUnity);
@@ -91,15 +91,26 @@ export default class databasecreatesale{
     }
     
     valueUnit(product, type, id){
-        let quantity = 'quantity' + id; 
+        let quantity = 'price' + id; 
+        let quantityReal = 'quantity' + id;
         let labelvalue = 'p' + id;
+        let totalGeneral = 'pricetotal' + id;
         const firebaseref = firebase.database().ref("production");
+     
         firebaseref.once('value', function(all){
           all.forEach((item)=>{
-            
                 if(item.val().product == product && item.val().type == document.getElementById(labelvalue).value){
                     console.log(item.val());
-                    // console.log(item.val().value);
+                    console.log(item.val().value);
+                    document.getElementById(quantityReal).addEventListener("change", function(){
+                       if(item.val().value){
+                           
+                           document.getElementById(totalGeneral).value = parseFloat(document.getElementById(quantityReal).value * item.val().value).toFixed(2);
+                       }
+                    });
+                    if(item.val().value){
+                        document.getElementById(quantity).value = item.val().value;
+                    }
                 }
           })
       })
@@ -134,43 +145,6 @@ export default class databasecreatesale{
             })
         
           })
-        // this.valueUnit(document.getElementById(id).value,document.getElementById(labelvalue).value, id);
-        // this.bestProduction(document.getElementById(id).value, id);
-    }
-
-
-    bestProduction(product, id){
-          let arrayProductions = [];
-          let minorDate = "31:31:31";
-          let minorHour = "31:31:31";
-          let bestProduction;
-          let positionType =  'p' + id;
-          let bestProductionLocal = 'bestProduction' + id;
-          console.log(product);
-          const firebaseref = firebase.database().ref("production");
-          firebaseref.once('value', function(all){
-              let type = document.getElementById(positionType).value;
-              console.log(document.getElementById(positionType).value);
-            all.forEach((text) => {
-               if(text.val().product === product && text.val().type === type){
-                   arrayProductions.push(text.val())
-               }
-            })
-            arrayProductions.map((item)=>{
-                if(item.cadastrationDate < minorDate){
-                    minorDate = item.cadastrationDate;
-                    minorHour = item.cadastrationHour;
-                    bestProduction = item;
-                
-                }
-                else if(item.cadastrationDate === minorDate){
-                    if(item.cadastrationHour < minorHour){
-                        minorHour = item.cadastrationHour;
-                        bestProduction = item;
-                    }
-                }
-                document.getElementById(bestProductionLocal).value = bestProduction.batch;
-            })
-        })
+        this.valueUnit(document.getElementById(id).value,document.getElementById(labelvalue).value, id);
     }
 }
