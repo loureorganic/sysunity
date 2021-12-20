@@ -28,23 +28,7 @@
 .section-table label{
     margin-bottom: 20px;
 }
-h4{
-    font-size: 19px;
-    color: white;
-    width: auto;
-    margin-bottom: 0;  
-    font-weight: bold;
-  }
-  
-#div-title{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 35px;
-    align-items: center;
-    justify-content: center;
-    background-color: #085D8C;
-}
+
 #nome-table{
     width: 10%;
     padding-left: 25px;
@@ -52,23 +36,50 @@ h4{
 }
 #tipo-table{
     width: 10%;
-    padding-left: 36px;
+    padding-left: 30px;
     text-align: start;
 }
 #lote-table{
     width: 32%;
-    padding-left: 76px;
+    padding-left: 100px;
     text-align: start;
 }  
 #opcoes{
     text-align: center;
-    padding-right: 40px;
+    padding-left: 60px;
     width: 55%;
 }  
 #div-table{
     overflow: auto;
     height: 350px;
     width: 100%;
+  }
+
+  .table  th{
+    cursor: pointer;
+  }
+  
+  .table .th-sort-asc::after{
+    content: "\25b4";
+  }
+  
+  .table .th-sort-desc::after{
+    content: "\25be";
+  }
+  
+  .table .th-sort-asc::after,
+  .table .th-sort-desc::after{
+    margin: 5px;
+  }
+  
+  .table .th-sort-asc::after,
+  .table .th-sort-desc::after{
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  #opcoes::after{
+    content: none;
+    
   }
 
 tbody tr{

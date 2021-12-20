@@ -22,34 +22,13 @@
   margin-bottom: 20px;
 }
 
-h4{
-  font-size: 19px;
-  color: white;
-  width: auto;
-  margin-bottom: 0;  
-  font-weight: bold;
-}
-
-#div-title{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 35px;
-  align-items: center;
-  justify-content: center;
-  background-color: #085D8C;
-}
-#nome{
-  width: 25%;
-  padding-left: 30px;
-  text-align: start;
-
-}
-
 #opcoes{
   width: 75%;
-  padding-right: 70px;
   text-align: center;
+}
+
+#saborProduto{
+  padding-top: 25px;
 }
 
 #div-table{
@@ -58,8 +37,31 @@ h4{
   width: 100%;
 }
 
-#saborProduto{
-  padding-top: 25px;
+.table  th{
+  cursor: pointer;
+}
+
+.table .th-sort-asc::after{
+  content: "\25b4";
+}
+
+.table .th-sort-desc::after{
+  content: "\25be";
+}
+
+.table .th-sort-asc::after,
+.table .th-sort-desc::after{
+  margin: 5px;
+}
+
+.table .th-sort-asc::after,
+.table .th-sort-desc::after{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#opcoes::after{
+  content: none;
+  
 }
 
 tbody tr {

@@ -35,6 +35,40 @@
 #dateVenda, #sellerVenda, #totalVenda{
     padding-top: 25px;
 }
+
+#div-table{
+    overflow: auto;
+    height: 350px;
+    width: 100%;
+}
+
+.table  th{
+    cursor: pointer;
+}
+
+.table .th-sort-asc::after{
+    content: "\25b4";
+}
+
+.table .th-sort-desc::after{
+    content: "\25be";
+}
+
+.table .th-sort-asc::after,
+.table .th-sort-desc::after{
+    margin: 5px;
+}
+
+.table .th-sort-asc::after,
+.table .th-sort-desc::after{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#opcoes::after{
+    content: none;
+    
+}
+
 tbody tr{
     background-color: #f3f3f3;
 }
