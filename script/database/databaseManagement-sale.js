@@ -1,5 +1,8 @@
-var dados = ""
+var dados = "";
 var var_lista = document.getElementById("tablebody");
+
+var td = document.createElement("td");
+var td2 = document.createElement("td");
 
 var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
@@ -38,13 +41,13 @@ export default class databasemanagementsale{
           var parent = this.parentNode;
           var div = document.createElement('div');
           if(data.path[0].id === 'btnDelete'){
-            self.iniciaModal("modal-delete", parent.getAttribute('id'));
+            self.iniciaModal("modal-delete", parent.getElementsByTagName('td')[2].innerHTML);
           }
           else if(data.path[0].id === 'btnSee'){
-            self.iniciaModal("modal-see", parent.getElementsByTagName('td')[1].innerHTML);
+            self.iniciaModal("modal-see", parent.getElementsByTagName('td')[2].innerHTML);
           }
           else if(data.path[0].id === 'btnEdit'){
-            self.iniciaModal("modal-edit", parent.getElementsByTagName('td')[1].innerHTML);
+            self.iniciaModal("modal-edit", parent.getElementsByTagName('td')[2].innerHTML);
           }
         })
       }
@@ -88,15 +91,48 @@ export default class databasemanagementsale{
 
       resultado.forEach(element => {
 
-        if(element.child("seller").val() == dados) {
+        if(element.child("totalGeneral").val() == dados) {
 
-          console.log(element.val().paymentWays)
+          // let abe = element.val().paymentWays.val()[dados];
+
+          let vec = element.val().paymentWays;
+
+          // console.log(vec)
+
+          Object.keys(vec).forEach(function(item) {
+
+            // console.log(vec)
+            
+            let vc = vec[item];
+
+            // console.log(vc)
+
+            var val1 = vc[Object.keys(vc)[0]];
+
+            let dados = "<input type='text' value=" + val1 + " disabled/>";
+            td.innerHTML += dados;
+            document.getElementById("formapay1").appendChild(td);
+
+            // for(let key in vc) {
+              
+              // let ct = vc[key]
+
+              // console.log(ct)
+
+              // if(ct == "Dinheiro") {
+
+              //   document.getElementById("formapagamento1").value = "Dinheiro";
+
+              // }
+            // }
+
+          })
 
           document.getElementById("vendedor1").value = element.val().seller;
           document.getElementById("total1").value = element.val().totalGeneral;
           document.getElementById("valorpago1").value = element.val().totalPaid;
-          // document.getElementById("valor").value = element.val().value;
-          // document.getElementById("valor").value = element.val().value;
+          document.getElementById("datavenda1").value = element.val().date;
+          document.getElementById("datapagamento1").value = element.val().date;
           // document.getElementById("valor").value = element.val().value;
           // document.getElementById("valor").value = element.val().value;
 
@@ -115,17 +151,42 @@ export default class databasemanagementsale{
       
       resultado.forEach(element => {
 
-        if(element.child("value").val() == a) {
+        if(element.child("totalGeneral").val() == a) {
 
-          document.getElementById("nome").placeholder = element.val().name;
-          document.getElementById("tipo").placeholder = element.val().type;
-          document.getElementById("valor").placeholder = element.val().value; 
+        // let abe = element.val().paymentWays.val()[dados];
+
+        let vec = element.val().paymentWays;
+
+        // console.log(vec)
+
+        Object.keys(vec).forEach(function(item) {
+
+          // console.log(vec)
+          
+          let vc = vec[item];
+
+          // console.log(vc)
+
+          var val2 = vc[Object.keys(vc)[0]];
+
+          let dados1 = "<input type='text' placeholder=" + val2 + " />";
+          td2.innerHTML += dados1;
+          document.getElementById("formapay2").appendChild(td2);
+
+
+        })
+
+          document.getElementById("vendedor2").placeholder = element.val().seller;
+          document.getElementById("total2").placeholder = element.val().totalGeneral;
+          document.getElementById("valorpago2").placeholder = element.val().totalPaid;
+          document.getElementById("datavenda2").placeholder = element.val().date;
+          document.getElementById("datapagamento2").placeholder = element.val().date;
           
           var btn = document.getElementById("btn_salvar");
           btn.addEventListener("click", function(e){
-            var inputnome = document.getElementById("nome").value;
-            var inputtipo = document.getElementById("tipo").value;
-            var inputvalor = document.getElementById("valor").value;
+            var inputnome = document.getElementById("vendedor2").value;
+            var inputtipo = document.getElementById("total2").placeholder.value;
+            var inputvalor =  document.getElementById("valorpago2").placeholder.value;
 
             if(inputnome === ""){
               inputnome = element.val().name;
@@ -148,9 +209,9 @@ export default class databasemanagementsale{
   funcUpd(chave, nome, tipo, valor){
     const database = firebase.database();
     let active = false;
-    database.ref('sale/'+chave+'/name').set(nome);
-    database.ref('sale/'+chave+'/type').set(tipo);
-    database.ref('sale/'+chave+'/value').set(valor);
+    // database.ref('sale/'+chave+'/name').set(nome);
+    // database.ref('sale/'+chave+'/type').set(tipo);
+    // database.ref('sale/'+chave+'/value').set(valor);
     
     window.location.reload(active);
   };
@@ -167,12 +228,14 @@ export default class databasemanagementsale{
 
     resultado.forEach(element => {
 
-      if(element.child("value").val() == dados) {
+      if(element.child("totalGeneral").val() == dados) {
 
         var btn = document.getElementById("confirm");
 
         btn.addEventListener("click", function(e){
+
           valu = element.key;
+
           database.ref('sale/'+valu).remove();
 
           window.location.reload(active);
