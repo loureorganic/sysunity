@@ -235,19 +235,54 @@ h2{
     animation: modal .3s;
 }
 
-#modal-alert-1,
+#modal-alert-1 .mod{
+    display: flex;
+}
+
+#modal-alert-1 .mod .top-modal{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #A82012;
+}
+
+#modal-alert-1 .mod form h3{
+    text-align: center;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#modal-alert-1 .close{
+    border: none;
+    background-color: transparent;
+}
+
+#modal-alert-1 .close::before{
+    content: url(../images/close_white_24dp.svg);
+}
+
 #modal-alert-2 .mod{
     display: flex;
 }
 
-#modal-alert-1,
 #modal-alert-2 .mod .top-modal{
     display: flex;
     justify-content: flex-end;
+    background-color: #A82012;
 }
 
-#modal-alert-1,
-#modal-alert-2 .mod form{
+#modal-alert-2 .mod form h3{
     text-align: center;
-    padding: 18px;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#modal-alert-2 .close{
+    border: none;
+    background-color: transparent;
+}
+
+#modal-alert-2 .close::before{
+    content: url(../images/close_white_24dp.svg);
 }
