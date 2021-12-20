@@ -24,11 +24,23 @@ export default class databasecreateproduct{
         
       })
 
-      console.log(boolean)
-
       if(boolean == true) {
 
-        alert("Esse produto já existe no banco de dados")
+        const modal = document.getElementById("modal-alert-1");
+
+        if(modal){
+
+          modal.classList.add('mostrar');
+
+          modal.addEventListener("click", (e) => {
+            if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+            modal.classList.remove('mostrar');
+            }
+            if(e.target.id == 'confirm') {
+            modal.classList.remove('mostrar');
+            }
+          })
+        }
 
       }
       else {
@@ -96,7 +108,21 @@ export default class databasecreateproduct{
 
       if(boolean2 == true) {
 
-        alert("Esse tipo já existe no banco de dados")
+        const modal = document.getElementById("modal-alert-2");
+
+        if(modal){
+
+          modal.classList.add('mostrar');
+
+          modal.addEventListener("click", (e) => {
+            if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+            modal.classList.remove('mostrar');
+            }
+            if(e.target.id == 'confirm') {
+            modal.classList.remove('mostrar');
+            }
+          })
+        }
 
       } else {
 
