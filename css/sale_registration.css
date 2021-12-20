@@ -100,7 +100,7 @@ h2{
 }
 
 .seller-date label{
-    width: 45%;
+    width: 75%;
 }
 
 .total-general-3{
@@ -229,6 +229,8 @@ h2{
 
 .discount-general label{
     justify-content: flex-end;
+    width: 40%;
+    margin-bottom: 6px;
 }
 
 .payment-value{
@@ -265,7 +267,7 @@ h2{
 }
 
 .total-value{
-    margin-left: 80px;
+    margin-left: 36px;
 }
 
 .total-value button{
@@ -280,10 +282,27 @@ h2{
     margin-top: 2px;
 }
 
+.btn-confirmar{
+    background-color: #2ECC71; 
+    color: #fff;
+    border-radius: 20px; 
+    border: none;
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+.paid-pending{
+    display: flex;
+    margin-top: 6px;
+}
+
 .total-paid{
     display: flex;
-    width: 50%;
-    margin-top: -6px;
+}
+
+.total-pending{
+    display: flex;
+    margin-left: 36px;
 }
 
 .register{
@@ -297,13 +316,6 @@ h2{
 }
 
 #btn_cadastrar{
-    height: 40px;
-    font-weight:600;
-    font-size: 16px;
-    background: #085D8C;
-}
-
-#btn_confirmar{
     height: 40px;
     font-weight:600;
     font-size: 16px;
