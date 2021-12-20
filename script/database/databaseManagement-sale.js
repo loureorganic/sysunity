@@ -87,6 +87,11 @@ export default class databasemanagementsale{
   // MODAL DE VISUALIZAR
   funcmodalsee(dados){
     const firebaseref = firebase.database().ref("sale");
+
+    if (td.hasChildNodes){
+      td.innerHTML = '';
+    }
+
     firebaseref.once('value',(resultado)=>{
 
       resultado.forEach(element => {
@@ -147,6 +152,11 @@ export default class databasemanagementsale{
     var self = this;
 
     const firebaseref = firebase.database().ref("sale");
+
+    if (td2.hasChildNodes){
+      td2.innerHTML = '';
+    }
+
     firebaseref.once('value',(resultado)=>{
       
       resultado.forEach(element => {
@@ -184,21 +194,29 @@ export default class databasemanagementsale{
           
           var btn = document.getElementById("btn_salvar");
           btn.addEventListener("click", function(e){
-            var inputnome = document.getElementById("vendedor2").value;
-            var inputtipo = document.getElementById("total2").placeholder.value;
-            var inputvalor =  document.getElementById("valorpago2").placeholder.value;
+            var inputvendedor = document.getElementById("vendedor2").value;
+            var inputtotal = document.getElementById("total2").value;
+            var inputvalorPago =  document.getElementById("valorpago2").value;
+            var inputdataVenda =  document.getElementById("datavenda2").value;
+            var inputdataPagamento =  document.getElementById("datapagamento2").value;
 
-            if(inputnome === ""){
-              inputnome = element.val().name;
+            if(inputvendedor === ""){
+              inputvendedor = element.val().seller;
             } 
-            if (inputtipo === ""){
-              inputtipo = element.val().type;
+            if (inputtotal === ""){
+              inputtotal = element.val().type;
             } 
-            if (inputvalor === ""){
-              inputvalor = element.val().value;
+            if (inputvalorPago === ""){
+              inputvalorPago = element.val().totalPaid;
+            }
+            if (inputdataVenda === ""){
+              inputdataVenda = element.val().date;
+            }
+            if (inputdataPagamento === ""){
+              inputdataPagamento = element.val().date;
             }
 
-            self.funcUpd(element.key, inputnome, inputtipo, inputvalor);
+            self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataPagamento);
           })   
         } 
       });
@@ -206,11 +224,13 @@ export default class databasemanagementsale{
   }
 
   // FUNCAO P/ ATUALIZAR DADOS
-  funcUpd(chave, nome, tipo, valor){
+  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataPagamento){
     const database = firebase.database();
     let active = false;
-    // database.ref('sale/'+chave+'/name').set(nome);
-    // database.ref('sale/'+chave+'/type').set(tipo);
+    database.ref('sale/'+chave+'/seller').set(vendedor);
+    database.ref('sale/'+chave+'/totalGeneral').set(total);
+    database.ref('sale/'+chave+'/totalPaid').set(valorPago);
+    database.ref('sale/'+chave+'/date').set(dataVenda);
     // database.ref('sale/'+chave+'/value').set(valor);
     
     window.location.reload(active);
