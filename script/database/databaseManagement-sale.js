@@ -22,7 +22,7 @@ export default class databasemanagementsale{
           var tr = document.createElement('tr');
           tr.classList.add('dot');
           dados =
-          "<td id='dateVenda'>" + venda.date + "</td>" + "<td id='sellerVenda'>" + venda.seller + "</td>" + "<td id='totalVenda'>" + venda.total + "</td>" +
+          "<td id='dateVenda'>" + venda.date + "</td>" + "<td id='sellerVenda'>" + venda.seller + "</td>" + "<td id='totalVenda'>" + venda.totalGeneral + "</td>" +
           "<td>" + btnsee + btnedit + btndelete + "</td>";
 
           tr.innerHTML = dados;
@@ -88,11 +88,17 @@ export default class databasemanagementsale{
 
       resultado.forEach(element => {
 
-        if(element.child("value").val() == dados) {
+        if(element.child("seller").val() == dados) {
 
-          document.getElementById("nome").value = element.val().name;
-          document.getElementById("tipo").value = element.val().type;
-          document.getElementById("valor").value = element.val().value;
+          console.log(element.val().paymentWays)
+
+          document.getElementById("vendedor1").value = element.val().seller;
+          document.getElementById("total1").value = element.val().totalGeneral;
+          document.getElementById("valorpago1").value = element.val().totalPaid;
+          // document.getElementById("valor").value = element.val().value;
+          // document.getElementById("valor").value = element.val().value;
+          // document.getElementById("valor").value = element.val().value;
+          // document.getElementById("valor").value = element.val().value;
 
         }   
       });
