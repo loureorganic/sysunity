@@ -52,8 +52,6 @@ publics = false;
 
 document.getElementById('btn_confirmar').addEventListener('click', function(){
 	salesBackEnd.valueGeneral(id);
-	
-	document.getElementById('payment-tab').disabled = false;
 })
 
 document.getElementById('options').addEventListener('click', function(){
