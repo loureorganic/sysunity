@@ -234,3 +234,17 @@ h2{
 .mostrar .mod {
     animation: modal .3s;
 }
+
+#modal-alert-1 .mod{
+    display: flex;
+}
+
+#modal-alert-1 .mod .top-modal{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#modal-alert-1 .mod form{
+    text-align: center;
+    padding: 18px;
+}
