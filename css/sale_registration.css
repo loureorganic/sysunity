@@ -57,7 +57,7 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 18px;
     padding: 6px;
 }
@@ -420,4 +420,8 @@ h2{
 }
 #checked .modal-footer {
     border: 0;
+}
+
+#productsTitle{
+    flex-direction: column;
 }
