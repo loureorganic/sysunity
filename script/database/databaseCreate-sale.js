@@ -55,13 +55,35 @@ export default class databasecreatesale{
      }
       }
     valueFinal(idPayment){
-        let total = 0;
-        let totalInputs = idPayment + 1;
-        for (let i = 0; i < totalInputs; i++){
-            let totalGeneral = 'total-value' + i;
-            total = total + Number(document.getElementById(totalGeneral).value);  
+
+        if(document.getElementById('total-value0').value == '') {
+
+            document.getElementById('total-value0').style.borderColor = "red";
+            document.getElementById('alerta_valortotal').style.display = 'flex';
+
+        } else {
+
+            document.getElementById('total-value0').style.borderColor = "blue";
+            document.getElementById('alerta_valortotal').style.display = 'none';
+
         }
-        document.getElementById('total-paid').value = total;
+        if (document.getElementById('payment_method0').value == '' || document.getElementById('payment_method0').value == null){
+            alert("222")
+        }
+        if(document.getElementById('total-value0').value !== '' && document.getElementById('payment_method0').value == '') {
+
+            alert("333")
+
+            let total = 0;
+            let totalInputs = idPayment + 1;
+            for (let i = 0; i < totalInputs; i++){
+                let totalGeneral = 'total-value' + i;
+                total = total + Number(document.getElementById(totalGeneral).value);  
+            }
+            document.getElementById('total-paid').value = total;
+
+        }
+
     }
     paymentWay(id){
         let select = document.createElement('select');
@@ -161,14 +183,56 @@ export default class databasecreatesale{
     }
 
     valueGeneral(id){
-        let total = 0;
-     let totalInputs = id + 1;
-        for (var i = 0; i < totalInputs; i++){
-            let totalGeneral = 'pricetotal' + i;
-           total = total +  Number(document.getElementById(totalGeneral).value);
+
+        if(document.getElementById('total-general-order').value == '') {
+
+            document.getElementById('total-general-order').style.borderColor = "red";
+            document.getElementById('alerta_totalgeral').style.display = 'flex';
+
+        } else {
+
+            document.getElementById('total-general-order').style.borderColor = "blue";
+            document.getElementById('alerta_totalgeral').style.display = 'none';
+
         }
-        document.getElementById('total-general').value = parseFloat(total).toFixed(2);
-        document.getElementById('totalGeneralPayment').value = parseFloat(total).toFixed(2);
+        if(document.getElementById('date').value == '') {
+
+            document.getElementById('date').style.borderColor = "red";
+            document.getElementById('alerta_data').style.display = 'flex';
+
+        } else {
+
+            document.getElementById('date').style.borderColor = "blue";
+            document.getElementById('alerta_data').style.display = 'none';
+
+        }
+        if(document.getElementById('quantity0').value == '') {
+
+            document.getElementById('quantity0').style.borderColor = "red";
+            document.getElementById('quantity-0').style.display = 'flex';
+
+        } else {
+
+            document.getElementById('quantity0').style.borderColor = "blue";
+            document.getElementById('quantity-0').style.display = 'none';
+
+        }
+        if(document.getElementById('total-general-order').value !== '' && document.getElementById('date').value !== '') {
+
+            let total = 0;
+            let totalInputs = id + 1;
+            for (var i = 0; i < totalInputs; i++){
+                let totalGeneral = 'pricetotal' + i;
+            total = total +  Number(document.getElementById(totalGeneral).value);
+            }
+            document.getElementById('total-general').value = parseFloat(total).toFixed(2);
+            document.getElementById('totalGeneralPayment').value = parseFloat(total).toFixed(2);
+            document.getElementById('payment-tab').disabled = false;
+
+            document.getElementById('total-general-order').style.borderColor = "blue";
+            document.getElementById('alerta_totalgeral').style.display = 'none';
+
+        }
     }
 
     typeSelect(option, id, id2){
