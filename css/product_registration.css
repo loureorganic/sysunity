@@ -235,16 +235,19 @@ h2{
     animation: modal .3s;
 }
 
-#modal-alert-1 .mod{
+#modal-alert-1,
+#modal-alert-2 .mod{
     display: flex;
 }
 
-#modal-alert-1 .mod .top-modal{
+#modal-alert-1,
+#modal-alert-2 .mod .top-modal{
     display: flex;
     justify-content: flex-end;
 }
 
-#modal-alert-1 .mod form{
+#modal-alert-1,
+#modal-alert-2 .mod form{
     text-align: center;
     padding: 18px;
 }
