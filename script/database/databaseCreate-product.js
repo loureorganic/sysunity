@@ -33,10 +33,7 @@ export default class databasecreateproduct{
           modal.classList.add('mostrar');
 
           modal.addEventListener("click", (e) => {
-            if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
-            modal.classList.remove('mostrar');
-            }
-            if(e.target.id == 'confirm') {
+            if(e.target.id == "modal-reg" || e.target.className == 'close'){
             modal.classList.remove('mostrar');
             }
           })
@@ -115,10 +112,7 @@ export default class databasecreateproduct{
           modal.classList.add('mostrar');
 
           modal.addEventListener("click", (e) => {
-            if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
-            modal.classList.remove('mostrar');
-            }
-            if(e.target.id == 'confirm') {
+            if(e.target.id == "modal-reg" || e.target.className == 'close'){
             modal.classList.remove('mostrar');
             }
           })
