@@ -10,37 +10,58 @@ let labelPayment = document.getElementById('labelPaymentWay');
 let labelTotalGeneral = document.getElementById('labelTotalGeneral');
 export default class databasecreatesale{
 
-    // createsale(){
-    //     document.getElementById("btn_cadastrar").addEventListener("click", function() {       
-    //         const database = firebase.database();
-    //         let active = false;
-    //         let newProductKey = database.ref().child('sale').push().key;
-    //         database.ref('sale/'+newProductKey+'/seller').set(seller);
-    //         database.ref('sale/'+newProductKey+'/date').set(date);
-    //         database.ref('sale/'+newProductKey+'/totalGeneral').set(totalgeneral);
-    //         database.ref('sale/'+newProductKey+'/quantidade').set(quantidade);
-    //         database.ref('sale/'+newProductKey+'/price').set(price);
-    //         database.ref('sale/'+newProductKey+'/total').set(total);
-    //         database.ref('sale/'+newProductKey+'/productSale').set(value1);
-    //         database.ref('sale/'+newProductKey+'/typeSale').set(value2);
+    createSaleOrder(id, idPayment){
+        
+        const database = firebase.database();
+        let newProductKey = database.ref().child('sale').push().key;
+        database.ref('sale/'+newProductKey+'/seller').set(document.getElementById('seller').value);
+        database.ref('sale/'+newProductKey+'/date').set(document.getElementById('date').value);
+        database.ref('sale/'+newProductKey+'/totalGeneral').set(document.getElementById('total-general').value);
+        database.ref('sale/'+newProductKey+'/totalPaid').set(document.getElementById('total-paid').value);
+        for (let i = 0; i < id + 1; i++){
+            let productValue = '' + i;
+            let typeValue = 'type' + i;
+            let quantityValue = 'quantity' + i;
+            let priceValue = 'price' + i;
+            let priceTotalValue = 'pricetotal' + i;
+            database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +productValue).set(document.getElementById(productValue).value);
+            database.ref('sale/'+newProductKey+'/products/'+  'product'+ i + '/'  +typeValue).set(document.getElementById(typeValue).value);
+            database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +quantityValue).set(document.getElementById(quantityValue).value);
+            database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +priceValue).set(document.getElementById(priceValue).value);
+            database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +priceTotalValue).set(document.getElementById(priceTotalValue).value);
+        }
+        for (let i = 0; i < idPayment + 1; i++){
+            let paymentForm = 'payment_method' + i;
+            let valueForm = 'total-value' + i;
+            database.ref('sale/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/' +paymentForm).set(document.getElementById(paymentForm).value);
+            database.ref('sale/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/'  +valueForm).set(document.getElementById(valueForm).value);
+        }
 
-    //         database.ref('sale/'+newProductKey+'/paySale').set(value3);
-    //         database.ref('sale/'+newProductKey+'/totalValue').set(totalvalue);
-    //         database.ref('sale/'+newProductKey+'/totalPaid').set(totalpaid);
-    //         database.ref('sale/'+newProductKey+'/discount').set(discount);
-    
-    //         window.location.reload(active);
-    //       })
-    // }
-
+      }
+      
+      createSalePublic(idPayment){
+      
+      const database = firebase.database();
+      let newProductKey = database.ref().child('saleBalance').push().key;
+      database.ref('saleBalance/'+newProductKey+'/seller').set(document.getElementById('seller').value);
+      database.ref('saleBalance/'+newProductKey+'/date').set(document.getElementById('date').value);
+      database.ref('saleBalance/'+newProductKey+'/totalPaid').set(document.getElementById('total-paid').value);
+      database.ref('saleBalance/'+newProductKey+'/totalGeneral').set(document.getElementById('total-general-order').value);
+      for (let i = 0; i < idPayment + 1; i++){
+        let paymentForm = 'payment_method' + i;
+        let valueForm = 'total-value' + i;
+        database.ref('saleBalance/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/' +paymentForm).set(document.getElementById(paymentForm).value);
+        database.ref('saleBalance/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/'  +valueForm).set(document.getElementById(valueForm).value);
+     }
+      }
     valueFinal(idPayment){
         let total = 0;
         let totalInputs = idPayment + 1;
         for (let i = 0; i < totalInputs; i++){
             let totalGeneral = 'total-value' + i;
-            total = total + parseFloat(document.getElementById(totalGeneral).value).toFixed(2);  
+            total = total + Number(document.getElementById(totalGeneral).value);  
         }
-        document.getElementById('total-paid').value = parseFloat(total).toFixed(2);
+        document.getElementById('total-paid').value = total;
     }
     paymentWay(id){
         let select = document.createElement('select');
@@ -111,14 +132,14 @@ export default class databasecreatesale{
         labelTotal.appendChild(total);
 
         let selectTypes = document.createElement('select');
-        selectTypes.setAttribute('id', 'p' + idTypeSelect);
+        selectTypes.setAttribute('id', 'type' + idTypeSelect);
         labelType.appendChild(selectTypes);
     }
     
     valueUnit(product, type, id, id2){
         let quantity = 'price' + id; 
         let quantityReal = 'quantity' + id;
-        let labelvalue = 'p' + id;
+        let labelvalue = 'type' + id;
         let totalGeneral = 'pricetotal' + id;   
         const firebaseref = firebase.database().ref("production");
      
@@ -152,8 +173,8 @@ export default class databasecreatesale{
 
     typeSelect(option, id, id2){
         
-        let labelvalue = 'p' + id;
-       let  selecttype = document.getElementById(labelvalue);
+        let labelvalue = 'type' + id;
+       let selecttype = document.getElementById(labelvalue);
 
         if(selecttype.hasChildNodes){
             selecttype.innerHTML = '';

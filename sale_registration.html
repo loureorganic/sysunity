@@ -233,14 +233,16 @@
                       <p id="alerta_data" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
                     <div class="total-general-3">
-                      <label>Total geral
-                        <input id="total-general" type="text" placeholder=""/>
+                      <label id="totalGeneralOrder">Total geral
+                        <input id="total-general-order" type="text" placeholder=""/>
                         <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
                       </label>
                     </div>
                   </div>
-                  <div class="title"></div>
-                  <h6>Produtos adicionados</h6>
+                  <div id="productsTitle">
+                    <div class="title"></div>
+                    <h6>Produtos adicionados</h6>
+                  </div>
                   <div class="p-t-q-p-t" id="boxsale">
                     <div class="product-type-quantity">
                       <div class="product">
@@ -269,7 +271,7 @@
                   
                     </div>
                   </div>
-                  <div class="buttons">
+                  <div class="buttons" id="buttonsBar">
                     <div class="button-adc">
                       <button type="button" id="buttonAdd">Adicionar</button>
                     </div>
@@ -283,7 +285,7 @@
                     </div>
                   </div>
                     <div class="total-general-2" id="boxproduct">
-                    <label>Total geral
+                    <label id="totalGeneralOne">Total geral
                       <input id="total-general" type="text" placeholder=""/>
                       <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
                     </label>
@@ -299,10 +301,10 @@
 
             <div class="form">
               <div class="discount-general" id="boxdiscount-general">
-                <label>Desconto
+                <!-- <label>Desconto
                   <input id="discount" type="text" placeholder=""/>
                   <p id="alerta_desconto" style="display: none;">O Campo precisa ser preenchido</p>
-                </label>
+                </label> -->
                 <div class="total-general">
                 <label>Total geral
                   <input id="totalGeneralPayment" type="text" placeholder=""/>

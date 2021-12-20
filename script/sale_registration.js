@@ -8,10 +8,12 @@ let idPayment = 0;
 var myArray = [];
 let order;
 let publics;
+var activedButton = false;
 const salesBackEnd = new databasecreatesale();
 salesBackEnd.optionProductsNew(id)
 salesBackEnd.paymentWay(idPayment);
 
+document.getElementById('payment-tab').disabled = true;
 
 document.getElementById('container').style.display = 'none';
 
@@ -21,24 +23,37 @@ salesBackEnd.paymentWay(idPayment);
 })
 document.getElementById("public").addEventListener("click", function() {
 	publics = true;
+	activedButton = true;
+	document.getElementById('payment-tab').disabled = true;
 	order = false;
 	document.getElementById('boxdate').style.display = "flex";
 	document.getElementById('boxsale').style.display = "none";
+	document.getElementById('productsTitle').style.display = "none";
+	document.getElementById('buttonsBar').style.display = "none";
+	document.getElementById('totalGeneralOrder').style.display = "flex";
+	document.getElementById('totalGeneralOne').style.display = "none";
 })
 document.getElementById('btn_confirmar_payment').addEventListener('click', function(){
 	salesBackEnd.valueFinal(idPayment);
 })
 document.getElementById("order").addEventListener("click", function() {
 order = true; 
+activedButton = true;
 publics = false;
 
 	document.getElementById('boxdate').style.display = "flex";
 	document.getElementById('boxsale').style.display = "flex";
+	document.getElementById('productsTitle').style.display = "flex";
+	document.getElementById('buttonsBar').style.display = "flex";
+	document.getElementById('totalGeneralOrder').style.display = "none";
+	document.getElementById('totalGeneralOne').style.display = "flex";
 })
 
 
 document.getElementById('btn_confirmar').addEventListener('click', function(){
 	salesBackEnd.valueGeneral(id);
+	
+	document.getElementById('payment-tab').disabled = false;
 })
 
 document.getElementById('options').addEventListener('click', function(){
@@ -63,15 +78,7 @@ document.getElementById('payment-tab').addEventListener("click", () => {
 	document.getElementById('boxpayment').style.display = "flex";
 	}
 })
-// document.getElementById("order2").addEventListener("click", function() {
-// 	document.getElementById('boxdiscount-general').style.display = "flex";
-// 	document.getElementById('boxpayment').style.display = "flex";
-// })
 
-// document.getElementById("public2").addEventListener("click", function() {
-// 	document.getElementById('boxdiscount-general').style.display = "none";
-// 	document.getElementById('boxpayment').style.display = "flex";
-// })
 document.getElementById('buttonAdd').addEventListener("click", function(){
 	id++; 
 	salesBackEnd.optionProductsNew(id);
@@ -109,20 +116,11 @@ firebaseref.once('value').then(function (snapshot) {
 	
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-
-	let sale = {
-		seller: document.getElementById('seller').value,
-		date: document.getElementById('date').value,
-		total_general: document.getElementById('total-general').value,
-		product: document.getElementById('product').value,
-		type: document.getElementById('type').value,
-		quantity: document.getElementById('quantity').value,
-		price: document.getElementById('price').value,
-		total: document.getElementById('total').value,
-		total_value: document.getElementById('total-value').value,
-		payment_method: document.getElementById('payment_method').value,
-		discount: document.getElementById('discount').value,
-		total_paid: document.getElementById('total-paid').value
-    }
+	console.log({id})
+	if(order){
+		salesBackEnd.createSaleOrder(id , idPayment);
+	}else if(publics){
+		salesBackEnd.createSalePublic(idPayment);
+	}
 
 });
