@@ -279,9 +279,9 @@
                       <button type="button" id="buttonDel">Deletar</button>
                     </div>
                   </div>
-                  <div class="register">
-                    <div class="btn-group" style="padding-top: 18px; width: 20%;">
-                      <button class="btn btn-primary" id="btn_confirmar" type="button">CONFIRMAR</button>
+                  <div class="buttons" style="justify-content: flex-end; width: 100%;">
+                    <div class="btn-group" style="padding-top: 6px;">
+                      <button class="btn-confirmar" id="btn_confirmar" type="button">CONFIRMAR</button>
                     </div>
                   </div>
                     <div class="total-general-2" id="boxproduct">
@@ -299,13 +299,13 @@
             </div>
             <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
 
-            <div class="form">
+            <div class="form" style="width: 60%;">
               <div class="discount-general" id="boxdiscount-general">
                 <!-- <label>Desconto
                   <input id="discount" type="text" placeholder=""/>
                   <p id="alerta_desconto" style="display: none;">O Campo precisa ser preenchido</p>
                 </label> -->
-                <div class="total-general">
+                <div class="total-general" style="margin-left: 0px;">
                 <label>Total geral
                   <input id="totalGeneralPayment" type="text" placeholder=""/>
                   <p id="alerta_totalgeral" style="display: none;">O Campo precisa ser preenchido</p>
@@ -324,19 +324,32 @@
                 </label>
               </div>
             </div>
-            <div class="buttons" style="margin-top: -18px;">
+            <div class="buttons">
               <div class="button-adc">
                 <button type="button" id="buttonAddPayment">Adicionar</button>
               </div>
-                <div class="btn-group" style="padding-top: 18px; width: 20%;">
-                  <button class="btn btn-primary" id="btn_confirmar_payment" type="button">CONFIRMAR</button>
-                </div>
+              <div class="button-del" style="margin-right: 30px;">
+                <button type="button" id="buttonDel">Deletar</button>
+              </div>
             </div>
-            <div class="total-paid" id="boxpayment">
-              <label>Total pago
-                <input id="total-paid" type="text" placeholder=""/>
-                <p id="" style="display: none;">O Campo precisa ser preenchido</p>
-              </label>
+            <div class="buttons" style="justify-content: flex-end; width: 100%;">
+              <div class="btn-group" style="width: 20%;">
+                <button class="btn-confirmar" id="btn_confirmar_payment" type="button">CONFIRMAR</button>
+              </div>
+            </div>
+            <div class="paid-pending">
+              <div class="total-paid" id="boxpayment">
+                <label>Total pago
+                  <input id="total-paid" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+              </div>
+              <div class="total-pending" id="boxpeding">
+                <label>Total pendente
+                  <input id="totalpendente" type="text" placeholder=""/>
+                  <p id="" style="display: none;">O Campo precisa ser preenchido</p>
+                </label>
+              </div>
             </div>
             <div class="register" style="justify-content: space-between;">
               <div class="btn-group" style="width: 10%;">
