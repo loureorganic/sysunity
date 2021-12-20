@@ -68,7 +68,16 @@ export default class databasecreatesale{
 
         }
         if (document.getElementById('payment_method0').value == '' || document.getElementById('payment_method0').value == null){
-            alert("222")
+            
+            document.getElementById('payment_method0').style.borderColor = "red";
+            document.getElementById('alerta_formapagamento').style.display = 'flex';
+
+        }
+        else {
+
+            document.getElementById('payment_method0').style.borderColor = "blue";
+            document.getElementById('alerta_formapagamento').style.display = 'none';
+            
         }
         if(document.getElementById('total-value0').value !== '' && document.getElementById('payment_method0').value == '') {
 
@@ -215,6 +224,28 @@ export default class databasecreatesale{
 
             document.getElementById('quantity0').style.borderColor = "blue";
             document.getElementById('quantity-0').style.display = 'none';
+
+        }
+        if(document.getElementById('0').value == '') {
+
+            document.getElementById('0').style.borderColor = "red";
+            document.getElementById('produto-00').style.display = 'flex';
+
+        } else {
+
+            document.getElementById('0').style.borderColor = "blue";
+            document.getElementById('produto-00').style.display = 'none';
+
+        }
+        if(document.getElementById('type0').value == '') {
+
+            document.getElementById('type0').style.borderColor = "red";
+            document.getElementById('tipo-00').style.display = 'flex';
+
+        } else {
+
+            document.getElementById('type0').style.borderColor = "blue";
+            document.getElementById('tipo-00').style.display = 'none';
 
         }
         if(document.getElementById('total-general-order').value !== '' && document.getElementById('date').value !== '') {
