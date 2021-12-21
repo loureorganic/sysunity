@@ -201,7 +201,7 @@ export default class databasemanagementsale{
           document.getElementById("totalvenda1").value = element.val().totalGeneral;
           document.getElementById("totalpago1").value = element.val().totalPaid;
           document.getElementById("datavenda1").value = element.val().date;
-          document.getElementById("dataentrega1").value = element.val().date;
+          document.getElementById("dataentrega1").value = element.val().dateDelivery;
           // document.getElementById("valor").value = element.val().value;
           // document.getElementById("valor").value = element.val().value;
 
@@ -303,21 +303,23 @@ export default class databasemanagementsale{
         document.getElementById("totalvenda2").placeholder = element.val().totalGeneral;
         document.getElementById("totalpago2").placeholder = element.val().totalPaid;
         document.getElementById("datavenda2").placeholder = element.val().date;
-        document.getElementById("dataentrega2").placeholder = element.val().date;
+        document.getElementById("dataentrega2").placeholder = element.val().dateDelivery;
           
         var btn = document.getElementById("btn_salvar");
+
         btn.addEventListener("click", function(e){
+
           var inputvendedor = document.getElementById("vendedor2").value;
-          var inputtotal = document.getElementById("total2").value;
-          var inputvalorPago =  document.getElementById("valorpago2").value;
+          var inputtotal = document.getElementById("totalvenda2").value;
+          var inputvalorPago =  document.getElementById("totalpago2").value;
           var inputdataVenda =  document.getElementById("datavenda2").value;
-          var inputdataPagamento =  document.getElementById("datapagamento2").value;
+          var inputdataEntrega =  document.getElementById("dataentrega2").value;
 
           if(inputvendedor === ""){
             inputvendedor = element.val().seller;
           } 
           if (inputtotal === ""){
-            inputtotal = element.val().type;
+            inputtotal = element.val().totalGeneral;
           } 
           if (inputvalorPago === ""){
             inputvalorPago = element.val().totalPaid;
@@ -325,11 +327,11 @@ export default class databasemanagementsale{
           if (inputdataVenda === ""){
             inputdataVenda = element.val().date;
           }
-          if (inputdataPagamento === ""){
-            inputdataPagamento = element.val().date;
+          if (inputdataEntrega === ""){
+            inputdataEntrega = element.val().dateDelivery;
           }
 
-          self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataPagamento);
+          self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega);
         })   
         } 
       });
@@ -337,14 +339,14 @@ export default class databasemanagementsale{
   }
 
   // FUNCAO P/ ATUALIZAR DADOS
-  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataPagamento){
+  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataEntrega){
     const database = firebase.database();
     let active = false;
     database.ref('sale/'+chave+'/seller').set(vendedor);
     database.ref('sale/'+chave+'/totalGeneral').set(total);
     database.ref('sale/'+chave+'/totalPaid').set(valorPago);
     database.ref('sale/'+chave+'/date').set(dataVenda);
-    // database.ref('sale/'+chave+'/value').set(valor);
+    database.ref('sale/'+chave+'/dateDelivery').set(dataEntrega);
     
     window.location.reload(active);
   };
