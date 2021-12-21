@@ -32,6 +32,7 @@ document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('buttonsBar').style.display = "none";
 	document.getElementById('totalGeneralOrder').style.display = "flex";
 	document.getElementById('totalGeneralOne').style.display = "none";
+	document.getElementById('labelDateDelivery').style.display = "none";
 })
 document.getElementById('btn_confirmar_payment').addEventListener('click', function(){
 		salesBackEnd.valueFinal(idPayment);
@@ -47,6 +48,7 @@ publics = false;
 	document.getElementById('buttonsBar').style.display = "flex";
 	document.getElementById('totalGeneralOrder').style.display = "none";
 	document.getElementById('totalGeneralOne').style.display = "flex";
+	document.getElementById('labelDateDelivery').style.display = 'flex';
 })
 
 
@@ -83,6 +85,16 @@ document.getElementById('payment-tab').addEventListener("click", () => {
 document.getElementById('buttonAdd').addEventListener("click", function(){
 	id++; 
 	salesBackEnd.optionProductsNew(id);
+})
+
+document.getElementById('buttonDel').addEventListener("click", function(){
+	salesBackEnd.optionProductsRemove(id);
+	id--;
+})
+
+document.getElementById('buttonDelPayment').addEventListener("click", function(){
+	salesBackEnd.removePaymentWay(idPayment);
+	idPayment--;
 })
 
 document.getElementById('productLabel').addEventListener("click", function() {
