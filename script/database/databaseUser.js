@@ -7,7 +7,7 @@ export default class databaseuser{
             snapshot.forEach(element => {
                 if(element.key === authUser)
                 {
-                document.getElementById('hello').innerHTML = "Olá " + element.val().firstname + ",";
+                document.getElementById('hello').innerHTML = "Boas-vindas, " + element.val().firstname +".";
                 }
              });
         });
