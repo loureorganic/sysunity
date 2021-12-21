@@ -239,8 +239,7 @@
       <button class="fechar"></button>
     </div>
     <form>
-
-      <!-- <table>
+      <table>
         <tr>
           <th class="top-table">Item</th>
           <th class="top-table">Quantidade</th>
@@ -256,28 +255,26 @@
           <td class="data-table">20</td>
           <td class="data-table">R$ 0,69</td>
         </tr>
-      </table> -->
-
-      <h6>Informações de pagamento</h6>
-
-      <div class="group">
-        <div class="payment">
-          <label for="">Forma de pagamento
-            <input id="formapagamento" type="text" placeholder="" disabled/>
-          </label>
-        </div>
-        <div class="payday">
-          <label for="">Data de pagamento
-            <input id="datapagamento" type="text" placeholder="" disabled/>
-          </label>
-        </div>
-        <div class="amount-paid">
-          <label for="">Valor pago
-            <input id="valorpago" type="text" placeholder="" disabled/>
-          </label>
-        </div>
-      </div>
-
+      </table> 
+  
+      <table class="table-payment">
+        <tr>
+          <th class="top-table">Forma de pagamento</th>
+          <th class="top-table">Valor pago</th>
+          <th class="top-table">Data de pagamento</th>
+        </tr>
+        <tr>
+          <td class="data-table">Dinheiro</td>
+          <td class="data-table">R$ 5,00</td>
+          <td class="data-table">01/08/21</td>
+        </tr>
+        <tr>
+          <td class="data-table">Dinheiro</td>
+          <td class="data-table">R$ 5,00</td>
+          <td class="data-table">01/08/21</td>
+        </tr>
+      </table> 
+  
       <div class="group">
         <div class="date-sale">
           <label for="">Data da venda
@@ -294,13 +291,24 @@
             <input id="dataentrega" type="text" placeholder="" disabled/>
           </label>
         </div>
-        <div class="total">
-          <label for="">Total
-            <input id="total" type="text" placeholder="" disabled/>
+      </div>
+      <div class="group">
+        <div class="amount-paid">
+          <label for="">Total pago
+            <input id="totalpago" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+        <div class="total-pending">
+          <label for="">Total pendente
+            <input id="totalpendente" type="text" placeholder="" disabled/>
+          </label>
+        </div>
+        <div class="total-sale">
+          <label for="">Total da venda
+            <input id="totalvenda" type="text" placeholder="" disabled/>
           </label>
         </div>
       </div>
-
     </form>
   </div>
 </div>
@@ -316,7 +324,6 @@
   </div>
 
   <form>
-
     <table>
       <tr>
         <th class="top-table">Item</th>
@@ -370,17 +377,12 @@
         </label>
       </div>
     </div>
-
-      
-      
-
-      <div class="group">
-        <div class="amount-paid">
-          <label for="">Total pago
-            <input id="totalpago" type="text" placeholder="" />
-          </label>
-        </div>
-      
+    <div class="group">
+      <div class="amount-paid">
+        <label for="">Total pago
+          <input id="totalpago" type="text" placeholder="" />
+        </label>
+      </div>
       <div class="total-pending">
         <label for="">Total pendente
           <input id="totalpendente" type="text" placeholder="" />
