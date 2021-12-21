@@ -32,6 +32,7 @@ document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('buttonsBar').style.display = "none";
 	document.getElementById('totalGeneralOrder').style.display = "flex";
 	document.getElementById('totalGeneralOne').style.display = "none";
+	document.getElementById('labelDateDelivery').style.display = "none";
 })
 document.getElementById('btn_confirmar_payment').addEventListener('click', function(){
 
@@ -99,6 +100,7 @@ publics = false;
 	document.getElementById('buttonsBar').style.display = "flex";
 	document.getElementById('totalGeneralOrder').style.display = "none";
 	document.getElementById('totalGeneralOne').style.display = "flex";
+	document.getElementById('labelDateDelivery').style.display = 'flex';
 })
 
 

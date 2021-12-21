@@ -18,6 +18,7 @@ export default class databasecreatesale{
         database.ref('sale/'+newProductKey+'/date').set(document.getElementById('date').value);
         database.ref('sale/'+newProductKey+'/totalGeneral').set(document.getElementById('total-general').value);
         database.ref('sale/'+newProductKey+'/totalPaid').set(document.getElementById('total-paid').value);
+        database.ref('sale/'+newProductKey+'/dateDelivery').set(document.getElementById('datedelivery').value);
         for (let i = 0; i < id + 1; i++){
             let productValue = '' + i;
             let typeValue = 'type' + i;
@@ -29,6 +30,7 @@ export default class databasecreatesale{
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +quantityValue).set(document.getElementById(quantityValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +priceValue).set(document.getElementById(priceValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +priceTotalValue).set(document.getElementById(priceTotalValue).value);
+            
         }
         for (let i = 0; i < idPayment + 1; i++){
             let paymentForm = 'payment_method' + i;
