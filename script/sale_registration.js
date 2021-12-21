@@ -139,6 +139,17 @@ document.getElementById('btn_confirmar').addEventListener('click', function(){
 
 	if(order == true) {
 
+		if(document.getElementById('datedelivery').value == '') {
+
+			document.getElementById('datedelivery').style.borderColor = "red";
+            document.getElementById('alerta_data2').style.display = 'flex';
+
+		} else {
+
+			document.getElementById('datedelivery').style.borderColor = "blue";
+            document.getElementById('alerta_data2').style.display = 'none';
+
+		}
 		if(document.getElementById('date').value == '') {
 
             document.getElementById('date').style.borderColor = "red";
@@ -205,7 +216,7 @@ document.getElementById('btn_confirmar').addEventListener('click', function(){
             document.getElementById('alerta_total').style.display = 'none';
 
         }
-		if(document.getElementById('date').value !== '' && document.getElementById('quantity0').value !== '' && document.getElementById('0').value && document.getElementById('type0').value !== '' && document.getElementById('price0').value !== '' && document.getElementById('pricetotal0').value !== '') {
+		if(document.getElementById('date').value !== '' && document.getElementById('quantity0').value !== '' && document.getElementById('0').value && document.getElementById('type0').value !== '' && document.getElementById('price0').value !== '' && document.getElementById('pricetotal0').value !== '' && document.getElementById('datedelivery').value !== '') {
 	
 			salesBackEnd.valueGeneral(id);
 	

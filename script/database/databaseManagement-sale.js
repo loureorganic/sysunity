@@ -116,7 +116,6 @@ export default class databasemanagementsale{
 
           Object.keys(vec2).forEach(function(item2) {
             
-
             // console.log(vec)
             
             let vc2 = vec2[item2];
@@ -161,7 +160,6 @@ export default class databasemanagementsale{
 
           Object.keys(vec).forEach(function(item) {
 
-
             // console.log(vec)
             
             let vc = vec[item];
@@ -203,7 +201,7 @@ export default class databasemanagementsale{
           document.getElementById("totalvenda1").value = element.val().totalGeneral;
           document.getElementById("totalpago1").value = element.val().totalPaid;
           document.getElementById("datavenda1").value = element.val().date;
-          document.getElementById("dataentrega1").value = element.val().date;
+          document.getElementById("dataentrega1").value = element.val().dateDelivery;
           // document.getElementById("valor").value = element.val().value;
           // document.getElementById("valor").value = element.val().value;
 
@@ -227,46 +225,101 @@ export default class databasemanagementsale{
 
         // let abe = element.val().paymentWays.val()[dados];
 
-        let vec = element.val().paymentWays;
+        let vec3 = element.val().paymentWays;
 
-        // console.log(vec)
+        let vec4 = element.val().products;
 
-        Object.keys(vec).forEach(function(item) {
+        // console.log(vec3)
 
+        if (var_lista5.hasChildNodes){
+          var_lista5.innerHTML = '';
+         }
+
+        Object.keys(vec4).forEach(function(item4) {
+            
           // console.log(vec)
           
-          let vc = vec[item];
+          let vc4 = vec4[item4];
 
-          // console.log(vc)
+          // console.log(vc4)
 
-          var val2 = vc[Object.keys(vc)[0]];
+          var tr4 = document.createElement('tr');
 
-          let dados1 = "<input type='text' placeholder=" + val2 + " />";
-          td2.innerHTML += dados1;
-          var_lista4.appendChild(td2);
+          var val5 = vc4[Object.keys(vc4)[0]];
+
+          var val6 = vc4[Object.keys(vc4)[3]];
+
+          let dados3 = "<td class='data-table'> " + val5 + " </td>" + "<td class='data-table'> " + val6 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
+
+          // let dados = "<input type='text' value=" + val1 + " disabled/>";
+
+          tr4.innerHTML = dados3;
+          var_lista5.appendChild(tr4);
+
+          // td.innerHTML += dados;
+          // document.getElementById("formapay1").appendChild(td);
+
+          // for(let key in vc) {
+            
+            // let ct = vc[key]
+
+            // console.log(ct)
+
+            // if(ct == "Dinheiro") {
+
+            //   document.getElementById("formapagamento1").value = "Dinheiro";
+
+            // }
+          // }
+
+        })
+
+        if (var_lista4.hasChildNodes){
+          var_lista4.innerHTML = '';
+         }
+
+        Object.keys(vec3).forEach(function(item3) {
+
+          // console.log(vec3)
+          
+          let vc3 = vec3[item3];
+
+          // console.log(vc3)
+
+          var tr3 = document.createElement('tr');
+
+          var val2 = vc3[Object.keys(vc3)[0]];
+
+          var val7 = vc3[Object.keys(vc3)[1]];
+
+          let dados1 = "<td class='data-table'> " + val2 + " </td>" + "<td class='data-table'> " + val7 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
+          tr3.innerHTML += dados1;
+          var_lista4.appendChild(tr3);
 
 
         })
 
         document.getElementById("vendedor2").placeholder = element.val().seller;
-        document.getElementById("total2").placeholder = element.val().totalGeneral;
+        document.getElementById("totalvenda2").placeholder = element.val().totalGeneral;
         document.getElementById("totalpago2").placeholder = element.val().totalPaid;
         document.getElementById("datavenda2").placeholder = element.val().date;
-        document.getElementById("dataentrega2").placeholder = element.val().date;
+        document.getElementById("dataentrega2").placeholder = element.val().dateDelivery;
           
         var btn = document.getElementById("btn_salvar");
+
         btn.addEventListener("click", function(e){
+
           var inputvendedor = document.getElementById("vendedor2").value;
-          var inputtotal = document.getElementById("total2").value;
-          var inputvalorPago =  document.getElementById("valorpago2").value;
+          var inputtotal = document.getElementById("totalvenda2").value;
+          var inputvalorPago =  document.getElementById("totalpago2").value;
           var inputdataVenda =  document.getElementById("datavenda2").value;
-          var inputdataPagamento =  document.getElementById("datapagamento2").value;
+          var inputdataEntrega =  document.getElementById("dataentrega2").value;
 
           if(inputvendedor === ""){
             inputvendedor = element.val().seller;
           } 
           if (inputtotal === ""){
-            inputtotal = element.val().type;
+            inputtotal = element.val().totalGeneral;
           } 
           if (inputvalorPago === ""){
             inputvalorPago = element.val().totalPaid;
@@ -274,11 +327,11 @@ export default class databasemanagementsale{
           if (inputdataVenda === ""){
             inputdataVenda = element.val().date;
           }
-          if (inputdataPagamento === ""){
-            inputdataPagamento = element.val().date;
+          if (inputdataEntrega === ""){
+            inputdataEntrega = element.val().dateDelivery;
           }
 
-          self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataPagamento);
+          self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega);
         })   
         } 
       });
@@ -286,14 +339,14 @@ export default class databasemanagementsale{
   }
 
   // FUNCAO P/ ATUALIZAR DADOS
-  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataPagamento){
+  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataEntrega){
     const database = firebase.database();
     let active = false;
     database.ref('sale/'+chave+'/seller').set(vendedor);
     database.ref('sale/'+chave+'/totalGeneral').set(total);
     database.ref('sale/'+chave+'/totalPaid').set(valorPago);
     database.ref('sale/'+chave+'/date').set(dataVenda);
-    // database.ref('sale/'+chave+'/value').set(valor);
+    database.ref('sale/'+chave+'/dateDelivery').set(dataEntrega);
     
     window.location.reload(active);
   };
