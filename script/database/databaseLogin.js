@@ -32,7 +32,7 @@ export default class Login{
                 console.log(errtotal);
             });
 
-            if (errsenha == true && erruser == true){
+            if (!errsenha == true && !erruser == true){
                 console.log('oi');
                 this.errosenhaeusuario();
             } else if(!user && erruser) 
