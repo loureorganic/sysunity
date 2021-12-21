@@ -278,17 +278,17 @@
       <div class="group">
         <div class="date-sale">
           <label for="">Data da venda
-            <input id="datavenda1" type="text" placeholder="" disabled/>
+            <input id="datavenda" type="text" placeholder="" disabled/>
           </label>
         </div>
         <div class="seller">
           <label for="">Vendedor
-            <input id="vendedor1" type="text" placeholder="" disabled/>
+            <input id="vendedor" type="text" placeholder="" disabled/>
           </label>
         </div>
         <div class="delivery">
           <label for="">Data de entrega
-            <input id="dataentrega1" type="text" placeholder="" disabled/>
+            <input id="dataentrega" type="text" placeholder="" disabled/>
           </label>
         </div>
       </div>
@@ -310,6 +310,11 @@
         </div>
       </div>
     </form>
+  </div>
+</div>
+
+<!-- MODAL DE EDITAR -->
+<div id="modal-edit" class="loader2">
 
   <div class="mod">
     <div class="top-modal">
@@ -325,6 +330,7 @@
         <th class="top-table">Quantidade</th>
         <th class="top-table">Valor</th>
       </tr>
+      <tr>
         <td class="data-table">Coxinha de frango</td>
         <td class="data-table">20</td>
         <td class="data-table">R$ 0,69</td>
@@ -357,17 +363,17 @@
     <div class="group">
       <div class="date-sale">
         <label for="">Data da venda
-          <input id="datavenda2" type="text" placeholder="" />
+          <input id="datavenda" type="text" placeholder="" />
         </label>
       </div>
       <div class="seller">
         <label for="">Vendedor
-          <input id="vendedor2" type="text" placeholder="" disabled/>
+          <input id="vendedor" type="text" placeholder="" />
         </label>
       </div>
       <div class="delivery">
         <label for="">Data de entrega
-          <input id="dataentrega2" type="text" placeholder="" />
+          <input id="dataentrega" type="text" placeholder="" />
         </label>
       </div>
     </div>
@@ -418,7 +424,7 @@
 
   <script type="module" src="script/sale_management.js"></script>
   <script src="script/preloader.js"></script>
-  <!-- <script type="module" src="script/modal.js"></script> -->
+  <script type="module" src="script/modal.js"></script>
 </body>
 
 </html>
