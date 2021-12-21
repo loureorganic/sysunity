@@ -81,7 +81,13 @@ export default class databasecreatesale{
         labelTotalGeneral.appendChild(input);
     }
 
-
+    removePaymentWay(id){
+        let paymentForm = 'payment_method' + id;
+        let valueForm = 'total-value' + id
+        ;
+        document.getElementById(paymentForm).remove();
+        document.getElementById(valueForm).remove();
+    }
     optionProducts(){
         const firebaseref = firebase.database().ref("production");
 
@@ -142,6 +148,20 @@ export default class databasecreatesale{
         labelType.appendChild(selectTypes);
     }
     
+    optionProductsRemove(idRemove){
+        let productValue = '' + idRemove;
+        let typeValue = 'type' + idRemove;
+        let quantityValue = 'quantity' + idRemove;
+        let priceValue = 'price' + idRemove;
+        let priceTotalValue = 'pricetotal' + idRemove;
+        document.getElementById(productValue).remove();
+        document.getElementById(typeValue).remove();
+        document.getElementById(quantityValue).remove();
+        document.getElementById(priceValue).remove();
+        document.getElementById(priceTotalValue).remove();
+    }
+
+
     valueUnit(product, type, id, id2){
         let quantity = 'price' + id; 
         let quantityReal = 'quantity' + id;

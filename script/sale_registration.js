@@ -242,6 +242,16 @@ document.getElementById('buttonAdd').addEventListener("click", function(){
 	salesBackEnd.optionProductsNew(id);
 })
 
+document.getElementById('buttonDel').addEventListener("click", function(){
+	salesBackEnd.optionProductsRemove(id);
+	id--;
+})
+
+document.getElementById('buttonDelPayment').addEventListener("click", function(){
+	salesBackEnd.removePaymentWay(idPayment);
+	idPayment--;
+})
+
 document.getElementById('productLabel').addEventListener("click", function() {
 	let productsSelected = document.querySelectorAll('.productItems');
 	for (var i = 0; i < productsSelected.length; i++) {
