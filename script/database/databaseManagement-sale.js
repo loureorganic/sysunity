@@ -1,8 +1,12 @@
 var dados = "";
 var var_lista = document.getElementById("tablebody");
+var var_lista2 = document.getElementById("tablebody2");
+var var_lista3 = document.getElementById("tablebody3");
+var var_lista4 = document.getElementById("tablebody4");
+var var_lista5 = document.getElementById("tablebody5");
 
-var td = document.createElement("td");
-var td2 = document.createElement("td");
+// var td = document.createElement("td");
+// var td2 = document.createElement("td");
 
 var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
@@ -86,11 +90,8 @@ export default class databasemanagementsale{
 
   // MODAL DE VISUALIZAR
   funcmodalsee(dados){
-    const firebaseref = firebase.database().ref("sale");
 
-    if (td.hasChildNodes){
-      td.innerHTML = '';
-    }
+    const firebaseref = firebase.database().ref("sale");
 
     firebaseref.once('value',(resultado)=>{
 
@@ -102,9 +103,60 @@ export default class databasemanagementsale{
 
           let vec = element.val().paymentWays;
 
+          let vec2 = element.val().products;
+
           // console.log(vec)
 
+          // console.log(vec2)
+
+          Object.keys(vec2).forEach(function(item2) {
+
+            // if (tr3.hasChildNodes){
+            //   tr3.innerHTML = '';
+            // }
+
+            // console.log(vec)
+            
+            let vc2 = vec2[item2];
+
+            // console.log(vc2)
+
+            var tr3 = document.createElement('tr');
+
+            var val3 = vc2[Object.keys(vc2)[0]];
+
+            var val4 = vc2[Object.keys(vc2)[3]];
+
+            let dados3 = "<td class='data-table'> " + val3 + " </td>" + "<td class='data-table'> " + val4 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
+
+            // let dados = "<input type='text' value=" + val1 + " disabled/>";
+
+            tr3.innerHTML = dados3;
+            var_lista3.appendChild(tr3);
+
+            // td.innerHTML += dados;
+            // document.getElementById("formapay1").appendChild(td);
+
+            // for(let key in vc) {
+              
+              // let ct = vc[key]
+
+              // console.log(ct)
+
+              // if(ct == "Dinheiro") {
+
+              //   document.getElementById("formapagamento1").value = "Dinheiro";
+
+              // }
+            // }
+
+          })
+
           Object.keys(vec).forEach(function(item) {
+
+            if (var_lista2.hasChildNodes){
+              var_lista2.innerHTML = '';
+            }
 
             // console.log(vec)
             
@@ -112,11 +164,21 @@ export default class databasemanagementsale{
 
             // console.log(vc)
 
+            var tr2 = document.createElement('tr');
+
             var val1 = vc[Object.keys(vc)[0]];
 
-            let dados = "<input type='text' value=" + val1 + " disabled/>";
-            td.innerHTML += dados;
-            document.getElementById("formapay1").appendChild(td);
+            var val2 = vc[Object.keys(vc)[1]];
+
+            let dados2 = "<td class='data-table'> " + val1 + " </td>" + "<td class='data-table'> " + val2 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
+
+            // let dados = "<input type='text' value=" + val1 + " disabled/>";
+
+            tr2.innerHTML = dados2;
+            var_lista2.appendChild(tr2);
+
+            // td.innerHTML += dados;
+            // document.getElementById("formapay1").appendChild(td);
 
             // for(let key in vc) {
               
@@ -134,10 +196,10 @@ export default class databasemanagementsale{
           })
 
           document.getElementById("vendedor1").value = element.val().seller;
-          document.getElementById("total1").value = element.val().totalGeneral;
-          document.getElementById("valorpago1").value = element.val().totalPaid;
+          document.getElementById("totalvenda1").value = element.val().totalGeneral;
+          document.getElementById("totalpago1").value = element.val().totalPaid;
           document.getElementById("datavenda1").value = element.val().date;
-          document.getElementById("datapagamento1").value = element.val().date;
+          document.getElementById("dataentrega1").value = element.val().date;
           // document.getElementById("valor").value = element.val().value;
           // document.getElementById("valor").value = element.val().value;
 
@@ -152,10 +214,6 @@ export default class databasemanagementsale{
     var self = this;
 
     const firebaseref = firebase.database().ref("sale");
-
-    if (td2.hasChildNodes){
-      td2.innerHTML = '';
-    }
 
     firebaseref.once('value',(resultado)=>{
       
@@ -181,43 +239,43 @@ export default class databasemanagementsale{
 
           let dados1 = "<input type='text' placeholder=" + val2 + " />";
           td2.innerHTML += dados1;
-          document.getElementById("formapay2").appendChild(td2);
+          var_lista4.appendChild(td2);
 
 
         })
 
-          document.getElementById("vendedor2").placeholder = element.val().seller;
-          document.getElementById("total2").placeholder = element.val().totalGeneral;
-          document.getElementById("valorpago2").placeholder = element.val().totalPaid;
-          document.getElementById("datavenda2").placeholder = element.val().date;
-          document.getElementById("datapagamento2").placeholder = element.val().date;
+        document.getElementById("vendedor2").placeholder = element.val().seller;
+        document.getElementById("total2").placeholder = element.val().totalGeneral;
+        document.getElementById("totalpago2").placeholder = element.val().totalPaid;
+        document.getElementById("datavenda2").placeholder = element.val().date;
+        document.getElementById("dataentrega2").placeholder = element.val().date;
           
-          var btn = document.getElementById("btn_salvar");
-          btn.addEventListener("click", function(e){
-            var inputvendedor = document.getElementById("vendedor2").value;
-            var inputtotal = document.getElementById("total2").value;
-            var inputvalorPago =  document.getElementById("valorpago2").value;
-            var inputdataVenda =  document.getElementById("datavenda2").value;
-            var inputdataPagamento =  document.getElementById("datapagamento2").value;
+        var btn = document.getElementById("btn_salvar");
+        btn.addEventListener("click", function(e){
+          var inputvendedor = document.getElementById("vendedor2").value;
+          var inputtotal = document.getElementById("total2").value;
+          var inputvalorPago =  document.getElementById("valorpago2").value;
+          var inputdataVenda =  document.getElementById("datavenda2").value;
+          var inputdataPagamento =  document.getElementById("datapagamento2").value;
 
-            if(inputvendedor === ""){
-              inputvendedor = element.val().seller;
-            } 
-            if (inputtotal === ""){
-              inputtotal = element.val().type;
-            } 
-            if (inputvalorPago === ""){
-              inputvalorPago = element.val().totalPaid;
-            }
-            if (inputdataVenda === ""){
-              inputdataVenda = element.val().date;
-            }
-            if (inputdataPagamento === ""){
-              inputdataPagamento = element.val().date;
-            }
+          if(inputvendedor === ""){
+            inputvendedor = element.val().seller;
+          } 
+          if (inputtotal === ""){
+            inputtotal = element.val().type;
+          } 
+          if (inputvalorPago === ""){
+            inputvalorPago = element.val().totalPaid;
+          }
+          if (inputdataVenda === ""){
+            inputdataVenda = element.val().date;
+          }
+          if (inputdataPagamento === ""){
+            inputdataPagamento = element.val().date;
+          }
 
-            self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataPagamento);
-          })   
+          self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataPagamento);
+        })   
         } 
       });
     })
