@@ -291,6 +291,10 @@ h2{
     padding: 6px 12px;
 }
 
+.btn-confirmar:hover{
+    background-color: green;
+}
+
 .paid-pending{
     display: flex;
     margin-top: 6px;
