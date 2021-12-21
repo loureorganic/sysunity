@@ -108,12 +108,14 @@ export default class databasemanagementsale{
           // console.log(vec)
 
           // console.log(vec2)
+          
+           if (var_lista3.hasChildNodes){
+             var_lista3.innerHTML = '';
+            }
+          
 
           Object.keys(vec2).forEach(function(item2) {
-
-            // if (tr3.hasChildNodes){
-            //   tr3.innerHTML = '';
-            // }
+            
 
             // console.log(vec)
             
@@ -152,11 +154,13 @@ export default class databasemanagementsale{
 
           })
 
+          if (var_lista2.hasChildNodes){
+            var_lista2.innerHTML = '';
+          }
+          
+
           Object.keys(vec).forEach(function(item) {
 
-            if (var_lista2.hasChildNodes){
-              var_lista2.innerHTML = '';
-            }
 
             // console.log(vec)
             
