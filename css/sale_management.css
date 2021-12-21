@@ -179,12 +179,7 @@ table button{
         padding-left: 0;
     }
 }
-.edit::before{
-    content: url(../images/create_white_24dp.svg);
-}
-.delete::before{
-    content: url(../images/delete_white_24dp.svg);
-}
+
 .loader {
     position: fixed;
     z-index: 99;
@@ -316,11 +311,7 @@ table button{
     margin-top: 18px;
 }
 
-.mod .payment input{
-    width: 80%;
-}
-
-.mod .payday input{
+.mod .delivery input{
     width: 80%;
 }
 
@@ -328,20 +319,16 @@ table button{
     width: 70%;
 }
 
-.mod .date-sale input{
-    width: 80%;
-}
-
 .mod .seller input{
     width: 80%;
 }
 
-.mod .delivery input{
-    width: 80%;
+.mod .total-sale input{
+    width: 70%;
 }
 
-.mod .total input{
-    width: 60%;
+.mod .total-pending input{
+    width: 70%;
 }
 
 .fechar{
@@ -357,7 +344,7 @@ table button{
     display: flex;
     flex-direction: column;
     margin-bottom: 18px;
-    padding: 12px;
+    padding: 18px;
 }
 .mod form label {
     font-weight: 600;
@@ -377,6 +364,20 @@ table button{
 
 .mod form table{
     overflow-y: scroll;
+}
+
+.mod .table-payment{
+    margin-top: 24px;
+}
+
+.mod .group{
+    margin-top: 18px;
+}
+
+.mod .btn-group{
+    display: flex;
+    width: 20%;
+    margin-top: 24px;
 }
   
 .button{
