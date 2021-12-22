@@ -2,8 +2,17 @@ var dados = "";
 var var_lista = document.getElementById("tablebody");
 var var_lista2 = document.getElementById("tablebody2");
 var var_lista3 = document.getElementById("tablebody3");
-var var_lista4 = document.getElementById("tablebody4");
-var var_lista5 = document.getElementById("tablebody5");
+// var var_lista4 = document.getElementById("tablebody4");
+// var var_lista5 = document.getElementById("tablebody5");
+
+var td3a = document.createElement('td');
+var td3b = document.createElement('td');
+var td3c = document.createElement('td');
+
+var td4a = document.createElement('td');
+var td4b = document.createElement('td');
+var td4c = document.createElement('td');
+var td4d = document.createElement('td');
 
 // var td = document.createElement("td");
 // var td2 = document.createElement("td");
@@ -234,19 +243,31 @@ export default class databasemanagementsale{
 
           // console.log(vec3)
 
-          if (var_lista5.hasChildNodes){
-            var_lista5.innerHTML = '';
+          if (td4a.hasChildNodes){
+            td4a.innerHTML = '';
+          }
+
+          if (td4b.hasChildNodes){
+            td4b.innerHTML = '';
+          }
+
+          if (td4c.hasChildNodes){
+            td4c.innerHTML = '';
+          }
+
+          if (td4d.hasChildNodes){
+            td4d.innerHTML = '';
           }
 
           Object.keys(vec4).forEach(function(item4) {
 
             let idpro = "pro" + i;
 
+            let idtip = "tip" + i;
+
             let idqua = "qua" + i;
 
             let idval = "val" + i;
-
-            let idtip = "tip" + i;
               
             // console.log(vec)
             
@@ -254,41 +275,48 @@ export default class databasemanagementsale{
 
             // console.log(vc4)
 
-            var tr4 = document.createElement('tr');
+            var td4 = document.createElement('td');
 
             var val5 = vc4[Object.keys(vc4)[0]];
             var val8 = vc4[Object.keys(vc4)[1]];
             var val6 = vc4[Object.keys(vc4)[3]];
             var val9 = vc4[Object.keys(vc4)[4]];
 
-            let dados3 = "<input id = " + idpro + " placeholder = " + val5 + " ></input>" + "<input id = " + idtip + " placeholder = " + val9 + " ></input>" + "<input id = " + idqua + " placeholder = " + val6 + " ></input>" + "<input id = " + idval + " placeholder = " + val8 + " ></input>";
+            let dados3a = "<input id = " + idpro + " placeholder = " + val5 + " ></input>";
+            let dados3b = "<input id = " + idtip + " placeholder = " + val9 + " ></input>";
+            let dados3c = "<input id = " + idqua + " placeholder = " + val6 + " ></input>";
+            let dados3d = "<input id = " + idval + " placeholder = " + val8 + " ></input>";
 
             // let dados = "<input type='text' value=" + val1 + " disabled/>";
-
-            tr4.innerHTML = dados3;
-            var_lista5.appendChild(tr4);
 
             // td.innerHTML += dados;
             // document.getElementById("formapay1").appendChild(td);
 
-            // for(let key in vc) {
-              
-              // let ct = vc[key]
+            td4a.innerHTML += dados3a;
+            document.getElementById("pro").appendChild(td4a);
 
-              // console.log(ct)
+            td4b.innerHTML += dados3b;
+            document.getElementById("tip").appendChild(td4b);
 
-              // if(ct == "Dinheiro") {
+            td4c.innerHTML += dados3c;
+            document.getElementById("qua").appendChild(td4c);
 
-              //   document.getElementById("formapagamento1").value = "Dinheiro";
-
-              // }
-            // }
+            td4d.innerHTML += dados3d;
+            document.getElementById("val").appendChild(td4d);
 
             i++;
           })
 
-          if (var_lista4.hasChildNodes){
-            var_lista4.innerHTML = '';
+          if (td3a.hasChildNodes){
+            td3a.innerHTML = '';
+          }
+
+          if (td3b.hasChildNodes){
+            td3b.innerHTML = '';
+          }
+
+          if (td3c.hasChildNodes){
+            td3c.innerHTML = '';
           }
 
           Object.keys(vec3).forEach(function(item3) {
@@ -305,15 +333,22 @@ export default class databasemanagementsale{
 
             // console.log(vc3)
 
-            var tr3 = document.createElement('tr');
-
             var val2 = vc3[Object.keys(vc3)[0]];
 
             var val7 = vc3[Object.keys(vc3)[1]];
 
-            let dados1 = "<input id = " + idfor2 + " placeholder = " + val2 + " ></input>" + "<input id = " + idpag2 + " placeholder = " + val7 + " ></input>" + "<input id = " + iddat2 + " placeholder = " + element.val().date + " ></input>";
-            tr3.innerHTML += dados1;
-            var_lista4.appendChild(tr3);
+            let dados1a = "<input id = " + idfor2 + " placeholder = " + val2 + " ></input>";
+            let dados1b = "<input id = " + idpag2 + " placeholder = " + val7 + " ></input>";
+            let dados1c = "<input id = " + iddat2 + " placeholder = " + element.val().date + " ></input>";
+
+            td3a.innerHTML += dados1a;
+            document.getElementById("forpag").appendChild(td3a);
+
+            td3b.innerHTML += dados1b;
+            document.getElementById("valpag").appendChild(td3b);
+
+            td3c.innerHTML += dados1c;
+            document.getElementById("datpag").appendChild(td3c);
 
             y++;
           })
