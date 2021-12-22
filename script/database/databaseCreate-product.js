@@ -72,11 +72,8 @@ export default class databasecreateproduct{
 
           modal.addEventListener("click", (e) => {
             if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
-            modal.classList.remove('mostrar');
-            }
-            if(e.target.id == 'deny') {
-            modal.classList.remove('mostrar');
-            window.location.reload(active);
+              modal.classList.remove('mostrar');
+              window.location.reload(active);
             }
           })
         }
@@ -84,7 +81,7 @@ export default class databasecreateproduct{
     })
   }
 
-  // CRIAÇÃO DO TIPO
+  // CRIAÇÃO DO TIPO NO BANCO
   creatoption(optionselected, type, value){
 
     const firebaseref = firebase.database().ref("product");
@@ -113,7 +110,8 @@ export default class databasecreateproduct{
 
           modal.addEventListener("click", (e) => {
             if(e.target.id == "modal-reg" || e.target.className == 'close'){
-            modal.classList.remove('mostrar');
+              boolean2 = false;
+              modal.classList.remove('mostrar');
             }
           })
         }
@@ -135,6 +133,12 @@ export default class databasecreateproduct{
         database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
         database.ref('historic/'+newClientKey+'/action').set("cadastrarProductOption");
 
+        let newClientKey3 = database.ref().child('storage').push().key;
+        database.ref('storage/'+newClientKey3+'/product').set(optionselected);
+        database.ref('storage/'+newClientKey3+'/type').set(type);
+        database.ref('storage/'+newClientKey3+'/total').set(0);
+        database.ref('storage/'+newClientKey3+'/totalValue').set(0);
+
         const modal = document.getElementById("modal-reg");
 
         if(modal){
@@ -143,11 +147,8 @@ export default class databasecreateproduct{
 
           modal.addEventListener("click", (e) => {
             if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
-            modal.classList.remove('mostrar');
-            }
-            if(e.target.id == 'deny') {
-            modal.classList.remove('mostrar');
-            window.location.reload(active);
+              modal.classList.remove('mostrar');
+              window.location.reload(active);
             }
           })
         }

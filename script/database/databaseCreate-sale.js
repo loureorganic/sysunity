@@ -14,30 +14,69 @@ export default class databasecreatesale{
         
         const database = firebase.database();
         let newProductKey = database.ref().child('sale').push().key;
+
         database.ref('sale/'+newProductKey+'/seller').set(document.getElementById('seller').value);
         database.ref('sale/'+newProductKey+'/date').set(document.getElementById('date').value);
         database.ref('sale/'+newProductKey+'/totalGeneral').set(document.getElementById('total-general').value);
         database.ref('sale/'+newProductKey+'/totalPaid').set(document.getElementById('total-paid').value);
         database.ref('sale/'+newProductKey+'/dateDelivery').set(document.getElementById('datedelivery').value);
+
         for (let i = 0; i < id + 1; i++){
+
             let productValue = '' + i;
             let typeValue = 'type' + i;
             let quantityValue = 'quantity' + i;
             let priceValue = 'price' + i;
             let priceTotalValue = 'pricetotal' + i;
+
+            const stofirebaseref = firebase.database().ref("storage");
+            stofirebaseref.once('value',(resultado)=>{
+      
+                resultado.forEach(element => {
+
+                    if(element.child("product").val() == document.getElementById(productValue).value && element.child("type").val() == document.getElementById(typeValue).value) {
+
+                        let oldTotal = element.child("total").val();
+                        let oldValue = element.child("totalValue").val();
+                        let newTotal = document.getElementById(quantityValue).value;
+                        let newValue = document.getElementById(priceValue).value;
+
+                        let calc = oldValue - newTotal * newValue;
+                        let calc2 = oldTotal - newTotal;
+
+                        database.ref('storage/'+element.key+'/total').set(calc2);
+                        database.ref('storage/'+element.key+'/totalValue').set(calc);
+
+                    }
+                })
+            })
+
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +productValue).set(document.getElementById(productValue).value);
-            database.ref('sale/'+newProductKey+'/products/'+  'product'+ i + '/'  +typeValue).set(document.getElementById(typeValue).value);
+            database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/'  +typeValue).set(document.getElementById(typeValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +quantityValue).set(document.getElementById(quantityValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +priceValue).set(document.getElementById(priceValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +priceTotalValue).set(document.getElementById(priceTotalValue).value);
             
         }
         for (let i = 0; i < idPayment + 1; i++){
+
             let paymentForm = 'payment_method' + i;
             let valueForm = 'total-value' + i;
+
             database.ref('sale/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/' +paymentForm).set(document.getElementById(paymentForm).value);
             database.ref('sale/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/'  +valueForm).set(document.getElementById(valueForm).value);
         }
+
+        let today = new Date();
+        let authUser = localStorage.getItem("id");
+        let cadastrationDate = today.toLocaleDateString();
+        let cadastrationHour = today.toLocaleTimeString();
+        let newClientKey = database.ref().child('sale').push().key;
+        
+        database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+        database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+        database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+        database.ref('historic/'+newClientKey+'/action').set("cadastrarSale");
 
       }
       
@@ -45,20 +84,22 @@ export default class databasecreatesale{
       
       const database = firebase.database();
       let newProductKey = database.ref().child('saleBalance').push().key;
+
       database.ref('saleBalance/'+newProductKey+'/seller').set(document.getElementById('seller').value);
       database.ref('saleBalance/'+newProductKey+'/date').set(document.getElementById('date').value);
       database.ref('saleBalance/'+newProductKey+'/totalPaid').set(document.getElementById('total-paid').value);
       database.ref('saleBalance/'+newProductKey+'/totalGeneral').set(document.getElementById('total-general-order').value);
+
       for (let i = 0; i < idPayment + 1; i++){
+
         let paymentForm = 'payment_method' + i;
         let valueForm = 'total-value' + i;
+
         database.ref('saleBalance/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/' +paymentForm).set(document.getElementById(paymentForm).value);
         database.ref('saleBalance/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/'  +valueForm).set(document.getElementById(valueForm).value);
      }
       }
     valueFinal(idPayment){
-
-        alert("333")
 
         let total = 0;
         let totalInputs = idPayment + 1;
@@ -70,9 +111,11 @@ export default class databasecreatesale{
 
     }
     paymentWay(id){
+
         let select = document.createElement('select');
         var dados = "<option id='PIX'>PIX</option>" + "<option id='Dinheiro'>Dinheiro</option>" + "<option id='credito'>Cartão de crédito</option>" +  "<option id='debito'>Cartão de Débito</option>"
         let input = document.createElement('input');
+
         input.setAttribute('type', 'text');
         input.setAttribute('id', 'total-value' + id)
         select.innerHTML += dados;
@@ -82,9 +125,10 @@ export default class databasecreatesale{
     }
 
     removePaymentWay(id){
+
         let paymentForm = 'payment_method' + id;
-        let valueForm = 'total-value' + id
-        ;
+        let valueForm = 'total-value' + id;
+
         document.getElementById(paymentForm).remove();
         document.getElementById(valueForm).remove();
     }

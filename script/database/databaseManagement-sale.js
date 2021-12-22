@@ -14,9 +14,6 @@ var td4b = document.createElement('td');
 var td4c = document.createElement('td');
 var td4d = document.createElement('td');
 
-// var td = document.createElement("td");
-// var td2 = document.createElement("td");
-
 var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
@@ -492,6 +489,17 @@ export default class databasemanagementsale{
     database.ref('sale/'+chave+'/totalPaid').set(valorPago);
     database.ref('sale/'+chave+'/date').set(dataVenda);
     database.ref('sale/'+chave+'/dateDelivery').set(dataEntrega);
+
+    let today = new Date();
+    let authUser = localStorage.getItem("id");
+    let cadastrationDate = today.toLocaleDateString();
+    let cadastrationHour = today.toLocaleTimeString();
+    let newClientKey = database.ref().child('sale').push().key;
+    
+    database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+    database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+    database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+    database.ref('historic/'+newClientKey+'/action').set("editarSale");
     
     window.location.reload(active);
   };
@@ -517,6 +525,17 @@ export default class databasemanagementsale{
           valu = element.key;
 
           database.ref('sale/'+valu).remove();
+
+          let today = new Date();
+          let authUser = localStorage.getItem("id");
+          let cadastrationDate = today.toLocaleDateString();
+          let cadastrationHour = today.toLocaleTimeString();
+          let newClientKey = database.ref().child('sale').push().key;
+
+          database.ref('historic/'+newClientKey+'/userAction').set(authUser);
+          database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);
+          database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
+          database.ref('historic/'+newClientKey+'/action').set("deletarSale");
 
           window.location.reload(active);
         })

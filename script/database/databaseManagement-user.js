@@ -30,6 +30,7 @@ export default class databasemanagementuser {
             let authUser = localStorage.getItem("id");
             let cadastrationDate = today.toLocaleDateString();
             let cadastrationHour = today.toLocaleTimeString();
+            
             let newClientKey = database.ref().child('user').push().key;
             database.ref('historic/'+newClientKey+'/userAction').set(authUser);
             database.ref('historic/'+newClientKey+'/date').set(cadastrationDate);

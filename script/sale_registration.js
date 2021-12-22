@@ -295,7 +295,7 @@ firebaseref.once('value').then(function (snapshot) {
 	
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-	console.log({id})
+	// console.log({id})
 	if(order){
 		salesBackEnd.createSaleOrder(id , idPayment);
 	}else if(publics){
