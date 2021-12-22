@@ -221,7 +221,7 @@ table button{
 }
 
 #btnSee{
-    margin-left: 100px;
+    margin-left: 150px;
 }
 
 /* MODAL */
@@ -360,6 +360,7 @@ table button{
     border-style: solid;
     border-color: #085D8C;
     width: 100%;
+    text-align: center;
 }
 
 .mod form table{
