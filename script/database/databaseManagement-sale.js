@@ -12,8 +12,6 @@ var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
-let y = 0;
-
 export default class databasemanagementsale{
 
   // CRIACAO DA TABELA
@@ -216,6 +214,8 @@ export default class databasemanagementsale{
 
     let i = 0;
 
+    let y = 0;
+
     var self = this;
 
     const firebaseref = firebase.database().ref("sale");
@@ -292,23 +292,29 @@ export default class databasemanagementsale{
 
           Object.keys(vec3).forEach(function(item3) {
 
+            let idfor2 = "for" + y;
+
+            let idpag2 = "pag" + y;
+
+            let iddat2 = "dat" + y;
+
             // console.log(vec3)
             
             let vc3 = vec3[item3];
 
             // console.log(vc3)
 
-            var tr3 = document.createElement('tr');
+            var td3 = document.createElement('td');
 
             var val2 = vc3[Object.keys(vc3)[0]];
 
             var val7 = vc3[Object.keys(vc3)[1]];
 
-            let dados1 = "<td class='data-table'> " + val2 + " </td>" + "<td class='data-table'> " + val7 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
-            tr3.innerHTML += dados1;
-            var_lista4.appendChild(tr3);
+            let dados1 = "<input id = " + idfor2 + " placeholder = " + val2 + " ></input>" + "<input id = " + idpag2 + " placeholder = " + val7 + " ></input>" + "<input id = " + iddat2 + " placeholder = " + element.val().date + " ></input>";
+            td3.innerHTML += dados1;
+            var_lista4.appendChild(td3);
 
-
+            y++;
           })
 
           document.getElementById("vendedor2").placeholder = element.val().seller;
@@ -326,7 +332,6 @@ export default class databasemanagementsale{
             var inputvalorPago =  document.getElementById("totalpago2").value;
             var inputdataVenda =  document.getElementById("datavenda2").value;
             var inputdataEntrega =  document.getElementById("dataentrega2").value;
-            var inputpro = '';
 
             const database = firebase.database();
 
@@ -336,15 +341,84 @@ export default class databasemanagementsale{
               let idqua = "qua" + abc;
               let idval = "val" + abc;
 
-              if(document.getElementById(idpro).value !== '' || document.getElementById(idqua).value !== '' || document.getElementById(idval).value !== ''){
+              if(document.getElementById(idpro).value == '') {
+
+                document.getElementById(idpro).style.borderColor = "red";
+                // document.getElementById('alerta_valortotal').style.display = 'flex';
+            
+              } else {
+            
+                document.getElementById(idpro).style.borderColor = "blue";
+                // document.getElementById('alerta_valortotal').style.display = 'none';
+            
+              }
+              if (document.getElementById(idqua).value == ''){
+                
+                document.getElementById(idqua).style.borderColor = "red";
+                // document.getElementById('alerta_formapagamento').style.display = 'flex';
+            
+              }
+              else {
+            
+                document.getElementById(idqua).style.borderColor = "blue";
+                // document.getElementById('alerta_formapagamento').style.display = 'none';
+                
+              }
+              if (document.getElementById(idval).value == ''){
+                
+                document.getElementById(idval).style.borderColor = "red";
+                // document.getElementById('alerta_formapagamento').style.display = 'flex';
+            
+              }
+              else {
+            
+                document.getElementById(idval).style.borderColor = "blue";
+                // document.getElementById('alerta_formapagamento').style.display = 'none';
+                
+              }
+              if(document.getElementById(idpro).value !== '' && document.getElementById(idqua).value !== '' && document.getElementById(idval).value !== ''){
 
                 database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + abc).set(document.getElementById(idpro).value);
                 database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + 'quantity' + abc).set(document.getElementById(idqua).value);
                 database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + 'price' + abc).set(document.getElementById(idval).value);
 
-              } else {
+              }
 
-                alert("FALTA DIGITAR ALGUM VALOR")
+            }
+
+            for(let def = 0; def < y; def++) {
+                
+              let idfor = "for" + def;
+              let idpag = "pag" + def;
+
+              if(document.getElementById(idfor).value == '') {
+
+                document.getElementById(idfor).style.borderColor = "red";
+                // document.getElementById('alerta_valortotal').style.display = 'flex';
+            
+              } else {
+            
+                document.getElementById(idfor).style.borderColor = "blue";
+                // document.getElementById('alerta_valortotal').style.display = 'none';
+            
+              }
+              if (document.getElementById(idpag).value == ''){
+                
+                document.getElementById(idpag).style.borderColor = "red";
+                // document.getElementById('alerta_formapagamento').style.display = 'flex';
+            
+              }
+              else {
+            
+                document.getElementById(idpag).style.borderColor = "blue";
+                // document.getElementById('alerta_formapagamento').style.display = 'none';
+                
+              }
+
+              if(document.getElementById(idfor).value !== '' && document.getElementById(idpag).value !== '') {
+
+                database.ref('sale/' + element.key + '/paymentWays/' + 'paymentWay' + def + '/' + 'payment_method' + def).set(document.getElementById(idfor).value);
+                database.ref('sale/' + element.key + '/paymentWays/' + 'paymentWay' + def + '/' + 'total-value' + def).set(document.getElementById(idpag).value);
 
               }
 
@@ -366,7 +440,7 @@ export default class databasemanagementsale{
               inputdataEntrega = element.val().dateDelivery;
             }
 
-            // self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega);
+            self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega);
           })   
         } 
       });
