@@ -245,6 +245,8 @@ export default class databasemanagementsale{
             let idqua = "qua" + i;
 
             let idval = "val" + i;
+
+            let idtip = "tip" + i;
               
             // console.log(vec)
             
@@ -252,20 +254,19 @@ export default class databasemanagementsale{
 
             // console.log(vc4)
 
-            var td4 = document.createElement('td');
+            var tr4 = document.createElement('tr');
 
             var val5 = vc4[Object.keys(vc4)[0]];
-
             var val8 = vc4[Object.keys(vc4)[1]];
-
             var val6 = vc4[Object.keys(vc4)[3]];
+            var val9 = vc4[Object.keys(vc4)[4]];
 
-            let dados3 = "<input id = " + idpro + " placeholder = " + val5 + " ></input>" + "<input id = " + idqua + " placeholder = " + val6 + " ></input>" + "<input id = " + idval + " placeholder = " + val8 + " ></input>";
+            let dados3 = "<input id = " + idpro + " placeholder = " + val5 + " ></input>" + "<input id = " + idtip + " placeholder = " + val9 + " ></input>" + "<input id = " + idqua + " placeholder = " + val6 + " ></input>" + "<input id = " + idval + " placeholder = " + val8 + " ></input>";
 
             // let dados = "<input type='text' value=" + val1 + " disabled/>";
 
-            td4.innerHTML = dados3;
-            var_lista5.appendChild(td4);
+            tr4.innerHTML = dados3;
+            var_lista5.appendChild(tr4);
 
             // td.innerHTML += dados;
             // document.getElementById("formapay1").appendChild(td);
@@ -304,15 +305,15 @@ export default class databasemanagementsale{
 
             // console.log(vc3)
 
-            var td3 = document.createElement('td');
+            var tr3 = document.createElement('tr');
 
             var val2 = vc3[Object.keys(vc3)[0]];
 
             var val7 = vc3[Object.keys(vc3)[1]];
 
             let dados1 = "<input id = " + idfor2 + " placeholder = " + val2 + " ></input>" + "<input id = " + idpag2 + " placeholder = " + val7 + " ></input>" + "<input id = " + iddat2 + " placeholder = " + element.val().date + " ></input>";
-            td3.innerHTML += dados1;
-            var_lista4.appendChild(td3);
+            tr3.innerHTML += dados1;
+            var_lista4.appendChild(tr3);
 
             y++;
           })
