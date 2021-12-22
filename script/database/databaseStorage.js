@@ -7,17 +7,18 @@ export default class databaseStorage{
   managementstorage() {
     
     var self = this;
-
-    const firebaseref = firebase.database().ref("storage");
+    const firebaserefproduction =firebase.database().ref("production");
+    const firebaserefstorage = firebase.database().ref("storage");
 
     // CRIACAO E POPULAR OS DADOS NA TABELA
-    firebaseref.once('value', function(all){
+    firebaserefproduction.once('value', function(all){
 
+      let arrayItems = [];
+      let arrayItemsFiltered = [];
       all.forEach(
-
         function(curecord){
-          
-          var usuario = curecord.val();
+       arrayItems.push(curecord.val().product);
+          // var usuario = curecord.val();
           var tr = document.createElement('tr');
           tr.classList.add('dot');
 
@@ -28,6 +29,12 @@ export default class databaseStorage{
           var_lista.appendChild(tr);
 
         })
+        console.log(arrayItems);
+        arrayItemsFiltered = arrayItems.filter(function(item, pos) {
+          return arrayItems.indexOf(item) == pos})
+        console.log(arrayItemsFiltered);
+        //cadastrar arrayItemsFiltered  no storage.
+        
     })
 
   }
