@@ -12,6 +12,7 @@ var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
 
+let y = 0;
 
 export default class databasemanagementsale{
 
@@ -213,6 +214,8 @@ export default class databasemanagementsale{
   // MODAL DE EDITAR
   funcmodaledit(a){
 
+    let i = 0;
+
     var self = this;
 
     const firebaseref = firebase.database().ref("sale");
@@ -223,116 +226,148 @@ export default class databasemanagementsale{
 
         if(element.child("totalGeneral").val() == a) {
 
-        // let abe = element.val().paymentWays.val()[dados];
+          // let abe = element.val().paymentWays.val()[dados];
 
-        let vec3 = element.val().paymentWays;
+          let vec3 = element.val().paymentWays;
 
-        let vec4 = element.val().products;
-
-        // console.log(vec3)
-
-        if (var_lista5.hasChildNodes){
-          var_lista5.innerHTML = '';
-         }
-
-        Object.keys(vec4).forEach(function(item4) {
-            
-          // console.log(vec)
-          
-          let vc4 = vec4[item4];
-
-          // console.log(vc4)
-
-          var tr4 = document.createElement('tr');
-
-          var val5 = vc4[Object.keys(vc4)[0]];
-
-          var val6 = vc4[Object.keys(vc4)[3]];
-
-          let dados3 = "<td class='data-table'> " + val5 + " </td>" + "<td class='data-table'> " + val6 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
-
-          // let dados = "<input type='text' value=" + val1 + " disabled/>";
-
-          tr4.innerHTML = dados3;
-          var_lista5.appendChild(tr4);
-
-          // td.innerHTML += dados;
-          // document.getElementById("formapay1").appendChild(td);
-
-          // for(let key in vc) {
-            
-            // let ct = vc[key]
-
-            // console.log(ct)
-
-            // if(ct == "Dinheiro") {
-
-            //   document.getElementById("formapagamento1").value = "Dinheiro";
-
-            // }
-          // }
-
-        })
-
-        if (var_lista4.hasChildNodes){
-          var_lista4.innerHTML = '';
-         }
-
-        Object.keys(vec3).forEach(function(item3) {
+          let vec4 = element.val().products;
 
           // console.log(vec3)
+
+          if (var_lista5.hasChildNodes){
+            var_lista5.innerHTML = '';
+          }
+
+          Object.keys(vec4).forEach(function(item4) {
+
+            let idpro = "pro" + i;
+
+            let idqua = "qua" + i;
+
+            let idval = "val" + i;
+              
+            // console.log(vec)
+            
+            let vc4 = vec4[item4];
+
+            // console.log(vc4)
+
+            var td4 = document.createElement('td');
+
+            var val5 = vc4[Object.keys(vc4)[0]];
+
+            var val8 = vc4[Object.keys(vc4)[1]];
+
+            var val6 = vc4[Object.keys(vc4)[3]];
+
+            let dados3 = "<input id = " + idpro + " placeholder = " + val5 + " ></input>" + "<input id = " + idqua + " placeholder = " + val6 + " ></input>" + "<input id = " + idval + " placeholder = " + val8 + " ></input>";
+
+            // let dados = "<input type='text' value=" + val1 + " disabled/>";
+
+            td4.innerHTML = dados3;
+            var_lista5.appendChild(td4);
+
+            // td.innerHTML += dados;
+            // document.getElementById("formapay1").appendChild(td);
+
+            // for(let key in vc) {
+              
+              // let ct = vc[key]
+
+              // console.log(ct)
+
+              // if(ct == "Dinheiro") {
+
+              //   document.getElementById("formapagamento1").value = "Dinheiro";
+
+              // }
+            // }
+
+            i++;
+          })
+
+          if (var_lista4.hasChildNodes){
+            var_lista4.innerHTML = '';
+          }
+
+          Object.keys(vec3).forEach(function(item3) {
+
+            // console.log(vec3)
+            
+            let vc3 = vec3[item3];
+
+            // console.log(vc3)
+
+            var tr3 = document.createElement('tr');
+
+            var val2 = vc3[Object.keys(vc3)[0]];
+
+            var val7 = vc3[Object.keys(vc3)[1]];
+
+            let dados1 = "<td class='data-table'> " + val2 + " </td>" + "<td class='data-table'> " + val7 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
+            tr3.innerHTML += dados1;
+            var_lista4.appendChild(tr3);
+
+
+          })
+
+          document.getElementById("vendedor2").placeholder = element.val().seller;
+          document.getElementById("totalvenda2").placeholder = element.val().totalGeneral;
+          document.getElementById("totalpago2").placeholder = element.val().totalPaid;
+          document.getElementById("datavenda2").placeholder = element.val().date;
+          document.getElementById("dataentrega2").placeholder = element.val().dateDelivery;
           
-          let vc3 = vec3[item3];
+          var btn = document.getElementById("btn_salvar");
 
-          // console.log(vc3)
+          btn.addEventListener("click", function(e){
 
-          var tr3 = document.createElement('tr');
+            var inputvendedor = document.getElementById("vendedor2").value;
+            var inputtotal = document.getElementById("totalvenda2").value;
+            var inputvalorPago =  document.getElementById("totalpago2").value;
+            var inputdataVenda =  document.getElementById("datavenda2").value;
+            var inputdataEntrega =  document.getElementById("dataentrega2").value;
+            var inputpro = '';
 
-          var val2 = vc3[Object.keys(vc3)[0]];
+            const database = firebase.database();
 
-          var val7 = vc3[Object.keys(vc3)[1]];
+            for(let abc = 0; abc < i; abc++) {
 
-          let dados1 = "<td class='data-table'> " + val2 + " </td>" + "<td class='data-table'> " + val7 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
-          tr3.innerHTML += dados1;
-          var_lista4.appendChild(tr3);
+              let idpro = "pro" + abc;
+              let idqua = "qua" + abc;
+              let idval = "val" + abc;
 
+              if(document.getElementById(idpro).value !== '' || document.getElementById(idqua).value !== '' || document.getElementById(idval).value !== ''){
 
-        })
+                database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + abc).set(document.getElementById(idpro).value);
+                database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + 'quantity' + abc).set(document.getElementById(idqua).value);
+                database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + 'price' + abc).set(document.getElementById(idval).value);
 
-        document.getElementById("vendedor2").placeholder = element.val().seller;
-        document.getElementById("totalvenda2").placeholder = element.val().totalGeneral;
-        document.getElementById("totalpago2").placeholder = element.val().totalPaid;
-        document.getElementById("datavenda2").placeholder = element.val().date;
-        document.getElementById("dataentrega2").placeholder = element.val().dateDelivery;
-          
-        var btn = document.getElementById("btn_salvar");
+              } else {
 
-        btn.addEventListener("click", function(e){
+                alert("FALTA DIGITAR ALGUM VALOR")
 
-          var inputvendedor = document.getElementById("vendedor2").value;
-          var inputtotal = document.getElementById("totalvenda2").value;
-          var inputvalorPago =  document.getElementById("totalpago2").value;
-          var inputdataVenda =  document.getElementById("datavenda2").value;
-          var inputdataEntrega =  document.getElementById("dataentrega2").value;
+              }
 
-          if(inputvendedor === ""){
-            inputvendedor = element.val().seller;
-          } 
-          if (inputtotal === ""){
-            inputtotal = element.val().totalGeneral;
-          } 
-          if (inputvalorPago === ""){
-            inputvalorPago = element.val().totalPaid;
-          }
-          if (inputdataVenda === ""){
-            inputdataVenda = element.val().date;
-          }
-          if (inputdataEntrega === ""){
-            inputdataEntrega = element.val().dateDelivery;
-          }
+            }
 
-          self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega);
-        })   
+            if(inputvendedor === ""){
+              inputvendedor = element.val().seller;
+            } 
+            if (inputtotal === ""){
+              inputtotal = element.val().totalGeneral;
+            } 
+            if (inputvalorPago === ""){
+              inputvalorPago = element.val().totalPaid;
+            }
+            if (inputdataVenda === ""){
+              inputdataVenda = element.val().date;
+            }
+            if (inputdataEntrega === ""){
+              inputdataEntrega = element.val().dateDelivery;
+            }
+
+            // self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega);
+          })   
         } 
       });
     })
