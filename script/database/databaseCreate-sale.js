@@ -29,12 +29,14 @@ export default class databasecreatesale{
             let priceValue = 'price' + i;
             let priceTotalValue = 'pricetotal' + i;
 
-            const firebaseref = firebase.database().ref("user");
-            firebaseref.once('value',(resultado)=>{
+            const stofirebaseref = firebase.database().ref("storage");
+            stofirebaseref.once('value',(resultado)=>{
       
                 resultado.forEach(element => {
 
-                    if(element.child("username").val() == a) {
+                    if(element.child("type").val() == document.getElementById(typeValue).value) {
+
+                        console.log(element.child("type").val())
 
                     }
                 })
