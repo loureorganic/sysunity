@@ -35,59 +35,7 @@ document.getElementById("public").addEventListener("click", function() {
 	document.getElementById('labelDateDelivery').style.display = "none";
 })
 document.getElementById('btn_confirmar_payment').addEventListener('click', function(){
-
-	if(document.getElementById('total-value0').value == '') {
-
-		document.getElementById('total-value0').style.borderColor = "red";
-		document.getElementById('alerta_valortotal').style.display = 'flex';
-
-	} else {
-
-		document.getElementById('total-value0').style.borderColor = "blue";
-		document.getElementById('alerta_valortotal').style.display = 'none';
-
-	}
-	if (document.getElementById('payment_method0').value == '' || document.getElementById('payment_method0').value == null){
-		
-		document.getElementById('payment_method0').style.borderColor = "red";
-		document.getElementById('alerta_formapagamento').style.display = 'flex';
-
-	}
-	else {
-
-		document.getElementById('payment_method0').style.borderColor = "blue";
-		document.getElementById('alerta_formapagamento').style.display = 'none';
-		
-	}
-	if (document.getElementById('total-paid').value == ''){
-		
-		document.getElementById('total-paid').style.borderColor = "red";
-		document.getElementById('total-paid-alerta').style.display = 'flex';
-
-	}
-	else {
-
-		document.getElementById('total-paid').style.borderColor = "blue";
-		document.getElementById('total-paid-alerta').style.display = 'none';
-		
-	}
-	if (document.getElementById('totalpendente').value == ''){
-		
-		document.getElementById('totalpendente').style.borderColor = "red";
-		document.getElementById('totalpendente-alerta').style.display = 'flex';
-
-	}
-	else {
-
-		document.getElementById('totalpendente').style.borderColor = "blue";
-		document.getElementById('totalpendente-alerta').style.display = 'none';
-		
-	}
-	if(document.getElementById('total-value0').value !== '' && document.getElementById('payment_method0').value == '' && document.getElementById('total-paid').value !== '' && document.getElementById('totalpendente').value !== '') {
-
 		salesBackEnd.valueFinal(idPayment);
-
-	}
 })
 document.getElementById("order").addEventListener("click", function() {
 order = true; 
@@ -106,123 +54,8 @@ publics = false;
 
 document.getElementById('btn_confirmar').addEventListener('click', function(){
 
-	if(publics == true) {
-
-		if(document.getElementById('total-general-order').value == '') {
-
-            document.getElementById('total-general-order').style.borderColor = "red";
-            document.getElementById('alerta_totalgeral').style.display = 'flex';
-
-        } else {
-
-            document.getElementById('total-general-order').style.borderColor = "blue";
-            document.getElementById('alerta_totalgeral').style.display = 'none';
-
-        }
-		if(document.getElementById('date').value == '') {
-
-            document.getElementById('date').style.borderColor = "red";
-            document.getElementById('alerta_data').style.display = 'flex';
-
-        } else {
-
-            document.getElementById('date').style.borderColor = "blue";
-            document.getElementById('alerta_data').style.display = 'none';
-
-        }
-		if(document.getElementById('total-general-order').value !== '' && document.getElementById('date').value !== '') {
-	
 			salesBackEnd.valueGeneral(id);
-	
-		}
-	}
-
-	if(order == true) {
-
-		if(document.getElementById('datedelivery').value == '') {
-
-			document.getElementById('datedelivery').style.borderColor = "red";
-            document.getElementById('alerta_data2').style.display = 'flex';
-
-		} else {
-
-			document.getElementById('datedelivery').style.borderColor = "blue";
-            document.getElementById('alerta_data2').style.display = 'none';
-
-		}
-		if(document.getElementById('date').value == '') {
-
-            document.getElementById('date').style.borderColor = "red";
-            document.getElementById('alerta_data').style.display = 'flex';
-
-        } else {
-
-            document.getElementById('date').style.borderColor = "blue";
-            document.getElementById('alerta_data').style.display = 'none';
-
-        }
-        if(document.getElementById('quantity0').value == '') {
-
-            document.getElementById('quantity0').style.borderColor = "red";
-            document.getElementById('quantity-0').style.display = 'flex';
-
-        } else {
-
-            document.getElementById('quantity0').style.borderColor = "blue";
-            document.getElementById('quantity-0').style.display = 'none';
-
-        }
-        if(document.getElementById('0').value == '') {
-
-            document.getElementById('0').style.borderColor = "red";
-            document.getElementById('produto-00').style.display = 'flex';
-
-        } else {
-
-            document.getElementById('0').style.borderColor = "blue";
-            document.getElementById('produto-00').style.display = 'none';
-
-        }
-        if(document.getElementById('type0').value == '') {
-
-            document.getElementById('type0').style.borderColor = "red";
-            document.getElementById('tipo-00').style.display = 'flex';
-
-        } else {
-
-            document.getElementById('type0').style.borderColor = "blue";
-            document.getElementById('tipo-00').style.display = 'none';
-
-        }
-		if(document.getElementById('price0').value == '') {
-
-            document.getElementById('price0').style.borderColor = "red";
-            document.getElementById('alerta_precounidade').style.display = 'flex';
-
-        } else {
-
-            document.getElementById('price0').style.borderColor = "blue";
-            document.getElementById('alerta_precounidade').style.display = 'none';
-
-        }
-		if(document.getElementById('pricetotal0').value == '') {
-
-            document.getElementById('pricetotal0').style.borderColor = "red";
-            document.getElementById('alerta_total').style.display = 'flex';
-
-        } else {
-
-            document.getElementById('pricetotal0').style.borderColor = "blue";
-            document.getElementById('alerta_total').style.display = 'none';
-
-        }
-		if(document.getElementById('date').value !== '' && document.getElementById('quantity0').value !== '' && document.getElementById('0').value && document.getElementById('type0').value !== '' && document.getElementById('price0').value !== '' && document.getElementById('pricetotal0').value !== '' && document.getElementById('datedelivery').value !== '') {
-	
-			salesBackEnd.valueGeneral(id);
-	
-		}
-	}
-	
+		
 })
 
 document.getElementById('options').addEventListener('click', function(){
@@ -303,3 +136,34 @@ document.getElementById("btn_cadastrar").addEventListener("click", function() {
 	}
 
 });
+
+// Função para alterar as abas
+
+let paymentAba = document.querySelector("#payment-tab");
+let productAba = document.querySelector("#product-tab");
+let paymentContent = document.querySelector("#payment");
+let productContent = document.querySelector("#product");
+
+
+
+function handleArrowNext(){
+
+	paymentAba.className = "nav-link active";
+	paymentContent.className = "tab-pane fade active show";
+	
+	productAba.className = "nav-link";
+	productContent.className = "tab-pane fade";
+
+}
+function handleArrowPrevious(){
+	
+	paymentAba.className = "nav-link";
+	paymentContent.className = "tab-pane fade";
+	
+	productAba.className = "nav-link active";
+	productContent.className = "tab-pane fade active show";
+
+}
+
+document.querySelector("#btn_setinha_1").addEventListener("click", handleArrowNext);
+document.querySelector("#btn_setinha_2").addEventListener("click", handleArrowPrevious);
