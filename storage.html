@@ -88,8 +88,8 @@
             </button>
             <div class="collapse" id="account-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li>
-                <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li>
+                <!-- <li><a href="reports_general.html" class="link-dark rounded">Relatórios gerais</a></li> -->
+               <!-- <li><a href="reports_sale.html" class="link-dark rounded">Relatórios de vendas</a></li> -->
                 <li><a href="reports_product.html" class="link-dark rounded">Relatórios de produtos</a></li>
               </ul>
             </div>
@@ -188,8 +188,7 @@
                     </div>
                     <div class="modal-body">
                       <form>
-                        <h5>Nesta página, irá ter uma tabela com datas, descrição e usuário.</h5>
-                        <h6>• Você terá acesso ao que foi modificado no sistema, por quem de acordo com a data.</h6>
+                        <h5>Nesta página, irá ter uma tabela com o nome das produções e quantidade disponível.</h5>
                         <h6>• Caso deseje sair desta página, clique no "x" acima.</h6>
                       </form>
                     </div>
@@ -205,10 +204,10 @@
             <table id="myTable" class="table">
               <thead>
                   <tr>
-                    <th>Nome</th>
-                    <th>Tipo</th>
+                    <th style="text-align: center;">Nome</th>
+        
                     <th style="text-align: center;">Quantidade disponivel</th>
-                    <th>Valor total</th>
+          
                   </tr>
               </thead>
               <tbody id="tablebody"></tbody>
