@@ -55,15 +55,6 @@ const myChart2 = new Chart(grafico2, {
         }]
     },
     options: {
-        animations: {
-          tension: {
-            duration: 1000,
-            easing: 'easeInOutBounce',
-            from: 1,
-            to: 0,
-            loop: true
-          }
-        },
         scales: {
           y: { // defining min and max so hiding the dataset does not change scale range
             min: 0,
