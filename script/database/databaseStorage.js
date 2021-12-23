@@ -18,28 +18,32 @@ export default class databaseStorage{
     })
     // CRIACAO E POPULAR OS DADOS NA TABELA
     firebaserefproduction.once('value', function(all){
-      console.log(storageGeneral)
       let arrayItems = [];
       let arrayItemsFiltered = [];
       all.forEach(
         function(curecord){
        arrayItems.push(curecord.val());
           // var usuario = curecord.val();
-          var tr = document.createElement('tr');
-          tr.classList.add('dot');
-
-          dados =
-          "<td>" + usuario.product + "</td>" + "<td>" + usuario.type + "</td>" + "<td>" + usuario.total + "</td>" + "<td>" + usuario.totalValue + "</td>";
-
-          tr.innerHTML = dados;
-          var_lista.appendChild(tr);
+        })
+      
+        firebaserefstorage.once('value', (all)=>{
+          Object.keys(all.val()).map((item)=>{
+            var tr = document.createElement('tr');
+            console.log({item})
+            console.log(all.val()[item].name);
+            console.log(all.val()[item].totalStorage);
+            tr.classList.add('dot');
+            dados =
+            "<td>" + all.val()[item].name + "</td>" + "<td>" + all.val()[item].totalStorage + "</td>";
+            tr.innerHTML = dados;
+            var_lista.appendChild(tr);
+          });
 
         })
 
 
         arrayItemsFiltered = arrayItems.filter(function(item, pos) {
           return arrayItems.indexOf(item) == pos})
-        //cadastrar arrayItemsFiltered  no storage.
         storageGeneral.map((itemStorage) =>{
           let value = 0;
           arrayItems.map((itemArr)=>{
@@ -50,16 +54,15 @@ export default class databaseStorage{
               //database.ref('storage/'+itemStorage+"/totalStorage").set(value);
             }
           })
-          console.log(itemStorage.name)
-          console.log(value);
           if(itemStorage){
-            
             database.ref('storage/'+itemStorage.name+"/totalStorage").set(value);
           }
         })
 
 
         arrayItemsFiltered.map((item) =>{
+
+
           arrayItems.map((itemStorage) =>{
 
             if (item.product === itemStorage){
