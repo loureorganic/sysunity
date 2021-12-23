@@ -241,21 +241,12 @@
     <form>
       <table>
         <tr>
-          <th class="top-table">Item</th>
+          <th class="top-table">Produto</th>
+          <th class="top-table">Tipo</th>
           <th class="top-table">Quantidade</th>
           <th class="top-table">Valor</th>
         </tr>
         <tbody id="tablebody3"></tbody>
-        <!-- <tr>
-          <td class="data-table">Coxinha de frango</td>
-          <td class="data-table">20</td>
-          <td class="data-table">R$ 0,69</td>
-        </tr>
-        <tr>
-          <td class="data-table">Coxinha de frango</td>
-          <td class="data-table">20</td>
-          <td class="data-table">R$ 0,69</td>
-        </tr> -->
       </table> 
   
       <table class="table-payment">
@@ -265,17 +256,7 @@
           <th class="top-table">Data de pagamento</th>
         </tr>
         <tbody id="tablebody2"></tbody>
-        <!-- <tr>
-          <td class="data-table">Dinheiro</td>
-          <td class="data-table">R$ 5,00</td>
-          <td class="data-table">01/08/21</td>
-        </tr>
-        <tr>
-          <td class="data-table">Dinheiro</td>
-          <td class="data-table">R$ 5,00</td>
-          <td class="data-table">01/08/21</td>
-        </tr> -->
-      </table> 
+      </table>
   
       <div class="group">
         <div class="date-sale">
@@ -326,42 +307,18 @@
   </div>
 
   <form>
-    <table>
-      <tr>
-        <th class="top-table">Item</th>
-        <th class="top-table">Quantidade</th>
-        <th class="top-table">Valor</th>
-      </tr>
-      <tr>
-        <td class="data-table">Coxinha de frango</td>
-        <td class="data-table">20</td>
-        <td class="data-table">R$ 0,69</td>
-      </tr>
-      <tr>
-        <td class="data-table">Coxinha de frango</td>
-        <td class="data-table">20</td>
-        <td class="data-table">R$ 0,69</td>
-      </tr>
-    </table> 
+    <div class="table1">
+      <label for="" id="pro">Produto</label>
+      <label for="" id="tip">Tipo</label>
+      <label for="" id="qua">Quantidade</label>
+      <label for="" id="val">Valor</label>
+    </div>
 
-    <table class="table-payment">
-      <tr>
-        <th class="top-table">Forma de pagamento</th>
-        <th class="top-table">Valor pago</th>
-        <th class="top-table">Data de pagamento</th>
-      </tr>
-      <tbody id="tablebody4"></tbody>
-      <!-- <tr>
-        <td class="data-table">Dinheiro</td>
-        <td class="data-table">R$ 5,00</td>
-        <td class="data-table">01/08/21</td>
-      </tr>
-      <tr>
-        <td class="data-table">Dinheiro</td>
-        <td class="data-table">R$ 5,00</td>
-        <td class="data-table">01/08/21</td>
-      </tr> -->
-    </table> 
+    <div class="table1" style="margin-top: 12px;">
+      <label for="" id="forpag">Forma de pagamento</label>
+      <label for="" id="valpag">Valor pago</label>
+      <label for="" id="datpag">Data de pagamento</label>
+    </div>
 
     <div class="group">
       <div class="date-sale">
@@ -427,7 +384,7 @@
 
   <script type="module" src="script/sale_management.js"></script>
   <script src="script/preloader.js"></script>
-  <script type="module" src="script/modal.js"></script>
+  <!-- <script type="module" src="script/modal.js"></script> -->
 </body>
 
 </html>

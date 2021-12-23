@@ -2,8 +2,17 @@ var dados = "";
 var var_lista = document.getElementById("tablebody");
 var var_lista2 = document.getElementById("tablebody2");
 var var_lista3 = document.getElementById("tablebody3");
-var var_lista4 = document.getElementById("tablebody4");
-var var_lista5 = document.getElementById("tablebody5");
+// var var_lista4 = document.getElementById("tablebody4");
+// var var_lista5 = document.getElementById("tablebody5");
+
+var td3a = document.createElement('td');
+var td3b = document.createElement('td');
+var td3c = document.createElement('td');
+
+var td4a = document.createElement('td');
+var td4b = document.createElement('td');
+var td4c = document.createElement('td');
+var td4d = document.createElement('td');
 
 // var td = document.createElement("td");
 // var td2 = document.createElement("td");
@@ -11,7 +20,6 @@ var var_lista5 = document.getElementById("tablebody5");
 var btnsee = '<button id="btnSee" class="button button2" ></button>';
 var btnedit = '<button id="btnEdit" class="button button2" ></button>';
 var btndelete = '<button id="btnDelete" class="button button2" ></button>';
-
 
 export default class databasemanagementsale{
 
@@ -116,7 +124,6 @@ export default class databasemanagementsale{
 
           Object.keys(vec2).forEach(function(item2) {
             
-
             // console.log(vec)
             
             let vc2 = vec2[item2];
@@ -161,7 +168,6 @@ export default class databasemanagementsale{
 
           Object.keys(vec).forEach(function(item) {
 
-
             // console.log(vec)
             
             let vc = vec[item];
@@ -203,7 +209,7 @@ export default class databasemanagementsale{
           document.getElementById("totalvenda1").value = element.val().totalGeneral;
           document.getElementById("totalpago1").value = element.val().totalPaid;
           document.getElementById("datavenda1").value = element.val().date;
-          document.getElementById("dataentrega1").value = element.val().date;
+          document.getElementById("dataentrega1").value = element.val().dateDelivery;
           // document.getElementById("valor").value = element.val().value;
           // document.getElementById("valor").value = element.val().value;
 
@@ -215,6 +221,10 @@ export default class databasemanagementsale{
   // MODAL DE EDITAR
   funcmodaledit(a){
 
+    let i = 0;
+
+    let y = 0;
+
     var self = this;
 
     const firebaseref = firebase.database().ref("sale");
@@ -225,75 +235,263 @@ export default class databasemanagementsale{
 
         if(element.child("totalGeneral").val() == a) {
 
-        // let abe = element.val().paymentWays.val()[dados];
+          // let abe = element.val().paymentWays.val()[dados];
 
-        let vec = element.val().paymentWays;
+          let vec3 = element.val().paymentWays;
 
-        // console.log(vec)
+          let vec4 = element.val().products;
 
-        Object.keys(vec).forEach(function(item) {
+          // console.log(vec3)
 
-          // console.log(vec)
+          if (td4a.hasChildNodes){
+            td4a.innerHTML = '';
+          }
+
+          if (td4b.hasChildNodes){
+            td4b.innerHTML = '';
+          }
+
+          if (td4c.hasChildNodes){
+            td4c.innerHTML = '';
+          }
+
+          if (td4d.hasChildNodes){
+            td4d.innerHTML = '';
+          }
+
+          Object.keys(vec4).forEach(function(item4) {
+
+            let idpro = "pro" + i;
+
+            let idtip = "tip" + i;
+
+            let idqua = "qua" + i;
+
+            let idval = "val" + i;
+              
+            // console.log(vec)
+            
+            let vc4 = vec4[item4];
+
+            // console.log(vc4)
+
+            var td4 = document.createElement('td');
+
+            var val5 = vc4[Object.keys(vc4)[0]];
+            var val8 = vc4[Object.keys(vc4)[1]];
+            var val6 = vc4[Object.keys(vc4)[3]];
+            var val9 = vc4[Object.keys(vc4)[4]];
+
+            let dados3a = "<input id = " + idpro + " placeholder = " + val5 + " ></input>";
+            let dados3b = "<input id = " + idtip + " placeholder = " + val9 + " ></input>";
+            let dados3c = "<input id = " + idqua + " placeholder = " + val6 + " ></input>";
+            let dados3d = "<input id = " + idval + " placeholder = " + val8 + " ></input>";
+
+            // let dados = "<input type='text' value=" + val1 + " disabled/>";
+
+            // td.innerHTML += dados;
+            // document.getElementById("formapay1").appendChild(td);
+
+            td4a.innerHTML += dados3a;
+            document.getElementById("pro").appendChild(td4a);
+
+            td4b.innerHTML += dados3b;
+            document.getElementById("tip").appendChild(td4b);
+
+            td4c.innerHTML += dados3c;
+            document.getElementById("qua").appendChild(td4c);
+
+            td4d.innerHTML += dados3d;
+            document.getElementById("val").appendChild(td4d);
+
+            i++;
+          })
+
+          if (td3a.hasChildNodes){
+            td3a.innerHTML = '';
+          }
+
+          if (td3b.hasChildNodes){
+            td3b.innerHTML = '';
+          }
+
+          if (td3c.hasChildNodes){
+            td3c.innerHTML = '';
+          }
+
+          Object.keys(vec3).forEach(function(item3) {
+
+            let idfor2 = "for" + y;
+
+            let idpag2 = "pag" + y;
+
+            let iddat2 = "dat" + y;
+
+            // console.log(vec3)
+            
+            let vc3 = vec3[item3];
+
+            // console.log(vc3)
+
+            var val2 = vc3[Object.keys(vc3)[0]];
+
+            var val7 = vc3[Object.keys(vc3)[1]];
+
+            let dados1a = "<input id = " + idfor2 + " placeholder = " + val2 + " ></input>";
+            let dados1b = "<input id = " + idpag2 + " placeholder = " + val7 + " ></input>";
+            let dados1c = "<input id = " + iddat2 + " placeholder = " + element.val().date + " ></input>";
+
+            td3a.innerHTML += dados1a;
+            document.getElementById("forpag").appendChild(td3a);
+
+            td3b.innerHTML += dados1b;
+            document.getElementById("valpag").appendChild(td3b);
+
+            td3c.innerHTML += dados1c;
+            document.getElementById("datpag").appendChild(td3c);
+
+            y++;
+          })
+
+          document.getElementById("vendedor2").placeholder = element.val().seller;
+          document.getElementById("totalvenda2").placeholder = element.val().totalGeneral;
+          document.getElementById("totalpago2").placeholder = element.val().totalPaid;
+          document.getElementById("datavenda2").placeholder = element.val().date;
+          document.getElementById("dataentrega2").placeholder = element.val().dateDelivery;
           
-          let vc = vec[item];
+          var btn = document.getElementById("btn_salvar");
 
-          // console.log(vc)
+          btn.addEventListener("click", function(e){
 
-          var val2 = vc[Object.keys(vc)[0]];
+            var inputvendedor = document.getElementById("vendedor2").value;
+            var inputtotal = document.getElementById("totalvenda2").value;
+            var inputvalorPago =  document.getElementById("totalpago2").value;
+            var inputdataVenda =  document.getElementById("datavenda2").value;
+            var inputdataEntrega =  document.getElementById("dataentrega2").value;
 
-          let dados1 = "<input type='text' placeholder=" + val2 + " />";
-          td2.innerHTML += dados1;
-          var_lista4.appendChild(td2);
+            const database = firebase.database();
 
+            for(let abc = 0; abc < i; abc++) {
 
-        })
+              let idpro = "pro" + abc;
+              let idqua = "qua" + abc;
+              let idval = "val" + abc;
 
-        document.getElementById("vendedor2").placeholder = element.val().seller;
-        document.getElementById("total2").placeholder = element.val().totalGeneral;
-        document.getElementById("totalpago2").placeholder = element.val().totalPaid;
-        document.getElementById("datavenda2").placeholder = element.val().date;
-        document.getElementById("dataentrega2").placeholder = element.val().date;
-          
-        var btn = document.getElementById("btn_salvar");
-        btn.addEventListener("click", function(e){
-          var inputvendedor = document.getElementById("vendedor2").value;
-          var inputtotal = document.getElementById("total2").value;
-          var inputvalorPago =  document.getElementById("valorpago2").value;
-          var inputdataVenda =  document.getElementById("datavenda2").value;
-          var inputdataPagamento =  document.getElementById("datapagamento2").value;
+              if(document.getElementById(idpro).value == '') {
 
-          if(inputvendedor === ""){
-            inputvendedor = element.val().seller;
-          } 
-          if (inputtotal === ""){
-            inputtotal = element.val().type;
-          } 
-          if (inputvalorPago === ""){
-            inputvalorPago = element.val().totalPaid;
-          }
-          if (inputdataVenda === ""){
-            inputdataVenda = element.val().date;
-          }
-          if (inputdataPagamento === ""){
-            inputdataPagamento = element.val().date;
-          }
+                document.getElementById(idpro).style.borderColor = "red";
+                // document.getElementById('alerta_valortotal').style.display = 'flex';
+            
+              } else {
+            
+                document.getElementById(idpro).style.borderColor = "blue";
+                // document.getElementById('alerta_valortotal').style.display = 'none';
+            
+              }
+              if (document.getElementById(idqua).value == ''){
+                
+                document.getElementById(idqua).style.borderColor = "red";
+                // document.getElementById('alerta_formapagamento').style.display = 'flex';
+            
+              }
+              else {
+            
+                document.getElementById(idqua).style.borderColor = "blue";
+                // document.getElementById('alerta_formapagamento').style.display = 'none';
+                
+              }
+              if (document.getElementById(idval).value == ''){
+                
+                document.getElementById(idval).style.borderColor = "red";
+                // document.getElementById('alerta_formapagamento').style.display = 'flex';
+            
+              }
+              else {
+            
+                document.getElementById(idval).style.borderColor = "blue";
+                // document.getElementById('alerta_formapagamento').style.display = 'none';
+                
+              }
+              if(document.getElementById(idpro).value !== '' && document.getElementById(idqua).value !== '' && document.getElementById(idval).value !== ''){
 
-          self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataPagamento);
-        })   
+                database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + abc).set(document.getElementById(idpro).value);
+                database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + 'quantity' + abc).set(document.getElementById(idqua).value);
+                database.ref('sale/' + element.key + '/products/' + 'product' + abc + '/' + 'price' + abc).set(document.getElementById(idval).value);
+
+              }
+
+            }
+
+            for(let def = 0; def < y; def++) {
+                
+              let idfor = "for" + def;
+              let idpag = "pag" + def;
+
+              if(document.getElementById(idfor).value == '') {
+
+                document.getElementById(idfor).style.borderColor = "red";
+                // document.getElementById('alerta_valortotal').style.display = 'flex';
+            
+              } else {
+            
+                document.getElementById(idfor).style.borderColor = "blue";
+                // document.getElementById('alerta_valortotal').style.display = 'none';
+            
+              }
+              if (document.getElementById(idpag).value == ''){
+                
+                document.getElementById(idpag).style.borderColor = "red";
+                // document.getElementById('alerta_formapagamento').style.display = 'flex';
+            
+              }
+              else {
+            
+                document.getElementById(idpag).style.borderColor = "blue";
+                // document.getElementById('alerta_formapagamento').style.display = 'none';
+                
+              }
+
+              if(document.getElementById(idfor).value !== '' && document.getElementById(idpag).value !== '') {
+
+                database.ref('sale/' + element.key + '/paymentWays/' + 'paymentWay' + def + '/' + 'payment_method' + def).set(document.getElementById(idfor).value);
+                database.ref('sale/' + element.key + '/paymentWays/' + 'paymentWay' + def + '/' + 'total-value' + def).set(document.getElementById(idpag).value);
+
+              }
+
+            }
+
+            if(inputvendedor === ""){
+              inputvendedor = element.val().seller;
+            } 
+            if (inputtotal === ""){
+              inputtotal = element.val().totalGeneral;
+            } 
+            if (inputvalorPago === ""){
+              inputvalorPago = element.val().totalPaid;
+            }
+            if (inputdataVenda === ""){
+              inputdataVenda = element.val().date;
+            }
+            if (inputdataEntrega === ""){
+              inputdataEntrega = element.val().dateDelivery;
+            }
+
+            self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega);
+          })   
         } 
       });
     })
   }
 
   // FUNCAO P/ ATUALIZAR DADOS
-  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataPagamento){
+  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataEntrega){
     const database = firebase.database();
     let active = false;
     database.ref('sale/'+chave+'/seller').set(vendedor);
     database.ref('sale/'+chave+'/totalGeneral').set(total);
     database.ref('sale/'+chave+'/totalPaid').set(valorPago);
     database.ref('sale/'+chave+'/date').set(dataVenda);
-    // database.ref('sale/'+chave+'/value').set(valor);
+    database.ref('sale/'+chave+'/dateDelivery').set(dataEntrega);
     
     window.location.reload(active);
   };

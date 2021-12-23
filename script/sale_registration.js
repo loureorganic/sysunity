@@ -55,8 +55,7 @@ publics = false;
 document.getElementById('btn_confirmar').addEventListener('click', function(){
 
 			salesBackEnd.valueGeneral(id);
-	
-	
+		
 })
 
 document.getElementById('options').addEventListener('click', function(){
@@ -129,7 +128,7 @@ firebaseref.once('value').then(function (snapshot) {
 	
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
-	console.log({id})
+	// console.log({id})
 	if(order){
 		salesBackEnd.createSaleOrder(id , idPayment);
 	}else if(publics){
