@@ -251,6 +251,7 @@ table button{
     justify-content: center;
     align-content: center;
     align-items: center;
+    width: 50%;
   }
   
 .loader2 {
@@ -368,6 +369,7 @@ table button{
     flex-direction: column;
     margin-bottom: 18px;
     padding: 12px;
+    width: 100%;
   }
 .mod form label {
     font-weight: 600;
@@ -383,6 +385,7 @@ table button{
     border-style: solid;
     border-color: #085D8C;
     width: 100%;
+    text-align: center;
   }
 .mod .name label{
     display: flex;
