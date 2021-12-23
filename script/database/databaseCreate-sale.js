@@ -11,6 +11,8 @@ let labelTotalGeneral = document.getElementById('labelTotalGeneral');
 export default class databasecreatesale{
 
     createSaleOrder(id, idPayment){
+
+        let active = false;
         
         const database = firebase.database();
         let newProductKey = database.ref().child('sale').push().key;
@@ -78,9 +80,54 @@ export default class databasecreatesale{
         database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
         database.ref('historic/'+newClientKey+'/action').set("cadastrarSale");
 
+        const modal = document.getElementById("modal-reg");
+
+        if(modal){
+
+          modal.classList.add('mostrar');
+
+          modal.addEventListener("click", (e) => {
+
+            if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+
+                modal.classList.remove('mostrar');
+                window.location.reload(active);
+
+            } else if(e.target.id == "viacl") {
+
+                console.log("111")
+
+                for (let i = 0; i < id + 1; i++){
+
+                    let productValue = '' + i;
+                    let typeValue = 'type' + i;
+                    let quantityValue = 'quantity' + i;
+                    let priceValue = 'price' + i;
+                    let priceTotalValue = 'pricetotal' + i;
+    
+                    const doc = new jsPDF("portrait","mm",[210,297])
+                    doc.setFont("helvetica")
+                    doc.setFontStyle("normal")
+                    doc.setFontSize(11)
+                    doc.text("Produto: " + document.getElementById(productValue).value + " de " + document.getElementById(typeValue).value, 10, 10)
+                    // doc.text("Data de produção: " + production.fabrication, 10, 20)
+                    // doc.text("Data de produção: " + production.deadline, 10, 30)
+                    // doc.text("Unidades: " + production.totalquantity, 10, 40)
+                    // doc.text("Lote: " + production.batch, 10, 50)          
+                    doc.save("bilhete-venda");
+                    // doc.autoPrint();
+                    // doc.output("dataurlnewwindow");
+
+                    window.location.reload(active);
+                }
+            }
+          })
+        }
+
       }
       
       createSalePublic(idPayment){
+        let active = false;
       
       const database = firebase.database();
       let newProductKey = database.ref().child('saleBalance').push().key;
@@ -98,7 +145,25 @@ export default class databasecreatesale{
         database.ref('saleBalance/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/' +paymentForm).set(document.getElementById(paymentForm).value);
         database.ref('saleBalance/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/'  +valueForm).set(document.getElementById(valueForm).value);
      }
-      }
+
+        const modal = document.getElementById("modal-reg");
+
+        if(modal){
+
+            modal.classList.add('mostrar');
+
+            modal.addEventListener("click", (e) => {
+
+                if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+
+                    modal.classList.remove('mostrar')
+                    window.location.reload(active);
+
+                }
+            })
+        }
+
+    }
     valueFinal(idPayment){
 
         let total = 0;
