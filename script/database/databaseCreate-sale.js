@@ -29,28 +29,6 @@ export default class databasecreatesale{
             let priceValue = 'price' + i;
             let priceTotalValue = 'pricetotal' + i;
 
-            const stofirebaseref = firebase.database().ref("storage");
-            stofirebaseref.once('value',(resultado)=>{
-      
-                resultado.forEach(element => {
-
-                    if(element.child("product").val() == document.getElementById(productValue).value && element.child("type").val() == document.getElementById(typeValue).value) {
-
-                        let oldTotal = element.child("total").val();
-                        let oldValue = element.child("totalValue").val();
-                        let newTotal = document.getElementById(quantityValue).value;
-                        let newValue = document.getElementById(priceValue).value;
-
-                        let calc = oldValue - newTotal * newValue;
-                        let calc2 = oldTotal - newTotal;
-
-                        database.ref('storage/'+element.key+'/total').set(calc2);
-                        database.ref('storage/'+element.key+'/totalValue').set(calc);
-
-                    }
-                })
-            })
-
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +productValue).set(document.getElementById(productValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/'  +typeValue).set(document.getElementById(typeValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +quantityValue).set(document.getElementById(quantityValue).value);

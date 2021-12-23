@@ -133,10 +133,14 @@ export default class databasemanagementsale{
             var tr3 = document.createElement('tr');
 
             var val3 = vc2[Object.keys(vc2)[0]];
+            var val4 = vc2[Object.keys(vc2)[4]];
+            var val10 = vc2[Object.keys(vc2)[3]];
+            var val11 = vc2[Object.keys(vc2)[1]];
 
-            var val4 = vc2[Object.keys(vc2)[3]];
-
-            let dados3 = "<td class='data-table'> " + val3 + " </td>" + "<td class='data-table'> " + val4 + " </td>" + "<td class='data-table'> " + element.val().date + " </td>";
+            let dados3 = "<td class='data-table'> " + val3 + " </td>" +
+                          "<td class='data-table'> " + val4 + " </td>" + 
+                          "<td class='data-table'> " + val10 + " </td>" +
+                          "<td class='data-table'> " + val11 + " </td>";
 
             // let dados = "<input type='text' value=" + val1 + " disabled/>";
 
