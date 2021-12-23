@@ -290,6 +290,16 @@ transform: rotate(180deg);
 transition: 0.25s;
 }
 
+.link-dark {
+    width: 100%;
+}
+.link-dark h4{
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 8px;
+    color: #fff;
+    margin: 0;
+}
 .set1{
 padding-right: 24px;
 display: flex;
