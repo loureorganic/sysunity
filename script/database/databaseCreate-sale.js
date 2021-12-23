@@ -129,6 +129,10 @@ export default class databasecreatesale{
                     idgeneral += 10;
                     doc.text("---------------------------", 10, idgeneral)
                     idgeneral += 10;
+                    doc.text("Total da Venda: " + document.getElementById("totalGeneralPayment").value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("Total Pendente: " + document.getElementById("totalpendente").value, 10, idgeneral)
+                    idgeneral += 10;
                 }
      
                 doc.save("nota-nao-fiscal-venda");
