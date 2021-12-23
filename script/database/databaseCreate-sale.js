@@ -31,27 +31,27 @@ export default class databasecreatesale{
             let priceValue = 'price' + i;
             let priceTotalValue = 'pricetotal' + i;
 
-            const stofirebaseref = firebase.database().ref("storage");
-            stofirebaseref.once('value',(resultado)=>{
+            // const stofirebaseref = firebase.database().ref("storage");
+            // stofirebaseref.once('value',(resultado)=>{
       
-                resultado.forEach(element => {
+            //     resultado.forEach(element => {
 
-                    if(element.child("product").val() == document.getElementById(productValue).value && element.child("type").val() == document.getElementById(typeValue).value) {
+            //         if(element.child("product").val() == document.getElementById(productValue).value && element.child("type").val() == document.getElementById(typeValue).value) {
 
-                        let oldTotal = element.child("total").val();
-                        let oldValue = element.child("totalValue").val();
-                        let newTotal = document.getElementById(quantityValue).value;
-                        let newValue = document.getElementById(priceValue).value;
+            //             let oldTotal = element.child("total").val();
+            //             let oldValue = element.child("totalValue").val();
+            //             let newTotal = document.getElementById(quantityValue).value;
+            //             let newValue = document.getElementById(priceValue).value;
 
-                        let calc = oldValue - newTotal * newValue;
-                        let calc2 = oldTotal - newTotal;
+            //             let calc = oldValue - newTotal * newValue;
+            //             let calc2 = oldTotal - newTotal;
 
-                        database.ref('storage/'+element.key+'/total').set(calc2);
-                        database.ref('storage/'+element.key+'/totalValue').set(calc);
+            //             database.ref('storage/'+element.key+'/total').set(calc2);
+            //             database.ref('storage/'+element.key+'/totalValue').set(calc);
 
-                    }
-                })
-            })
+            //         }
+            //     })
+            // })
 
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +productValue).set(document.getElementById(productValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/'  +typeValue).set(document.getElementById(typeValue).value);
@@ -87,9 +87,33 @@ export default class databasecreatesale{
           modal.classList.add('mostrar');
 
           modal.addEventListener("click", (e) => {
+
             if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+
                 modal.classList.remove('mostrar');
                 window.location.reload(active);
+
+            }else if(e.target.id == "viacli") {
+
+                
+
+                
+    
+                const doc = new jsPDF("portrait","mm",[210,297])
+                doc.setFont("helvetica")
+                doc.setFontStyle("normal")
+                doc.setFontSize(11)
+                doc.text("Produto: ", 10, 10)
+                doc.text("Data de produção: ", 10, 20)
+                doc.text("Data de produção: ", 10, 30)
+                doc.text("Unidades: ", 10, 40)
+                doc.text("Lote: ", 10, 50)          
+                doc.save("bilhete-venda");
+                // doc.autoPrint();
+                // doc.output("dataurlnewwindow");
+
+                // window.location.reload(active);
+                
             }
           })
         }
