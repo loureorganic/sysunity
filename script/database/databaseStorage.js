@@ -47,10 +47,11 @@ export default class databaseStorage{
             if(itemStorage.name == itemArr.product){
               value = value + itemArr.totalquantity;
               // console.log(itemArr.totalquantity)
-              console.log(value);
               //database.ref('storage/'+itemStorage+"/totalStorage").set(value);
             }
           })
+          console.log(itemStorage.name)
+          console.log(value);
           if(itemStorage){
             
             database.ref('storage/'+itemStorage.name+"/totalStorage").set(value);
