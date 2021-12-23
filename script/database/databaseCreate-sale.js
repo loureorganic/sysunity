@@ -103,25 +103,35 @@ export default class databasecreatesale{
                 doc.setFont("helvetica")
                 doc.setFontStyle("normal")
                 doc.setFontSize(11)
-                doc.text('Vendedor:' + document.getElementById('seller').value, 10, 10)
-                doc.text("Produtos: ", 10, 20)
-        for (let i = 0; i < id + 1; i++){
-            let productValue = '' + i;
-            let typeValue = 'type' + i;
-            let quantityValue = 'quantity' + i;
-            let priceValue = 'price' + i;
-            let priceTotalValue = 'pricetotal' + i;
-            var idgeneral = i * 10;
-            doc.text("Produto: " + document.getElementById(productValue).value, -idgeneral, -idgeneral)
-        }
-                // doc.text("Data de produção: ", 10, 40)
-                // doc.text("Unidades: ", 10, 50)
-                // doc.text("Lote: ", 10, 60)          
-                doc.save("nota-nao-fiscal-venda");
-                // doc.autoPrint();
-                // doc.output("dataurlnewwindow");
 
-                // window.location.reload(active);
+                doc.text('Vendedor: ' + document.getElementById('seller').value, 10, 10)
+                doc.text('Data: ' + document.getElementById('date').value, 10, 20)
+                doc.text('Data de Entrega: ' + document.getElementById('datedelivery').value, 10, 30)
+
+                doc.text('------------------------------', 10, 40)
+
+                var idgeneral = 50;
+                
+                for (let i = 0; i < id + 1; i++){
+                    let productValue = '' + i;
+                    let typeValue = 'type' + i;
+                    let quantityValue = 'quantity' + i;
+                    let priceValue = 'price' + i;
+                    let priceTotalValue = 'pricetotal' + i;
+
+                    doc.text("Produto: " + document.getElementById(productValue).value + " de " + document.getElementById(typeValue).value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("Quantidade: " + document.getElementById(quantityValue).value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("Preço unidade: " + document.getElementById(priceValue).value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("Valor Total: " + document.getElementById(priceTotalValue).value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("---------------------------", 10, idgeneral)
+                    idgeneral += 10;
+                }
+     
+                doc.save("nota-nao-fiscal-venda");
                 
             }
           })
