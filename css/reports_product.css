@@ -35,21 +35,8 @@
     margin-top: 18px;
 }
 
-.graphics-group{
-    display: flex;
-    margin-left: 42px;
-}
-
-.graphics-double{
-    display: flex;
-    width: 50%;
-    margin: 18px;
-    margin-right: 24px
-}
-
 .graphics-single{
-    display: flex;
-    width: 40%;
+    width: 60%;
     align-self: center;
     margin: 24px 0px 0px 50px;
 }
