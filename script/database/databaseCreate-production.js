@@ -169,29 +169,29 @@ export default class databasecreateproduction{
 
       let active = false;
     
-      // const database = firebase.database();
-      // let newClientKey = database.ref().child('production').push().key;
-      // database.ref('production/'+newClientKey+'/product').set(production.product);
-      // database.ref('production/'+newClientKey+'/type').set(production.type);
-      // database.ref('production/'+newClientKey+'/fabricationdate').set(production.fabrication);
-      // database.ref('production/'+newClientKey+'/deadlinedate').set(production.deadline);
-      // database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
-      // database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
-      // database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
-      // database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
-      // database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
-      // database.ref('production/'+newClientKey+'/batch').set(production.batch);
-      // database.ref('production/'+newClientKey+'/user').set(a.key);
+      const database = firebase.database();
+      let newClientKey = database.ref().child('production').push().key;
+      database.ref('production/'+newClientKey+'/product').set(production.product);
+      database.ref('production/'+newClientKey+'/type').set(production.type);
+      database.ref('production/'+newClientKey+'/fabricationdate').set(production.fabrication);
+      database.ref('production/'+newClientKey+'/deadlinedate').set(production.deadline);
+      database.ref('production/'+newClientKey+'/packagequantity').set(production.packagequantity);
+      database.ref('production/'+newClientKey+'/packageperunity').set(production.packageperunity);
+      database.ref('production/'+newClientKey+'/totalquantity').set(production.totalquantity);
+      database.ref('production/'+newClientKey+'/cadastrationDate').set(cadastrationDate);
+      database.ref('production/'+newClientKey+'/cadastrationHour').set(cadastrationHour);
+      database.ref('production/'+newClientKey+'/batch').set(production.batch);
+      database.ref('production/'+newClientKey+'/user').set(a.key);
 
-      // let today = new Date();
-      // let authUser = localStorage.getItem("id");
-      // let cadastrationDate = today.toLocaleDateString();
-      // let cadastrationHour = today.toLocaleTimeString();
-      // let newClientKey2 = database.ref().child('user').push().key;
-      // database.ref('historic/'+newClientKey2+'/userAction').set(authUser);
-      // database.ref('historic/'+newClientKey2+'/date').set(cadastrationDate);
-      // database.ref('historic/'+newClientKey2+'/hour').set(cadastrationHour);
-      // database.ref('historic/'+newClientKey2+'/action').set("deletarProduct");
+      let today = new Date();
+      let authUser = localStorage.getItem("id");
+      let cadastrationDate = today.toLocaleDateString();
+      let cadastrationHour = today.toLocaleTimeString();
+      let newClientKey2 = database.ref().child('user').push().key;
+      database.ref('historic/'+newClientKey2+'/userAction').set(authUser);
+      database.ref('historic/'+newClientKey2+'/date').set(cadastrationDate);
+      database.ref('historic/'+newClientKey2+'/hour').set(cadastrationHour);
+      database.ref('historic/'+newClientKey2+'/action').set("deletarProduct");
 
     });
 
@@ -200,8 +200,9 @@ export default class databasecreateproduction{
 
   clickImprimir(production) {
 
-    const modal = document.getElementById("modal-note");
     let active = false;
+
+    const modal = document.getElementById("modal-reg");
 
     if(modal){
 
@@ -209,19 +210,12 @@ export default class databasecreateproduction{
 
       modal.addEventListener("click", (e) => {
 
-        if(e.target.id == modal || e.target.className == 'fechar'){
+        if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
 
           modal.classList.remove('mostrar');
           window.location.reload(active);
 
-        }
-        if(e.target.id == 'deny') {
-
-          modal.classList.remove('mostrar');
-          window.location.reload(active);
-          
-        }
-        else if(e.target.id == 'confirm') {
+        } else if(e.target.id == 'confirm') {
 
           // CAPTURAR O PRODUTO, O TIPO, O LOTE, A DATA DE PRODUCAO, A DATA DE VENCIMENTO E A UNIDADE
           // const doc = new jsPDF()
@@ -248,8 +242,9 @@ export default class databasecreateproduction{
 
   clickImprimir2(production) {
 
-    const modal = document.getElementById("modal-note");
     let active = false;
+
+    const modal = document.getElementById("modal-reg");
 
     if(modal){
 
@@ -257,17 +252,12 @@ export default class databasecreateproduction{
 
       modal.addEventListener("click", (e) => {
 
-        if(e.target.id == modal || e.target.className == 'fechar'){
+        if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
 
           modal.classList.remove('mostrar');
           window.location.reload(active);
 
-        }
-        if(e.target.id == 'deny') {
-          modal.classList.remove('mostrar');
-          window.location.reload(active);
-        }
-        else if(e.target.id == 'confirm') {
+        } else if(e.target.id == 'confirm') {
 
           // CAPTURAR O PRODUTO, O TIPO, O LOTE, A DATA DE PRODUCAO, A DATA DE VENCIMENTO E A UNIDADE
           // const doc = new jsPDF()
@@ -290,7 +280,6 @@ export default class databasecreateproduction{
       })
     }
   }
-   
 }
 
 
