@@ -11,6 +11,8 @@ let labelTotalGeneral = document.getElementById('labelTotalGeneral');
 export default class databasecreatesale{
 
     createSaleOrder(id, idPayment){
+
+        let active = false;
         
         const database = firebase.database();
         let newProductKey = database.ref().child('sale').push().key;
@@ -29,6 +31,28 @@ export default class databasecreatesale{
             let quantityValue = 'quantity' + i;
             let priceValue = 'price' + i;
             let priceTotalValue = 'pricetotal' + i;
+
+            // const stofirebaseref = firebase.database().ref("storage");
+            // stofirebaseref.once('value',(resultado)=>{
+      
+            //     resultado.forEach(element => {
+
+            //         if(element.child("product").val() == document.getElementById(productValue).value && element.child("type").val() == document.getElementById(typeValue).value) {
+
+            //             let oldTotal = element.child("total").val();
+            //             let oldValue = element.child("totalValue").val();
+            //             let newTotal = document.getElementById(quantityValue).value;
+            //             let newValue = document.getElementById(priceValue).value;
+
+            //             let calc = oldValue - newTotal * newValue;
+            //             let calc2 = oldTotal - newTotal;
+
+            //             database.ref('storage/'+element.key+'/total').set(calc2);
+            //             database.ref('storage/'+element.key+'/totalValue').set(calc);
+
+            //         }
+            //     })
+            // })
 
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/' +productValue).set(document.getElementById(productValue).value);
             database.ref('sale/'+newProductKey+'/products/'+ 'product'+ i + '/'  +typeValue).set(document.getElementById(typeValue).value);
@@ -57,9 +81,67 @@ export default class databasecreatesale{
         database.ref('historic/'+newClientKey+'/hour').set(cadastrationHour);
         database.ref('historic/'+newClientKey+'/action').set("cadastrarSale");
 
+        const modal = document.getElementById("modal-reg");
+
+        if(modal){
+
+          modal.classList.add('mostrar');
+
+          modal.addEventListener("click", (e) => {
+
+            if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+
+                modal.classList.remove('mostrar');
+                window.location.reload(active);
+
+            }else if(e.target.id == "viacli") {
+
+                
+
+                
+    
+                const doc = new jsPDF("portrait","mm",[210,297])
+                doc.setFont("helvetica")
+                doc.setFontStyle("normal")
+                doc.setFontSize(11)
+
+                doc.text('Vendedor: ' + document.getElementById('seller').value, 10, 10)
+                doc.text('Data: ' + document.getElementById('date').value, 10, 20)
+                doc.text('Data de Entrega: ' + document.getElementById('datedelivery').value, 10, 30)
+
+                doc.text('------------------------------', 10, 40)
+
+                var idgeneral = 50;
+                
+                for (let i = 0; i < id + 1; i++){
+                    let productValue = '' + i;
+                    let typeValue = 'type' + i;
+                    let quantityValue = 'quantity' + i;
+                    let priceValue = 'price' + i;
+                    let priceTotalValue = 'pricetotal' + i;
+
+                    doc.text("Produto: " + document.getElementById(productValue).value + " de " + document.getElementById(typeValue).value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("Quantidade: " + document.getElementById(quantityValue).value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("Preço unidade: " + document.getElementById(priceValue).value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("Valor Total: " + document.getElementById(priceTotalValue).value, 10, idgeneral)
+                    idgeneral += 10;
+                    doc.text("---------------------------", 10, idgeneral)
+                    idgeneral += 10;
+                }
+     
+                doc.save("nota-nao-fiscal-venda");
+                
+            }
+          })
+        }
+
       }
       
       createSalePublic(idPayment){
+        let active = false;
       
       const database = firebase.database();
       let newProductKey = database.ref().child('saleBalance').push().key;
@@ -78,6 +160,21 @@ export default class databasecreatesale{
         database.ref('saleBalance/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/' +paymentForm).set(document.getElementById(paymentForm).value);
         database.ref('saleBalance/'+newProductKey+'/paymentWays/'+  'paymentWay'+ i + '/'  +valueForm).set(document.getElementById(valueForm).value);
      }
+
+     const modal = document.getElementById("modal-reg");
+
+     if(modal){
+
+        modal.classList.add('mostrar');
+
+        modal.addEventListener("click", (e) => {
+          if(e.target.id == "modal-reg" || e.target.className == 'fechar'){
+              modal.classList.remove('mostrar')
+              window.location.reload(active);
+          }
+        })
+      }
+
       }
     valueFinal(idPayment){
 
