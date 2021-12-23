@@ -35,8 +35,20 @@
     margin-top: 18px;
 }
 
-.graphics-single{
-    width: 60%;
+.graphics-score{
+    width: 85%;
+    align-self: center;
+    margin: 24px 0px 0px 50px;
+}
+
+.graphics-circle{
+    width: 50%;
+    align-self: center;
+    margin: 24px 0px 0px 50px;
+}
+
+.graphics-arrow{
+    width: 85%;
     align-self: center;
     margin: 24px 0px 0px 50px;
 }
