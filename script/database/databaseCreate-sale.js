@@ -109,7 +109,7 @@ export default class databasecreatesale{
                 doc.text('Data: ' + document.getElementById('date').value, 10, 20)
                 doc.text('Data de Entrega: ' + document.getElementById('datedelivery').value, 10, 30)
 
-                doc.text('------------------------------', 10, 40)
+                doc.text('____________________________________________________________', 10, 40)
 
                 var idgeneral = 50;
                 
@@ -128,7 +128,7 @@ export default class databasecreatesale{
                     idgeneral += 10;
                     doc.text("Valor Total: " + document.getElementById(priceTotalValue).value, 10, idgeneral)
                     idgeneral += 10;
-                    doc.text("---------------------------", 10, idgeneral)
+                    doc.text("____________________________________________________________", 10, idgeneral)
                     idgeneral += 10;
                     doc.text("Total da Venda: " + document.getElementById("totalGeneralPayment").value, 10, idgeneral)
                     idgeneral += 10;
