@@ -18,21 +18,24 @@ export default class databaseStorage{
       all.forEach(
         function(curecord){
        arrayItems.push(curecord.val().product);
-          // var usuario = curecord.val();
-          var tr = document.createElement('tr');
-          tr.classList.add('dot');
-
-          dados =
-          "<td>" + usuario.product + "</td>" + "<td>" + usuario.type + "</td>" + "<td>" + usuario.total + "</td>" + "<td>" + usuario.totalValue + "</td>";
-
-          tr.innerHTML = dados;
-          var_lista.appendChild(tr);
+          // var usuario = curecord.val()
 
         })
         console.log(arrayItems);
         arrayItemsFiltered = arrayItems.filter(function(item, pos) {
           return arrayItems.indexOf(item) == pos})
         console.log(arrayItemsFiltered);
+        arrayItemsFiltered.map((item)=>{
+          var tr = document.createElement('tr');
+          tr.classList.add('dot');
+
+
+          dados =
+          "<td>" + item + "</td>" + "<td>" + "</td>" + "<td>" + usuario.total + "</td>" + "<td>" + usuario.totalValue + "</td>";
+
+          tr.innerHTML = dados;
+          var_lista.appendChild(tr);
+        })
         //cadastrar arrayItemsFiltered  no storage.
         
     })
