@@ -394,6 +394,16 @@ h2{
     justify-content: flex-end;
     padding: 6px;
 }
+.fechar{
+    background: none;
+    border: none;
+}
+  
+.fechar::before{
+    content: url(../images/close_white_24dp.svg);
+    filter: invert(15%) sepia(48%) saturate(7196%) hue-rotate(189deg) brightness(92%) contrast(94%);
+}
+
 #modal-reg form{
     display: flex;
 }
@@ -406,6 +416,7 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 18px;
 }
 #modal-reg form h1{
     text-align: center;
