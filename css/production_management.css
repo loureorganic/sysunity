@@ -30,24 +30,23 @@
 }
 
 #nome-table{
-    width: 10%;
-    padding-left: 25px;
-    text-align: start;
+    width: 15%;
+    padding-left: 10px;
+    text-align: center;
 }
 #tipo-table{
-    width: 10%;
-    padding-left: 30px;
-    text-align: start;
+    width: 15%;
+    padding-left: 20px;
+    text-align: center;
 }
 #lote-table{
-    width: 32%;
-    padding-left: 100px;
-    text-align: start;
+    width: 20%;
+    text-align: center;
 }  
 #opcoes{
     text-align: center;
     padding-left: 60px;
-    width: 55%;
+    width: 35%;
 }  
 #div-table{
     overflow: auto;
@@ -58,25 +57,19 @@
   .table  th{
     cursor: pointer;
   }
-  
   .table .th-sort-asc::after{
-    content: "\25b4";
-  }
-  
-  .table .th-sort-desc::after{
-    content: "\25be";
-  }
+    content: url(../images/expand_less_white_24dp.svg);
+}
+
+.table .th-sort-desc::after{
+    content: url(../images/expand_more_white_24dp\ \(1\).svg);
+}
   
   .table .th-sort-asc::after,
   .table .th-sort-desc::after{
     margin: 5px;
   }
-  
-  .table .th-sort-asc::after,
-  .table .th-sort-desc::after{
-    background: rgba(0, 0, 0, 0.1);
-  }
-  
+
   #opcoes::after{
     content: none;
     

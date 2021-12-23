@@ -42,11 +42,11 @@
 }
 
 .table .th-sort-asc::after{
-  content: "\25b4";
+  content: url(../images/expand_less_white_24dp.svg);
 }
 
 .table .th-sort-desc::after{
-  content: "\25be";
+  content: url(../images/expand_more_white_24dp\ \(1\).svg);
 }
 
 .table .th-sort-asc::after,
@@ -54,10 +54,6 @@
   margin: 5px;
 }
 
-.table .th-sort-asc::after,
-.table .th-sort-desc::after{
-  background: rgba(0, 0, 0, 0.1);
-}
 
 #opcoes::after{
   content: none;
