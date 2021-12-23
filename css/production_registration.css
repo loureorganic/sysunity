@@ -238,7 +238,6 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    align-items: center;
   }
   
 .loader2 {
@@ -316,6 +315,7 @@ h2{
     border-color: #085D8C;
     width: 100%;
 }
+
 #modal-reg .button-close{
     display: flex;
     justify-content: flex-end;
@@ -345,6 +345,11 @@ h2{
     color: rgba(130, 130, 130, 1); 
     font-weight: bold;
     font-size: 30px;
+}
+#modal-reg .btn-links{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 #modal-reg .btn-paraGerenciamento{
     height: 40px;
