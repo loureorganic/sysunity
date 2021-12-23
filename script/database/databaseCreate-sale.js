@@ -21,7 +21,7 @@ export default class databasecreatesale{
         database.ref('sale/'+newProductKey+'/date').set(document.getElementById('date').value);
         database.ref('sale/'+newProductKey+'/totalGeneral').set(document.getElementById('total-general').value);
         database.ref('sale/'+newProductKey+'/totalPaid').set(document.getElementById('total-paid').value);
-         database.ref('sale/'+newProductKey+'/totalPending').set(document.getElementById('total-pending').value);
+        database.ref('sale/'+newProductKey+'/totalPending').set(document.getElementById('totalpendente').value);
         database.ref('sale/'+newProductKey+'/dateDelivery').set(document.getElementById('datedelivery').value);
 
         for (let i = 0; i < id + 1; i++){
@@ -149,7 +149,6 @@ export default class databasecreatesale{
       database.ref('saleBalance/'+newProductKey+'/seller').set(document.getElementById('seller').value);
       database.ref('saleBalance/'+newProductKey+'/date').set(document.getElementById('date').value);
       database.ref('saleBalance/'+newProductKey+'/totalPaid').set(document.getElementById('total-paid').value);
-      database.ref('saleBalance/'+newProductKey+'/totalPending').set(document.getElementById('total-pending').value);
       database.ref('saleBalance/'+newProductKey+'/totalGeneral').set(document.getElementById('total-general-order').value);
 
       for (let i = 0; i < idPayment + 1; i++){
@@ -184,9 +183,8 @@ export default class databasecreatesale{
             let totalGeneral = 'total-value' + i;
             total = total + Number(document.getElementById(totalGeneral).value);  
         }
-        document.getElementById('totalpendente').value = document.getElementById('totalGeneralPayment').value - total;
         document.getElementById('total-paid').value = total;
-
+        document.getElementById('totalpendente').value = Number(document.getElementById('totalGeneralPayment').value - total);
     }
     paymentWay(id){
 
