@@ -151,9 +151,6 @@ export default class databasecreateproduction{
 
    validateProduction(production){
 
-    let today = new Date();
-    let cadastrationDate = today.toLocaleDateString();
-    let cadastrationHour = today.toLocaleTimeString();
     let a;
     let authUser = localStorage.getItem("id");
     const firebaseref = firebase.database().ref("user");
@@ -161,6 +158,9 @@ export default class databasecreateproduction{
     firebaseref.once('value').then(function (snapshot) {
 
       snapshot.forEach(element => {
+
+        let authUser = localStorage.getItem("id");
+
         if(element.key === authUser)
         {
           a = element;
@@ -168,6 +168,9 @@ export default class databasecreateproduction{
       });
 
       let active = false;
+      let today = new Date();
+      let cadastrationDate = today.toLocaleDateString();
+      let cadastrationHour = today.toLocaleTimeString();
     
       const database = firebase.database();
       let newClientKey = database.ref().child('production').push().key;
@@ -183,11 +186,12 @@ export default class databasecreateproduction{
       database.ref('production/'+newClientKey+'/batch').set(production.batch);
       database.ref('production/'+newClientKey+'/user').set(a.key);
 
-      let today = new Date();
+      // let today = new Date();
       let authUser = localStorage.getItem("id");
-      let cadastrationDate = today.toLocaleDateString();
-      let cadastrationHour = today.toLocaleTimeString();
+      // let cadastrationDate = today.toLocaleDateString();
+      // let cadastrationHour = today.toLocaleTimeString();
       let newClientKey2 = database.ref().child('user').push().key;
+
       database.ref('historic/'+newClientKey2+'/userAction').set(authUser);
       database.ref('historic/'+newClientKey2+'/date').set(cadastrationDate);
       database.ref('historic/'+newClientKey2+'/hour').set(cadastrationHour);
