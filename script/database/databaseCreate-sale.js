@@ -16,7 +16,14 @@ export default class databasecreatesale{
         
         const database = firebase.database();
         let newProductKey = database.ref().child('sale').push().key;
-
+        let today = new Date();
+        let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        let cadastrationDate = date;
+        let cadastrationHour = today.toLocaleTimeString();
+        
+        let generalTimeBatch = cadastrationDate.toString()+ '-' + cadastrationHour.toString();
+        let batch = generalTimeBatch.replace(/:/g, '-').replace(/-/g, '')
+        database.ref('sale/'+newProductKey+'/numberSale').set(batch);
         database.ref('sale/'+newProductKey+'/seller').set(document.getElementById('seller').value);
         database.ref('sale/'+newProductKey+'/date').set(document.getElementById('date').value);
         database.ref('sale/'+newProductKey+'/totalGeneral').set(document.getElementById('total-general').value);
