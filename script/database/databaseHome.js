@@ -16,7 +16,12 @@ export default class databasehome{
       )
       venda.slice(0, 3).map((item, index) => {
         let valuePosition = 'td' + index;
-        document.getElementById(valuePosition).innerText = 'A encomenda de n°'+ 'faltam' + ' até o prazo limite para a entrega.'
+        let today2 = new Date();
+        let date = today2.getFullYear()+'-'+(today2.getMonth()+1)+'-'+today2.getDate();
+        console.log(Number(item.dateDelivery));
+        console.log(Number(date))
+        console.log(Number(item.dateDelivery) - Number(date));
+        document.getElementById(valuePosition).innerText = 'A encomenda de n° '+ item.numberSale +' faltam' + 'dias até o prazo limite para a entrega.'
         console.log({item});
       })
     })
