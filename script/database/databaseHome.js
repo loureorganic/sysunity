@@ -21,7 +21,7 @@ export default class databasehome{
         console.log(Number(item.dateDelivery));
         console.log(Number(date))
         console.log(Number(item.dateDelivery) - Number(date));
-        document.getElementById(valuePosition).innerText = 'A encomenda de n° '+ item.numberSale +' faltam' + 'dias até o prazo limite para a entrega.'
+        document.getElementById(valuePosition).innerText = 'A encomenda de n° '+ item.numberSale +' faltam' + ' dias até o prazo limite para a entrega.'
         console.log({item});
       })
     })
