@@ -214,7 +214,7 @@ export default class databasemanagementsale{
           document.getElementById("totalpago1").value = element.val().totalPaid;
           document.getElementById("datavenda1").value = element.val().date;
           document.getElementById("dataentrega1").value = element.val().dateDelivery;
-          // document.getElementById("valor").value = element.val().value;
+          document.getElementById("totalpendente").value = element.val().totalPending;
           // document.getElementById("valor").value = element.val().value;
 
         }   
@@ -362,6 +362,7 @@ export default class databasemanagementsale{
           document.getElementById("totalpago2").placeholder = element.val().totalPaid;
           document.getElementById("datavenda2").placeholder = element.val().date;
           document.getElementById("dataentrega2").placeholder = element.val().dateDelivery;
+          document.getElementById("totalpendente2").placeholder = element.val().totalPending;
           
           var btn = document.getElementById("btn_salvar");
 
@@ -369,6 +370,7 @@ export default class databasemanagementsale{
 
             var inputvendedor = document.getElementById("vendedor2").value;
             var inputtotal = document.getElementById("totalvenda2").value;
+            var inputtotalPendente =  document.getElementById("totalpendente2").value;
             var inputvalorPago =  document.getElementById("totalpago2").value;
             var inputdataVenda =  document.getElementById("datavenda2").value;
             var inputdataEntrega =  document.getElementById("dataentrega2").value;
@@ -383,7 +385,7 @@ export default class databasemanagementsale{
 
               if(document.getElementById(idpro).value == '') {
 
-                document.getElementById(idpro).style.borderColor = "red";
+                // document.getElementById(idpro).style.borderColor = "red";
                 // document.getElementById('alerta_valortotal').style.display = 'flex';
             
               } else {
@@ -394,7 +396,7 @@ export default class databasemanagementsale{
               }
               if (document.getElementById(idqua).value == ''){
                 
-                document.getElementById(idqua).style.borderColor = "red";
+                // document.getElementById(idqua).style.borderColor = "red";
                 // document.getElementById('alerta_formapagamento').style.display = 'flex';
             
               }
@@ -406,7 +408,7 @@ export default class databasemanagementsale{
               }
               if (document.getElementById(idval).value == ''){
                 
-                document.getElementById(idval).style.borderColor = "red";
+                // document.getElementById(idval).style.borderColor = "red";
                 // document.getElementById('alerta_formapagamento').style.display = 'flex';
             
               }
@@ -433,7 +435,7 @@ export default class databasemanagementsale{
 
               if(document.getElementById(idfor).value == '') {
 
-                document.getElementById(idfor).style.borderColor = "red";
+                // document.getElementById(idfor).style.borderColor = "red";
                 // document.getElementById('alerta_valortotal').style.display = 'flex';
             
               } else {
@@ -444,7 +446,7 @@ export default class databasemanagementsale{
               }
               if (document.getElementById(idpag).value == ''){
                 
-                document.getElementById(idpag).style.borderColor = "red";
+                // document.getElementById(idpag).style.borderColor = "red";
                 // document.getElementById('alerta_formapagamento').style.display = 'flex';
             
               }
@@ -464,23 +466,26 @@ export default class databasemanagementsale{
 
             }
 
-            if(inputvendedor === ""){
+            if(inputvendedor === "") {
               inputvendedor = element.val().seller;
             } 
-            if (inputtotal === ""){
+            if(inputtotal === "") {
               inputtotal = element.val().totalGeneral;
             } 
-            if (inputvalorPago === ""){
+            if(inputvalorPago === "") {
               inputvalorPago = element.val().totalPaid;
             }
-            if (inputdataVenda === ""){
+            if(inputdataVenda === "") {
               inputdataVenda = element.val().date;
             }
-            if (inputdataEntrega === ""){
+            if(inputdataEntrega === "") {
               inputdataEntrega = element.val().dateDelivery;
             }
+            if(inputtotalPendente === "") {
+              inputtotalPendente = element.val().totalPending;
+            }
 
-            self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega);
+            self.funcUpd(element.key, inputvendedor, inputtotal, inputvalorPago, inputdataVenda, inputdataEntrega, inputtotalPendente);
           })   
         } 
       });
@@ -488,7 +493,7 @@ export default class databasemanagementsale{
   }
 
   // FUNCAO P/ ATUALIZAR DADOS
-  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataEntrega){
+  funcUpd(chave, vendedor, total, valorPago, dataVenda, dataEntrega, totalPendente){
     const database = firebase.database();
     let active = false;
     database.ref('sale/'+chave+'/seller').set(vendedor);
@@ -496,6 +501,7 @@ export default class databasemanagementsale{
     database.ref('sale/'+chave+'/totalPaid').set(valorPago);
     database.ref('sale/'+chave+'/date').set(dataVenda);
     database.ref('sale/'+chave+'/dateDelivery').set(dataEntrega);
+    database.ref('sale/'+chave+'/totalPending').set(totalPendente);
     
     window.location.reload(active);
   };
