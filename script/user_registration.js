@@ -8,47 +8,69 @@ const data = new databasecreateuser();
 
 document.getElementById("btn_cadastrar").addEventListener("click", function() {
 
+	var select = document.getElementById("access");
+    var value = select.options[select.selectedIndex].value;
+
+	var select1 = document.getElementById("office");
+    var value1 = select1.options[select1.selectedIndex].value;
+
 	if(document.getElementById('nome').value === "") {
 
-		document.getElementById('nome').style.borderColor = "red";
-		document.getElementById('alerta_nome_usuario').style.display = 'flex';
+	document.getElementById('nome').style.borderColor = "red";
+	document.getElementById('alerta_nome_usuario').style.display = 'flex';
+
+	} else{
+
+	document.getElementById('nome').style.borderColor = "blue";
+	document.getElementById('alerta_nome_usuario').style.display = "none";
+
+	} if(document.getElementById('sobrenome').value === "") {
+
+	document.getElementById('sobrenome').style.borderColor = "red";
+	document.getElementById('alerta_sobrenome').style.display = 'flex';
+
+	} else{
+
+	document.getElementById('sobrenome').style.borderColor = "blue";
+	document.getElementById('alerta_sobrenome').style.display = "none";
+
+	} if(document.getElementById('email').value === "") {
+
+	document.getElementById('email').style.borderColor = "red";
+	document.getElementById('alerta_email').style.display = 'flex';
+
+	} else{
+
+	document.getElementById('email').style.borderColor = "blue";
+	document.getElementById('alerta_email').style.display = 'none';
+
+	} if(document.getElementById("nomedeusuario").value === "") {
+
+	document.getElementById('nomedeusuario').style.borderColor = "red";
+	document.getElementById('alerta_usuario').style.display = 'flex';
+
+	} else{
+
+	document.getElementById('nomedeusuario').style.borderColor = "blue";
+	document.getElementById('alerta_usuario').style.display = 'none';
 	
-		} else{
-	
-		document.getElementById('nome').style.borderColor = "blue";
-		document.getElementById('alerta_nome_usuario').style.display = "none";
-	
-		} if(document.getElementById('sobrenome').value === "") {
-	
-		document.getElementById('sobrenome').style.borderColor = "red";
-		document.getElementById('alerta_sobrenome').style.display = 'flex';
-	
-		} else{
-	
-		document.getElementById('sobrenome').style.borderColor = "blue";
-		document.getElementById('alerta_sobrenome').style.display = "none";
-	
-		} if(document.getElementById('email').value === "") {
-	
-		document.getElementById('email').style.borderColor = "red";
-		document.getElementById('alerta_email').style.display = 'flex';
-	
-		} else{
-	
-		document.getElementById('email').style.borderColor = "blue";
-		document.getElementById('alerta_email').style.display = 'none';
-	
-		} if(document.getElementById("nomedeusuario").value === "") {
-	
-		document.getElementById('nomedeusuario').style.borderColor = "red";
-		document.getElementById('alerta_usuario').style.display = 'flex';
-	
-		} else{
-	
-		document.getElementById('nomedeusuario').style.borderColor = "blue";
-		document.getElementById('alerta_usuario').style.display = 'none';
-		
-		}
+	} if(value === "") {
+
+		document.getElementById('access').style.borderColor = "red";
+
+	} else {
+
+		document.getElementById('access').style.borderColor = "blue";
+
+	} if(value1 === "") {
+
+		document.getElementById('office').style.borderColor = "red";
+
+	} else {
+
+		document.getElementById('office').style.borderColor = "blue";
+
+	}
 
 	let user = {
 		nome: document.getElementById('nome').value,
