@@ -29,11 +29,9 @@ export default class Login{
                    errtotal = true;
                    console.log('ehere');
                 }   
-                console.log(errtotal);
             });
 
-            if (errsenha == true && erruser == true){
-                console.log('oi');
+            if (!errsenha && !erruser && !user){
                 this.errosenhaeusuario();
             } else if(!user && erruser) 
             {
@@ -41,8 +39,6 @@ export default class Login{
             }
             else if (!user && errsenha) {
                 this.errosenha();
-            } else if (errtotal){
-                this.errosenhaeusuario();
             }
            
         })
